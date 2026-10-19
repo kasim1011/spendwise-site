@@ -1,0 +1,18 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Spendwise full app icon - gradient field + the mark from spendwise-mark.svg
+    scaled to 704/1024 (68.75%) of the canvas. Used for icon.png and favicon.png.
+  -->
+  <defs>
+    <linearGradient id="spendwise-field" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#004AC6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#spendwise-field)"/>
+  <g transform="translate(152 152)">
+    <circle cx="360" cy="360" r="300" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="104"/>
+    <path d="M572.132034 147.867966A300 300 0 1 1 147.867966 147.867966" stroke="#FFFFFF" stroke-width="104" stroke-linecap="round"/>
+    <path d="M222 369L309 456L498 266" stroke="#FFFFFF" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

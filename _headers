@@ -1,0 +1,54 @@
+# Response headers for spendwise.download, served by Cloudflare Pages.
+#
+# Pages parses this file and never serves it as an asset. Every matching rule
+# applies, and a header defined twice is joined with a comma, so Cache-Control
+# appears only in the most specific rule for each path.
+
+# Baseline security headers on every response.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Pages: revalidate every visit so a deploy is visible immediately. Pages
+# answers with a 304 from the ETag when nothing changed.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/privacy.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/terms.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/support.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Stylesheets are unversioned, so keep their window short.
+/styles/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Icons, fonts, the OG card and the screenshots change rarely, so cache them
+# hard. Replacing a file at an existing path does not reach returning visitors:
+# rename it (or add a `?v=` query in the HTML) and update the references.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/screenshot/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Crawler and store records: short cache so edits land within the hour.
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/app-ads.txt
+  Cache-Control: public, max-age=3600

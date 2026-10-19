@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# AdMob's app-ads.txt crawler. `User-agent: *` already allows it, but the
+# app-ads.txt troubleshooting guide asks for an explicit group, and a crawler
+# that finds a matching specific group ignores the wildcard one — so naming it
+# removes any doubt about how this file is interpreted.
+# https://support.google.com/admob/answer/9776740
+User-agent: Google-adstxt
+Allow: /
+
+Sitemap: https://spendwise.download/sitemap.xml

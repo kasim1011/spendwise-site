@@ -1,0 +1,278 @@
+/* Spendwise site — long-form documents: privacy, terms, and support. */
+
+.doc-hero {
+  padding: clamp(2.25rem, 5vw, 3.5rem) 0 2rem;
+  background: linear-gradient(180deg, var(--bg-softer), var(--bg));
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.doc-hero h1 {
+  margin-bottom: 0.75rem;
+}
+
+.doc-hero__lede {
+  max-width: 46rem;
+  font-size: 1.05rem;
+  color: var(--body);
+}
+
+.doc-hero__meta {
+  margin-top: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.doc-hero__meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.doc {
+  max-width: 46rem;
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+}
+
+.doc h2 {
+  margin: 2.5rem 0 0.85rem;
+  padding-top: 0.5rem;
+  font-size: 1.35rem;
+  scroll-margin-top: 90px;
+}
+
+.doc h2:first-of-type {
+  margin-top: 0;
+}
+
+.doc h3 {
+  margin: 1.75rem 0 0.6rem;
+  font-size: 1.05rem;
+  scroll-margin-top: 90px;
+}
+
+.doc p,
+.doc li {
+  color: var(--body);
+}
+
+.doc strong {
+  color: var(--ink);
+}
+
+.doc code {
+  padding: 0.1rem 0.35rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.88em;
+  color: var(--ink);
+}
+
+/* ---------- Contents ---------- */
+
+.toc {
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.toc h2 {
+  margin: 0 0 0.75rem;
+  padding: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.1rem;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: 0.92rem;
+}
+
+.toc li {
+  margin-bottom: 0.3rem;
+  break-inside: avoid;
+}
+
+/* ---------- Tables ---------- */
+
+.doc table {
+  width: 100%;
+  margin: 1.25rem 0;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.doc th,
+.doc td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc th {
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.doc tbody tr:nth-child(even) td {
+  background: var(--bg-softer);
+}
+
+/* ---------- Callouts ---------- */
+
+.note {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.note__title {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.note--warn {
+  border-left-color: var(--danger);
+  background: var(--danger-tint);
+}
+
+.note--good {
+  border-left-color: var(--success);
+  background: var(--success-tint);
+}
+
+/* ---------- Support page ---------- */
+
+.faq {
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding: 1rem 1.25rem;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  flex: none;
+  color: var(--brand);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq[open] summary::after {
+  content: '\2212';
+}
+
+.faq[open] summary {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.faq summary:hover {
+  background: var(--brand-tint);
+}
+
+.faq__body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.faq__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Contact card ---------- */
+
+.contact-card {
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  background: linear-gradient(150deg, var(--brand-bright), var(--brand));
+  border-radius: var(--radius-lg);
+  color: #fff;
+}
+
+.contact-card h2 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.contact-card p {
+  color: rgb(255 255 255 / 90%);
+}
+
+/* Exclude .btn: this rule is (0,2,1) and would otherwise outrank
+   `.btn--ghost { color: var(--ink) }` at (0,1,0), leaving white text on
+   the button's white background until :hover restores it. */
+.contact-card a:not(.btn) {
+  color: #fff;
+  font-weight: 600;
+}
+
+.contact-card .btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .toc ol {
+    columns: 1;
+  }
+
+  .doc table,
+  .doc thead,
+  .doc tbody,
+  .doc th,
+  .doc td,
+  .doc tr {
+    display: block;
+  }
+
+  .doc thead {
+    display: none;
+  }
+
+  .doc td {
+    border-top: 0;
+  }
+
+  .doc td:first-child {
+    border-top: 1px solid var(--line);
+    background: var(--bg-soft);
+    font-weight: 600;
+    color: var(--ink);
+  }
+}

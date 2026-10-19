@@ -1,0 +1,7 @@
+# Keep maintainer documentation off the public site.
+#
+# This file is parsed by Cloudflare Pages and is never served as an asset.
+# Redirects are evaluated before static assets, so this rule overrides the
+# README.md sitting in this directory. Only 301/302/303/307/308 are supported —
+# Pages does not honour rewrites to arbitrary status codes such as 404.
+/README.md / 301
