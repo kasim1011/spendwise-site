@@ -1210,12 +1210,51 @@
               <li><a href="/50-30-20-budget-calculator">50/30/20 budget calculator</a></li>
               <li><a href="/split-bill-calculator">Split bill calculator</a></li>
               <li><a href="/subscription-cost-calculator">Subscription cost calculator</a></li>
+              <li><a href="/blog/why-local-first">Why local-first</a></li>
             </ul>
           </nav>
         </div>
       </section>
 
       <!-- ================= CTA ================= -->
+      <section class="section section--soft" id="tour">
+        <div class="wrap">
+          <div class="section__head section__head--center">
+            <span class="eyebrow">Watch</span>
+            <h2>See the app in 53 seconds</h2>
+            <p>
+              A silent tour of the dashboard, logging an expense, a group, and the balance it
+              settles. The player loads only when you press play — until then this page makes no
+              request outside its own origin.
+            </p>
+          </div>
+
+          <div class="tour" data-video="IYf93G3uZEY">
+            <picture>
+              <source srcset="/assets/tour-poster.webp" type="image/webp" />
+              <img
+                src="/assets/tour-poster.png"
+                alt="The Spendwise dashboard: $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and recurring bills still to log."
+                width="540"
+                height="960"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <button
+              class="tour__play"
+              type="button"
+              aria-label="Play the 53-second Spendwise tour"
+            >
+              <span class="tour__play-mark" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="tour__alt">
+            <a href="https://youtube.com/shorts/IYf93G3uZEY" rel="noopener">Watch it on YouTube</a>
+          </p>
+        </div>
+      </section>
+
       <section class="cta">
         <div class="wrap">
           <h2>Get Spendwise on Google Play</h2>
@@ -1296,6 +1335,24 @@
           }
         }
       }
+    </script>
+    <!--
+      The tour is click-to-load on purpose. An iframe on load would add the site's only third-party
+      request and break the single-origin promise in site/README.md; this creates the player from
+      youtube-nocookie.com only after a user gesture, so the default page load is unchanged.
+    -->
+    <script>
+      const tour = document.querySelector('.tour[data-video]');
+      tour?.querySelector('.tour__play')?.addEventListener('click', () => {
+        const player = document.createElement('iframe');
+        player.className = 'tour__player';
+        player.src = `https://www.youtube-nocookie.com/embed/${tour.dataset.video}?autoplay=1&mute=1&playsinline=1&rel=0`;
+        player.title = 'Spendwise in 53 seconds';
+        player.allow =
+          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        player.allowFullscreen = true;
+        tour.replaceChildren(player);
+      });
     </script>
   </body>
 </html>

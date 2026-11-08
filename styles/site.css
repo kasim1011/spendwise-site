@@ -848,3 +848,81 @@ body:has(.gallery li:target) {
 .related a {
   font-weight: 600;
 }
+
+/* ---------- Homepage tour ---------- */
+
+/* Click-to-load: the poster is local, so the page keeps a single origin until the visitor presses
+   play, and the iframe is created from youtube-nocookie.com only on that gesture. */
+.tour {
+  position: relative;
+  width: min(320px, 100%);
+  margin-inline: auto;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+
+.tour picture,
+.tour img,
+.tour__player {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tour img {
+  object-fit: cover;
+}
+
+.tour__player {
+  border: 0;
+}
+
+.tour__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 0;
+  background: rgb(11 18 32 / 18%);
+  cursor: pointer;
+}
+
+.tour__play:hover,
+.tour__play:focus-visible {
+  background: rgb(11 18 32 / 28%);
+}
+
+.tour__play:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -6px;
+}
+
+.tour__play-mark {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 96%);
+  box-shadow: var(--shadow);
+}
+
+.tour__play-mark::before {
+  content: "";
+  margin-inline-start: 4px;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-inline-start: 18px solid var(--brand);
+}
+
+.tour__alt {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
