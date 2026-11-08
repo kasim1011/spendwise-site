@@ -67,7 +67,7 @@
     </script>
   </head>
   <body>
-        <header class="site-header">
+    <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="brand" href="/">
           <img src="/assets/logo.svg" alt="" width="32" height="32" />
@@ -105,10 +105,10 @@
         <article class="doc">
           <h2 id="what-local-first-means">What local-first means here</h2>
           <p>
-            Every transaction, category, budget, person and receipt attachment lives in SQLite inside
-            the app's private storage on the device. Screens read from that database. There is no
-            login, no sync queue, and no server that has to answer before the app can show what you
-            spent.
+            Every transaction, category, budget, person and receipt attachment lives in SQLite
+            inside the app's private storage on the device. Screens read from that database. There
+            is no login, no sync queue, and no server that has to answer before the app can show
+            what you spent.
           </p>
           <p>
             That is the whole architecture. "Offline support" usually means a local cache of
@@ -148,9 +148,7 @@
               <strong>No live sync across devices.</strong> Your phone is the ledger. A tablet is a
               second, separate ledger unless you move a backup file between them.
             </li>
-            <li>
-              <strong>No web app.</strong> There is nothing to open in a browser at work.
-            </li>
+            <li><strong>No web app.</strong> There is nothing to open in a browser at work.</li>
             <li>
               <strong>No automatic bank import.</strong> Entries are typed, or brought in from a
               backup file you move yourself.
@@ -173,15 +171,15 @@
           </p>
           <p>
             The app shows <strong>one native ad</strong> on the confirmation screen after a save,
-            served by Google AdMob and non-personalised. It is the only revenue the app has. There is
-            no second placement, no rewarded video and no interstitial on launch. Non-personalised
-            means the ad is not chosen from a profile of you, and the app does not pass an
-            advertising identifier to the SDK.
+            served by Google AdMob and non-personalised. It is the only revenue the app has. There
+            is no second placement, no rewarded video and no interstitial on launch.
+            Non-personalised means the ad is not chosen from a profile of you, and the app does not
+            pass an advertising identifier to the SDK.
           </p>
           <p>
             The app also sends <strong>anonymous usage events</strong> — that a screen was viewed,
-            that an install opened — to Firebase. No amounts, note text, category names, person names
-            or attachments are included. Analytics can be switched off in Settings, and the ad
+            that an install opened — to Firebase. No amounts, note text, category names, person
+            names or attachments are included. Analytics can be switched off in Settings, and the ad
             request still fires either way because it is what pays for the app. In the EEA and the
             UK, the ad request is consent-gated.
           </p>
@@ -202,8 +200,8 @@
             anything that can open it, so treat it like a bank statement rather than a password
             vault. Keep it somewhere you would keep a paper ledger: not in a public folder, not
             attached to an email to yourself that you later forget about. The
-            <a href="/private-expense-tracker">private-expense-tracker page</a> states the same limit
-            rather than overselling the word "private".
+            <a href="/private-expense-tracker">private-expense-tracker page</a> states the same
+            limit rather than overselling the word "private".
           </p>
 
           <h2 id="who-this-is-not-for">Who this is not for</h2>
@@ -217,8 +215,8 @@
             Spendwise is free on Google Play, offline, and needs no sign-up. The
             <a href="/offline-expense-tracker">offline expense tracker guide</a> covers what the app
             does in airplane mode, and the
-            <a href="/expense-tracker-vs-spreadsheet">comparison with a spreadsheet</a> is the honest
-            case for not using one.
+            <a href="/expense-tracker-vs-spreadsheet">comparison with a spreadsheet</a> is the
+            honest case for not using one.
           </p>
 
           <nav class="related" aria-label="More guides">
