@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de divisão de conta com gorjeta</title>
+    <meta
+      name="description"
+      content="Divida uma conta entre quantas pessoas quiser, gorjeta incluída. Arredondamento em centavos inteiros, sem conta, e quando dividir igual é injusto."
+    />
+    <link rel="canonical" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Calculadora de divisão de conta com gorjeta" />
+    <meta
+      property="og:description"
+      content="Conta, gorjeta e número de pessoas, divididos ao centavo. E quando dividir igual é a resposta errada."
+    />
+    <meta property="og:url" content="https://spendwise.download/pt-br/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="A marca do Spendwise: um anel de progresso branco com um visto sobre um degradê azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/pt-br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculadora de divisão de conta",
+            "item": "https://spendwise.download/pt-br/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A gorjeta deve ser calculada antes ou depois do imposto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sobre o subtotal antes do imposto, que é o costume nos Estados Unidos e a leitura mais simples das duas. Informe nesta calculadora a conta antes do imposto e ela fica correta de primeira. Quando já houver taxa de serviço na conta, zere a gorjeta em vez de acrescentar uma segunda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como divido uma conta de forma desigual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Resolva os itens primeiro e divida o resto. Atribua cada prato a quem comeu, divida os pratos compartilhados e a gorjeta igualmente e some as duas partes. Divisões proporcionais à renda são defensáveis para aluguel, não para uma conta de restaurante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual é a forma mais justa de tratar o centavo que sobra?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dê o centavo extra a uma pessoa, ou a quem está recolhendo. Nunca arredonde cada parte para cima: quatro pessoas arredondando uma parte de 53,87 para 54 pagam 216,00 contra uma conta de 215,51, e quem recolhe fica com a diferença sem ter decidido isso."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Esta calculadora guarda a conta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Tudo é calculado na página, nada é enviado, e não há cookies nem scripts de terceiros. Fechar a aba descarta tudo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como o Spendwise lida com despesas compartilhadas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Um grupo é um registro próprio, com orçamento e categorias próprios, então uma viagem ou uma casa compartilhada não se mistura com os gastos pessoais. Uma pessoa mantém o registro, e o app acompanha quem deve a quem pelos saldos de pessoas. Ele não oferece edição compartilhada em tempo real, então um grupo precisa de um guardião, não de dois editores."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/pt-br/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="/#features">Recursos</a>
+          <a href="/#gallery">Galeria</a>
+          <a href="/#privacy">Privacidade</a>
+          <a href="/support" hreflang="en" lang="en">Suporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de Privacidade</a>
+          <a href="/terms" hreflang="en" lang="en">Termos</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Ferramenta gratuita</p>
+          <h1>Calculadora de divisão de conta</h1>
+          <p class="doc-hero__lede">
+            Uma conta, uma gorjeta e um número de pessoas. A calculadora divide ao centavo e diz
+            exatamente onde vai o centavo que sobra. Sem conta, sem ID de rastreamento, nada sai da
+            página.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Atualizado:</strong> 20 de outubro de 2026 &nbsp;·&nbsp;
+            <strong>Arredondamento:</strong> centavos inteiros &nbsp;·&nbsp;
+            <strong>Custo:</strong> gratuito
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Divide certinho: {people} partes de {each}."
+            data-msg-one="{remainder} pessoa paga um centavo a mais ({high}); o resto paga {each}. O total fecha — nunca arredonde cada parte para cima."
+            data-msg-many="{remainder} das {people} pessoas pagam um centavo a mais ({high}); o resto paga {each}. O total fecha — nunca arredonde cada parte para cima."
+          >
+            <h2 class="tool__title" id="split-heading">Sua conta</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Conta, antes da gorjeta</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Gorjeta, por cento</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Pessoas</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>A divisão</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Gorjeta</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Total a pagar</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Cada um paga</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Maior parte</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                A calculadora precisa de JavaScript. Faça na mão: acrescente a porcentagem da
+                gorjeta à conta, divida pelo número de pessoas e dê o centavo que sobra a uma pessoa.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Como esta divisão funciona</h2>
+          <p>
+            A gorjeta é calculada sobre a conta antes do imposto, somada ao total, e o total é
+            dividido pelo número de pessoas. A ordem importa: gorjeta sobre o valor com imposto
+            infla o valor em toda a alíquota local e, numa conta de 187,40 com 15%, são 4,20 que
+            ninguém pretendia deixar.
+          </p>
+          <p>
+            A divisão é em <strong>centavos inteiros</strong>, nunca em ponto flutuante. Uma conta de
+            215,51 entre quatro pessoas não divide certo, então as partes ficam em 53,87 e uma pessoa
+            paga 53,88. A alternativa — arredondar cada parte para cima — é como quem recolhe o
+            dinheiro acaba com um lucro silencioso, e como começa uma discussão no grupo.
+          </p>
+
+          <h2 id="tipping">Gorjeta, taxa de serviço e o que a conta já inclui</h2>
+          <p>
+            Costumes de gorjeta não viajam bem, e uma calculadora não resolve isso; ela ao menos não
+            piora. Três regras que mantêm a conta honesta:
+          </p>
+          <ul>
+            <li>
+              <strong>Verifique antes se há taxa de serviço.</strong> Uma linha dizendo “12,5% de
+              serviço” significa que a gorjeta já está na conta. Zere a gorjeta e divida o total, ou
+              você está dando gorjeta duas vezes.
+            </li>
+            <li>
+              <strong>Gorjeta sobre o subtotal, não sobre o imposto.</strong> Informe o valor antes
+              do imposto. Quando a conta mostra só o total, divida por um mais a alíquota para
+              recuperá-lo.
+            </li>
+            <li>
+              <strong>Combine antes de a maquininha chegar.</strong> Decidir a gorjeta enquanto o
+              terminal pede um percentual é como uma mesa de cinco acaba pagando 25%.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Quando dividir igual é a resposta errada</h2>
+          <p>
+            Dividir igual é rápido e costuma ser justo o bastante. Deixa de ser justo quando o gasto
+            é desigual — uma garrafa de vinho, um bife, uma pessoa que pediu uma entrada e saiu cedo.
+          </p>
+          <ul>
+            <li>
+              <strong>Por item.</strong> Atribua cada linha a quem pediu, divida os pratos
+              compartilhados e a gorjeta igualmente e depois some. É mais preciso, um pouco
+              constrangedor, e a decisão certa quando a diferença é grande.
+            </li>
+            <li>
+              <strong>Por etapa.</strong> Caminho do meio: separe bebidas e sobremesa, divida a
+              comida igualmente. Resolve a maior parte do desconforto sem itemizar.
+            </li>
+            <li>
+              <strong>Não por renda.</strong> Dividir proporcionalmente ao salário faz sentido para
+              aluguel e contas, não para um jantar. Quem ganha mais não deve mais pelo seu macarrão.
+            </li>
+          </ul>
+          <p>
+            Para custos compartilhados recorrentes — aluguel, contas de consumo, o mercado da casa —
+            a divisão igual também costuma ser o padrão errado, porque o consumo não é igual. Uma
+            divisão ponderada por pessoa (duas no quarto grande, uma no pequeno) dura mais que uma
+            divisão igual que alguém ressente em silêncio.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="A tela própria de um grupo para outubro de 2026: US$ 553,00 gastos de um orçamento de grupo de US$ 800,00 marcado como Dentro do previsto, as pessoas com saldo em aberto e um botão Adicionar despesa."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Um registro compartilhado com orçamento e saldos próprios.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="A tela Pessoas listando Alex, que deve US$ 245,00, e Sam, que tem US$ 500,00 a receber, cada um com um saldo corrente e uma ação Adicionar pessoa."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Dinheiro emprestado e devido, mantido como saldo corrente.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Dividir uma vez, acompanhar o mês inteiro</h2>
+          <p>
+            Uma calculadora resolve um jantar. A versão difícil é uma casa compartilhada ou uma
+            viagem em que vinte pagamentos pequenos acontecem em duas semanas e ninguém lembra quem
+            cobriu o quê. Isso é um problema de livro-caixa, e uma conversa de grupo é um livro-caixa
+            ruim.
+          </p>
+          <p>
+            No Spendwise, um grupo é um registro próprio — orçamento próprio, categorias próprias —
+            então uma viagem não contamina o mês pessoal. As despesas adicionadas ao grupo ficam ao
+            lado dos saldos de pessoas, para dinheiro emprestado e devido, e a tela do grupo mostra
+            quem está a receber e quem está devendo. A troca é explícita:
+            <strong>uma pessoa mantém o registro</strong>. Não há edição compartilhada em tempo real,
+            então o grupo precisa de um guardião que lança, e todo mundo vê o total.
+          </p>
+          <p>
+            Quando a viagem acaba, os números já estão lá: nada de reconstruir a partir de capturas
+            de tela, e o relatório mensal traz o gasto do grupo separado do orçamento da casa.
+          </p>
+
+          <h2 id="faq">Perguntas frequentes</h2>
+          <details class="faq">
+            <summary>A gorjeta deve ser calculada antes ou depois do imposto?</summary>
+            <div class="faq__body">
+              <p>
+                Sobre o subtotal antes do imposto, que é o costume nos Estados Unidos e a leitura
+                mais simples das duas. Informe nesta calculadora a conta antes do imposto e ela fica
+                correta de primeira. Quando já houver taxa de serviço na conta, zere a gorjeta em vez
+                de acrescentar uma segunda.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Como divido uma conta de forma desigual?</summary>
+            <div class="faq__body">
+              <p>
+                Resolva os itens primeiro e divida o resto. Atribua cada prato a quem comeu, divida
+                os pratos compartilhados e a gorjeta igualmente e some as duas partes. Divisões
+                proporcionais à renda são defensáveis para aluguel, não para uma conta de
+                restaurante.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Qual é a forma mais justa de tratar o centavo que sobra?</summary>
+            <div class="faq__body">
+              <p>
+                Dê o centavo extra a uma pessoa, ou a quem está recolhendo. Nunca arredonde cada
+                parte para cima: quatro pessoas arredondando uma parte de 53,87 para 54 pagam 216,00
+                contra uma conta de 215,51, e quem recolhe fica com a diferença sem ter decidido
+                isso.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Esta calculadora guarda a conta?</summary>
+            <div class="faq__body">
+              <p>
+                Não. Tudo é calculado na página, nada é enviado, e não há cookies nem scripts de
+                terceiros. Fechar a aba descarta tudo.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Como o Spendwise lida com despesas compartilhadas?</summary>
+            <div class="faq__body">
+              <p>
+                Um grupo é um registro próprio, com orçamento e categorias próprios, então uma
+                viagem ou uma casa compartilhada não se mistura com os gastos pessoais. Uma pessoa
+                mantém o registro, e o app acompanha quem deve a quem pelos saldos de pessoas. Ele
+                não oferece edição compartilhada em tempo real, então um grupo precisa de um
+                guardião, não de dois editores — veja
+                <a href="/pt-br/split-expenses-with-friends">a versão mais longa</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Mais ferramentas e guias">
+            <h2>Mais ferramentas e guias</h2>
+            <ul>
+              <li><a href="/pt-br/50-30-20-budget-calculator">Calculadora 50/30/20</a></li>
+              <li><a href="/pt-br/subscription-cost-calculator">Calculadora de assinaturas</a></li>
+              <li><a href="/pt-br/split-expenses-with-friends">Dividir gastos com amigos</a></li>
+              <li><a href="/pt-br/private-expense-tracker">Registro de gastos privado</a></li>
+              <li><a href="/pt-br/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/pt-br/expense-tracker-vs-spreadsheet">Spendwise vs planilha</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Mantenha o registro do grupo em um só lugar</h2>
+          <p>
+            Gratuito, sem conta, sem ID de rastreamento. Um registro de grupo, saldos de pessoas e
+            um mês que você pode exportar.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=pt-BR&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Baixar no Google Play</a
+            >
+            <a class="btn btn--ghost" href="/pt-br/split-expenses-with-friends"
+              >Como funcionam as despesas compartilhadas</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/pt-br/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Um registrador de despesas privado e offline para Android. Seu histórico fica no seu
+              celular.
+            </p>
+          </div>
+          <div>
+            <h2>Produto</h2>
+            <ul>
+              <li><a href="/#features">Recursos</a></li>
+              <li><a href="/#gallery">Galeria</a></li>
+              <li><a href="/#privacy">Privacidade</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Jurídico</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de Privacidade</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Termos e condições</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Suporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ajuda e perguntas frequentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos os direitos reservados.</span>
+          <span>Feito para Android 10 e versões posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

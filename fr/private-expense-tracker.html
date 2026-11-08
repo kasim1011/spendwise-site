@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suivi de dépenses privé : sans identifiant de suivi</title>
+    <meta
+      name="description"
+      content="Spendwise garde vos dépenses dans une base locale, sans identifiant de suivi et avec des statistiques désactivables. La version honnête du « privé »."
+    />
+    <link rel="canonical" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Suivi de dépenses privé : sans identifiant de suivi" />
+    <meta
+      property="og:description"
+      content="Ce qui est collecté, ce qui ne l'est pas, quelles autorisations l'appli demande et les limites du mot « privé » qu'il faut connaître."
+    />
+    <meta property="og:url" content="https://spendwise.download/fr/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Le logo Spendwise : un anneau de progression blanc avec une coche sur un dégradé bleu."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Suivi de dépenses privé : sans identifiant de suivi",
+            "item": "https://spendwise.download/fr/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise collecte-t-il mes transactions ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Les transactions, budgets, notes, personnes et pièces jointes vivent dans une base SQLite sur le téléphone. Aucun serveur ne les reçoit, et il n'existe aucun compte auquel les associer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La publicité utilise-t-elle mon identifiant publicitaire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. L'appli retire l'autorisation AD_ID : il n'y a donc aucun identifiant publicitaire à utiliser. Chaque demande de publicité est non personnalisée, et dans l'EEE et au Royaume-Uni, un formulaire de consentement décide si une publicité est demandée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que désactive l'interrupteur des statistiques ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Toutes les statistiques d'usage. Spendwise envoie des vues d'écran anonymes indexées sur des noms de route, sans identifiant utilisateur ni contenu de transaction. Désactiver les statistiques dans les Réglages arrête entièrement ces événements ; désactivé est absolu, pas réduit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles autorisations Spendwise demande-t-il ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les notifications, pour le rappel quotidien et les rappels de factures récurrentes. Les reçus sont choisis via le sélecteur de photos et le sélecteur de documents d'Android, qui ne demandent aucune autorisation. Le verrouillage de l'appli utilise le code, le schéma ou la biométrie déjà configurés sur votre appareil. Aucune autorisation de contacts, de localisation, de caméra ou d'identifiant publicitaire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le fichier de sauvegarde est-il chiffré ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le fichier .spendwise est une archive simple de la base et de vos pièces jointes. Traitez-le comme un relevé bancaire et gardez-le dans un endroit de confiance."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/fr/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="/#features">Fonctionnalités</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Confidentialité</a>
+          <a href="/support" hreflang="en" lang="en">Assistance</a>
+          <a href="/privacy" hreflang="en" lang="en">Politique de confidentialité</a>
+          <a href="/terms" hreflang="en" lang="en">Conditions générales</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr" aria-current="true">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Confidentialité</p>
+          <h1>Un suivi de dépenses privé : ce que « privé » veut dire ici</h1>
+          <p class="doc-hero__lede">
+            « Privé », toutes les applis le promettent. Cette page essaie de le mériter en étant
+            précise : ce que l'appli stocke, ce qui quitte le téléphone, ce que le SDK publicitaire
+            peut voir et où s'arrêtent les promesses.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Mis à jour :</strong> 20 octobre 2026 &nbsp;·&nbsp;
+            <strong>Identifiant de suivi :</strong> aucun &nbsp;·&nbsp;
+            <strong>Identifiant publicitaire :</strong> autorisation retirée &nbsp;·&nbsp;
+            <strong>Statistiques :</strong> désactivables
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">Le trajet des données</h2>
+          <p>
+            Spendwise n'a pas de backend. Chaque transaction, budget, catégorie, note, personne,
+            groupe et reçu joint est écrit dans une base SQLite stockée dans l'espace privé de
+            l'appli, et chaque écran lit cette base. Il n'y a rien à quoi se connecter : il n'existe
+            donc aucun profil de vous à construire, vendre, perdre ou transmettre.
+          </p>
+          <p>
+            Deux fonctionnalités communiquent avec Internet, et toutes deux sont assez petites pour
+            être décrites précisément :
+          </p>
+          <ul>
+            <li>
+              <strong>Une seule publicité</strong> sur l'écran de confirmation de transaction,
+              demandée en non personnalisé, avec l'autorisation d'identifiant publicitaire retirée de
+              l'appli.
+            </li>
+            <li>
+              <strong>Des statistiques d'écran anonymes</strong> — un nom de route par écran affiché,
+              pas d'identifiant utilisateur, aucun contenu de transaction, aucun identifiant
+              publicitaire, aucun identifiant de suivi.
+            </li>
+          </ul>
+          <p>
+            Il n'y a pas de rapport de plantage, pas d'enregistrement de session, pas de carte de
+            chaleur et aucun SDK tiers en dehors des bibliothèques de publicité et de statistiques. La
+            <a href="/privacy" hreflang="en" lang="en">politique de confidentialité</a> les énumère,
+            et elle est courte parce que la liste est courte.
+          </p>
+
+          <h2 id="permissions">Les autorisations, et celles qui sont absentes</h2>
+          <p>
+            Les autorisations Android sont un bon indicateur de ce qu'une appli peut réellement faire.
+            Spendwise demande les notifications, pour que le rappel quotidien et les rappels de
+            factures récurrentes puissent se déclencher. C'est toute la liste.
+          </p>
+          <ul>
+            <li>
+              <strong>Aucune autorisation de contacts.</strong> Les personnes que vous suivez sont
+              des entrées que vous créez, pas votre carnet d'adresses.
+            </li>
+            <li>
+              <strong>Aucune localisation.</strong> Rien dans l'appli n'a besoin de savoir où vous
+              êtes.
+            </li>
+            <li>
+              <strong>Aucune autorisation de caméra.</strong> Joindre un reçu passe par le sélecteur
+              de photos et le sélecteur de documents d'Android, qui accordent à l'appli l'accès au
+              fichier choisi et rien d'autre.
+            </li>
+            <li>
+              <strong>Aucune autorisation d'identifiant publicitaire.</strong> L'entrée du manifeste
+              est retirée à la compilation : aucun identifiant ne peut donc être lu par un réseau
+              publicitaire.
+            </li>
+          </ul>
+          <p>
+            Le verrouillage de l'appli, lui, ne stocke rien de plus : il confie la vérification à
+            l'invite d'authentification d'Android, si bien que votre code, votre schéma ou votre
+            biométrie ne touchent jamais Spendwise.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="L'écran Réglages montrant la langue de l'appli, la devise USD, un choix d'apparence Système, Clair ou Sombre, et cinq couleurs d'accent."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Les Réglages rassemblent les interrupteurs qui comptent ici : statistiques,
+                verrouillage de l'appli et devise, aucun lié à un compte.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="Le hub Argent listant le budget mensuel utilisé à 52 %, 27 catégories par défaut, deux personnes suivies et huit programmations récurrentes, avec Rapports et Notes sous Analyses."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Catégories, personnes et programmations sont des lignes locales — aucune copie cloud
+                à synchroniser.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="L'écran Sauvegarde et restauration indiquant 122 transactions, 39 catégories et 6 personnes, avec un bouton Créer le fichier de sauvegarde et un bouton Choisir un fichier de sauvegarde."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Sauvegarde et restauration sont des actions locales ; le fichier va là où vous
+                l'envoyez, pas sur un serveur.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">La publicité, sans euphémisme</h2>
+          <p>
+            Spendwise affiche une publicité native sur l'écran de confirmation, et c'est ainsi que
+            l'appli reste gratuite sans abonnement. Les faits qui comptent pour la confidentialité :
+          </p>
+          <ul>
+            <li>
+              <strong>Chaque demande est non personnalisée</strong>, y compris pour un utilisateur qui
+              a accepté le formulaire de consentement. Le consentement autorise une demande ; il
+              n'achète jamais de personnalisation.
+            </li>
+            <li>
+              <strong>Aucun identifiant publicitaire</strong> n'est accessible au SDK, car
+              l'autorisation est supprimée à la compilation.
+            </li>
+            <li>
+              <strong>Dans l'EEE et au Royaume-Uni, un contrôle de consentement passe d'abord</strong>
+              et échoue en mode fermé : pas de réseau, pas de consentement ou pas de message
+              configuré signifie pas de publicité. Réglages → Confidentialité permet de rouvrir le
+              formulaire lorsque le cadre l'exige.
+            </li>
+          </ul>
+          <p>
+            Le réseau publicitaire voit tout de même la requête elle-même — une adresse IP, un modèle
+            d'appareil et une région approximative sont inévitables dans toute requête réseau. La
+            différence, c'est que rien de ce côté ne construit un profil de vos dépenses à y associer.
+          </p>
+
+          <h2 id="analytics">Des statistiques que vous pouvez vraiment désactiver</h2>
+          <p>
+            Les statistiques d'usage existent, et l'appli le dit franchement au lieu de prétendre le
+            contraire. Spendwise enregistre une vue d'écran anonyme par route — quels écrans sont
+            atteints, pas ce qu'ils contiennent — sans identifiant utilisateur, sans e-mail et sans
+            contenu de transaction.
+          </p>
+          <p>
+            L'interrupteur se trouve dans les Réglages et son effet est absolu : statistiques
+            désactivées, les événements cessent d'être envoyés. Il ne les réduit pas, ne les hache pas
+            et n'en garde pas de copie locale pour plus tard. Si la phrase « les statistiques peuvent
+            être désactivées » doit vouloir dire quelque chose, c'est cela.
+          </p>
+
+          <h2 id="limits">Où la promesse s'arrête</h2>
+          <p>L'honnêteté vaut mieux qu'un slogan, voici donc les limites :</p>
+          <ul>
+            <li>
+              <strong>Le fichier de sauvegarde n'est pas chiffré.</strong> C'est une archive
+              <code>.spendwise</code> que toute personne qui détient le fichier peut lire. Gardez-la là
+              où vous garderiez un relevé bancaire, ou renoncez au fichier et acceptez que les données
+              meurent avec le téléphone.
+            </li>
+            <li>
+              <strong>Le verrouillage de votre téléphone est le vrai périmètre.</strong> Spendwise
+              ajoute le verrouillage de l'appli comme seconde vérification, mais un appareil
+              déverrouillé et rooté est un appareil dont les données d'appli peuvent être lues.
+            </li>
+            <li>
+              <strong>Google Play intervient toujours dans l'installation</strong>, et les services
+              Play de votre téléphone sont ceux de Google, pas ceux de Spendwise. Ce qui est affirmé
+              ici concerne ce que cette appli fait de vos données, pas le système d'exploitation sur
+              lequel elle tourne.
+            </li>
+            <li>
+              <strong>Les pièces jointes sont des fichiers.</strong> Une photo de reçu quitte l'appli
+              quand vous la partagez ailleurs, et ses métadonnées sont celles que le fichier avait
+              déjà.
+            </li>
+          </ul>
+
+          <h2 id="controls">Les contrôles, au même endroit</h2>
+          <ul>
+            <li><strong>Statistiques activées/désactivées</strong> — Réglages → Confidentialité.</li>
+            <li>
+              <strong>Consentement publicitaire</strong> — Réglages → Confidentialité, là où le cadre
+              de consentement exige un moyen de revenir au formulaire.
+            </li>
+            <li><strong>Verrouillage de l'appli</strong> — Réglages → Sécurité.</li>
+            <li>
+              <strong>Tout supprimer</strong> — désinstallez l'appli ou effacez ses données dans les
+              réglages d'Android.
+            </li>
+          </ul>
+
+          <h2 id="faq">Questions fréquentes</h2>
+
+          <details class="faq">
+            <summary>Spendwise collecte-t-il mes transactions ?</summary>
+            <div class="faq__body">
+              <p>
+                Non. Les transactions, budgets, notes, personnes et pièces jointes vivent dans une
+                base SQLite sur le téléphone. Aucun serveur ne les reçoit, et il n'existe aucun compte
+                auquel les associer.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>La publicité utilise-t-elle mon identifiant publicitaire ?</summary>
+            <div class="faq__body">
+              <p>
+                Non. L'appli retire l'autorisation AD_ID : il n'y a donc aucun identifiant
+                publicitaire à utiliser. Chaque demande de publicité est non personnalisée, et dans
+                l'EEE et au Royaume-Uni, un formulaire de consentement décide si une publicité est
+                demandée.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Que désactive l'interrupteur des statistiques ?</summary>
+            <div class="faq__body">
+              <p>
+                Toutes les statistiques d'usage. Spendwise envoie des vues d'écran anonymes indexées
+                sur des noms de route, sans identifiant utilisateur ni contenu de transaction.
+                Désactiver les statistiques dans les Réglages arrête entièrement ces événements ;
+                désactivé est absolu, pas réduit.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Quelles autorisations Spendwise demande-t-il ?</summary>
+            <div class="faq__body">
+              <p>
+                Les notifications, pour le rappel quotidien et les rappels de factures récurrentes.
+                Les reçus sont choisis via le sélecteur de photos et le sélecteur de documents
+                d'Android, qui ne demandent aucune autorisation. Le verrouillage de l'appli utilise le
+                code, le schéma ou la biométrie déjà configurés sur votre appareil. Aucune autorisation
+                de contacts, de localisation, de caméra ou d'identifiant publicitaire.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Le fichier de sauvegarde est-il chiffré ?</summary>
+            <div class="faq__body">
+              <p>
+                Non. Le fichier <code>.spendwise</code> est une archive simple de la base et de vos
+                pièces jointes. Traitez-le comme un relevé bancaire et gardez-le dans un endroit de
+                confiance. La <a href="/support" hreflang="en" lang="en">FAQ d'assistance</a> donne les
+                étapes de sauvegarde.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Autres guides">
+            <h2>Autres guides</h2>
+            <ul>
+              <li><a href="/fr/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/fr/offline-expense-tracker">Suivi de dépenses hors ligne</a></li>
+              <li><a href="/fr/expense-tracker-without-signup">Suivi de dépenses sans inscription</a></li>
+              <li><a href="/fr/split-expenses-with-friends">Partager des dépenses entre amis</a></li>
+              <li><a href="/fr/expense-tracker-vs-spreadsheet">Spendwise vs tableur</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Des dépenses qui restent sur votre téléphone</h2>
+          <p>
+            Aucun compte, aucun identifiant de suivi, aucune copie dans le cloud. Les statistiques
+            peuvent être désactivées et
+            <a href="/fr/offline-expense-tracker">le journal fonctionne hors ligne</a>.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=fr&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >Obtenir sur Google Play</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >Lire la politique de confidentialité</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/fr/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un suivi de dépenses privé, conçu pour fonctionner hors ligne sur Android. Vos
+              dépenses restent sur votre téléphone.
+            </p>
+          </div>
+          <div>
+            <h2>Produit</h2>
+            <ul>
+              <li><a href="/#features">Fonctionnalités</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Confidentialité</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Mentions légales</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Politique de confidentialité</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Conditions générales</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Assistance</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Assistance &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Tous droits réservés.</span>
+          <span>Conçu pour Android 10 et versions ultérieures.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

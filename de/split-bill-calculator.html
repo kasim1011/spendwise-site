@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rechnung teilen mit Trinkgeld: exakte Anteile</title>
+    <meta
+      name="description"
+      content="Eine Rechnung auf beliebig viele Personen teilen, Trinkgeld inklusive. Centgenau, ohne Konto, plus die Fälle, in denen gleich teilen unfair ist."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Rechnung teilen mit Trinkgeld: exakte Anteile" />
+    <meta
+      property="og:description"
+      content="Rechnung, Trinkgeld und Personenzahl, auf den Cent geteilt. Dazu: wann gleich teilen die falsche Antwort ist."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rechnung teilen mit Trinkgeld",
+            "item": "https://spendwise.download/de/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Rechnet man das Trinkgeld vor oder nach der Steuer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Auf den Betrag vor Steuern. Das ist in den USA üblich und die einfachere der beiden Rechnungen. Gib in diesem Rechner die Rechnung vor Steuern ein, dann stimmt es beim ersten Durchlauf. Steht schon eine Servicepauschale auf der Rechnung, setz das Trinkgeld auf null, statt ein zweites draufzulegen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie teile ich eine Rechnung ungleich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kläre zuerst die Posten und teile dann den Rest. Ordne jedes Gericht der Person zu, die es gegessen hat, teile geteilte Platten und das Trinkgeld gleichmäßig und addiere beide Teile. Anteile nach Einkommen sind bei der Miete vertretbar, bei der Restaurantrechnung nicht."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie behandelt man den übrigen Cent am fairsten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gib den zusätzlichen Cent einer Person, oder der Person, die einsammelt. Runde nie jeden Anteil auf: Vier Personen, die 53,87 auf 54 aufrunden, zahlen 216,00 bei einer Rechnung von 215,51, und der Unterschied landet ohne Entscheidung in der Tasche der Person, die einsammelt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Speichert dieser Rechner die Rechnung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Alles wird in der Seite gerechnet, nichts wird hochgeladen, und es gibt keine Cookies und keine Skripte von Drittanbietern. Beim Schließen des Tabs ist es weg."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie geht Spendwise mit geteilten Ausgaben um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine Gruppe ist ein eigenes Ledger mit eigenem Budget und eigenen Kategorien, eine Reise oder eine WG mischt sich also nicht mit den persönlichen Ausgaben. Eine Person führt das Ledger, und die App verfolgt über die Salden der Personen, wer wem was schuldet. Gemeinsames Bearbeiten in Echtzeit gibt es nicht, die Gruppe braucht also eine Person, nicht zwei Redakteure."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Kostenloses Werkzeug</p>
+          <h1>Rechnung teilen mit Trinkgeld</h1>
+          <p class="doc-hero__lede">
+            Eine Rechnung, ein Trinkgeld, eine Personenzahl. Der Rechner teilt auf den Cent und sagt
+            dir genau, wo der übrige Cent landet. Kein Konto, keine Tracking-ID, nichts verlässt die
+            Seite.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Rundung:</strong> ganze Cent &nbsp;·&nbsp; <strong>Preis:</strong> kostenlos
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Geht glatt auf: {people} × {each} — die Summe stimmt genau."
+            data-msg-one="{remainder} Person zahlt einen Cent mehr ({high}); die übrigen zahlen {each}. Die Summe stimmt genau — runde nie jeden Anteil auf."
+            data-msg-many="{remainder} von {people} zahlen einen Cent mehr ({high}); die übrigen zahlen {each}. Die Summe stimmt genau — runde nie jeden Anteil auf."
+          >
+            <h2 class="tool__title" id="split-heading">Deine Rechnung</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Rechnung, ohne Trinkgeld</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Trinkgeld, Prozent</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Personen</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>Die Aufteilung</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Trinkgeld</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Zu zahlen insgesamt</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Anteil pro Person</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Höchster Anteil</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                Der Rechner braucht JavaScript. Von Hand: Trinkgeld in Prozent auf die Rechnung
+                rechnen, dann durch die Personenzahl teilen und den übrigen Cent einer Person geben.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Wie diese Aufteilung rechnet</h2>
+          <p>
+            Das Trinkgeld rechnet auf der Rechnung vor Steuern, kommt zum Gesamtbetrag, und der
+            Gesamtbetrag wird durch die Personenzahl geteilt. Die Reihenfolge zählt: Trinkgeld auf den
+            Betrag nach Steuern bläht es um den lokalen Steuersatz auf, bei einer Rechnung von 187,40
+            und 15 % sind das 4,20, die niemand geben wollte.
+          </p>
+          <p>
+            Geteilt wird in <strong>ganzen Cent</strong>, nie in Gleitkommazahlen. Eine Summe von
+            215,51 auf vier Personen geht nicht glatt auf, also zahlt jede 53,87 und eine Person
+            53,88. Die Alternative — jeden Anteil aufrunden — ist der Weg, auf dem die Person, die
+            einsammelt, still einen Gewinn macht und im Gruppenchat ein Streit anfängt.
+          </p>
+
+          <h2 id="tipping">Trinkgeld, Servicepauschale und was schon auf der Rechnung steht</h2>
+          <p>
+            Trinkgeld-Gepflogenheiten lassen sich schlecht übertragen, und ein Rechner löst das nicht; er kann
+            es wenigstens nicht schlimmer machen. Drei Regeln, die die Rechnung ehrlich halten:
+          </p>
+          <ul>
+            <li>
+              <strong>Prüfe zuerst, ob eine Servicepauschale drauf ist.</strong> Eine Zeile „12,5 %
+              Service“ heißt: Das Trinkgeld steht schon auf der Rechnung. Setz das Trinkgeld auf null
+              und teile die Summe, sonst gibst du doppelt.
+            </li>
+            <li>
+              <strong>Trinkgeld auf den Nettobetrag, nicht auf die Steuer.</strong> Gib den Betrag vor
+              Steuern ein. Wenn die Rechnung nur eine Gesamtsumme zeigt, teile durch eins plus
+              Steuersatz, um ihn zurückzurechnen.
+            </li>
+            <li>
+              <strong>Einigt euch, bevor das Kartenlesegerät kommt.</strong> Das Trinkgeld erst zu
+              wählen, wenn das Terminal nach einem Prozentsatz fragt, ist der Weg, auf dem ein Tisch
+              mit fünf Personen 25 % zahlt.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Wann gleich teilen die falsche Antwort ist</h2>
+          <p>
+            Gleich teilen ist schnell und meistens fair genug. Es hört auf, fair zu sein, wenn die
+            Ausgaben schief liegen — eine Flasche Wein, ein Steak, eine Person, die eine Vorspeise
+            bestellt hat und früh gegangen ist.
+          </p>
+          <ul>
+            <li>
+              <strong>Nach Posten.</strong> Ordne jede Zeile der Person zu, die sie bestellt hat,
+              teile geteilte Platten und das Trinkgeld gleichmäßig und addiere dann. Genauer, etwas
+              umständlich, und die richtige Wahl, wenn die Differenz groß ist.
+            </li>
+            <li>
+              <strong>Nach Gang.</strong> Der Mittelweg: Getränke und Dessert getrennt, das Essen
+              gleichmäßig geteilt. Nimmt das meiste Unbehagen raus, ohne alles aufzulisten.
+            </li>
+            <li>
+              <strong>Nicht nach Einkommen.</strong> Anteile nach Gehalt ergeben bei Miete und
+              Rechnungen Sinn, beim Abendessen nicht. Wer mehr verdient, schuldet für deine Pasta
+              nicht mehr.
+            </li>
+          </ul>
+          <p>
+            Bei wiederkehrenden gemeinsamen Kosten — Miete, Strom, Lebensmittel in der WG — ist gleich
+            teilen meistens auch der falsche Standard, weil der Verbrauch nicht gleich ist. Ein
+            gewichteter Anteil pro Person (zwei im großen Zimmer, eine im kleinen) hält länger als
+            eine gleiche Teilung, die jemand still mit Groll zahlt.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="Der eigene Bildschirm einer Gruppe für Oktober 2026: 553,00 $ ausgegeben bei einem Gruppen-Budget von 800,00 $, markiert als auf Kurs, dazu die Personen mit offenen Salden und ein Knopf Ausgabe hinzufügen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Ein gemeinsames Ledger mit eigenem Budget und eigenen Salden.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="Der Bildschirm Personen mit Alex, der 245,00 $ schuldet, und Sam, dem 500,00 $ zustehen, jeweils mit laufendem Saldo, dazu eine Aktion Person hinzufügen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Verliehenes und geliehenes Geld, als laufender Saldo geführt.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Einmal teilen, den ganzen Monat erfassen</h2>
+          <p>
+            Ein Rechner beantwortet ein Abendessen. Schwerer ist die WG oder die Reise, bei der über
+            zwei Wochen zwanzig kleine Zahlungen passieren und niemand mehr weiß, wer was ausgelegt
+            hat. Das ist ein Ledger-Problem, und ein Chatverlauf ist ein schlechtes Ledger.
+          </p>
+          <p>
+            In Spendwise ist eine Gruppe ein eigenes Ledger — eigenes Budget, eigene Kategorien —, ein
+            Urlaub verunreinigt den persönlichen Monat also nicht. Ausgaben in der Gruppe stehen neben
+            den Salden der Personen für geliehenes und verliehenes Geld, und der Gruppenbildschirm
+            zeigt, wer im Plus und wer im Minus ist. Der Kompromiss ist ausgesprochen:
+            <strong>eine Person führt das Ledger</strong>. Gemeinsames Bearbeiten in Echtzeit gibt es
+            nicht, die Gruppe braucht also eine Person, die erfasst, und alle anderen sehen die
+            Summe.
+          </p>
+          <p>
+            Wenn die Reise endet, stehen die Zahlen schon da: nichts muss aus Screenshots
+            rekonstruiert werden, und der Monatsbericht führt die Gruppenausgaben getrennt vom
+            Haushaltsbudget.
+          </p>
+
+          <h2 id="faq">Häufige Fragen</h2>
+          <details class="faq">
+            <summary>Rechnet man das Trinkgeld vor oder nach der Steuer?</summary>
+            <div class="faq__body">
+              <p>
+                Auf den Betrag vor Steuern. Das ist in den USA üblich und die einfachere der beiden
+                Rechnungen. Gib in diesem Rechner die Rechnung vor Steuern ein, dann stimmt es beim
+                ersten Durchlauf. Steht schon eine Servicepauschale auf der Rechnung, setz das Trinkgeld
+                auf null, statt ein zweites draufzulegen.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Wie teile ich eine Rechnung ungleich?</summary>
+            <div class="faq__body">
+              <p>
+                Kläre zuerst die Posten und teile dann den Rest. Ordne jedes Gericht der Person zu,
+                die es gegessen hat, teile geteilte Platten und das Trinkgeld gleichmäßig und addiere
+                beide Teile. Anteile nach Einkommen sind bei der Miete vertretbar, bei der
+                Restaurantrechnung nicht.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Wie behandelt man den übrigen Cent am fairsten?</summary>
+            <div class="faq__body">
+              <p>
+                Gib den zusätzlichen Cent einer Person, oder der Person, die einsammelt. Runde nie
+                jeden Anteil auf: Vier Personen, die 53,87 auf 54 aufrunden, zahlen 216,00 bei einer
+                Rechnung von 215,51, und der Unterschied landet ohne Entscheidung in der Tasche der
+                Person, die einsammelt.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Speichert dieser Rechner die Rechnung?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Alles wird in der Seite gerechnet, nichts wird hochgeladen, und es gibt keine
+                Cookies und keine Skripte von Drittanbietern. Beim Schließen des Tabs ist es weg.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Wie geht Spendwise mit geteilten Ausgaben um?</summary>
+            <div class="faq__body">
+              <p>
+                Eine Gruppe ist ein eigenes Ledger mit eigenem Budget und eigenen Kategorien, eine
+                Reise oder eine WG mischt sich also nicht mit den persönlichen Ausgaben. Eine Person
+                führt das Ledger, und die App verfolgt über die Salden der Personen, wer wem was
+                schuldet. Gemeinsames Bearbeiten in Echtzeit gibt es nicht, die Gruppe braucht also
+                eine Person, nicht zwei Redakteure — siehe
+                <a href="/de/split-expenses-with-friends">die längere Version</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Weitere Rechner und Leitfäden">
+            <h2>Weitere Rechner und Leitfäden</h2>
+            <ul>
+              <li><a href="/de/50-30-20-budget-calculator">50/30/20-Budgetrechner</a></li>
+              <li><a href="/de/subscription-cost-calculator">Abo-Kosten-Rechner</a></li>
+              <li><a href="/de/split-expenses-with-friends">Ausgaben mit Freunden teilen</a></li>
+              <li><a href="/de/private-expense-tracker">Privater Ausgaben-Tracker</a></li>
+              <li><a href="/de/expense-tracker-vs-spendee">Spendee vs. Spendwise</a></li>
+              <li><a href="/de/expense-tracker-vs-spreadsheet">Spendwise vs. Tabelle</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Das Ledger der Gruppe an einem Ort</h2>
+          <p>
+            Kostenlos, kein Konto, keine Tracking-ID. Ein Gruppen-Ledger, Salden pro Person und ein
+            Monat zum Exportieren.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/de/split-expenses-with-friends"
+              >Wie geteilte Ausgaben funktionieren</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

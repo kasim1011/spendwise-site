@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de suscripciones: cuánto al año</title>
+    <meta
+      name="description"
+      content="Suma todas tus suscripciones, mensuales y anuales, y mira el costo anual real. Gratis, sin cuenta, y cómo recortar las que ya olvidaste."
+    />
+    <link rel="canonical" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Calculadora de suscripciones: cuánto al año" />
+    <meta
+      property="og:description"
+      content="Suma cada cargo recurrente, mira la cifra anual y compara la facturación anual con la mensual."
+    />
+    <meta property="og:url" content="https://spendwise.download/es/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La marca de Spendwise: un anillo de progreso blanco con una marca de verificación sobre un degradado azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculadora de suscripciones",
+            "item": "https://spendwise.download/es/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿La facturación anual es siempre más barata?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Compara el precio anual con doce pagos mensuales. Un patrón habitual es diez mensualidades por un año, un descuento de alrededor del 17 %, pero algunos servicios cobran una prima por el plan anual o quitan una función mensual. Haz la multiplicación en vez de fiarte de la insignia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué las suscripciones parecen más baratas de lo que son?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Porque el precio se anuncia al mes y se cobra en silencio. Tres servicios de 9,99 cada uno se leen como unos diez al mes, no como 360 al año. Anualizar es la única vista que compara una suscripción con una compra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo encuentro suscripciones que olvidé?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Busca en tus extractos de los últimos doce meses los cargos que se repiten, y luego revisa la lista de suscripciones de la tienda de apps y tu correo en busca de recibos de renovación. Las pruebas gratuitas que se convirtieron son los sospechosos habituales, porque el primer cargo llega después del momento de decidir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La calculadora envía mis suscripciones a algún sitio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Los datos se calculan en la página y nunca salen del navegador. No hay cookies, ni scripts de terceros, ni un servidor que guarde una lista."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puede Spendwise recordarme antes de que se renueve una suscripción?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spendwise guarda programaciones recurrentes para las facturas conocidas y reserva su monto contra el presupuesto mensual, con recordatorios por categoría. No se conecta a un banco, así que una suscripción hay que introducirla una vez y luego aparece como una factura pendiente en lugar de detectarse automáticamente."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/es/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/#features">Funciones</a>
+          <a href="/#gallery">Galería</a>
+          <a href="/#privacy">Privacidad</a>
+          <a href="/support" hreflang="en" lang="en">Soporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de privacidad</a>
+          <a href="/terms" hreflang="en" lang="en">Términos y condiciones</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es" aria-current="true">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Herramienta gratis</p>
+          <h1>Calculadora de suscripciones</h1>
+          <p class="doc-hero__lede">
+            Anota cada cargo recurrente una vez y mira lo que cuesta al mes, al año y en cinco años.
+            Sin cuenta, sin ID de seguimiento y nada de lo que escribas sale de la página.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Actualizado:</strong> 20 de octubre de 2026 &nbsp;·&nbsp;
+            <strong>Facturación:</strong> mensual o anual &nbsp;·&nbsp;
+            <strong>Precio:</strong> gratis
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">Tus suscripciones</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Nombre</span>
+                  <input type="text" name="label" value="Streaming" />
+                </label>
+                <label class="tool__field">
+                  <span>Monto</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Facturación</span>
+                  <select name="cycle">
+                    <option value="monthly">Mensual</option>
+                    <option value="yearly">Anual</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Quitar</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Nombre</span>
+                  <input type="text" name="label" value="Música" />
+                </label>
+                <label class="tool__field">
+                  <span>Monto</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Facturación</span>
+                  <select name="cycle">
+                    <option value="monthly">Mensual</option>
+                    <option value="yearly">Anual</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Quitar</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Nombre</span>
+                  <input type="text" name="label" value="Almacenamiento en la nube" />
+                </label>
+                <label class="tool__field">
+                  <span>Monto</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Facturación</span>
+                  <select name="cycle">
+                    <option value="monthly">Mensual</option>
+                    <option value="yearly" selected>Anual</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Quitar</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              Un cargo anual se cuenta como una doceava parte al mes, así que la cifra mensual es una
+              media, no un extracto bancario.
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>Agregar una suscripción</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>El total</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Al mes</dt>
+                  <dd data-out="monthly">35,31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Al año</dt>
+                  <dd data-out="yearly">423,72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Cinco años</dt>
+                  <dd data-out="five">2118,60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Al día</dt>
+                  <dd data-out="day">1,18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                La calculadora necesita JavaScript. Hazlo a mano: suma los cargos mensuales, divide
+                cada cargo anual entre doce y suma eso al total mensual.
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Nombre</span>
+                  <input type="text" name="label" value="" placeholder="Suscripción" />
+                </label>
+                <label class="tool__field">
+                  <span>Monto</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Facturación</span>
+                  <select name="cycle">
+                    <option value="monthly">Mensual</option>
+                    <option value="yearly">Anual</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Quitar</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">Por qué anualizar es la única vista honesta</h2>
+          <p>
+            El precio de las suscripciones está diseñado para leerse al mes. Diez al mes parece un
+            café; también son 120 al año, y esa es la cifra que hay que comparar con una compra, un
+            viaje o el fondo de emergencia que no has empezado. La calculadora existe para hacer la
+            única multiplicación que no vas a hacer de cabeza.
+          </p>
+          <p>
+            Los cargos anuales se dividen entre doce en lugar de listarse aparte, porque una lista
+            mixta necesita una unidad común. La trampa es real y merece decirse: un plan anual de
+            99,99 en la nube aparece como 8,33 al mes, pero el extracto de marzo mostrará 99,99.
+            Presupuesta la media y deja suficiente en la cuenta para el mes en que cae.
+          </p>
+
+          <h2 id="compare">Facturación anual frente a mensual</h2>
+          <p>
+            El descuento por pagar un año por adelantado es habitual, pero es un precio con
+            condiciones, no un regalo. Tres preguntas deciden si conviene aceptarlo:
+          </p>
+          <ul>
+            <li>
+              <strong>¿Cuál es el descuento real?</strong> Multiplica el precio mensual por doce y
+              compara. Un año por el precio de diez es más o menos un 17 %; un año por el precio de
+              once es un 8 %, que puede no compensar inmovilizar el dinero.
+            </li>
+            <li>
+              <strong>¿Seguirás usándolo en el mes once?</strong> El ahorro solo es real si la
+              suscripción sobrevive. Un servicio que habrías cancelado en el mes cuatro cuesta más
+              en facturación anual, no menos.
+            </li>
+            <li>
+              <strong>¿Puedes asumir el desembolso?</strong> Pagar 120 en un mes no es lo mismo que
+              pagar 10 al mes, aunque los totales estén cerca. Si acabaría en una tarjeta de crédito,
+              el descuento es probablemente negativo.
+            </li>
+          </ul>
+
+          <h2 id="audit">Una auditoría de quince minutos que sí recorta el costo</h2>
+          <ol>
+            <li>
+              <strong>Encuentra los cargos.</strong> Busca en doce meses de extractos el mismo
+              comercio que aparece cada mes o cada año, y luego revisa la lista de suscripciones de la
+              tienda de apps y tu correo en busca de recibos de renovación.
+            </li>
+            <li>
+              <strong>Anota el precio real, con impuestos.</strong> Los precios anunciados en dólares
+              a menudo excluyen el impuesto local, y una prueba que se convirtió puede estar cobrando
+              una tarifa que nunca elegiste.
+            </li>
+            <li>
+              <strong>Ordena por costo por uso.</strong> Un servicio de 12 al mes que usas a diario es
+              barato; uno de 5 que abres dos veces al año no lo es, diga lo que diga la insignia.
+            </li>
+            <li>
+              <strong>Cancela primero lo último de la lista.</strong> El objetivo no es cero
+              suscripciones; es que cada cargo recurrente sea uno al que te volverías a suscribir
+              hoy.
+            </li>
+            <li>
+              <strong>Fija una revisión de renovaciones.</strong> Vuelve a esta página cuando una
+              prueba gratuita esté a punto de convertirse, o una vez al trimestre. La escalada es
+              gradual por diseño.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="El centro Dinero con el presupuesto mensual al 52 % usado, 27 categorías predefinidas, dos personas registradas y ocho programaciones recurrentes, con Informes y Notas en Análisis."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Facturas recurrentes y programaciones, contadas contra el presupuesto.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Ajustes con el idioma de la app, la moneda de la app en USD, una elección de apariencia Sistema, Claro u Oscuro y cinco colores de acento."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                La app es local: el idioma, la moneda y el tema son ajustes del dispositivo.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">La trampa de compartir</h2>
+          <p>
+            Los planes familiares y el prepago anual son donde se esconden los totales de
+            suscripciones. Un plan familiar de 179 al año compartido entre cuatro personas es más
+            barato por cabeza que cuatro planes individuales, pero solo si alguien cobra las partes,
+            que es un pequeño libro de cuentas aparte. Anota quién debe qué cuando el plan se renueve,
+            o el plan se convierte en un regalo de duración poco clara.
+          </p>
+          <p>
+            Lo mismo vale para la facturación anual en un hogar: la tarjeta de una persona, los
+            beneficios de varias. Los saldos de personas de Spendwise existen exactamente para eso, y
+            un registro de grupo mantiene un plan compartido aparte del gasto personal.
+          </p>
+
+          <h2 id="app">Convertir el total en una línea del presupuesto</h2>
+          <p>
+            La cifra que produce esta página es una buena candidata a factura recurrente en Spendwise.
+            Introduce la programación una vez y el presupuesto mensual la reserva, así que la cifra
+            que queda en el panel es dinero que puedes gastar y no dinero ya prometido. No hay
+            conexión bancaria ni detección de suscripciones: la app solo sabe lo que escribes, que es
+            también por lo que sale del teléfono sin cuenta y sin ID de seguimiento.
+          </p>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+          <details class="faq">
+            <summary>¿La facturación anual es siempre más barata?</summary>
+            <div class="faq__body">
+              <p>
+                No. Compara el precio anual con doce pagos mensuales. Un patrón habitual es diez
+                mensualidades por un año, un descuento de alrededor del 17 %, pero algunos servicios
+                cobran una prima por el plan anual o quitan una función mensual. Haz la multiplicación
+                en vez de fiarte de la insignia.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Por qué las suscripciones parecen más baratas de lo que son?</summary>
+            <div class="faq__body">
+              <p>
+                Porque el precio se anuncia al mes y se cobra en silencio. Tres servicios de 9,99
+                cada uno se leen como unos diez al mes, no como 360 al año. Anualizar es la única
+                vista que compara una suscripción con una compra.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Cómo encuentro suscripciones que olvidé?</summary>
+            <div class="faq__body">
+              <p>
+                Busca en tus extractos de los últimos doce meses los cargos que se repiten, y luego
+                revisa la lista de suscripciones de la tienda de apps y tu correo en busca de recibos
+                de renovación. Las pruebas gratuitas que se convirtieron son los sospechosos
+                habituales, porque el primer cargo llega después del momento de decidir.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿La calculadora envía mis suscripciones a algún sitio?</summary>
+            <div class="faq__body">
+              <p>
+                No. Los datos se calculan en la página y nunca salen del navegador. No hay cookies,
+                ni scripts de terceros, ni un servidor que guarde una lista.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Puede Spendwise recordarme antes de que se renueve una suscripción?</summary>
+            <div class="faq__body">
+              <p>
+                Spendwise guarda programaciones recurrentes para las facturas conocidas y reserva su
+                monto contra el presupuesto mensual, con recordatorios por categoría. No se conecta a
+                un banco, así que una suscripción hay que introducirla una vez y luego aparece como
+                una factura pendiente en lugar de detectarse automáticamente.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Más herramientas y guías">
+            <h2>Más herramientas y guías</h2>
+            <ul>
+              <li><a href="/es/50-30-20-budget-calculator">Calculadora de presupuesto 50/30/20</a></li>
+              <li><a href="/es/split-bill-calculator">Calculadora para dividir la cuenta</a></li>
+              <li><a href="/es/offline-expense-tracker">Registro de gastos sin conexión</a></li>
+              <li><a href="/es/private-expense-tracker">Registro de gastos privado</a></li>
+              <li><a href="/es/expense-tracker-without-signup">Registro de gastos sin registro</a></li>
+              <li><a href="/es/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Dale al total una línea en el presupuesto</h2>
+          <p>
+            Spendwise es gratis, no tiene cuenta y no lleva ID de seguimiento. Escribe la factura una
+            vez y el presupuesto la reserva.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=es&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >Descargar en Google Play</a
+            >
+            <a class="btn btn--ghost" href="/es/offline-expense-tracker"
+              >Ver qué funciona sin conexión</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/es/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un registro de gastos privado y sin conexión para Android. Tus cuentas pertenecen a tu
+              teléfono.
+            </p>
+          </div>
+          <div>
+            <h2>Producto</h2>
+            <ul>
+              <li><a href="/#features">Funciones</a></li>
+              <li><a href="/#gallery">Galería</a></li>
+              <li><a href="/#privacy">Privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de privacidad</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Términos y condiciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Soporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ayuda y preguntas frecuentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos los derechos reservados.</span>
+          <span>Hecho para Android 10 y versiones posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

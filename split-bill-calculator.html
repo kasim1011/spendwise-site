@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Split bill calculator with tip: exact shares</title>
+    <meta
+      name="description"
+      content="Split a bill by any number of people, tip included. Integer-cent rounding, no account, plus the honest cases where an even split is unfair."
+    />
+    <link rel="canonical" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Split bill calculator with tip: exact shares" />
+    <meta
+      property="og:description"
+      content="Bill, tip and headcount, split to the cent. Plus when an even split is the wrong answer."
+    />
+    <meta property="og:url" content="https://spendwise.download/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Spendwise mark: a white progress ring and tick on a blue gradient field."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Split bill calculator",
+            "item": "https://spendwise.download/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should the tip be calculated before or after tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On the pre-tax subtotal, which is the custom in the United States and the simpler of the two reads. Enter the pre-tax bill in this calculator and it is correct on the first pass. Where a service charge is already on the bill, set the tip to zero rather than adding a second one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I split a bill unevenly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Settle the items first and split the remainder. Assign each dish to whoever ate it, divide shared plates and the tip evenly, and add the two parts. Income-proportional splits are defensible for rent, not for a restaurant bill."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the fairest way to handle the leftover cent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give the extra cent to one person, or to whoever is collecting. Never round every share up: four people rounding a 53.87 share to 54 pays 216.00 against a 215.51 bill, and the collector pockets the difference without deciding to."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this calculator store the bill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Everything is computed in the page, nothing is uploaded, and there are no cookies or third-party scripts. Closing the tab discards it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Spendwise handle shared expenses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A group is its own ledger with its own budget and categories, so a trip or a shared flat does not mix with personal spending. One person keeps the ledger, and the app tracks who owes whom through people balances. It does not offer shared real-time editing, so a group needs one keeper rather than two editors."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#features">Features</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en" aria-current="true">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Free tool</p>
+          <h1>Split bill calculator</h1>
+          <p class="doc-hero__lede">
+            One bill, a tip, and a headcount. The calculator divides it to the cent and tells you
+            exactly where the leftover penny goes. No account, no tracking ID, nothing leaves the
+            page.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Updated:</strong> 20 October 2026 &nbsp;·&nbsp;
+            <strong>Rounding:</strong> integer cents &nbsp;·&nbsp; <strong>Cost:</strong> free
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Splits evenly: {people} shares of {each}."
+            data-msg-one="{remainder} person pays one cent more ({high}); the rest pay {each}. The total is exact — never round every share up."
+            data-msg-many="{remainder} of the {people} pay one cent more ({high}); the rest pay {each}. The total is exact — never round every share up."
+          >
+            <h2 class="tool__title" id="split-heading">Your bill</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Bill, before tip</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Tip, percent</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>People</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>The split</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Tip</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Total to pay</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Each pays</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Highest share</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                The calculator needs JavaScript. Do it by hand: add the tip percentage to the bill,
+                then divide by the number of people and give the left-over cent to one person.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">How this split works</h2>
+          <p>
+            The tip is calculated on the pre-tax bill, added to the total, and the total is divided
+            by the headcount. That order matters: tipping on the post-tax amount inflates the tip by
+            whatever the local tax rate is, and on a 187.40 bill with 15% it is 4.20 that nobody
+            intended to leave.
+          </p>
+          <p>
+            The division is in <strong>whole cents</strong>, never in floating point. A bill of
+            215.51 across four people does not divide evenly, so the shares are 53.87 each and one
+            person pays 53.88. The alternative — rounding every share up — is how a collector ends
+            up with a quiet profit, and how a group chat argument starts.
+          </p>
+
+          <h2 id="tipping">Tip, service charge, and what the bill already includes</h2>
+          <p>
+            Tip norms travel badly, and a calculator cannot fix that; it can at least not make it
+            worse. Three rules that keep the arithmetic honest:
+          </p>
+          <ul>
+            <li>
+              <strong>Check for a service charge first.</strong> A line saying "12.5% service" means
+              the tip is already on the bill. Set the tip to zero and split the total, or you are
+              tipping twice.
+            </li>
+            <li>
+              <strong>Tip on the subtotal, not the tax.</strong> Enter the pre-tax figure. Where the
+              bill shows only a grand total, divide by one plus the tax rate to recover it.
+            </li>
+            <li>
+              <strong>Agree before the card lands.</strong> Deciding the tip while the terminal asks
+              for a percentage is how a table of five ends up paying 25%.
+            </li>
+          </ul>
+
+          <h2 id="unfair">When an even split is the wrong answer</h2>
+          <p>
+            An even split is fast and usually fair enough. It stops being fair when the spend is
+            lopsided — one bottle of wine, one steak, one person who ordered a starter and left
+            early.
+          </p>
+          <ul>
+            <li>
+              <strong>By item.</strong> Assign each line to whoever ordered it, split shared plates
+              and the tip evenly, then add. More precise, slightly awkward, and the right call when
+              the gap is large.
+            </li>
+            <li>
+              <strong>By course.</strong> A middle path: separate drinks and dessert, split food
+              evenly. Handles most of the awkwardness without itemising.
+            </li>
+            <li>
+              <strong>Not by income.</strong> Proportional-to-salary splits make sense for rent and
+              bills, not for dinner. Someone who earns more does not owe more for your pasta.
+            </li>
+          </ul>
+          <p>
+            For recurring shared costs — rent, utilities, a flat's groceries — the even split is
+            usually the wrong default too, because consumption is not even. A per-person weighted
+            split (two people in the big room, one in the small) is more durable than an equal one
+            that someone quietly resents.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="A group's own screen for October 2026: $553.00 spent against an $800.00 group budget marked On track, the people with outstanding balances, and an Add Expense button."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>A shared ledger with its own budget and balances.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="The People screen listing Alex, who owes $245.00, and Sam, who is owed $500.00, each with a running balance and an Add Person action."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Money lent and borrowed, kept as a running balance.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Splitting once, tracking all month</h2>
+          <p>
+            A calculator answers one dinner. The harder version is a shared flat or a trip where
+            twenty small payments happen over two weeks and nobody remembers who covered what. That
+            is a ledger problem, and a chat thread is a poor ledger.
+          </p>
+          <p>
+            In Spendwise a group is its own ledger — its own budget, its own categories — so a trip
+            does not contaminate the personal month. Expenses added to the group sit alongside
+            people balances for money lent and borrowed, and the group screen shows who is up and
+            who is down. The trade is explicit: <strong>one person keeps the ledger</strong>. There
+            is no shared real-time editing, so the group needs one keeper who logs, and everyone
+            else sees the total.
+          </p>
+          <p>
+            When the trip ends, the numbers are already there: no reconstruction from screenshots,
+            and the monthly report carries the group spend separately from the household budget.
+          </p>
+
+          <h2 id="faq">Frequently asked questions</h2>
+          <details class="faq">
+            <summary>Should the tip be calculated before or after tax?</summary>
+            <div class="faq__body">
+              <p>
+                On the pre-tax subtotal, which is the custom in the United States and the simpler of
+                the two reads. Enter the pre-tax bill in this calculator and it is correct on the
+                first pass. Where a service charge is already on the bill, set the tip to zero
+                rather than adding a second one.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>How do I split a bill unevenly?</summary>
+            <div class="faq__body">
+              <p>
+                Settle the items first and split the remainder. Assign each dish to whoever ate it,
+                divide shared plates and the tip evenly, and add the two parts. Income-proportional
+                splits are defensible for rent, not for a restaurant bill.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>What is the fairest way to handle the leftover cent?</summary>
+            <div class="faq__body">
+              <p>
+                Give the extra cent to one person, or to whoever is collecting. Never round every
+                share up: four people rounding a 53.87 share to 54 pays 216.00 against a 215.51
+                bill, and the collector pockets the difference without deciding to.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Does this calculator store the bill?</summary>
+            <div class="faq__body">
+              <p>
+                No. Everything is computed in the page, nothing is uploaded, and there are no
+                cookies or third-party scripts. Closing the tab discards it.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>How does Spendwise handle shared expenses?</summary>
+            <div class="faq__body">
+              <p>
+                A group is its own ledger with its own budget and categories, so a trip or a shared
+                flat does not mix with personal spending. One person keeps the ledger, and the app
+                tracks who owes whom through people balances. It does not offer shared real-time
+                editing, so a group needs one keeper rather than two editors — see
+                <a href="/split-expenses-with-friends">the longer version</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="More tools and guides">
+            <h2>More tools and guides</h2>
+            <ul>
+              <li><a href="/50-30-20-budget-calculator">50/30/20 budget calculator</a></li>
+              <li><a href="/subscription-cost-calculator">Subscription cost calculator</a></li>
+              <li><a href="/split-expenses-with-friends">Split expenses with friends</a></li>
+              <li><a href="/private-expense-tracker">Private expense tracker</a></li>
+              <li><a href="/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/expense-tracker-vs-spreadsheet">Spendwise vs spreadsheet</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Keep the group's ledger in one place</h2>
+          <p>
+            Free, no account, no tracking ID. A group ledger, people balances, and a month you can
+            export.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=en_US&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Get it on Google Play</a
+            >
+            <a class="btn btn--ghost" href="/split-expenses-with-friends"
+              >How shared expenses work</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              A private, offline-first expense tracker for Android. Your ledger belongs on your
+              phone.
+            </p>
+          </div>
+          <div>
+            <h2>Product</h2>
+            <ul>
+              <li><a href="/#features">Features</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
+              <li><a href="/#privacy">Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy">Privacy policy</a></li>
+              <li><a href="/terms">Terms &amp; conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Support</h2>
+            <ul>
+              <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. All rights reserved.</span>
+          <span>Made for Android 10 and above.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

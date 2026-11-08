@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Учёт расходов без регистрации: без аккаунта и почты</title>
+    <meta
+      name="description"
+      content="Spendwise — учёт расходов на Android без регистрации, почты и пароля. Откройте, записывайте траты, а журнал останется на вашем телефоне."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-without-signup" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Учёт расходов без регистрации: без аккаунта и почты" />
+    <meta
+      property="og:description"
+      content="Что на самом деле происходит при первом запуске, когда аккаунта нет, почему большинство трекеров его просит и чем вы платите за отказ."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Учёт расходов без регистрации",
+            "item": "https://spendwise.download/ru/expense-tracker-without-signup"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise действительно обходится без адреса почты?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Верно. Экрана регистрации нет. Первый запуск спрашивает язык и валюту, и то и другое потом можно изменить в Настройках, — на этом настройка заканчивается."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что будет, если я потеряю телефон?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Журнал на этом телефоне пропадёт, если вы не сделали файл резервной копии. Восстановить его не из чего: аккаунта нет, и по той же причине прочитать его не может никто другой."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли вести один журнал Spendwise на двух телефонах?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Одновременно — нет. Файл резервной копии можно восстановить на втором телефоне, но синхронизации между ними нет, а восстановление заменяет то, что было на этом телефоне."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как Spendwise зарабатывает без аккаунтов?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Одна неперсонализированная реклама на экране подтверждения операции. Подписки нет, встроенных покупок нет, данные не продаются; анонимную статистику экранов можно отключить в Настройках."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как удалить всё, что сохранил Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Удаление приложения стирает его приватное хранилище, либо очистите данные приложения в настройках Android. У Spendwise никогда не было копии на сервере, которую нужно было бы удалять."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-without-signup" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-without-signup" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-without-signup" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-without-signup" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-without-signup" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-without-signup" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-without-signup" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/expense-tracker-without-signup" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-without-signup" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-without-signup" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-without-signup" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-without-signup" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Без аккаунта</p>
+          <h1>Учёт расходов без регистрации, аккаунта и почты</h1>
+          <p class="doc-hero__lede">
+            Спросите, зачем трекеру расходов ваш адрес почты, и честный ответ обычно звучит так:
+            «чтобы синхронизировать, выставлять счёт или присылать рекламу». Spendwise не делает ни
+            того, ни другого, ни третьего, поэтому ничего и не просит. Эта страница объясняет, как
+            это выглядит на практике.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Первый запуск:</strong> только язык и валюта &nbsp;·&nbsp;
+            <strong>Данные:</strong> на вашем телефоне
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="first-run">Что на самом деле показывает первый запуск</h2>
+          <p>
+            Откройте Spendwise впервые — приложение спросит две вещи: на каком языке вы читаете и в
+            какой валюте хранятся ваши деньги. Список валют — полный набор ISO, только для
+            форматирования: 156 кодов, с правильными знаками после запятой для иен и динаров. Оба
+            выбора можно изменить позже в Настройках.
+          </p>
+          <p>
+            Дальше вы уже в приложении. Ни поля для почты, ни пароля, ни «подтвердите адрес», ни
+            галочки согласия на рассылку, ни входа. Категории уже заведены, обзор готов, а первую
+            трату можно записать через минуту после установки.
+          </p>
+
+          <h2 id="what-changes">Три вещи, которые меняются без аккаунта</h2>
+          <h3>Никто не может закрыть вам доступ к вашей же истории</h3>
+          <p>
+            Нет пароля, который нужно сбросить, нет сессии, которая истечёт, и нет сервера, который
+            может решить, что вы здесь больше не нужны. Журнал лежит в приватном хранилище
+            приложения на вашем телефоне, поэтому единственный замок — блокировка экрана телефона. А
+            если нужен второй, блокировка приложения спросит PIN-код, графический ключ или биометрию,
+            прежде чем Spendwise откроется.
+          </p>
+          <h3>У компании нет копии ваших трат</h3>
+          <p>
+            У Spendwise нет бэкенда, который хранит операции. Нет профиля с описанием ваших покупок в
+            супермаркете, нет карточки клиента, которую можно потерять, и нечего передать, если
+            кто-то попросит. Данные входят в приложение и выходят из него только так, как выберете
+            вы: файл резервной копии или экспорт отчёта.
+          </p>
+          <h3>Цена: резервная копия полностью на вас</h3>
+          <p>
+            Аккаунт в облаке заодно служит копией вне устройства. Здесь удаление приложения стирает
+            журнал. Ответ Spendwise — один файл:
+            <strong>Настройки → Резервное копирование → Создать файл копии</strong> записывает каждую
+            операцию, категорию, бюджет, человека, группу и вложение чека в один файл
+            <code>.spendwise</code>. Восстановите его на новом телефоне — и вы снова на месте. Держите
+            его в надёжном месте и помните: он не зашифрован.
+          </p>
+
+          <h2 id="why-they-ask">Почему другие приложения просят аккаунт</h2>
+          <p>Во всём этом нет злого умысла. Аккаунт — это способ, которым трекер предлагает:</p>
+          <ul>
+            <li><strong>Синхронизацию</strong> — один и тот же журнал на телефоне, планшете и в веб-приложении.</li>
+            <li><strong>Импорт из банка</strong> — операции подтягиваются автоматически.</li>
+            <li><strong>Оплату</strong> — подписку нужно к кому-то привязать.</li>
+            <li>
+              <strong>Удержание</strong> — адрес почты помогает вернуть вас после того, как вы
+              перестали открывать приложение.
+            </li>
+          </ul>
+          <p>
+            Spendwise не предлагает ничего из первых трёх, так что четвёртому не к чему прицепиться.
+            Если вам нужна банковская синхронизация и журнал на нескольких устройствах, аккаунт —
+            честная цена; именно так и говорит
+            <a href="/ru/expense-tracker-vs-spendee">сравнение со Spendee</a>. Если вы здесь потому,
+            что не хотите ещё один вход, дальше — самое важное.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Экран настроек: язык приложения, валюта приложения USD, выбор оформления «Как в системе», «Светлая» или «Тёмная» и пять акцентных цветов."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Всё, что спросил первый запуск, можно изменить в Настройках: язык, валюта,
+                оформление, акцент.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="Форма добавления операции: сумма 47,82 $, выбрана «Расход», подсвечена категория «Продукты», стоит сегодняшняя дата, а строка «Чек или документ» предлагает фото или PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Для записи не нужна личность — только сумма и категория.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="Экран «Резервное копирование»: 122 операции, 39 категорий и 6 человек, кнопки «Создать файл копии» и «Выбрать файл копии»."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Резервная копия заменяет аккаунт: один файл, создаётся и восстанавливается на вашем
+                телефоне.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="money">Чем это оплачивается</h2>
+          <p>
+            Spendwise бесплатен, без встроенных покупок, и не продаёт данные. Доход — одна
+            неперсонализированная реклама на экране подтверждения операции, единственном экране, где
+            задача уже выполнена и середина страницы пуста. В ЕЭЗ и Великобритании её показ
+            регулирует запрос согласия; если согласие не дано, реклама не показывается.
+          </p>
+          <p>
+            Анонимная статистика экранов — вторая сетевая функция: какие экраны используются,
+            привязанные к именам маршрутов, без идентификатора пользователя, без почты, без рекламного
+            идентификатора и без трекинг-ID. Она включена по умолчанию и отключается в Настройках —
+            после этого не отправляется ничего.
+            <a href="/privacy" hreflang="en" lang="en">Страница о конфиденциальности</a> перечисляет
+            детали.
+          </p>
+
+          <h2 id="fit">Кому это подходит, а кому нет</h2>
+          <p>
+            Это подходит тем, кто хочет быстрый личный журнал на одном телефоне, кто скорее введёт
+            расход вручную, чем отдаст свой почтовый ящик, и кто готов держать файл резервной копии. А
+            ещё тем, кто бросил три облачных трекера, потому что вход мешал больше, чем помогал.
+          </p>
+          <p>
+            Это не подходит семье, где телефон каждого должен обновлять один и тот же журнал в
+            реальном времени, и тем, кто не готов вводить расходы руками и нуждается в банковском
+            импорте. Там правильный ответ — синхронизированное приложение, и этот сайт не будет
+            делать вид, что это не так.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Spendwise действительно обходится без адреса почты?</summary>
+            <div class="faq__body">
+              <p>
+                Верно. Экрана регистрации нет. Первый запуск спрашивает язык и валюту, и то и другое
+                потом можно изменить в Настройках, — на этом настройка заканчивается.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Что будет, если я потеряю телефон?</summary>
+            <div class="faq__body">
+              <p>
+                Журнал на этом телефоне пропадёт, если вы не сделали файл резервной копии.
+                Восстановить его не из чего: аккаунта нет, и по той же причине прочитать его не может
+                никто другой.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Можно ли вести один журнал Spendwise на двух телефонах?</summary>
+            <div class="faq__body">
+              <p>
+                Одновременно — нет. Файл резервной копии можно восстановить на втором телефоне, но
+                синхронизации между ними нет, а восстановление заменяет то, что было на этом
+                телефоне. Смотрите
+                <a href="/ru/offline-expense-tracker">как работает офлайн-журнал</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Как Spendwise зарабатывает без аккаунтов?</summary>
+            <div class="faq__body">
+              <p>
+                Одна неперсонализированная реклама на экране подтверждения операции. Подписки нет,
+                встроенных покупок нет, данные не продаются; анонимную статистику экранов можно
+                отключить в Настройках.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Как удалить всё, что сохранил Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Удаление приложения стирает его приватное хранилище, либо очистите данные приложения в
+                настройках Android. У Spendwise никогда не было копии на сервере, которую нужно было
+                бы удалять.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Больше гайдов">
+            <h2>Больше гайдов</h2>
+            <ul>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/offline-expense-tracker">Офлайн-учёт расходов</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Без регистрации, без почты, без трекинг-ID</h2>
+          <p>
+            Установите Spendwise, выберите язык и валюту и начинайте записывать. Журнал останется на
+            вашем телефоне.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dno_signup"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >Читать политику конфиденциальности</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

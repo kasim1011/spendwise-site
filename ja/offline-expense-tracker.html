@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>オフライン家計簿：通信なしで支出を記録</title>
+    <meta
+      name="description"
+      content="SpendwiseはAndroid向けのオフライン家計簿です。アカウントもクラウドも通信も不要で、支出の記録、予算管理、共同支出の精算ができます。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/offline-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/offline-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/offline-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/offline-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/offline-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="オフライン家計簿：通信なしで支出を記録" />
+    <meta
+      property="og:description"
+      content="オフライン優先の家計簿が機内モードでできること、いまも通信が必要な部分、そして帳簿がなぜ端末内のデータベースにあるのかを説明します。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/offline-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青いグラデーションの背景に、白い進捗リングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "オフライン家計簿",
+            "item": "https://spendwise.download/ja/offline-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwiseは機内モードでも動きますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。記録、予算、グループ、レポート、リマインダー、バックアップはすべて電波を切ったまま動作します。通信を使うのは確認画面の広告1件だけで、表示できないときはプレースホルダーが表示されます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "支出はどこに保存されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "端末のアプリ専用ストレージ内にあるSQLiteデータベースです。サーバー上のコピーも同期サービスも、データを預かるアカウントもありません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "端末が再接続したらどうなりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "何もアップロードされません。匿名の画面分析を有効にしたままにしていれば送信が再開しますが、帳簿そのものはエクスポートするかバックアップファイルを作らない限り端末から出ません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "2台の端末で1つのオフライン帳簿を共有できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "リアルタイムでは共有できません。帳簿は1台の端末が保持します。バックアップファイルで別の端末に移せますが、双方向の同期はありません。同期にはサーバーが必要だからです。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseをアンインストールするとデータは失われますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。アンインストールするとアプリ専用ストレージが削除されます。アンインストールや機種変更の前に、設定の「バックアップと復元」からバックアップファイルを作成してください。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">コンテンツへスキップ</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/offline-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/offline-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/offline-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/offline-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/offline-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/offline-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/offline-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/offline-expense-tracker" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/offline-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/offline-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/offline-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/offline-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">設計からオフライン</p>
+          <h1>インターネットにつながなくても使えるオフライン家計簿</h1>
+          <p class="doc-hero__lede">
+            ほとんどの家計簿アプリはオンライン前提で、後からオフラインモードを足したものです。Spendwiseはその逆で、帳簿は端末内のデータベースにあり、ネットワークはあってもなくても構いません。ここでは、そのことによって何が得られ、何を手放すのかを正確に説明します。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026年10月20日 &nbsp;·&nbsp;
+            <strong>対応：</strong>Android 10以降 &nbsp;·&nbsp;
+            <strong>価格：</strong>無料（非パーソナライズ広告1件で運営）
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="what-offline-means">ここでいう「オフライン」の意味</h2>
+          <p>
+            Spendwiseは、すべての取引、カテゴリ、予算、人物、領収書の添付ファイルを、端末上のアプリ専用ストレージにあるSQLiteに保存します。画面はそのデータベースから読み込みます。ログインも同期キューも、支出を表示する前に応答を待つサーバーもありません。
+          </p>
+          <p>
+            これがアーキテクチャのすべてであり、アプリが瞬時に開いて、電車でも飛行機でも地下室でも、データ通信のない海外SIMでも動く理由です。「オフラインモード」の切り替えがないのも同じ理由で、切り替えて戻る先がそもそもありません。
+          </p>
+
+          <h2 id="without-a-connection">電波を切ったままできること</h2>
+          <ul>
+            <li>
+              <strong>支出を記録</strong>：金額、カテゴリ、日付、メモ、写真またはPDFの添付。写真はAndroidのギャラリー選択画面から選ぶので、アプリにカメラの権限は不要です。
+            </li>
+            <li>
+              <strong>月の予算を立てる</strong>：月間予算を設定すると、まだ記録していない定期支出も見込んで計算するので、家賃が引かれるまで数字が良く見えすぎることはありません。
+            </li>
+            <li>
+              <strong>グループの帳簿をつける</strong>：旅行やシェアハウスごとに、独自のカテゴリ、予算、人物、精算残高を持てます。
+            </li>
+            <li>
+              <strong>リマインダーを受け取る</strong>：19:00の毎日のリマインダーとカテゴリごとの定期リマインダーは端末内のアラームで、サーバーから送られるプッシュ通知ではありません。
+            </li>
+            <li>
+              <strong>レポートを見て書き出す</strong>：月次・年次のレポートをPDFまたはXLSXで<code>Download/Spendwise</code>に書き出します。アップロードは一切ありません。
+            </li>
+            <li>
+              <strong>バックアップと復元</strong>：すべての行とすべての添付ファイルを1つのファイルにまとめ、端末内で作成・復元します。
+            </li>
+          </ul>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="取引追加フォーム。金額は$47.82、支出が選択され、カテゴリの食料品が強調表示され、日付は今日、領収書または書類の行には写真かPDFを選べる。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                記録は端末内で完結します。確認した瞬間に、フォームの内容が端末のデータベースに書き込まれます。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="検索欄のある日別の取引履歴。日曜市、コーヒーと昼食、薬局、映画館が並び、それぞれの日に合計が表示されている。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                履歴と検索はローカルのデータベースを直接読みます。リクエストも読み込み表示もありません。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026年10月のレポート。予算$6,000.00に対して支出$2,095.50、収入と収支、そして家賃$1,400.00から始まるカテゴリ別支出のドーナツグラフ。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                レポートは端末上で作られ、サーバーを介さずPDFまたはXLSXに書き出されます。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="what-needs-network">いまも通信を使う小さな部分</h2>
+          <p>ローカルではないものが2つあり、どちらもアプリの動作に必須ではありません。</p>
+          <ul>
+            <li>
+              <strong>広告。</strong>Spendwiseが無料なのは、取引の確認画面に表示される非パーソナライズ広告1件によるものです。表示には通信が必要です。オフラインではリクエストが失敗し、画面にはプレースホルダーが表示されますが、記録、保存、完了ボタンは影響を受けません。
+            </li>
+            <li>
+              <strong>匿名の画面分析。</strong>どの画面を改善すべきかを判断するために使います。既定で有効で、追跡IDもユーザーIDも含まず、設定から完全に無効にできます。無効にすれば何も送信されません。
+            </li>
+          </ul>
+          <p>
+            帳簿そのものにはネットワークを扱うコード経路がありません。これは検証できる主張で、宣伝文句ではありません。Wi-Fiとモバイルデータを切り、Spendwiseを開いてください。ここまでに挙げた機能はすべてそのまま動きます。
+          </p>
+
+          <h2 id="why-offline">オフラインを選ぶ理由</h2>
+          <p>
+            クラウドの家計簿は便利です。同期もバックアップも銀行の明細の取り込みも、誰か他の人のサーバーがやってくれるからです。その代わりに、あなたの支出履歴の全体がそのサーバー上に置かれ、自分で作らされたアカウントに紐づき、自分では書いていないポリシーに従うことになります。オフライン優先はこの取引を逆にします。
+          </p>
+          <ul>
+            <li>作る必要も、忘れる心配も、アクセスを失う心配もないアカウント。</li>
+            <li>自分のデータを読むのに誰の許可も要らない。</li>
+            <li>取引が黙って消える同期の衝突がない。</li>
+            <li>動かすサーバーがないので、払い続けるものがない。</li>
+          </ul>
+          <p>
+            手放すものは確かにあります。銀行との接続、自動のカテゴリ分類、Webアプリ、2台の端末間でリアルタイムに共有する帳簿はありません。それらをこの取引より重んじるなら、Spendeeのような同期型アプリのほうが向いています。<a href="/ja/expense-tracker-vs-spendee">Spendeeとの比較</a>でも正直に書いています。
+          </p>
+
+          <h2 id="backup">オフラインではバックアップも自分のもの</h2>
+          <p>
+            クラウドのアカウントはバックアップの代わりにもなりますが、オフラインの帳簿はそうではありません。だからSpendwiseはバックアップを主要な操作にしています。<strong>設定 → バックアップと復元 → バックアップファイルを作成</strong>を選ぶと、すべての取引、カテゴリ、予算、人物、グループ、領収書の添付ファイルを含む<code>.spendwise</code>ファイルが1つ作られます。大切なファイルを置いている場所に保存してください。
+          </p>
+          <p>
+            正直な注意が2つあります。バックアップファイルは暗号化されていないので、銀行の明細と同じように扱ってください。そしてアンインストールすると帳簿は削除されます。データが大事ならバックアップは任意ではありません。
+          </p>
+
+          <h2 id="faq">よくある質問</h2>
+
+          <details class="faq">
+            <summary>Spendwiseは機内モードでも動きますか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。記録、予算、グループ、レポート、リマインダー、バックアップはすべて電波を切ったまま動作します。通信を使うのは確認画面の広告1件だけで、表示できないときはプレースホルダーが表示されます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>支出はどこに保存されますか？</summary>
+            <div class="faq__body">
+              <p>
+                端末のアプリ専用ストレージ内にあるSQLiteデータベースです。サーバー上のコピーも同期サービスも、データを預かるアカウントもありません。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>端末が再接続したらどうなりますか？</summary>
+            <div class="faq__body">
+              <p>
+                何もアップロードされません。匿名の画面分析を有効にしたままにしていれば送信が再開しますが、帳簿そのものはエクスポートするかバックアップファイルを作らない限り端末から出ません。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>2台の端末で1つのオフライン帳簿を共有できますか？</summary>
+            <div class="faq__body">
+              <p>
+                リアルタイムでは共有できません。帳簿は1台の端末が保持します。バックアップファイルで別の端末に移せますが、双方向の同期はありません。同期にはサーバーが必要だからです。複数人での旅行については、<a href="/ja/split-expenses-with-friends">グループの仕組み</a>をご覧ください。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseをアンインストールするとデータは失われますか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。アンインストールするとアプリ専用ストレージが削除されます。アンインストールや機種変更の前に、設定の「バックアップと復元」からバックアップファイルを作成してください。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="その他のガイド">
+            <h2>その他のガイド</h2>
+            <ul>
+              <li><a href="/ja/expense-tracker-vs-spendee">SpendeeとSpendwise</a></li>
+              <li><a href="/ja/expense-tracker-without-signup">登録不要の家計簿</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベートな家計簿</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友人との支出の割り勘</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">Spendwiseと表計算ソフト</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>電波がなくても動く家計簿を試してみませんか</h2>
+          <p>
+            無料、アカウント不要、追跡IDなし。帳簿は端末に残り、バックアップファイル1つで持ち運べます。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Doffline"
+              rel="noopener"
+              >Google Playで入手</a
+            >
+            <a class="btn btn--ghost" href="/ja/expense-tracker-without-signup"
+              >登録がない理由</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

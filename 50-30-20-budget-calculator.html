@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>50/30/20 budget calculator: split any income</title>
+    <meta
+      name="description"
+      content="Turn take-home pay into needs, wants and savings with the 50/30/20 rule. Free, no account, and honest about when the rule stops fitting."
+    />
+    <link rel="canonical" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="50/30/20 budget calculator: split any income" />
+    <meta
+      property="og:description"
+      content="A free 50/30/20 calculator, the maths behind it, and what to do when rent eats more than half your pay."
+    />
+    <meta property="og:url" content="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Spendwise mark: a white progress ring and tick on a blue gradient field."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "50/30/20 budget calculator",
+            "item": "https://spendwise.download/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is 50/30/20 based on gross or take-home pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Take-home pay: the amount that actually lands in your account after tax and any pension or payroll deductions. Using gross salary inflates every bucket and makes a budget that looks fine on paper and fails in the bank."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What counts as a need in the 50/30/20 rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rent or mortgage, utilities, groceries, transport to work, insurance, minimum debt payments and necessary medication. Anything you would keep paying while unemployed is a need. A gym you could cancel, a streaming bundle and a second car are wants."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my rent alone is more than 50%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The rule is a starting point, not a law. In a high-cost city, 60/20/20 or 70/20/10 is the honest version: keep a real 20% for savings and debt, and take the shortfall from wants first. Cutting savings to protect wants inverts the priority."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the calculator store my income?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The arithmetic runs in your browser, nothing is sent anywhere, and the site loads no third-party script. Reloading the page clears everything you typed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Spendwise app a 50/30/20 budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. Spendwise holds one monthly budget and reserves known recurring bills against it, so the number left is what you can freely spend. Use this page to pick the totals, then set the 50% figure as the monthly budget and log spending against it."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#features">Features</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en" aria-current="true">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Free tool</p>
+          <h1>50/30/20 budget calculator</h1>
+          <p class="doc-hero__lede">
+            Split take-home pay into needs, wants and savings in one step — then read what the rule
+            leaves out. No account, no signup, no tracking ID: the arithmetic happens in your
+            browser.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Updated:</strong> 20 October 2026 &nbsp;·&nbsp;
+            <strong>Input:</strong> take-home pay &nbsp;·&nbsp; <strong>Cost:</strong> free
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">Your numbers</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>Monthly take-home pay · after tax and other deductions</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>The split</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Needs · 50%</dt>
+                  <dd data-out="needs">2,000.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Wants · 30%</dt>
+                  <dd data-out="wants">1,200.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Savings and debt · 20%</dt>
+                  <dd data-out="savings">800.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Per day · 30-day month</dt>
+                  <dd data-out="day">133.33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                Amounts are in whatever currency you type and round to the cent. This page is a
+                planning tool, not a ledger; it keeps nothing.
+              </p>
+            </div>
+            <noscript>
+              <p>
+                The calculator needs JavaScript. The rule is still simple: 50% of take-home pay for
+                needs, 30% for wants, 20% for savings and debt repayment — halve, take a third, take
+                a fifth.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">What the 50/30/20 rule actually says</h2>
+          <p>
+            The rule became popular through Elizabeth Warren and Amelia Warren Tyagi's
+            <em>All Your Worth</em> (2005). The claim is narrow and useful: of the money that
+            arrives in your account, half can go to obligations, three tenths to discretionary life,
+            and one fifth to the future. Nothing in the split depends on your salary, your country,
+            or your bank.
+          </p>
+          <p>
+            The strength is that it is a <strong>ceiling on needs</strong>, not a target for them.
+            Most budgeting advice tells you to spend less and save more without saying what less
+            means. Here, the 50% line is a diagnosis: if necessities cross it, the problem is
+            structural — rent, transport, childcare — and no coupon app fixes it.
+          </p>
+
+          <h2 id="how-to-read">How to read the three numbers</h2>
+          <ul>
+            <li>
+              <strong>Needs, 50%.</strong> Rent or mortgage, utilities, groceries, transport to
+              work, insurance, minimum debt payments, essential medication. The test is simple:
+              would you still pay this in the first month of unemployment?
+            </li>
+            <li>
+              <strong>Wants, 30%.</strong> Restaurants, subscriptions, travel, hobbies, a nicer
+              phone than you need. This is the bucket that pays for the shortfall when the other two
+              are tight — and the first place to look when savings slip.
+            </li>
+            <li>
+              <strong>Savings and debt, 20%.</strong> Emergency fund, retirement, investing, and
+              anything above the minimum on a loan. Paying down expensive debt is the highest-return
+              savings available, so it belongs here rather than in needs.
+            </li>
+          </ul>
+          <p>
+            On 4,000 a month that is 2,000, 1,200 and 800. The daily figure — roughly 133 — is not
+            part of the original rule. It is there because a monthly number is too large to feel
+            during a week, and the question "can I afford this today" is the one people actually
+            ask.
+          </p>
+
+          <h2 id="blur">Where the categories blur</h2>
+          <p>
+            Every 50/30/20 argument is really an argument about one expense. Some calls that survive
+            scrutiny:
+          </p>
+          <ul>
+            <li>
+              <strong>Groceries are a need; the delivery fee is a want.</strong> Split them. A
+              takeaway habit filed under food can hide a four-figure annual wants budget.
+            </li>
+            <li>
+              <strong>The car is mixed.</strong> The loan, insurance and fuel for the commute are
+              needs; the upgrade trim is not. If you could commute by bus in a pinch, the honest
+              needs figure is the bus fare, and the difference is a want.
+            </li>
+            <li>
+              <strong>A gym is a want — unless a doctor prescribed it.</strong> Memberships you
+              would cancel in a bad month are wants by definition, however healthy.
+            </li>
+            <li>
+              <strong>Minimum debt payments are needs; overpayments are savings.</strong> Otherwise
+              a large loan pushes necessities past 50% and the plan collapses.
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">When the rule does not fit</h2>
+          <p>
+            The 50/30/20 split assumes housing takes well under half your pay. In London, Dublin,
+            Toronto, Sydney, Mumbai or San Francisco — or on a single income with childcare — that
+            assumption is often false. Three honest variants:
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20.</strong> Housing pushes needs to 60%. Wants shrink to 20% and
+              savings stay at 20%, because the future is the part you cannot borrow back.
+            </li>
+            <li>
+              <strong>70/20/10.</strong> A high-cost city on an entry salary. Ten percent saved is
+              still a real habit; zero is not.
+            </li>
+            <li>
+              <strong>Zero-based.</strong> Assign every unit of income a job at the start of the
+              month. More work than a percentage, and better for irregular pay.
+            </li>
+          </ul>
+          <p>
+            Variable income needs a different mechanic: budget from the lowest recent month and
+            treat the surplus as savings, rather than budgeting from the best month and praying. The
+            percentage stays useful as a check at year end, not as a monthly instruction.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="The Spendwise dashboard for October 2026 showing $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and the recurring bills still to log."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                One monthly budget, with the bills still to log reserved against it.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="The October 2026 report showing $2,095.50 spent against a $6,000.00 budget, income and net balance, and a spending-by-category doughnut chart starting with Rent at $1,400.00."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>The month's categories, ready to compare with your split.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">Make the 20% leave before you see it</h2>
+          <p>
+            A split that depends on willpower loses to one that depends on a standing order. Move
+            the 20% on payday, not at month end, and keep it in an account that is mildly annoying
+            to reach. The same applies to recurring bills: if rent and utilities leave on known
+            dates, the money for them is already spent, whatever the balance says.
+          </p>
+          <p>
+            The remaining question — what did I actually spend? — is a tracking problem, not a
+            budgeting one. Spendwise keeps the ledger as a local SQLite database on the phone, with
+            one monthly budget that reserves known recurring bills, a reminder at 19:00, and PDF or
+            XLSX export at month end. It does not calculate a 50/30/20 split; set the 50% total as
+            the budget, log as you spend, and compare the report against the plan.
+          </p>
+
+          <h2 id="faq">Frequently asked questions</h2>
+          <details class="faq">
+            <summary>Is 50/30/20 based on gross or take-home pay?</summary>
+            <div class="faq__body">
+              <p>
+                Take-home pay: the amount that actually lands in your account after tax and any
+                pension or payroll deductions. Using gross salary inflates every bucket and makes a
+                budget that looks fine on paper and fails in the bank.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>What counts as a need in the 50/30/20 rule?</summary>
+            <div class="faq__body">
+              <p>
+                Rent or mortgage, utilities, groceries, transport to work, insurance, minimum debt
+                payments and necessary medication. Anything you would keep paying while unemployed
+                is a need. A gym you could cancel, a streaming bundle and a second car are wants.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>What if my rent alone is more than 50%?</summary>
+            <div class="faq__body">
+              <p>
+                The rule is a starting point, not a law. In a high-cost city, 60/20/20 or 70/20/10
+                is the honest version: keep a real 20% for savings and debt, and take the shortfall
+                from wants first. Cutting savings to protect wants inverts the priority.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Does the calculator store my income?</summary>
+            <div class="faq__body">
+              <p>
+                No. The arithmetic runs in your browser, nothing is sent anywhere, and the site
+                loads no third-party script. Reloading the page clears everything you typed.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Is the Spendwise app a 50/30/20 budget?</summary>
+            <div class="faq__body">
+              <p>
+                Not directly. Spendwise holds one monthly budget and reserves known recurring bills
+                against it, so the number left is what you can freely spend. Use this page to pick
+                the totals, then set the 50% figure as the monthly budget and log spending against
+                it.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="More tools and guides">
+            <h2>More tools and guides</h2>
+            <ul>
+              <li><a href="/split-bill-calculator">Split bill calculator</a></li>
+              <li><a href="/subscription-cost-calculator">Subscription cost calculator</a></li>
+              <li><a href="/split-expenses-with-friends">Split expenses with friends</a></li>
+              <li><a href="/offline-expense-tracker">Offline expense tracker</a></li>
+              <li><a href="/expense-tracker-without-signup">Expense tracker without signup</a></li>
+              <li><a href="/expense-tracker-vs-spreadsheet">Spendwise vs spreadsheet</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Plan the split, then track what happens</h2>
+          <p>
+            Spendwise is free, needs no account and carries no tracking ID. Set the budget, log the
+            spend, export the month.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=en_US&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >Get it on Google Play</a
+            >
+            <a class="btn btn--ghost" href="/private-expense-tracker">Read the privacy page</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              A private, offline-first expense tracker for Android. Your ledger belongs on your
+              phone.
+            </p>
+          </div>
+          <div>
+            <h2>Product</h2>
+            <ul>
+              <li><a href="/#features">Features</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
+              <li><a href="/#privacy">Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy">Privacy policy</a></li>
+              <li><a href="/terms">Terms &amp; conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Support</h2>
+            <ul>
+              <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. All rights reserved.</span>
+          <span>Made for Android 10 and above.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

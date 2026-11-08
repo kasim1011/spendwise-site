@@ -1,5 +1,13 @@
 /* Spendwise site — chrome, marketing sections, and the screenshot gallery. */
 
+/* Screenshots are served as WebP inside <picture>, with the PNG as fallback. The wrapper
+   must add no box of its own: a gallery shot escapes to position:fixed when enlarged, and
+   it has to keep measuring against the viewport, not a <picture> that only exists for
+   format selection. */
+picture {
+  display: contents;
+}
+
 /* ---------- Header ---------- */
 
 .site-header {
@@ -13,6 +21,7 @@
 
 .site-header__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -43,10 +52,23 @@
 
 .site-nav {
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   gap: 0.35rem;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
+}
+
+/* The brand keeps its natural width; the nav wraps and the switcher may shrink. */
+.brand {
+  flex: 0 0 auto;
+}
+
+/* When the nav and the switcher do not fit on one line, the switcher wraps alone: push it to the
+   end of its line instead of leaving it under the brand. */
+.site-lang {
+  margin-inline-start: auto;
 }
 
 .site-nav::-webkit-scrollbar {
@@ -69,6 +91,50 @@
 }
 
 .site-nav a[aria-current='page'] {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* Language switcher: rendered only on pages that ship in more than one language. Twelve locales
+   do not fit a phone, so the strip shrinks and scrolls sideways instead of widening the page. */
+.site-lang {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.15rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0.15rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  scrollbar-width: none;
+}
+
+.site-lang::-webkit-scrollbar {
+  display: none;
+}
+
+.site-lang a {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-lang a:hover {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.site-lang a[aria-current='true'] {
+  /* On a phone the strip opens at its start; the current language must be the first pill. */
+  order: -1;
+  background: var(--brand-tint);
   color: var(--brand);
   font-weight: 600;
 }
@@ -335,7 +401,7 @@
 }
 
 .gallery li:target .shot__open::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   z-index: 60;
@@ -392,7 +458,7 @@
 }
 
 .gallery li:target .shot__close::after {
-  content: "\00d7";
+  content: '\00d7';
   position: absolute;
   top: clamp(0.75rem, 2vw, 1.5rem);
   right: clamp(0.75rem, 2vw, 1.5rem);
@@ -604,4 +670,181 @@ body:has(.gallery li:target) {
   .site-nav {
     width: 100%;
   }
+}
+
+/* ---------- Comparison page ---------- */
+
+.compare-scroll {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.compare {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.compare th,
+.compare td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  text-align: start;
+  vertical-align: top;
+}
+
+.compare thead th {
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.compare tbody th {
+  background: var(--bg-softer);
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.compare tbody tr:nth-child(even) td {
+  background: var(--bg-softer);
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0;
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.shots figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.feature ul {
+  padding-inline-start: 1.1rem;
+  font-size: 0.94rem;
+  color: var(--body);
+}
+
+.feature li + li {
+  margin-top: 0.35rem;
+}
+
+/* Stack the comparison on phones instead of asking for a sideways swipe. */
+@media (max-width: 640px) {
+  .compare-scroll {
+    overflow: visible;
+  }
+
+  .compare {
+    min-width: 0;
+  }
+
+  .compare thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .compare,
+  .compare tbody,
+  .compare tr,
+  .compare th,
+  .compare td {
+    display: block;
+  }
+
+  .compare tr {
+    margin-bottom: 0.85rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .compare tbody th {
+    border: 0;
+    border-bottom: 1px solid var(--line-soft);
+    border-radius: 0;
+    background: var(--bg-soft);
+    white-space: normal;
+  }
+
+  .compare td {
+    border: 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .compare td:last-child {
+    border-bottom: 0;
+  }
+
+  .compare tbody tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  .compare td::before {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--brand);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .compare td:nth-of-type(1)::before {
+    content: 'Spendwise';
+  }
+
+  .compare td:nth-of-type(2)::before {
+    content: 'Spendee';
+  }
+}
+
+/* ---------- Related guides ---------- */
+
+.related {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.related h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.related ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.related a {
+  font-weight: 600;
 }

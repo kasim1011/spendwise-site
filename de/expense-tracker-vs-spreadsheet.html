@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ausgaben-Tracker vs. Tabelle: was schneller ist</title>
+    <meta
+      name="description"
+      content="Eine Tabelle ist gratis und flexibel, eine App auf dem Handy schneller. Wo jedes gewinnt und wie du die Zahlen zwischen beiden bewegst."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Ausgaben-Tracker vs. Tabelle: was schneller ist" />
+    <meta
+      property="og:description"
+      content="Die Tabelle ist das ehrlichste Budget-Werkzeug, das je gebaut wurde. Hier steht, wo sie noch gewinnt, wo eine App sie schlägt und wie du beides behältst."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ausgaben-Tracker vs. Tabelle",
+            "item": "https://spendwise.download/de/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kann ich meine bestehende Tabelle in Spendwise importieren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Spendwise hat keinen CSV- oder Tabellen-Import. Wiederherstellen akzeptiert nur die eigene .spendwise-Datei, eine alte Tabelle umzuziehen heißt also, den Verlauf von Hand einzutragen oder ab diesem Monat sauber neu anzufangen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich Spendwise-Daten in eine Tabelle exportieren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Ein Monat oder ein Jahr geht als XLSX mit einem Summary-Blatt und einer Monatstabelle raus, dazu ein PDF, das den Bericht auf dem Bildschirm spiegelt. Beide werden unter Android in Download/Spendwise geschrieben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ersetzt eine App die Formeln einer Tabelle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Die App beantwortet Budget-Fragen direkt und exportiert die Zahlen; sie wird keine Rechenfläche. Wenn du eigene Formeln brauchst, behalte die Tabelle und exportiere hinein."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist eine Tabelle privater als eine App?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sie kann es sein, wenn die Datei auf deinem Gerät bleibt und die Suite sie nicht synchronisiert. Spendwise gibt dasselbe Versprechen in anderer Form: Das Ledger ist eine lokale Datenbank, es gibt kein Konto, und auf einem Server liegt keine Kopie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist besser für ein Haushaltsbudget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine Tabelle, wenn eine Person alles am Rechner einträgt und eigene Berichte will. Eine App, wenn Ausgaben unterwegs am Handy erfasst werden oder mehr als eine Person die Salden sehen muss, weil eine als Datei geteilte Tabelle Versionskonflikte einlädt."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Vergleich</p>
+          <h1>Ausgaben-Tracker vs. Tabelle: ein ehrlicher Vergleich</h1>
+          <p class="doc-hero__lede">
+            Eine Tabelle ist das ehrlichste Budget-Werkzeug, das je gebaut wurde: gratis,
+            transparent und frei formbar. Sie verlangt nur, dass du die Buchführung am Schreibtisch
+            machst. Hier steht, wo dieser Handel nicht mehr aufgeht — und wo schon.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Export:</strong> PDF und XLSX &nbsp;·&nbsp;
+            <strong>Import:</strong> keiner, mit Absicht
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">Wo die Tabelle wirklich gewinnt</h2>
+          <ul>
+            <li>
+              <strong>Sie kostet nichts und installiert nichts.</strong> Du hast schon eine, auf
+              jedem Gerät, für immer.
+            </li>
+            <li>
+              <strong>Die Formeln gehören dir.</strong> Jede Ansicht, die du dir vorstellen kannst —
+              eine Sparquote, ein gleitender Durchschnitt, eine Aufteilung pro Zahltag — ist eine
+              Spalte entfernt.
+            </li>
+            <li>
+              <strong>Nichts ist abstrahiert.</strong> Du siehst jede Zelle, prüfst jede Summe und
+              reparierst einen Fehler dort, wo er sitzt.
+            </li>
+            <li>
+              <strong>Sie ist zugleich das Archiv.</strong> Eine Datei hält Jahre an Verlauf in einem
+              Format, das die meisten Apps überlebt.
+            </li>
+          </ul>
+          <p>
+            Wenn du der Typ bist, der sonntags bei einem Kaffee die Tabelle abgleicht, wird eine App
+            deine Finanzen nicht verbessern. Sie verschiebt nur deinen Ablauf.
+          </p>
+
+          <h2 id="spreadsheet-breaks">Wo es bricht</h2>
+          <p>
+            Das Problem ist nicht die Mathematik. Es ist die Reibung zwischen dem Moment, in dem Geld
+            dein Konto verlässt, und dem Moment, in dem daraus eine Zeile wird.
+          </p>
+          <ul>
+            <li>
+              <strong>Erfassen an der Kasse.</strong> Eine Datei öffnen, die nächste leere Zeile
+              finden, Datum, Kategorie und Betrag tippen und neu speichern — am Handy ist das eine
+              Minute Arbeit, die niemand an der Kasse macht. Die Daten kommen eine Woche zu spät,
+              wenn überhaupt.
+            </li>
+            <li>
+              <strong>Kein Gedächtnis.</strong> Eine Tabelle erinnert dich nicht ans Erfassen, und
+              sie weiß nicht, dass die Miete bald abgeht.
+            </li>
+            <li>
+              <strong>Kategorien per Tippfehler.</strong> Einmal „Lebensmittel“ und einmal
+              „Lebensmittle“ — so wird eine Kategoriesumme zur Lüge, ohne dass eine Formel meckert.
+            </li>
+            <li>
+              <strong>Versionskonflikte.</strong> Zwei Personen, die „Budget 2026 final v3.xlsx“
+              bearbeiten, sind das WG-Äquivalent zu einem Merge-Konflikt, entschieden von der Person,
+              die zuletzt gespeichert hat.
+            </li>
+            <li>
+              <strong>Wiederkehrende Kosten leben in deinem Kopf.</strong> Die Mietrücklage muss von
+              Hand modelliert werden, sonst ist die Zahl „Budget übrig“ zur Monatsmitte Fiktion.
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">Direkt nebeneinander</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">Was zählt</th>
+                  <th scope="col">Tabelle</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Kosten</th>
+                  <td>Gratis, oder was deine Suite ohnehin kostet.</td>
+                  <td>Gratis, finanziert durch eine nicht personalisierte Anzeige.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Eine Ausgabe erfassen</th>
+                  <td>Eine Zeile am Handy: Datei, Zeile, Datum, Kategorie, Betrag, speichern.</td>
+                  <td>Betrag, Kategorie, bestätigen — der Bestätigungsbildschirm ist der Anzeigenbildschirm.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Budget prüfen</th>
+                  <td>Was deine Formeln hergeben.</td>
+                  <td>Ein Monatsbudget, das bekannte wiederkehrende Rechnungen zurücklegt.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Erinnerungen</th>
+                  <td>Keine.</td>
+                  <td>Tägliche Erinnerung um 19:00 Uhr, wiederkehrende Erinnerungen je Kategorie.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Belege</th>
+                  <td>Eine separate Datei, wenn überhaupt von Hand verknüpft.</td>
+                  <td>Ein Foto oder PDF an der Ausgabe, mitgeführt in der Sicherungsdatei.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Berichte</th>
+                  <td>Deine Sache, zu bauen und zu erklären.</td>
+                  <td>Monats- und Jahresberichte, exportiert als PDF oder XLSX.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Eigene Auswertung</th>
+                  <td>Unbegrenzt.</td>
+                  <td>Nicht die Aufgabe — exportiere und rechne in der Tabelle.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Wo es lebt</th>
+                  <td>Die Datei, wo immer du sie ablegst.</td>
+                  <td>Eine SQLite-Datenbank auf deinem Handy, gesichert in eine Datei, die du behältst.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Import aus dem jeweils anderen</th>
+                  <td>Kopieren und einfügen.</td>
+                  <td>Keiner. Es gibt keinen CSV-Import.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="Das Formular für eine neue Buchung mit dem Betrag 47,82 $, ausgewählter Ausgabe, hervorgehobener Kategorie Lebensmittel, heutigem Datum und einer Zeile für Beleg oder Dokument mit Foto- oder PDF-Auswahl."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Ein Bildschirm, Betrag und Kategorie, dann bestätigen.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="Der Bericht für Oktober 2026: 2.095,50 $ ausgegeben bei einem Budget von 6.000,00 $, Einnahmen und Saldo, dazu ein Ringdiagramm der Ausgaben nach Kategorie, beginnend mit Miete über 1.400,00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Der Bericht, den du in der Tabelle gebaut hättest, schon gebaut — und
+                exportierbar.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="Die Buchungshistorie nach Tagen gruppiert, mit Suchfeld: Sonntagsmarkt, Kaffee und Mittagessen, Apotheke und Kino, jeder Tag mit eigenem Saldo."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Verlauf nach Tag gruppiert, durchsuchbar, mit dem Saldo jedes Tages.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">Beides behalten: der Export ist die Brücke</h2>
+          <p>
+            Die vernünftige Antwort für die meisten ist nicht „ersetze die Tabelle“. Sie ist „hör auf,
+            Zeilen von Hand zu tippen, und exportiere dann“.
+          </p>
+          <p>
+            Spendwise exportiert einen Monat oder ein Jahr als <strong>XLSX</strong> — ein
+            Summary-Blatt mit Summen und der Aufteilung nach Kategorie, dazu eine Monatstabelle — und
+            als <strong>PDF</strong>, das den Bericht auf dem Bildschirm spiegelt. Beides wird unter
+            Android in <code>Download/Spendwise</code> geschrieben, das Teilen-Menü ist der zweite
+            Weg. Deine Tabelle wird die Auswertungsschicht, die App die Erfassungsschicht.
+          </p>
+          <p>
+            Was sie nicht tut, ist importieren. Es gibt keinen CSV-Import und keinen Weg, eine alte
+            Tabelle zu laden, ein Umzug heißt also, die Vergangenheit von Hand einzutragen oder ab
+            diesem Monat neu anzufangen. Das ist eine bewusste Grenze: beliebige Tabellen sauber zu
+            lesen ist ein eigenes Projekt, und ein schlechter Import beschädigt still ein Ledger.
+          </p>
+
+          <h2 id="fit">Was du nehmen solltest</h2>
+          <ul>
+            <li>
+              <strong>Bleib bei der Tabelle</strong>, wenn du wöchentlich am Schreibtisch erfasst,
+              eigene Formeln willst und deinem Ablauf schon vertraust.
+            </li>
+            <li>
+              <strong>Nimm die App</strong>, wenn Ausgaben abseits des Schreibtischs passieren, wenn
+              du Erinnerungen willst und ein Budget, das weiß, dass die Miete kommt, oder wenn Belege
+              bei der Ausgabe liegen sollen.
+            </li>
+            <li>
+              <strong>Nimm beides</strong>, wenn du schnelles Erfassen und tiefe Auswertung willst:
+              App am Handy, Tabelle für den Rest, Export am Monatsende.
+            </li>
+          </ul>
+
+          <h2 id="faq">Häufige Fragen</h2>
+
+          <details class="faq">
+            <summary>Kann ich meine bestehende Tabelle in Spendwise importieren?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Spendwise hat keinen CSV- oder Tabellen-Import. Wiederherstellen akzeptiert nur
+                die eigene <code>.spendwise</code>-Datei, eine alte Tabelle umzuziehen heißt also,
+                den Verlauf von Hand einzutragen oder ab diesem Monat sauber neu anzufangen.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Kann ich Spendwise-Daten in eine Tabelle exportieren?</summary>
+            <div class="faq__body">
+              <p>
+                Ja. Ein Monat oder ein Jahr geht als XLSX mit einem Summary-Blatt und einer
+                Monatstabelle raus, dazu ein PDF, das den Bericht auf dem Bildschirm spiegelt. Beide
+                werden unter Android in <code>Download/Spendwise</code> geschrieben.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Ersetzt eine App die Formeln einer Tabelle?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Die App beantwortet Budget-Fragen direkt und exportiert die Zahlen; sie wird
+                keine Rechenfläche. Wenn du eigene Formeln brauchst, behalte die Tabelle und
+                exportiere hinein.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Ist eine Tabelle privater als eine App?</summary>
+            <div class="faq__body">
+              <p>
+                Sie kann es sein, wenn die Datei auf deinem Gerät bleibt und die Suite sie nicht
+                synchronisiert. Spendwise gibt dasselbe Versprechen in anderer Form: Das Ledger ist
+                eine lokale Datenbank, es gibt kein Konto, und auf einem Server liegt keine Kopie —
+                siehe
+                <a href="/private-expense-tracker" hreflang="en" lang="en"
+                  >was privat hier heißt</a
+                >.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Was ist besser für ein Haushaltsbudget?</summary>
+            <div class="faq__body">
+              <p>
+                Eine Tabelle, wenn eine Person alles am Rechner einträgt und eigene Berichte will.
+                Eine App, wenn Ausgaben unterwegs am Handy erfasst werden oder mehr als eine Person
+                die Salden sehen muss, weil eine als Datei geteilte Tabelle Versionskonflikte
+                einlädt.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Weitere Leitfäden">
+            <h2>Weitere Leitfäden</h2>
+            <ul>
+              <li>
+                <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en"
+                  >Spendee vs Spendwise</a
+                >
+              </li>
+              <li>
+                <a href="/de/offline-expense-tracker"
+                  >Offline expense tracker</a
+                >
+              </li>
+              <li>
+                <a href="/expense-tracker-without-signup" hreflang="en" lang="en"
+                  >Expense tracker without signup</a
+                >
+              </li>
+              <li>
+                <a href="/private-expense-tracker" hreflang="en" lang="en"
+                  >Private expense tracker</a
+                >
+              </li>
+              <li>
+                <a href="/split-expenses-with-friends" hreflang="en" lang="en"
+                  >Split expenses with friends</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Am Handy erfassen, in der Tabelle auswerten</h2>
+          <p>
+            Kostenlos, kein Konto, keine Tracking-ID. Exportiere den Monat als XLSX und behalte deine
+            Formeln dort, wo sie hingehören.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/de/offline-expense-tracker"
+              >Was offline funktioniert</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حاسبة ميزانية 50/30/20: قسّم أي دخل</title>
+    <meta
+      name="description"
+      content="حوّل صافي راتبك إلى احتياجات ورغبات ومدخرات بقاعدة 50/30/20. مجانية، بلا حساب، وصادقة في حدود القاعدة."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="حاسبة ميزانية 50/30/20: قسّم أي دخل" />
+    <meta
+      property="og:description"
+      content="حاسبة مجانية لقاعدة 50/30/20، والرياضيات وراءها، وما تفعله حين يأكل الإيجار أكثر من نصف راتبك."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="شعار Spendwise: حلقة تقدم بيضاء وعلامة صح على حقل متدرج أزرق."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "حاسبة ميزانية 50/30/20",
+            "item": "https://spendwise.download/ar/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل تُحسب قاعدة 50/30/20 على الراتب الإجمالي أم على صافي الراتب؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "على صافي الراتب: المبلغ الذي يصل فعلًا إلى حسابك بعد الضريبة وأي خصومات تقاعدية أو كشوف رواتب. استخدام الراتب الإجمالي يضخّم كل بند، ويصنع ميزانية تبدو جيدة على الورق وتفشل في البنك."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما الذي يُعدّ احتياجًا في قاعدة 50/30/20؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "الإيجار أو القسط العقاري، والمرافق، والبقالة، والانتقال إلى العمل، والتأمين، والحد الأدنى لأقساط الدين، والأدوية الضرورية. كل ما ستواصل دفعه لو فقدت عملك هو احتياج. أما النادي الذي يمكنك إلغاؤه، وحزمة البث، والسيارة الثانية، فهي رغبات."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ماذا لو كان إيجاري وحده أكثر من 50%؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "القاعدة نقطة بداية لا قانون. في مدينة مرتفعة التكاليف، تكون 60/20/20 أو 70/20/10 هي الصيغة الصادقة: أبقِ 20% حقيقية للمدخرات والدين، وخُذ النقص من الرغبات أولًا. وتخفيض المدخرات لحماية الرغبات يقلب الأولوية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تخزّن الحاسبة دخلي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. تجري العملية الحسابية في متصفحك، ولا يُرسل شيء إلى أي مكان، ولا تحمّل الصفحة أي سكربت خارجي. وإعادة تحميل الصفحة تمحو كل ما كتبته."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تطبيق Spendwise ميزانية 50/30/20؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ليس مباشرة. يحتفظ Spendwise بميزانية شهرية واحدة ويحجز منها الفواتير المتكررة المعروفة، فيكون المتبقي هو ما تستطيع إنفاقه بحرية. استخدم هذه الصفحة لاختيار الإجماليات، ثم عيّن رقم 50% ميزانيةً شهرية وسجّل الإنفاق مقابله."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">أداة مجانية</p>
+          <h1>حاسبة ميزانية 50/30/20</h1>
+          <p class="doc-hero__lede">
+            قسّم صافي راتبك إلى احتياجات ورغبات ومدخرات في خطوة واحدة، ثم اقرأ ما تتجاهله القاعدة.
+            بلا حساب، بلا تسجيل، بلا معرّف تتبّع: الحساب يجري في متصفحك.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>آخر تحديث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp;
+            <strong>المدخل:</strong> صافي الراتب &nbsp;·&nbsp; <strong>السعر:</strong> مجاني
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">أرقامك</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>صافي الراتب الشهري · بعد الضريبة والخصومات الأخرى</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>التقسيم</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>الاحتياجات · 50%</dt>
+                  <dd data-out="needs">2,000.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>الرغبات · 30%</dt>
+                  <dd data-out="wants">1,200.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>المدخرات والدين · 20%</dt>
+                  <dd data-out="savings">800.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>لكل يوم · شهر من 30 يومًا</dt>
+                  <dd data-out="day">133.33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                المبالغ بأي عملة تكتبها وتُقرَّب إلى السنت. هذه الصفحة أداة تخطيط لا دفتر حسابات،
+                ولا تحتفظ بشيء.
+              </p>
+            </div>
+            <noscript>
+              <p>
+                تحتاج الحاسبة إلى JavaScript. والقاعدة ما زالت بسيطة: 50% من صافي الراتب
+                للاحتياجات، و30% للرغبات، و20% للمدخرات وسداد الدين — نصف، وثلث، وخُمس.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">ماذا تقول قاعدة 50/30/20 فعلًا</h2>
+          <p>
+            ذاعت القاعدة عبر كتاب <em>All Your Worth</em> (2005) لـElizabeth Warren وAmelia Warren
+            Tyagi. والادعاء ضيّق ومفيد: من المال الذي يصل إلى حسابك، يمكن
+            أن يذهب النصف إلى الالتزامات، وثلاثة أعشار إلى الحياة الاختيارية، وخُمس إلى المستقبل. ولا
+            شيء في هذا التقسيم يعتمد على راتبك أو بلدك أو بنكك.
+          </p>
+          <p>
+            القوة في أنها <strong>سقف للاحتياجات</strong>، لا هدف لها. معظم نصائح الميزانية تقول
+            أنفق أقل وادّخر أكثر دون أن تحدد معنى «أقل». هنا خط 50% تشخيص: إذا تجاوزته الضرورات،
+            فالمشكلة بنيوية — الإيجار، والمواصلات، ورعاية الأطفال — ولا يصلحها أي تطبيق كوبونات.
+          </p>
+
+          <h2 id="how-to-read">كيف تقرأ الأرقام الثلاثة</h2>
+          <ul>
+            <li>
+              <strong>الاحتياجات، 50%.</strong> الإيجار أو القسط العقاري، والمرافق، والبقالة،
+              والانتقال إلى العمل، والتأمين، والحد الأدنى لأقساط الدين، والأدوية الأساسية. والاختبار
+              بسيط: هل ستواصل دفع هذا في الشهر الأول من البطالة؟
+            </li>
+            <li>
+              <strong>الرغبات، 30%.</strong> المطاعم، والاشتراكات، والسفر، والهوايات، وهاتف أفخم مما
+              تحتاج. هذا هو البند الذي يغطي النقص حين تضيق الآخران، وأول ما تنظر إليه إذا تعثّرت
+              المدخرات.
+            </li>
+            <li>
+              <strong>المدخرات والدين، 20%.</strong> صندوق الطوارئ، والتقاعد، والاستثمار، وكل ما
+              يزيد على الحد الأدنى في قرض. وسداد الدين المكلف أعلى مردود ادخاري متاح، فهو مكانه هنا
+              لا في الاحتياجات.
+            </li>
+          </ul>
+          <p>
+            على 4,000 شهريًا، يعني ذلك 2,000 و1,200 و800. والرقم اليومي — نحو 133 — ليس من القاعدة
+            الأصلية. وُجد لأن الرقم الشهري أكبر من أن يُحسّ خلال أسبوع، ولأن سؤال «هل أستطيع تحمّل
+            هذا اليوم؟» هو ما يسأله الناس فعلًا.
+          </p>
+
+          <h2 id="blur">حين تتشابك الفئات</h2>
+          <p>
+            كل جدال حول 50/30/20 هو في الحقيقة جدال حول مصروف واحد. بعض الأحكام التي تصمد للفحص:
+          </p>
+          <ul>
+            <li>
+              <strong>البقالة احتياج؛ ورسوم التوصيل رغبة.</strong> افصلهما. فعادة طلب الطعام
+              المكتوبة تحت «طعام» قد تخفي ميزانية رغبات سنوية بأربعة أرقام.
+            </li>
+            <li>
+              <strong>السيارة مختلطة.</strong> القرض والتأمين والوقود للانتقال إلى العمل احتياجات؛
+              وفئة التجهيز الأفضل ليست كذلك. وإن كان بإمكانك الانتقال بالحافلة عند الضيق، فاحتياجك
+              الصادق هو أجرة الحافلة، والفرق رغبة.
+            </li>
+            <li>
+              <strong>النادي رغبة — إلا إذا وصفه طبيب.</strong> العضويات التي ستلغيها في شهر عسر
+              رغبات بحكم التعريف، مهما كانت صحية.
+            </li>
+            <li>
+              <strong>الحد الأدنى لأقساط الدين احتياج؛ والدفع الزائد ادخار.</strong> وإلا دفع قرض
+              كبير الضرورات إلى ما بعد 50% وانهارت الخطة.
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">حين لا تناسبك القاعدة</h2>
+          <p>
+            يفترض تقسيم 50/30/20 أن السكن يأخذ أقل بكثير من نصف راتبك. في لندن أو دبلن أو تورونتو
+            أو سيدني أو مومباي أو سان فرانسيسكو — أو على دخل واحد مع رعاية أطفال — غالبًا ما يكون
+            هذا الافتراض خاطئًا. وثلاث صيغ صادقة:
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20.</strong> يدفع السكن الاحتياجات إلى 60%. تنكمش الرغبات إلى 20% وتبقى
+              المدخرات 20%، لأن المستقبل هو الجزء الذي لا يمكن استلافه.
+            </li>
+            <li>
+              <strong>70/20/10.</strong> مدينة مرتفعة التكاليف وراتب مبتدئ. و10% مدخرة عادة حقيقية؛
+              والصفر ليس كذلك.
+            </li>
+            <li>
+              <strong>الميزانية الصفرية.</strong> أعطِ كل وحدة دخل وظيفة في بداية الشهر. عمل أكثر
+              من نسبة مئوية، وأفضل للدخل غير المنتظم.
+            </li>
+          </ul>
+          <p>
+            الدخل المتغيّر يحتاج آلية مختلفة: ضع الميزانية من أدنى شهر قريب واعتبر الفائض مدخرات،
+            بدلًا من التخطيط من أفضل شهر والدعاء. وتبقى النسبة مفيدة كمراجعة في نهاية السنة، لا
+            كأمر شهري.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="لوحة معلومات Spendwise لأكتوبر 2026 تعرض 2,095.50 دولارًا منفقة هذا الشهر مقابل ميزانية قدرها 6,000.00 دولار موسومة «على المسار»، ودخلًا قدره 5,320.00 دولارًا ورصيدًا صافيًا قدره 3,224.50 دولارًا، وشريط مجموعات، والفواتير المتكررة التي لم تُسجّل بعد."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                ميزانية شهرية واحدة، مع حجز الفواتير التي لم تُسجّل بعد مقابلها.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="تقرير أكتوبر 2026 يعرض 2,095.50 دولارًا منفقة مقابل ميزانية 6,000.00 دولار، والدخل والرصيد الصافي، ومخطط دائري للإنفاق حسب الفئة يبدأ بالإيجار عند 1,400.00 دولار."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>فئات الشهر، جاهزة للمقارنة مع تقسيمك.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">اجعل الـ20% تخرج قبل أن تراها</h2>
+          <p>
+            التقسيم الذي يعتمد على الإرادة يخسر أمام تقسيم يعتمد على أمر دفع دائم. حوّل الـ20% يوم
+            الراتب، لا في نهاية الشهر، واحفظها في حساب يضايقك الوصول إليه قليلًا. وينطبق الشيء نفسه
+            على الفواتير المتكررة: إذا خرج الإيجار والمرافق في تواريخ معلومة، فمالها مصروف سلفًا،
+            مهما قال الرصيد.
+          </p>
+          <p>
+            السؤال الباقي — ماذا أنفقت فعلًا؟ — مشكلة تتبّع لا مشكلة ميزانية. يحفظ Spendwise السجل في
+            قاعدة بيانات SQLite محلية على الهاتف، مع ميزانية شهرية واحدة تحجز الفواتير المتكررة
+            المعروفة، وتذكير في 19:00، وتصدير PDF أو XLSX في نهاية الشهر. وهو لا يحسب تقسيم 50/30/20؛
+            عيّن إجمالي 50% ميزانيةً، وسجّل أثناء الإنفاق، وقارن التقرير بالخطة.
+          </p>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+          <details class="faq">
+            <summary>هل تُحسب قاعدة 50/30/20 على الراتب الإجمالي أم على صافي الراتب؟</summary>
+            <div class="faq__body">
+              <p>
+                على صافي الراتب: المبلغ الذي يصل فعلًا إلى حسابك بعد الضريبة وأي خصومات تقاعدية أو
+                كشوف رواتب. استخدام الراتب الإجمالي يضخّم كل بند، ويصنع ميزانية تبدو جيدة على الورق
+                وتفشل في البنك.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>ما الذي يُعدّ احتياجًا في قاعدة 50/30/20؟</summary>
+            <div class="faq__body">
+              <p>
+                الإيجار أو القسط العقاري، والمرافق، والبقالة، والانتقال إلى العمل، والتأمين، والحد
+                الأدنى لأقساط الدين، والأدوية الضرورية. كل ما ستواصل دفعه لو فقدت عملك هو احتياج.
+                أما النادي الذي يمكنك إلغاؤه، وحزمة البث، والسيارة الثانية، فهي رغبات.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>ماذا لو كان إيجاري وحده أكثر من 50%؟</summary>
+            <div class="faq__body">
+              <p>
+                القاعدة نقطة بداية لا قانون. في مدينة مرتفعة التكاليف، تكون 60/20/20 أو 70/20/10 هي
+                الصيغة الصادقة: أبقِ 20% حقيقية للمدخرات والدين، وخُذ النقص من الرغبات أولًا.
+                وتخفيض المدخرات لحماية الرغبات يقلب الأولوية.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>هل تخزّن الحاسبة دخلي؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. تجري العملية الحسابية في متصفحك، ولا يُرسل شيء إلى أي مكان، ولا تحمّل الصفحة أي
+                سكربت خارجي. وإعادة تحميل الصفحة تمحو كل ما كتبته.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>هل تطبيق Spendwise ميزانية 50/30/20؟</summary>
+            <div class="faq__body">
+              <p>
+                ليس مباشرة. يحتفظ Spendwise بميزانية شهرية واحدة ويحجز منها الفواتير المتكررة
+                المعروفة، فيكون المتبقي هو ما تستطيع إنفاقه بحرية. استخدم هذه الصفحة لاختيار
+                الإجماليات، ثم عيّن رقم 50% ميزانيةً شهرية وسجّل الإنفاق مقابله.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="مزيد من الأدوات والأدلة">
+            <h2>مزيد من الأدوات والأدلة</h2>
+            <ul>
+              <li><a href="/ar/split-bill-calculator">حاسبة تقسيم الفاتورة</a></li>
+              <li><a href="/ar/subscription-cost-calculator">حاسبة تكلفة الاشتراكات</a></li>
+              <li><a href="/ar/split-expenses-with-friends">اقتسام المصاريف مع الأصدقاء</a></li>
+              <li><a href="/ar/offline-expense-tracker">متتبّع مصاريف دون اتصال</a></li>
+              <li><a href="/ar/expense-tracker-without-signup">متتبّع مصاريف دون تسجيل</a></li>
+              <li><a href="/ar/expense-tracker-vs-spreadsheet">Spendwise مقابل جدول بيانات</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>خطّط التقسيم، ثم تابع ما يحدث</h2>
+          <p>
+            Spendwise مجاني، ولا يحتاج حسابًا، ولا يحمل معرّف تتبّع. عيّن الميزانية، وسجّل الإنفاق،
+            وصدّر الشهر.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ar/private-expense-tracker">اقرأ صفحة الخصوصية</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>家計簿アプリと表計算ソフト：どちらが速い</title>
+    <meta
+      name="description"
+      content="表計算ソフトは無料で柔軟、スマホのアプリは入力が速い。それぞれが勝つ場面と、数字を両者の間で移す方法を説明します。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="家計簿アプリと表計算ソフト：どちらが速い" />
+    <meta
+      property="og:description"
+      content="表計算ソフトは、これまでに作られた中で最も正直な予算管理ツールです。それが今も勝つ場面、アプリが上回る場面、そして両方を併用する方法を紹介します。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのロゴ：青いグラデーションの上に白いプログレスリングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "家計簿アプリと表計算ソフト",
+            "item": "https://spendwise.download/ja/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "今使っている表計算をSpendwiseにインポートできますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。SpendwiseにはCSVや表計算のインポート機能がありません。バックアップの復元は独自の.spendwiseファイルだけを受け付けるため、古いシートを移すには履歴を手で入力するか、今月からきれいに始めることになります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseのデータを表計算にエクスポートできますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。1か月分または1年分を、サマリーシートと月次表を含むXLSXとして、画面のレポートを写したPDFと一緒にエクスポートできます。どちらもAndroidの Download/Spendwise に書き出されます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "アプリは表計算の数式を置き換えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。アプリは予算に関する問いに直接答え、数字をエクスポートしますが、計算の場になるわけではありません。独自の数式が必要なら、シートを残してそこへエクスポートしてください。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "表計算のほうがアプリよりプライベートですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ファイルが端末に残り、スイートが同期しないなら、そう言えます。Spendwiseは同じ約束を別の形で果たします。台帳はローカルのデータベースで、アカウントはなく、サーバー上にコピーもありません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "家庭の予算にはどちらが向いていますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1人がパソコンですべて入力し、独自のレポートを求めるなら表計算ソフト。支出をスマホでその場で記録するなら、または複数人が残高を見る必要があるならアプリです。ファイルで共有するシートは版の衝突を招きます。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">比較</p>
+          <h1>家計簿アプリと表計算ソフト、正直な比較</h1>
+          <p class="doc-hero__lede">
+            表計算ソフトは、これまでに作られた中で最も正直な予算管理ツールです。無料で、中身が
+            すべて見え、自分の手で形を決められます。ただし、帳簿づけを机の前でやることを求めて
+            きます。このページでは、その交換条件が通用しなくなる場面と、そうでない場面を扱います。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026年10月20日 &nbsp;·&nbsp;
+            <strong>エクスポート：</strong>PDFとXLSX &nbsp;·&nbsp;
+            <strong>インポート：</strong>設計上なし
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">表計算ソフトが本当に強いところ</h2>
+          <ul>
+            <li>
+              <strong>費用もインストールも不要。</strong>どの端末にも、すでに入っています。しかも
+              ずっと使えます。
+            </li>
+            <li>
+              <strong>数式は自分のもの。</strong>貯蓄率、移動平均、給料日ごとの按分など、思いつく
+              表示はどれも列をひとつ足すだけです。
+            </li>
+            <li>
+              <strong>何も抽象化されていない。</strong>すべてのセルが見え、すべての合計を検算でき、
+              誤りはその場所で直せます。
+            </li>
+            <li>
+              <strong>そのまま保管庫にもなる。</strong>1つのファイルに何年分の履歴も入り、その形式は
+              ほとんどのアプリより長く残ります。
+            </li>
+          </ul>
+          <p>
+            コーヒーを片手に毎週日曜にシートを突き合わせるのが苦にならない人なら、アプリで家計が
+            良くなることはありません。変わるのは作業の流れだけです。
+          </p>
+
+          <h2 id="spreadsheet-breaks">通用しなくなる場面</h2>
+          <p>
+            問題は計算ではありません。お金が出ていった瞬間と、それが1行になる瞬間のあいだにある
+            摩擦です。
+          </p>
+          <ul>
+            <li>
+              <strong>レジ前での入力。</strong>ファイルを開き、次の空行を探し、日付とカテゴリと
+              金額を打ち、保存し直す。これをスマホでやるのは1分の作業ですが、レジの前でやる人は
+              いません。データは、届いたとしても1週間遅れで届きます。
+            </li>
+            <li>
+              <strong>記憶がない。</strong>シートは記録を促してくれませんし、家賃がまもなく
+              引き落とされることも知りません。
+            </li>
+            <li>
+              <strong>打ち間違いがカテゴリになる。</strong>カテゴリ名を1文字打ち間違えるだけで、
+              数式エラーも出ないままカテゴリ合計が嘘になります。
+            </li>
+            <li>
+              <strong>版の衝突。</strong>2人が「予算2026 最終 v3.xlsx」を同時に編集するのは、
+              家庭版のマージ衝突です。決着をつけるのは最後に保存した人になります。
+            </li>
+            <li>
+              <strong>毎月の固定費は頭の中にある。</strong>家賃の引き落とし分を手で組み込まない
+              限り、月半ばの「残り予算」は作り話になります。
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">並べて比較</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">重視する点</th>
+                  <th scope="col">表計算ソフト</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">費用</th>
+                  <td>無料、またはすでに払っているスイートの範囲で。</td>
+                  <td>無料。非パーソナライズの広告1件で支えています。</td>
+                </tr>
+                <tr>
+                  <th scope="row">支出の記録</th>
+                  <td>スマホで1行：ファイル、行、日付、カテゴリ、金額、保存。</td>
+                  <td>金額、カテゴリ、確認。確認画面が広告画面です。</td>
+                </tr>
+                <tr>
+                  <th scope="row">予算の確認</th>
+                  <td>自分で組んだ数式しだい。</td>
+                  <td>既知の毎月の請求を確保した月次予算。</td>
+                </tr>
+                <tr>
+                  <th scope="row">リマインダー</th>
+                  <td>なし。</td>
+                  <td>毎日19:00のリマインダー、カテゴリごとの定期リマインダー。</td>
+                </tr>
+                <tr>
+                  <th scope="row">領収書</th>
+                  <td>別ファイル。関連づけるなら手作業。</td>
+                  <td>写真かPDFを支出に添付し、バックアップにも含める。</td>
+                </tr>
+                <tr>
+                  <th scope="row">レポート</th>
+                  <td>作るのも説明するのも自分。</td>
+                  <td>月次・年次レポートをPDFまたはXLSXでエクスポート。</td>
+                </tr>
+                <tr>
+                  <th scope="row">独自の分析</th>
+                  <td>無制限。</td>
+                  <td>不得意分野。エクスポートしてシートで計算。</td>
+                </tr>
+                <tr>
+                  <th scope="row">データの置き場所</th>
+                  <td>ファイル。置きたい場所に。</td>
+                  <td>スマホ上のSQLiteデータベース。自分で保管するファイルにバックアップ。</td>
+                </tr>
+                <tr>
+                  <th scope="row">相手からのインポート</th>
+                  <td>コピー＆ペースト。</td>
+                  <td>なし。CSVインポートはありません。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="取引を追加する画面。金額は$47.82、支出が選択され、カテゴリの食費が強調表示され、日付は今日、領収書または書類の行から写真かPDFを選べます。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>画面は1つ。金額とカテゴリを入れて確認するだけ。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026年10月のレポート。予算$6,000.00に対して支出$2,095.50、収入と収支、カテゴリ別支出のドーナツグラフがあり、先頭は家賃の$1,400.00です。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                シートで作っていたはずのレポートが、すでに出来ていて、しかもエクスポートできます。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="日ごとにまとまった取引履歴と検索欄。日曜の市場、コーヒーと昼食、薬局、映画館が並び、それぞれの日に収支が付いています。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>日ごとにまとまった履歴。検索でき、その日の収支もわかります。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">両方使う：エクスポートが橋になる</h2>
+          <p>
+            多くの人にとって妥当な答えは「表計算ソフトを置き換える」ではなく、「行を手で打つのを
+            やめて、エクスポートする」です。
+          </p>
+          <p>
+            Spendwiseは1か月分または1年分を<strong>XLSX</strong>（合計とカテゴリ内訳のサマリー
+            シート、月次表）として、また画面のレポートをそのまま写した<strong>PDF</strong>として
+            エクスポートします。どちらもAndroidの<code>Download/Spendwise</code>に書き出され、
+            共有シートも第2の経路になります。表計算ソフトは分析の層に、アプリは記録の層になります。
+          </p>
+          <p>
+            できないのはインポートです。CSVインポートはなく、古いシートを読み込む方法もないので、
+            移行するなら過去を手で入力するか、今月から新しく始めることになります。これは意図的な
+            上限です。任意の表計算をうまく解析するのはそれ自体が大きな仕事であり、雑なインポートは
+            台帳を静かに壊します。
+          </p>
+
+          <h2 id="fit">どちらを使うべきか</h2>
+          <ul>
+            <li>
+              <strong>シートのままでよい人。</strong>週に一度、机で記録し、独自の数式が欲しく、
+              今のやり方をすでに信頼しているなら。
+            </li>
+            <li>
+              <strong>アプリを使う人。</strong>机から離れた場所で支出が起きる、リマインダーや家賃の
+              予定を把握した予算が欲しい、領収書を支出と一緒に置きたいなら。
+            </li>
+            <li>
+              <strong>両方を使う人。</strong>速い記録と深い分析の両方が欲しいなら。スマホはアプリ、
+              それ以外はシート、月末にエクスポート。
+            </li>
+          </ul>
+
+          <h2 id="faq">よくある質問</h2>
+
+          <details class="faq">
+            <summary>今使っている表計算をSpendwiseにインポートできますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。SpendwiseにはCSVや表計算のインポート機能がありません。バックアップの復元は
+                独自の<code>.spendwise</code>ファイルだけを受け付けるため、古いシートを移すには
+                履歴を手で入力するか、今月からきれいに始めることになります。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseのデータを表計算にエクスポートできますか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。1か月分または1年分を、サマリーシートと月次表を含むXLSXとして、画面の
+                レポートを写したPDFと一緒にエクスポートできます。どちらもAndroidの
+                <code>Download/Spendwise</code>に書き出されます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>アプリは表計算の数式を置き換えますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。アプリは予算に関する問いに直接答え、数字をエクスポートしますが、計算の場に
+                なるわけではありません。独自の数式が必要なら、シートを残してそこへエクスポート
+                してください。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>表計算のほうがアプリよりプライベートですか？</summary>
+            <div class="faq__body">
+              <p>
+                ファイルが端末に残り、スイートが同期しないなら、そう言えます。Spendwiseは同じ
+                約束を別の形で果たします。台帳はローカルのデータベースで、アカウントはなく、
+                サーバー上にコピーもありません。詳しくは
+                <a href="/ja/private-expense-tracker">ここでの「プライベート」の意味</a>を
+                ご覧ください。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>家庭の予算にはどちらが向いていますか？</summary>
+            <div class="faq__body">
+              <p>
+                1人がパソコンですべて入力し、独自のレポートを求めるなら表計算ソフト。支出をスマホで
+                その場で記録するなら、または複数人が残高を見る必要があるならアプリです。ファイルで
+                共有するシートは版の衝突を招きます。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="その他のガイド">
+            <h2>その他のガイド</h2>
+            <ul>
+              <li><a href="/ja/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ja/offline-expense-tracker">オフラインの家計簿アプリ</a></li>
+              <li><a href="/ja/expense-tracker-without-signup">登録不要の家計簿アプリ</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベートな家計簿アプリ</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友だちと支出を分ける</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>スマホで記録し、シートで分析する</h2>
+          <p>
+            無料、アカウント不要、トラッキングIDなし。月をXLSXでエクスポートして、数式は
+            しかるべき場所に置いておけます。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >Google Playで入手</a
+            >
+            <a class="btn btn--ghost" href="/ja/offline-expense-tracker">オフラインでできることを見る</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

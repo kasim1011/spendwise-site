@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>50/30/20 预算计算器：把收入分成三份</title>
+    <meta
+      name="description"
+      content="用 50/30/20 法则把税后收入分成必要开支、想要和储蓄。免费、无需账号，也直说这条法则什么时候不适用。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="50/30/20 预算计算器：把收入分成三份" />
+    <meta
+      property="og:description"
+      content="免费的 50/30/20 计算器、它背后的算法，以及房租吃掉收入一半以上时该怎么办。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 标志：蓝色渐变上的白色进度环，环中有一个对勾。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "50/30/20 预算计算器",
+            "item": "https://spendwise.download/zh-hans/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "50/30/20 是按税前还是税后收入算？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "税后收入：扣除税费、养老金或工资扣款之后，真正进入你账户的金额。用税前工资会把每一项都撑大，做出一个纸面上好看、到了银行就崩掉的预算。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "50/30/20 法则里，什么算必要开支？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "房租或房贷、水电、食品杂货、通勤、保险、最低还款和必需的药物。失业后你还会继续付的，就是必要开支。可以退掉的健身房、流媒体套餐和第二辆车，都是想要。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "光房租就超过 50% 怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "这条法则是起点，不是法律。在高成本城市，60/20/20 或 70/20/10 才是诚实的版本：为储蓄和还债留出真正的 20%，缺口先从想要里补。为了保住想要而削减储蓄，是把优先级倒过来了。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "计算器会保存我的收入吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。计算在你的浏览器里完成，什么都不发送，网站也不加载任何第三方脚本。刷新页面就会清空你输入的一切。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 应用是 50/30/20 预算吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不完全是。Spendwise 只有一个每月预算，并为已知的定期账单预留金额，剩下的数字才是你可以自由花的钱。用这一页定下各项总额，然后把 50% 那个数字设成每月预算，再把支出记在它下面。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">免费工具</p>
+          <h1>50/30/20 预算计算器</h1>
+          <p class="doc-hero__lede">
+            一步把税后收入分成必要开支、想要和储蓄，再看看这条法则漏掉了什么。没有账号，不用注册，也没有跟踪 ID：计算全部在你的浏览器里完成。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>输入：</strong>税后收入 &nbsp;·&nbsp; <strong>价格：</strong>免费
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">你的数字</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>每月税后收入 · 扣除税费和其他项目之后</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>分配结果</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>必要开支 · 50%</dt>
+                  <dd data-out="needs">2,000.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>想要 · 30%</dt>
+                  <dd data-out="wants">1,200.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>储蓄与还债 · 20%</dt>
+                  <dd data-out="savings">800.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>每天 · 按 30 天一个月</dt>
+                  <dd data-out="day">133.33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                金额以你输入时使用的货币为准，四舍五入到分。这个页面是规划工具，不是账本；它什么都不保存。
+              </p>
+            </div>
+            <noscript>
+              <p>
+                计算器需要 JavaScript。法则本身仍然简单：税后收入的 50% 用于必要开支，30% 用于想要，20% 用于储蓄和还债——取一半、取三分之一、取五分之一。
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">50/30/20 法则到底说了什么</h2>
+          <p>
+            这条法则因 Elizabeth Warren 与 Amelia Warren Tyagi 的
+            <em>All Your Worth</em>（2005）而流行。它的主张很窄，也很有用：进入你账户的钱里，一半可以交给必须承担的义务，十分之三给自由支配的生活，五分之一留给未来。这个划分和你的薪水、国家、银行都没有关系。
+          </p>
+          <p>
+            它的力量在于，这是<strong>必要开支的上限</strong>，而不是目标。多数理财建议都叫你少花多存，却不说「少」是多少。这里，50% 那条线是一个诊断：如果必要开支越过了它，问题就是结构性的——房租、通勤、托育——再好的优惠券应用也修不好。
+          </p>
+
+          <h2 id="how-to-read">三个数字怎么读</h2>
+          <ul>
+            <li>
+              <strong>必要开支，50%。</strong>房租或房贷、水电、食品杂货、通勤、保险、最低还款、必需的药物。判断标准很简单：如果明天失业，第一个月你还会付这笔钱吗？
+            </li>
+            <li>
+              <strong>想要，30%。</strong>餐厅、订阅、旅行、爱好、一部比需要更好的手机。当另外两项吃紧时，这一项负责补缺口——储蓄下滑时，也是第一个该看的地方。
+            </li>
+            <li>
+              <strong>储蓄与还债，20%。</strong>应急基金、养老、投资，以及贷款最低还款之外的任何还款。偿还高息债务是回报最高的储蓄，所以它属于这里，而不是必要开支。
+            </li>
+          </ul>
+          <p>
+            每月 4,000 的话，就是 2,000、1,200 和 800。每天的数字——大约 133——并不在原版法则里。它在这里，是因为一个月度数字太大，一周之内感觉不到，而「今天这笔我付得起吗」才是人们真正会问的问题。
+          </p>
+
+          <h2 id="blur">分类模糊的地方</h2>
+          <p>
+            每一场 50/30/20 的争论，其实都是在争某一笔开销。以下几条判断经得起推敲：
+          </p>
+          <ul>
+            <li>
+              <strong>食品杂货是必要开支；配送费是想要。</strong>分开记。把点外卖的习惯算进「吃饭」，可能藏着一笔四位数的年度「想要」预算。
+            </li>
+            <li>
+              <strong>汽车是混合的。</strong>车贷、保险和通勤用的油是必要开支；升级的配置不是。如果实在不行你可以坐公交上班，诚实的必要开支就是公交票价，差额算是想要。
+            </li>
+            <li>
+              <strong>健身房是想要——除非医生开的处方。</strong>坏月份里你会退掉的会员，无论多健康，按定义都是想要。
+            </li>
+            <li>
+              <strong>最低还款是必要开支；多还的部分是储蓄。</strong>否则一笔大额贷款会把必要开支推过 50%，整个计划就垮了。
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">法则不合用的时候</h2>
+          <p>
+            50/30/20 假设住房远低于收入的一半。在伦敦、都柏林、多伦多、悉尼、孟买或旧金山——或者靠一份收入还要付托育——这个假设常常不成立。三种诚实的变体：
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20。</strong>住房把必要开支推到 60%。想要压缩到 20%，储蓄保持 20%，因为未来是你借不回来的那部分。
+            </li>
+            <li>
+              <strong>70/20/10。</strong>高成本城市里的起薪。存下 10% 仍然是真实的习惯；0 不是。
+            </li>
+            <li>
+              <strong>零基预算。</strong>月初就给每一单位收入派一个用途。比按比例更费事，但对不规律的收入更合适。
+            </li>
+          </ul>
+          <p>
+            浮动收入需要另一套机制：按最近最低的那个月做预算，把多出来的部分当作储蓄，而不是按最好的月份做预算然后祈祷。百分比在年底作为检查仍然有用，但不适合当作每月的指令。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="Spendwise 2026 年 10 月的概览：本月在 6,000.00 美元的预算下已花 2,095.50 美元，状态为「进展正常」，收入 5,320.00 美元，净余额 3,224.50 美元，还有一排分组，以及尚未记录的定期账单。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                一个月度预算，还没记的账单已经预留出来。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026 年 10 月的报告：在 6,000.00 美元的预算下已花 2,095.50 美元，含收入和净余额，以及按分类的环形图，第一项是 1,400.00 美元的房租。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>这个月的分类，正好拿来和你的分配对照。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">让那 20% 在你看见之前就离开</h2>
+          <p>
+            靠意志力的分配，会输给靠自动转账的分配。发薪日就把 20% 转走，别等到月底，并把它放在一个取起来有点麻烦的账户里。定期账单同理：如果房租和水电在固定日期扣款，那笔钱其实已经花掉了，不管余额显示什么。
+          </p>
+          <p>
+            剩下的问题是——我到底花了多少？——这是记账问题，不是预算问题。Spendwise 把账本作为本地 SQLite 数据库存在手机上，一个每月预算会预留已知的定期账单，19:00 提醒，月底可以导出 PDF 或 XLSX。它不会计算 50/30/20 的分配；把 50% 的总额设成预算，边花边记，再把报告和计划对照。
+          </p>
+
+          <h2 id="faq">常见问题</h2>
+          <details class="faq">
+            <summary>50/30/20 是按税前还是税后收入算？</summary>
+            <div class="faq__body">
+              <p>
+                税后收入：扣除税费、养老金或工资扣款之后，真正进入你账户的金额。用税前工资会把每一项都撑大，做出一个纸面上好看、到了银行就崩掉的预算。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>50/30/20 法则里，什么算必要开支？</summary>
+            <div class="faq__body">
+              <p>
+                房租或房贷、水电、食品杂货、通勤、保险、最低还款和必需的药物。失业后你还会继续付的，就是必要开支。可以退掉的健身房、流媒体套餐和第二辆车，都是想要。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>光房租就超过 50% 怎么办？</summary>
+            <div class="faq__body">
+              <p>
+                这条法则是起点，不是法律。在高成本城市，60/20/20 或 70/20/10 才是诚实的版本：为储蓄和还债留出真正的 20%，缺口先从想要里补。为了保住想要而削减储蓄，是把优先级倒过来了。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>计算器会保存我的收入吗？</summary>
+            <div class="faq__body">
+              <p>
+                不会。计算在你的浏览器里完成，什么都不发送，网站也不加载任何第三方脚本。刷新页面就会清空你输入的一切。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise 应用是 50/30/20 预算吗？</summary>
+            <div class="faq__body">
+              <p>
+                不完全是。Spendwise 只有一个每月预算，并为已知的定期账单预留金额，剩下的数字才是你可以自由花的钱。用这一页定下各项总额，然后把 50% 那个数字设成每月预算，再把支出记在它下面。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="更多工具和指南">
+            <h2>更多工具和指南</h2>
+            <ul>
+              <li><a href="/zh-hans/split-bill-calculator">账单分摊计算器</a></li>
+              <li><a href="/zh-hans/subscription-cost-calculator">订阅费用计算器</a></li>
+              <li><a href="/zh-hans/split-expenses-with-friends">和朋友分摊费用</a></li>
+              <li><a href="/zh-hans/offline-expense-tracker">离线记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-without-signup">不用注册的记账工具</a></li>
+              <li><a href="/zh-hans/expense-tracker-vs-spreadsheet">Spendwise 与电子表格对比</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>先规划分配，再记录发生的一切</h2>
+          <p>
+            Spendwise 免费，无需账号，也没有跟踪 ID。设好预算，记下支出，月底导出。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/zh-hans/private-expense-tracker">阅读隐私页面</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpendeeとSpendwise：クラウド同期か端末内の家計簿か</title>
+    <meta
+      name="description"
+      content="Spendeeはアカウントと有料プランで同期。SpendwiseはAndroid端末内でオフライン管理し、無料・登録不要。機能とプライバシーを比較します。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta
+      property="og:title"
+      content="SpendeeとSpendwise：クラウド同期か、端末内の家計簿か"
+    />
+    <meta
+      property="og:description"
+      content="一方は支出をクラウドのアカウントに保存し、もう一方は端末内に保ちます。料金、プライバシー、共有、データの取り出しがどう変わるか。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青いグラデーションの上に白い進捗リングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SpendeeとSpendwise：クラウド同期か端末内の家計簿か",
+            "item": "https://spendwise.download/ja/expense-tracker-vs-spendee"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "SpendwiseはSpendeeと同じアプリですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。SpendeeはプラハのSPENDEE a.s.が開発しています。Spendwiseは別の開発者による独立したAndroidアプリです。名前が似ているため、一方を探している人がもう一方を見つけてしまい、それがこのページがある理由です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseを使うのにアカウントは必要ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。登録も、メールアドレスも、パスワードもありません。初回起動時に言語と通貨を尋ね、そのままアプリが開きます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseはインターネット接続なしで動きますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。記録、予算、グループ、レポート、バックアップと復元はすべてローカルです。確認画面の広告1件だけは表示に接続が必要で、オフラインではプレースホルダーが表示されますが、アプリのほかの部分は影響を受けません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseのデータを新しい端末に移すには？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "設定、バックアップと復元、バックアップファイルを作成の順に進みます。ファイルには取引、カテゴリ、予算、人物、グループ、添付レシートが入っています。新しい端末ではバックアップファイルを選択を選びます。復元すると安全のためのスナップショットのあとに現在のデータが置き換わります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseは無料ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。サブスクリプションもアプリ内課金もありません。取引の確認画面の非パーソナライズ広告1件がアプリを支え、匿名の画面分析は設定でオフにできます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "SpendwiseはiPhoneで動きますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。SpendwiseはAndroid 10以降向けのAndroidアプリです。SpendeeはAndroid、iOS、ウェブで利用できます。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">コンテンツへスキップ</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spendee" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spendee" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spendee" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spendee" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spendee" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spendee" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spendee" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/expense-tracker-vs-spendee" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spendee" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spendee" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spendee" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">比較</p>
+          <h1>SpendeeとSpendwise：クラウド同期か、端末内の家計簿か</h1>
+          <p class="doc-hero__lede">
+            どちらのアプリも支出を記録し、1か月にいくらかかったかを教えてくれます。両者が分かれるのはただ一点、そのほかのすべてがそこから決まる点です。支出がほかの誰かのサーバー上のアカウントに置かれるのか、それとも端末内のデータベースに置かれるのか。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong> 2026年10月20日 &nbsp;·&nbsp;
+            <strong>Spendwise：</strong> Android 10以降 &nbsp;·&nbsp;
+            <strong>Spendeeの料金：</strong> 同日に同社の料金ページで確認
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="short-answer">結論から言うと</h2>
+          <p>
+            銀行の取引を自動で取り込んでほしい、家計簿をスマートフォンでもウェブアプリでも見たい、2台の端末をほかの誰かのサーバーに同期してほしい。そういう場合は<strong>Spendee</strong>を選んでください。ログインするより自分で支出を入力したい、飛行機の中でも動いてほしい、すでに機能している予算と自分の間にサブスクリプションを挟みたくない。そういう場合は<strong>Spendwise</strong>です。
+          </p>
+          <p>
+            この比較は2つのアプリのうち一方の開発者が書いたものなので、判定ではなく主張として読んでください。下の表は、Spendeeが優れていない点だけでなく、本当に優れている点も示しています。
+          </p>
+
+          <h2 id="side-by-side">並べて比較</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">重視する点</th>
+                  <th scope="col">Spendwise</th>
+                  <th scope="col">Spendee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">アカウント</th>
+                  <td>なし。メールアドレスもパスワードもプロフィールもありません。</td>
+                  <td>アプリとウェブアプリの両方にサインインし、データはそれに紐づきます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">記録の保存場所</th>
+                  <td>端末内のSQLiteデータベース。サーバー上のコピーはありません。</td>
+                  <td>Spendeeのクラウドに保存され、端末間で同期されます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">料金</th>
+                  <td>無料。非パーソナライズ広告が1件あるだけで、アプリ内課金はありません。</td>
+                  <td>
+                    無料のBasicプラン。Plusは月額1.99ドルまたは年額14.99ドル、Premiumは月額5.99ドルまたは年額35.99ドルで、7日間のトライアル付き。
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">無料プランに含まれるもの</th>
+                  <td>グループを含む、アプリのすべての機能。</td>
+                  <td>Basicでは現金ウォレット1つと予算1つ。</td>
+                </tr>
+                <tr>
+                  <th scope="row">銀行口座との連携</th>
+                  <td>なし。支出は1件ずつ入力しますが、数秒で終わります。</td>
+                  <td>有料機能で、取り込んだ取引は自動で分類されます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">予算を誰かと共有する</th>
+                  <td>
+                    グループ：旅行や世帯ごとに独自の家計簿、人物、予算、精算を持ち、すべて端末内で完結します。
+                  </td>
+                  <td>PlusとPremiumでは、ほかのSpendeeユーザーとウォレットを共有できます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">対応プラットフォーム</th>
+                  <td>Android 10以降。</td>
+                  <td>Android、iOS、ウェブアプリ。</td>
+                </tr>
+                <tr>
+                  <th scope="row">データの取り出し</th>
+                  <td>
+                    月ごと・年ごとのPDFまたは表計算ファイルに加え、すべての行とレシートをまとめた1ファイルのバックアップ。
+                  </td>
+                  <td>取引のインポートとエクスポート。3つのプランすべてで利用できます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">トラッキングと広告</th>
+                  <td>
+                    トラッキングIDはありません。確認画面に非パーソナライズ広告が1件。オフにできる匿名の画面分析。
+                  </td>
+                  <td>Spendee自身のプライバシーポリシーを確認してください。ここでは要約しません。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="what-differs">アカウントがないことで実際に変わること</h2>
+          <p>
+            表は機能の一覧です。ローカルの家計簿を選ぶ理由は、アカウントがなくなったあと、それらの機能がどう感じられるかにあります。
+          </p>
+
+          <h3>サインインする先がなく、壊れるものもない</h3>
+          <p>
+            Spendwiseは言語と通貨を選ぶ画面から始まり、そのまま家計簿が開きます。コーヒーの列に並んでいる最中に失敗するログイン画面も、パスワードの再設定も、期限切れになるセッションもありません。つまり、自分の支出履歴から誰かに締め出されることもありません。それを保持するサーバーが存在しないからです。
+          </p>
+
+          <h3>代償は現実です：バックアップは自分のもの</h3>
+          <p>
+            クラウドのアカウントはバックアップの役目も果たします。Spendwiseは意図的にそうしておらず、アプリをアンインストールすると家計簿は削除されます。代わりになるのは自分で管理するファイルです。<strong>設定 → バックアップと復元 → バックアップファイルを作成</strong>を実行すると、すべての取引、カテゴリ、予算、人物、グループ、添付レシートが1つの<code>.spendwise</code>ファイルとして<code>Download/Spendwise</code>に書き出されます。新しい端末で復元すれば、元の状態に戻ります。ファイルは暗号化されていないので、銀行の明細書を保管するのと同じ場所に置いてください。
+          </p>
+
+          <h3>グループは標準で付いてきて、しかもローカル</h3>
+          <p>
+            グループは2冊目の家計簿です。旅行、シェアハウス、結婚式。独自のカテゴリ、予算、人物、メモ、精算を持つので、旅行の出費が世帯の数字を濁すことはありません。グループを解放するためのサブスクリプションも、承諾すべき招待もありません。正直な代償は、グループのほかのメンバーの端末にその写しがリアルタイムで届かないことです。家計簿を保つのは1人であり、1人が保つからこそ正確なのです。
+          </p>
+
+          <h3>広告は1件、分析はオフにできる</h3>
+          <p>
+            Spendwiseに広告はあり、そうでないふりはしません。確認画面に非パーソナライズ広告が1件だけあり、そこはすでに作業が終わった場所です。トラッキングIDはありません。匿名の画面分析はアプリの改善に役立ち、設定にオン／オフのスイッチがあります。オフはオフであって「少なく」ではありません。プライバシーポリシーに両方とも明記しています。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="2026年10月のSpendwiseダッシュボード。予算6,000.00ドルに対して支出2,095.50ドルで「順調」と表示され、収入5,320.00ドル、純残高3,224.50ドル、そしてグループの帯が並んでいます。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                ダッシュボードが最初に答えるのは、今月いくらかかったか、予算はいくら残っているか、この先に何が控えているかです。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="グループタブ。8カテゴリのFlat 4Bと4カテゴリのVoyage en Franceが並び、各カードにグループの支出額が表示されています。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                各グループは独自のコンテキストで、カテゴリ、予算、人物もそれぞれ別です。メインの家計簿に付けるタグではありません。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026年10月のレポート。予算6,000.00ドルに対して支出2,095.50ドル、収入と純残高、そして家賃1,400.00ドルから始まるカテゴリ別支出のドーナツグラフ。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                月次と年次のレポートは、アカウントなしでPDFまたは表計算ファイルとして書き出せます。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="spendee-wins">Spendeeのほうが良い選択になる場合</h2>
+          <p>サーバーなしでは難しいことが3つあり、Spendeeはその3つすべてを実現しています：</p>
+          <ul>
+            <li>
+              <strong>銀行口座との連携と自動分類。</strong>支出を入力する気がまったくないなら、オフラインの家計簿アプリは勝てません。Spendeeは有料プランで取引を取り込み、分類までしてくれます。
+            </li>
+            <li>
+              <strong>2台の端末が本当に同期する。</strong>スマートフォン、ウェブアプリ、そしてもう1人のスマートフォン。アカウントで手に入るのはまさにそれです。Spendwiseは設計上、1台のスマートフォンです。
+            </li>
+            <li>
+              <strong>iPhoneとウェブ。</strong>SpendwiseはAndroid専用です。手元の端末がAndroidでないなら、この比較はそこで終わりです。
+            </li>
+          </ul>
+          <p>
+            Spendeeはまた、より古く大きな製品です。それは機能表には表れにくい点に出ます。銀行リストに載る通貨の種類の多さ、長年かけて直されてきた例外的なケースの多さ。どちらのアプリも無料で試せ、Spendeeの有料プランは月にコーヒー1杯より安い価格から始まるので、両方を試すのにかかるのはお金ではなく午後1つ分です。
+          </p>
+
+          <h2 id="price">料金差で何が手に入るか</h2>
+          <p>
+            Spendwiseの収益はすべて、1つの画面の広告1件から出ています。だからアプリは無料で、これからも無料です。後からアップグレードを売りつけることはありません。Spendeeの無料プランも本物の家計簿ですが、ウォレット1つと予算1つまでに制限され、銀行同期、追加のウォレット、共有ウォレットを解放するのは2つの有料プランです。それらの機能が欲しいなら、年14.99〜35.99ドルは妥当な価格です。欲しくないなら、無料プランの天井こそがほかを探す理由になります。
+          </p>
+
+          <h2 id="faq">よくある質問</h2>
+
+          <details class="faq">
+            <summary>SpendwiseはSpendeeと同じアプリですか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。SpendeeはプラハのSPENDEE a.s.が開発しています。Spendwiseは別の開発者による独立したAndroidアプリです。名前が似ているため、一方を探している人がもう一方を見つけてしまい、それがこのページがある理由です。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseを使うのにアカウントは必要ですか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。登録も、メールアドレスも、パスワードもありません。初回起動時に言語と通貨を尋ね、そのままアプリが開きます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseはインターネット接続なしで動きますか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。記録、予算、グループ、レポート、バックアップと復元はすべてローカルです。確認画面の広告1件だけは表示に接続が必要で、オフラインではプレースホルダーが表示されますが、アプリのほかの部分は影響を受けません。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseのデータを新しい端末に移すには？</summary>
+            <div class="faq__body">
+              <p>
+                <strong>設定 → バックアップと復元 → バックアップファイルを作成</strong>を開きます。ファイルには取引、カテゴリ、予算、人物、グループ、添付レシートが入っています。新しい端末では<strong>バックアップファイルを選択</strong>を選びます。復元すると安全のためのスナップショットのあとに現在のデータが置き換わります。詳しい手順は<a href="/support" hreflang="en" lang="en">サポートページ</a>にあります。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseは無料ですか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。サブスクリプションもアプリ内課金もありません。取引の確認画面の非パーソナライズ広告1件がアプリを支え、匿名の画面分析は設定でオフにできます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>SpendwiseはiPhoneで動きますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。SpendwiseはAndroid 10以降向けのAndroidアプリです。SpendeeはAndroid、iOS、ウェブで利用できます。
+              </p>
+            </div>
+          </details>
+
+          <h2 id="try">自分に合うほうを試してください</h2>
+          <p>
+            このページが役目を果たしていれば、自分がどちらの列にいるかはもう分かっているはずです。Spendwiseは無料で、1分もかからずにインストールできます。合わなければアンインストールしてください。その間にどこかへアップロードされたものはありません。
+          </p>
+          <nav class="related" aria-label="ほかのガイド">
+            <h2>ほかのガイド</h2>
+            <ul>
+              <li><a href="/ja/offline-expense-tracker">オフラインの支出管理</a></li>
+              <li><a href="/ja/expense-tracker-without-signup">登録なしで使える支出管理</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベートな支出管理</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友だちとの割り勘</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">Spendwiseと表計算ソフトの比較</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Google PlayのSpendwise</h2>
+          <p>
+            無料、アカウントなし、トラッキングIDなし。家計簿は端末に残り、端末を替えるときはファイル1つで一緒に運べます。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dvs_spendee"
+              rel="noopener"
+              >Google Playで入手</a
+            >
+            <a class="btn btn--ghost" href="/support" hreflang="en" lang="en">FAQを読む</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

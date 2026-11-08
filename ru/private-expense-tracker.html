@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Приватный учёт расходов: локально, без трекинг-ID</title>
+    <meta
+      name="description"
+      content="Spendwise хранит траты в локальной базе: трекинг-ID нет, аналитику можно отключить. Честная версия слова «приватно»."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Приватный учёт расходов: локально, без трекинг-ID" />
+    <meta
+      property="og:description"
+      content="Что собирается, что нет, какие разрешения просит приложение и где у слова «приватно» есть границы, о которых стоит знать."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Приватный учёт расходов: локально, без трекинг-ID",
+            "item": "https://spendwise.download/ru/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Собирает ли Spendwise мои операции?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Операции, бюджеты, заметки, люди и вложения хранятся в базе SQLite на телефоне. Ни один сервер их не получает, и нет аккаунта, с которым их можно связать."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Использует ли реклама мой рекламный ID?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Приложение вырезает разрешение AD_ID, поэтому рекламного идентификатора просто нет. Каждый запрос рекламы неперсонализированный, а в ЕЭЗ и Великобритании форма согласия решает, будет ли запрос вообще."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что отключает переключатель аналитики?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Всю аналитику использования. Spendwise отправляет анонимные показы экранов с именами маршрутов, без ID пользователя и без содержимого операций. Выключение аналитики в настройках полностью останавливает эти события; выключено — значит абсолютно, а не меньше."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какие разрешения просит Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Уведомления — для ежедневного напоминания и напоминаний о регулярных платежах. Чеки выбираются через системный выбор фото и документов Android, которые не требуют разрешений. Блокировка приложения использует ваш существующий PIN-код, графический ключ или биометрию устройства. Разрешений на контакты, геолокацию, камеру и рекламный ID нет."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Зашифрован ли файл резервной копии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Файл .spendwise — это обычный архив базы данных и ваших вложений. Относитесь к нему как к банковской выписке и храните там, где доверяете."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Конфиденциальность</p>
+          <h1>Приватный учёт расходов: что здесь значит «приватно»</h1>
+          <p class="doc-hero__lede">
+            «Приватно» — слово, которое обещает каждое приложение. Эта страница пытается его
+            заслужить конкретикой: что приложение хранит, что покидает телефон, что видит
+            рекламный SDK и где заканчиваются границы обещания.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Трекинг-ID:</strong> нет &nbsp;·&nbsp;
+            <strong>Рекламный ID:</strong> разрешение удалено &nbsp;·&nbsp;
+            <strong>Аналитика:</strong> отключается
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">Путь данных</h2>
+          <p>
+            У Spendwise нет бэкенда. Каждая операция, бюджет, категория, заметка, человек, группа
+            и вложение-чек пишутся в базу SQLite в приватном хранилище приложения, и каждый экран
+            читает из этой базы. Входить некуда, поэтому нет и профиля, который можно построить,
+            продать, потерять или передать.
+          </p>
+          <p>Две функции обращаются к интернету, и обе достаточно малы, чтобы описать их точно:</p>
+          <ul>
+            <li>
+              <strong>Одна реклама</strong> на экране подтверждения операции, запрашиваемая как
+              неперсонализированная, а разрешение на рекламный идентификатор вырезано из
+              приложения.
+            </li>
+            <li>
+              <strong>Анонимная аналитика экранов</strong> — имя маршрута на каждый показ экрана,
+              без ID пользователя, без содержимого операций, без рекламного идентификатора, без
+              трекинг-ID.
+            </li>
+          </ul>
+          <p>
+            Здесь нет отчётов о падениях, записи сессий, тепловых карт и сторонних SDK, кроме
+            библиотек рекламы и аналитики.
+            <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+            перечисляет их, и она короткая, потому что список короткий.
+          </p>
+
+          <h2 id="permissions">Разрешения — и те, которых нет</h2>
+          <p>
+            Разрешения Android — хороший индикатор того, что приложение действительно может
+            делать. Spendwise просит уведомления, чтобы срабатывали ежедневное напоминание и
+            напоминания о регулярных платежах. Это весь список.
+          </p>
+          <ul>
+            <li>
+              <strong>Нет разрешения на контакты.</strong> Люди, которых вы ведёте, — это записи,
+              которые вы создаёте, а не адресная книга.
+            </li>
+            <li>
+              <strong>Нет геолокации.</strong> Ничему в приложении не нужно знать, где вы
+              находитесь.
+            </li>
+            <li>
+              <strong>Нет разрешения на камеру.</strong> Вложение чека использует системный выбор
+              фото и документов Android, который даёт приложению доступ только к выбранному файлу
+              и ни к чему больше.
+            </li>
+            <li>
+              <strong>Нет разрешения на рекламный идентификатор.</strong> Запись в манифесте
+              вырезается при сборке, поэтому рекламной сети нечего читать.
+            </li>
+          </ul>
+          <p>
+            Блокировка приложения при этом не добавляет своего хранилища: она передаёт проверку
+            системному запросу аутентификации Android, поэтому ваш PIN-код, графический ключ или
+            биометрия не попадают в Spendwise.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Настройки: язык приложения, валюта приложения USD, выбор оформления «Как в системе», «Светлая» или «Тёмная» и пять акцентных цветов."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                В настройках собраны переключатели, важные здесь: аналитика, блокировка приложения
+                и валюта, — ни один из них не привязан к аккаунту.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="Раздел «Деньги»: месячный бюджет использован на 52%, 27 встроенных категорий, два человека и восемь регулярных расписаний, а под «Аналитикой» — отчёты и заметки."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Категории, люди и расписания — локальные строки, облачной копии для синхронизации
+                нет.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="Экран «Резервное копирование»: 122 операции, 39 категорий и 6 человек, кнопки «Создать файл копии» и «Выбрать файл копии»."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Резервное копирование и восстановление — локальные действия: файл отправляется
+                туда, куда вы его сохраните, а не на сервер.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">Реклама без эвфемизмов</h2>
+          <p>
+            Spendwise финансируется рекламой. Одна нативная реклама стоит на экране подтверждения,
+            и именно так приложение остаётся бесплатным без подписки. Факты, важные для
+            конфиденциальности:
+          </p>
+          <ul>
+            <li>
+              <strong>Каждый запрос неперсонализированный</strong>, в том числе для пользователя,
+              принявшего форму согласия. Согласие разрешает запрос, но никогда не покупает
+              персонализацию.
+            </li>
+            <li>
+              <strong>Рекламного идентификатора</strong> у SDK нет, потому что разрешение удаляется
+              при сборке.
+            </li>
+            <li>
+              <strong>В ЕЭЗ и Великобритании сначала идёт согласие</strong>, и оно закрывается при
+              отказе: нет сети, нет согласия или нет настроенного сообщения — значит, рекламы нет.
+              «Настройки → Конфиденциальность» позволяют снова открыть форму там, где этого требует
+              фреймворк.
+            </li>
+          </ul>
+          <p>
+            Рекламная сеть всё равно видит сам запрос — IP-адрес, модель устройства и примерный
+            регион неизбежны в любом сетевом запросе. Разница в том, что на этой стороне никто не
+            строит профиль ваших трат, чтобы к нему прикрепить рекламу.
+          </p>
+
+          <h2 id="analytics">Аналитика, которую действительно можно отключить</h2>
+          <p>
+            Аналитика использования существует, и приложение говорит об этом прямо, без отрицаний.
+            Spendwise записывает анонимный показ экрана на маршрут — какие экраны открывают, а не что
+            на них, — без ID пользователя, без email и без содержимого операций.
+          </p>
+          <p>
+            Переключатель находится в настройках, и его действие абсолютно: когда аналитика
+            выключена, события перестают отправляться. Она не уменьшает их, не хеширует и не хранит
+            локальную копию на потом. Если фраза «аналитику можно отключить» вообще что-то значит,
+            она должна значить именно это.
+          </p>
+
+          <h2 id="limits">Где обещание заканчивается</h2>
+          <p>Честность стоит больше слогана, поэтому вот границы:</p>
+          <ul>
+            <li>
+              <strong>Файл резервной копии не зашифрован.</strong> Это архив
+              <code>.spendwise</code>, который прочитает любой, у кого есть файл. Храните его там,
+              где хранили бы банковскую выписку, либо откажитесь от файла и примите, что данные
+              умрут вместе с телефоном.
+            </li>
+            <li>
+              <strong>Экран блокировки телефона — настоящий периметр.</strong> Spendwise добавляет
+              блокировку приложения как вторую проверку, но устройство, которое разблокировано и
+              рутовано, — это устройство, данные приложений которого можно прочитать.
+            </li>
+            <li>
+              <strong>Google Play всё ещё участвует в установке</strong>, а сервисы Play на вашем
+              телефоне принадлежат Google, а не Spendwise. Утверждение здесь — о том, что это
+              приложение делает с вашими данными, а не об операционной системе, в которой оно
+              работает.
+            </li>
+            <li>
+              <strong>Вложения — это файлы.</strong> Фото чека покидает приложение, когда вы
+              делитесь им в другом месте, а его метаданные — это то, что уже было в файле.
+            </li>
+          </ul>
+
+          <h2 id="controls">Все элементы управления в одном месте</h2>
+          <ul>
+            <li><strong>Аналитика вкл./выкл.</strong> — Настройки → Конфиденциальность.</li>
+            <li>
+              <strong>Согласие на рекламу</strong> — Настройки → Конфиденциальность, где фреймворк
+              согласия требует обратного пути в форму.
+            </li>
+            <li><strong>Блокировка приложения</strong> — Настройки → Безопасность.</li>
+            <li>
+              <strong>Удалить всё</strong> — удалите приложение или очистите его данные в
+              настройках Android.
+            </li>
+          </ul>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Собирает ли Spendwise мои операции?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Операции, бюджеты, заметки, люди и вложения хранятся в базе SQLite на
+                телефоне. Ни один сервер их не получает, и нет аккаунта, с которым их можно
+                связать.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Использует ли реклама мой рекламный ID?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Приложение вырезает разрешение AD_ID, поэтому рекламного идентификатора
+                просто нет. Каждый запрос рекламы неперсонализированный, а в ЕЭЗ и Великобритании
+                форма согласия решает, будет ли запрос вообще.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Что отключает переключатель аналитики?</summary>
+            <div class="faq__body">
+              <p>
+                Всю аналитику использования. Spendwise отправляет анонимные показы экранов с
+                именами маршрутов, без ID пользователя и без содержимого операций. Выключение
+                аналитики в настройках полностью останавливает эти события; выключено — значит
+                абсолютно, а не меньше.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Какие разрешения просит Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Уведомления — для ежедневного напоминания и напоминаний о регулярных платежах.
+                Чеки выбираются через системный выбор фото и документов Android, которые не
+                требуют разрешений. Блокировка приложения использует ваш существующий PIN-код,
+                графический ключ или биометрию устройства. Разрешений на контакты, геолокацию,
+                камеру и рекламный ID нет.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Зашифрован ли файл резервной копии?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Файл <code>.spendwise</code> — это обычный архив базы данных и ваших
+                вложений. Относитесь к нему как к банковской выписке и храните там, где доверяете.
+                <a href="/support" hreflang="en" lang="en">FAQ поддержки</a> содержит шаги
+                резервного копирования.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Ещё гайды">
+            <h2>Ещё гайды</h2>
+            <ul>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/offline-expense-tracker">Учёт расходов офлайн</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Траты, которые остаются на телефоне</h2>
+          <p>
+            Без аккаунта, без трекинг-ID, без облачной копии. Аналитику можно отключить, а
+            <a href="/ru/offline-expense-tracker">журнал работает офлайн</a>.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >Читать политику конфиденциальности</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

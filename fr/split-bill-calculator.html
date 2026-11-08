@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partage d'addition avec pourboire : parts exactes</title>
+    <meta
+      name="description"
+      content="Partagez une addition entre plusieurs personnes, pourboire inclus. Arrondi au centime, sans compte, et les cas où un partage égal est injuste."
+    />
+    <link rel="canonical" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Partage d'addition avec pourboire : parts exactes" />
+    <meta
+      property="og:description"
+      content="Addition, pourboire et nombre de personnes, divisés au centime. Et quand le partage égal est la mauvaise réponse."
+    />
+    <meta property="og:url" content="https://spendwise.download/fr/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La marque Spendwise : un anneau de progression blanc et une coche sur un dégradé bleu."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculateur de partage d'addition",
+            "item": "https://spendwise.download/fr/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Le pourboire se calcule avant ou après la taxe ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sur le sous-total hors taxes, qui est l'usage aux États-Unis et la plus simple des deux lectures. Saisissez l'addition hors taxes dans ce calculateur et le résultat est juste du premier coup. Quand le service est déjà compris sur l'addition, mettez le pourboire à zéro plutôt que d'en ajouter un second."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment partager une addition de façon inégale ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Réglez d'abord les articles, puis partagez le reste. Attribuez chaque plat à qui l'a mangé, divisez les plats communs et le pourboire également, et additionnez les deux parties. Un partage proportionnel aux revenus se défend pour un loyer, pas pour une addition de restaurant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la façon la plus juste de traiter le centime restant ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Donnez le centime supplémentaire à une personne, ou à qui encaisse. N'arrondissez jamais chaque part au centime supérieur : quatre personnes qui arrondissent une part de 53,87 à 54 paient 216,00 pour une addition de 215,51, et l'encaisseur empoche la différence sans l'avoir décidé."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ce calculateur conserve-t-il l'addition ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Tout est calculé dans la page, rien n'est envoyé, et il n'y a ni cookies ni scripts tiers. Fermer l'onglet efface tout."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment Spendwise gère-t-il les dépenses partagées ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un groupe est son propre registre, avec son budget et ses catégories, donc un voyage ou une colocation ne se mélange pas aux dépenses personnelles. Une personne tient le registre, et l'appli suit qui doit quoi grâce aux soldes des personnes. Elle ne propose pas de modification partagée en temps réel, donc un groupe a besoin d'un gardien plutôt que de deux éditeurs."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/fr/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="/#features">Fonctionnalités</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Confidentialité</a>
+          <a href="/support" hreflang="en" lang="en">Assistance</a>
+          <a href="/privacy" hreflang="en" lang="en">Politique de confidentialité</a>
+          <a href="/terms" hreflang="en" lang="en">Conditions générales</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr" aria-current="true">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Outil gratuit</p>
+          <h1>Calculateur de partage d'addition</h1>
+          <p class="doc-hero__lede">
+            Une addition, un pourboire et un nombre de personnes. Le calculateur divise au centime et
+            vous dit exactement où va le centime restant. Sans compte, sans identifiant de suivi,
+            rien ne quitte la page.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Mis à jour :</strong> 20 octobre 2026 &nbsp;·&nbsp;
+            <strong>Arrondi :</strong> centimes entiers &nbsp;·&nbsp; <strong>Prix :</strong> gratuit
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Partage égal : {each} par personne, {people} au total."
+            data-msg-one="{remainder} personne paie un centime de plus ({high}) ; les autres paient {each}. Le total est exact — n'arrondissez jamais chaque part au centime supérieur."
+            data-msg-many="{remainder} des {people} personnes paient un centime de plus ({high}) ; les autres paient {each}. Le total est exact — n'arrondissez jamais chaque part au centime supérieur."
+          >
+            <h2 class="tool__title" id="split-heading">Votre addition</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Addition, avant pourboire</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Pourboire, en pourcentage</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Personnes</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>La répartition</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Pourboire</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Total à payer</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Chacun paie</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Part la plus haute</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                Le calculateur a besoin de JavaScript. À la main : ajoutez le pourcentage de
+                pourboire à l'addition, divisez par le nombre de personnes et donnez le centime
+                restant à une seule personne.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Comment fonctionne ce partage</h2>
+          <p>
+            Le pourboire se calcule sur l'addition hors taxes, s'ajoute au total, puis le total est
+            divisé par le nombre de personnes. Cet ordre compte : calculer le pourboire sur le
+            montant taxes comprises gonfle le pourboire du taux de taxe local, et sur une addition de
+            187,40 avec 15 %, ce sont 4,20 que personne n'avait l'intention de laisser.
+          </p>
+          <p>
+            La division se fait en <strong>centimes entiers</strong>, jamais en virgule flottante. Une
+            addition de 215,51 entre quatre personnes ne se divise pas également : chaque part est de
+            53,87 et une personne paie 53,88. L'alternative — arrondir chaque part au centime
+            supérieur — c'est ainsi qu'un encaisseur finit avec un bénéfice discret, et qu'une
+            dispute de groupe démarre.
+          </p>
+
+          <h2 id="tipping">Pourboire, service compris et ce que l'addition inclut déjà</h2>
+          <p>
+            Les usages du pourboire voyagent mal, et un calculateur n'y changera rien ; il peut au
+            moins ne pas empirer les choses. Trois règles qui gardent le calcul honnête :
+          </p>
+          <ul>
+            <li>
+              <strong>Vérifiez d'abord s'il y a un service compris.</strong> Une ligne « service
+              12,5 % » signifie que le pourboire est déjà sur l'addition. Mettez le pourboire à zéro
+              et partagez le total, sinon vous payez deux fois.
+            </li>
+            <li>
+              <strong>Calculez sur le sous-total, pas sur la taxe.</strong> Saisissez le montant hors
+              taxes. Si l'addition n'affiche qu'un total, divisez par un plus le taux de taxe pour le
+              retrouver.
+            </li>
+            <li>
+              <strong>Mettez-vous d'accord avant que la carte arrive.</strong> Décider du pourboire
+              pendant que le terminal demande un pourcentage, c'est ainsi qu'une table de cinq finit
+              par payer 25 %.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Quand un partage égal est la mauvaise réponse</h2>
+          <p>
+            Un partage égal est rapide et généralement assez juste. Il cesse de l'être quand la
+            dépense est déséquilibrée — une bouteille de vin, une entrecôte, une personne qui a pris
+            une entrée et est partie tôt.
+          </p>
+          <ul>
+            <li>
+              <strong>Par article.</strong> Attribuez chaque ligne à qui l'a commandée, partagez les
+              plats communs et le pourboire également, puis additionnez. Plus précis, un peu gênant,
+              et le bon choix quand l'écart est important.
+            </li>
+            <li>
+              <strong>Par service.</strong> Une voie médiane : séparez les boissons et le dessert,
+              partagez la nourriture également. Cela règle l'essentiel de la gêne sans tout détailler.
+            </li>
+            <li>
+              <strong>Pas selon les revenus.</strong> Les partages proportionnels au salaire ont du
+              sens pour le loyer et les factures, pas pour un dîner. Quelqu'un qui gagne plus ne doit
+              pas plus pour vos pâtes.
+            </li>
+          </ul>
+          <p>
+            Pour les dépenses partagées récurrentes — loyer, charges, courses d'une colocation — le
+            partage égal est aussi souvent le mauvais réflexe, parce que la consommation n'est pas
+            égale. Un partage pondéré par personne (deux dans la grande chambre, une dans la petite)
+            dure plus longtemps qu'un partage égal que quelqu'un finit par ressentir.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="L'écran d'un groupe pour octobre 2026 : 553,00 $ dépensés pour un budget de groupe de 800,00 $ marqué Sur la bonne voie, les personnes avec un solde en attente et un bouton Ajouter une dépense."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Un registre partagé avec son propre budget et ses soldes.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="L'écran Personnes listant Alex, qui vous doit 245,00 $, et Sam, à qui vous devez 500,00 $, chacun avec un solde courant et une action Ajouter une personne."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                L'argent prêté et emprunté, tenu comme un solde courant.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Partager une fois, suivre tout le mois</h2>
+          <p>
+            Un calculateur répond à un dîner. La version plus difficile, c'est une colocation ou un
+            voyage où vingt petits paiements s'étalent sur deux semaines et où personne ne se
+            souvient qui a couvert quoi. C'est un problème de registre, et un fil de discussion est
+            un mauvais registre.
+          </p>
+          <p>
+            Dans Spendwise, un groupe est son propre registre — son budget, ses catégories — donc un
+            voyage ne contamine pas le mois personnel. Les dépenses ajoutées au groupe côtoient les
+            soldes des personnes pour l'argent prêté et emprunté, et l'écran du groupe montre qui est
+            en positif et qui est en négatif. Le compromis est explicite :
+            <strong>une personne tient le registre</strong>. Il n'y a pas de modification partagée en
+            temps réel, donc le groupe a besoin d'un gardien qui enregistre, et tous les autres
+            voient le total.
+          </p>
+          <p>
+            À la fin du voyage, les chiffres sont déjà là : pas de reconstruction à partir de
+            captures d'écran, et le rapport mensuel porte les dépenses du groupe séparément du budget
+            du foyer.
+          </p>
+
+          <h2 id="faq">Questions fréquentes</h2>
+          <details class="faq">
+            <summary>Le pourboire se calcule avant ou après la taxe ?</summary>
+            <div class="faq__body">
+              <p>
+                Sur le sous-total hors taxes, qui est l'usage aux États-Unis et la plus simple des
+                deux lectures. Saisissez l'addition hors taxes dans ce calculateur et le résultat est
+                juste du premier coup. Quand le service est déjà compris sur l'addition, mettez le
+                pourboire à zéro plutôt que d'en ajouter un second.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Comment partager une addition de façon inégale ?</summary>
+            <div class="faq__body">
+              <p>
+                Réglez d'abord les articles, puis partagez le reste. Attribuez chaque plat à qui l'a
+                mangé, divisez les plats communs et le pourboire également, et additionnez les deux
+                parties. Un partage proportionnel aux revenus se défend pour un loyer, pas pour une
+                addition de restaurant.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Quelle est la façon la plus juste de traiter le centime restant ?</summary>
+            <div class="faq__body">
+              <p>
+                Donnez le centime supplémentaire à une personne, ou à qui encaisse. N'arrondissez
+                jamais chaque part au centime supérieur : quatre personnes qui arrondissent une part
+                de 53,87 à 54 paient 216,00 pour une addition de 215,51, et l'encaisseur empoche la
+                différence sans l'avoir décidé.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Ce calculateur conserve-t-il l'addition ?</summary>
+            <div class="faq__body">
+              <p>
+                Non. Tout est calculé dans la page, rien n'est envoyé, et il n'y a ni cookies ni
+                scripts tiers. Fermer l'onglet efface tout.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Comment Spendwise gère-t-il les dépenses partagées ?</summary>
+            <div class="faq__body">
+              <p>
+                Un groupe est son propre registre, avec son budget et ses catégories, donc un voyage
+                ou une colocation ne se mélange pas aux dépenses personnelles. Une personne tient le
+                registre, et l'appli suit qui doit quoi grâce aux soldes des personnes. Elle ne
+                propose pas de modification partagée en temps réel, donc un groupe a besoin d'un
+                gardien plutôt que de deux éditeurs — voyez
+                <a href="/fr/split-expenses-with-friends">la version longue</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Autres outils et guides">
+            <h2>Autres outils et guides</h2>
+            <ul>
+              <li><a href="/fr/50-30-20-budget-calculator">Calculateur 50/30/20</a></li>
+              <li>
+                <a href="/fr/subscription-cost-calculator">Calculateur de coût des abonnements</a>
+              </li>
+              <li><a href="/fr/split-expenses-with-friends">Partager les dépenses entre amis</a></li>
+              <li><a href="/fr/private-expense-tracker">Suivi des dépenses privé</a></li>
+              <li><a href="/fr/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/fr/expense-tracker-vs-spreadsheet">Spendwise vs tableur</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Gardez le registre du groupe au même endroit</h2>
+          <p>
+            Gratuit, sans compte, sans identifiant de suivi. Un registre de groupe, des soldes par
+            personne et un mois que vous pouvez exporter.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=fr&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Obtenir sur Google Play</a
+            >
+            <a class="btn btn--ghost" href="/fr/split-expenses-with-friends"
+              >Comment marchent les dépenses partagées</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/fr/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un suivi de dépenses privé, conçu pour fonctionner hors ligne sur Android. Vos
+              dépenses restent sur votre téléphone.
+            </p>
+          </div>
+          <div>
+            <h2>Produit</h2>
+            <ul>
+              <li><a href="/#features">Fonctionnalités</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Confidentialité</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Mentions légales</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Politique de confidentialité</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Conditions générales</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Assistance</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Assistance &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Tous droits réservés.</span>
+          <span>Conçu pour Android 10 et versions ultérieures.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

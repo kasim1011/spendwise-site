@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora para dividir la cuenta con propina</title>
+    <meta
+      name="description"
+      content="Divide una cuenta entre quien quieras, propina incluida. Redondeo en céntimos enteros, sin cuenta, y cuándo dividir a partes iguales es injusto."
+    />
+    <link rel="canonical" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Calculadora para dividir la cuenta con propina" />
+    <meta
+      property="og:description"
+      content="Cuenta, propina y número de personas, divididos al céntimo. Y cuándo dividir a partes iguales es la respuesta equivocada."
+    />
+    <meta property="og:url" content="https://spendwise.download/es/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La marca de Spendwise: un anillo de progreso blanco con una marca de verificación sobre un degradado azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculadora para dividir la cuenta",
+            "item": "https://spendwise.download/es/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿La propina se calcula antes o después de impuestos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sobre el subtotal antes de impuestos, que es la costumbre en Estados Unidos y la lectura más simple de las dos. Escribe la cuenta antes de impuestos en esta calculadora y queda bien a la primera. Cuando ya hay un cargo por servicio en la cuenta, pon la propina en cero en lugar de sumar una segunda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo divido una cuenta de forma desigual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Primero suma los platos y luego divide el resto. Asigna cada plato a quien lo comió, divide los platos compartidos y la propina a partes iguales, y suma las dos partes. Los repartos proporcionales al ingreso son defendibles para el alquiler, no para la cuenta de un restaurante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la forma más justa de repartir el céntimo sobrante?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dale el céntimo extra a una persona, o a quien esté cobrando. Nunca redondees todas las partes hacia arriba: cuatro personas que redondean una parte de 53,87 a 54 pagan 216,00 frente a una cuenta de 215,51, y quien cobra se queda la diferencia sin haberlo decidido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Esta calculadora guarda la cuenta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Todo se calcula en la página, no se sube nada y no hay cookies ni scripts de terceros. Al cerrar la pestaña se descarta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo maneja Spendwise los gastos compartidos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un grupo es su propio libro con su propio presupuesto y categorías, así que un viaje o un piso compartido no se mezcla con el gasto personal. Una persona lleva el registro y la app rastrea quién debe a quién mediante saldos de personas. No ofrece edición compartida en tiempo real, así que un grupo necesita un responsable y no dos editores; lee la versión larga."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/es/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/#features">Funciones</a>
+          <a href="/#gallery">Galería</a>
+          <a href="/#privacy">Privacidad</a>
+          <a href="/support" hreflang="en" lang="en">Soporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de privacidad</a>
+          <a href="/terms" hreflang="en" lang="en">Términos y condiciones</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es" aria-current="true">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Herramienta gratis</p>
+          <h1>Calculadora para dividir la cuenta</h1>
+          <p class="doc-hero__lede">
+            Una cuenta, una propina y un número de personas. La calculadora la divide al céntimo y te
+            dice exactamente dónde va el céntimo que sobra. Sin cuenta, sin ID de seguimiento y nada
+            sale de la página.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Actualizado:</strong> 20 de octubre de 2026 &nbsp;·&nbsp;
+            <strong>Redondeo:</strong> céntimos enteros &nbsp;·&nbsp; <strong>Precio:</strong> gratis
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Sale a partes iguales: {people} personas pagan {each} cada una."
+            data-msg-one="{remainder} persona paga un céntimo más ({high}); el resto paga {each}. El total es exacto: nunca redondees todas las partes hacia arriba."
+            data-msg-many="{remainder} de las {people} personas pagan un céntimo más ({high}); el resto paga {each}. El total es exacto: nunca redondees todas las partes hacia arriba."
+          >
+            <h2 class="tool__title" id="split-heading">Tu cuenta</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Cuenta, antes de la propina</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Propina, en porcentaje</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Personas</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>El reparto</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Propina</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Total a pagar</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Cada uno paga</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Parte más alta</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                La calculadora necesita JavaScript. Hazlo a mano: suma el porcentaje de propina a la
+                cuenta, divide entre el número de personas y dale el céntimo sobrante a una sola
+                persona.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Cómo funciona este reparto</h2>
+          <p>
+            La propina se calcula sobre la cuenta antes de impuestos, se suma al total y el total se
+            divide entre el número de personas. El orden importa: dar propina sobre el importe con
+            impuestos infla la propina en la tasa local, y en una cuenta de 187,40 con un 15 % son
+            4,20 que nadie pensaba dejar.
+          </p>
+          <p>
+            La división es en <strong>céntimos enteros</strong>, nunca en coma flotante. Una cuenta de
+            215,51 entre cuatro personas no se divide de forma exacta, así que cada parte es de 53,87
+            y una persona paga 53,88. La alternativa —redondear todas las partes hacia arriba— es cómo
+            quien cobra acaba con un beneficio silencioso y cómo empieza una discusión en el chat del
+            grupo.
+          </p>
+
+          <h2 id="tipping">Propina, cargo por servicio y lo que la cuenta ya incluye</h2>
+          <p>
+            Las normas sobre la propina viajan mal, y una calculadora no lo arregla; al menos puede
+            no empeorarlo. Tres reglas que mantienen la aritmética honesta:
+          </p>
+          <ul>
+            <li>
+              <strong>Busca primero un cargo por servicio.</strong> Una línea que dice «12,5 %
+              servicio» significa que la propina ya está en la cuenta. Pon la propina en cero y
+              divide el total, o estarás dando propina dos veces.
+            </li>
+            <li>
+              <strong>Da propina sobre el subtotal, no sobre el impuesto.</strong> Escribe la cifra
+              antes de impuestos. Cuando la cuenta solo muestra un gran total, divídelo entre uno más
+              la tasa de impuesto para recuperarla.
+            </li>
+            <li>
+              <strong>Ponte de acuerdo antes de que llegue el datáfono.</strong> Decidir la propina
+              mientras el terminal pide un porcentaje es cómo una mesa de cinco acaba pagando un
+              25 %.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Cuándo dividir a partes iguales es la respuesta equivocada</h2>
+          <p>
+            Dividir a partes iguales es rápido y casi siempre suficientemente justo. Deja de serlo
+            cuando el gasto está desequilibrado: una botella de vino, un chuletón, alguien que pidió
+            un entrante y se fue pronto.
+          </p>
+          <ul>
+            <li>
+              <strong>Por plato.</strong> Asigna cada línea a quien la pidió, divide los platos
+              compartidos y la propina a partes iguales, y luego suma. Más preciso, algo incómodo, y
+              la decisión correcta cuando la diferencia es grande.
+            </li>
+            <li>
+              <strong>Por pase.</strong> Un camino intermedio: separa las bebidas y el postre, divide
+              la comida a partes iguales. Resuelve casi toda la incomodidad sin detallar cada plato.
+            </li>
+            <li>
+              <strong>No por ingresos.</strong> Los repartos proporcionales al sueldo tienen sentido
+              para el alquiler y las facturas, no para una cena. Quien gana más no debe más por tu
+              pasta.
+            </li>
+          </ul>
+          <p>
+            En gastos compartidos recurrentes —alquiler, suministros, la compra del piso— dividir a
+            partes iguales también suele ser una mala opción por defecto, porque el consumo no es
+            igual. Un reparto ponderado por persona (dos en la habitación grande, una en la pequeña)
+            dura más que uno igual que alguien acaba resintiendo en silencio.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="La pantalla propia de un grupo para octubre de 2026: 553,00 $ gastados frente a un presupuesto de grupo de 800,00 $ marcado En buen camino, las personas con saldos pendientes y un botón Agregar gasto."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Un registro compartido con su propio presupuesto y sus saldos.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="La pantalla Personas con Alex, que debe 245,00 $, y Sam, a quien le deben 500,00 $, cada uno con un saldo acumulado y una acción Agregar persona."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Dinero prestado y recibido, guardado como saldo acumulado.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Dividir una vez, anotar todo el mes</h2>
+          <p>
+            Una calculadora resuelve una cena. La versión difícil es un piso compartido o un viaje en
+            el que pasan veinte pagos pequeños en dos semanas y nadie recuerda quién cubrió qué. Eso
+            es un problema de libro de cuentas, y un hilo de chat es un mal libro de cuentas.
+          </p>
+          <p>
+            En Spendwise un grupo es su propio libro —su presupuesto, sus categorías—, así que un
+            viaje no contamina el mes personal. Los gastos agregados al grupo conviven con los saldos
+            de personas por dinero prestado y recibido, y la pantalla del grupo muestra quién va
+            arriba y quién abajo. El intercambio es explícito: <strong>una persona lleva el
+            registro</strong>. No hay edición compartida en tiempo real, así que el grupo necesita un
+            responsable que anote, y el resto ve el total.
+          </p>
+          <p>
+            Cuando el viaje termina, los números ya están: sin reconstruir nada a partir de capturas,
+            y el informe mensual lleva el gasto del grupo aparte del presupuesto del hogar.
+          </p>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+          <details class="faq">
+            <summary>¿La propina se calcula antes o después de impuestos?</summary>
+            <div class="faq__body">
+              <p>
+                Sobre el subtotal antes de impuestos, que es la costumbre en Estados Unidos y la
+                lectura más simple de las dos. Escribe la cuenta antes de impuestos en esta
+                calculadora y queda bien a la primera. Cuando ya hay un cargo por servicio en la
+                cuenta, pon la propina en cero en lugar de sumar una segunda.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Cómo divido una cuenta de forma desigual?</summary>
+            <div class="faq__body">
+              <p>
+                Primero suma los platos y luego divide el resto. Asigna cada plato a quien lo comió,
+                divide los platos compartidos y la propina a partes iguales, y suma las dos partes.
+                Los repartos proporcionales al ingreso son defendibles para el alquiler, no para la
+                cuenta de un restaurante.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Cuál es la forma más justa de repartir el céntimo sobrante?</summary>
+            <div class="faq__body">
+              <p>
+                Dale el céntimo extra a una persona, o a quien esté cobrando. Nunca redondees todas
+                las partes hacia arriba: cuatro personas que redondean una parte de 53,87 a 54 pagan
+                216,00 frente a una cuenta de 215,51, y quien cobra se queda la diferencia sin
+                haberlo decidido.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Esta calculadora guarda la cuenta?</summary>
+            <div class="faq__body">
+              <p>
+                No. Todo se calcula en la página, no se sube nada y no hay cookies ni scripts de
+                terceros. Al cerrar la pestaña se descarta.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>¿Cómo maneja Spendwise los gastos compartidos?</summary>
+            <div class="faq__body">
+              <p>
+                Un grupo es su propio libro con su propio presupuesto y categorías, así que un viaje
+                o un piso compartido no se mezcla con el gasto personal. Una persona lleva el
+                registro y la app rastrea quién debe a quién mediante saldos de personas. No ofrece
+                edición compartida en tiempo real, así que un grupo necesita un responsable y no dos
+                editores; lee
+                <a href="/es/split-expenses-with-friends">la versión larga</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Más herramientas y guías">
+            <h2>Más herramientas y guías</h2>
+            <ul>
+              <li><a href="/es/50-30-20-budget-calculator">Calculadora de presupuesto 50/30/20</a></li>
+              <li><a href="/es/subscription-cost-calculator">Calculadora de suscripciones</a></li>
+              <li><a href="/es/split-expenses-with-friends">Compartir gastos con amigos</a></li>
+              <li><a href="/es/private-expense-tracker">Registro de gastos privado</a></li>
+              <li><a href="/es/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/es/expense-tracker-vs-spreadsheet">Spendwise vs hoja de cálculo</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Lleva el registro del grupo en un solo sitio</h2>
+          <p>
+            Gratis, sin cuenta y sin ID de seguimiento. Un registro de grupo, saldos de personas y un
+            mes que puedes exportar.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=es&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Descargar en Google Play</a
+            >
+            <a class="btn btn--ghost" href="/es/split-expenses-with-friends"
+              >Cómo funcionan los gastos compartidos</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/es/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un registro de gastos privado y sin conexión para Android. Tus cuentas pertenecen a tu
+              teléfono.
+            </p>
+          </div>
+          <div>
+            <h2>Producto</h2>
+            <ul>
+              <li><a href="/#features">Funciones</a></li>
+              <li><a href="/#gallery">Galería</a></li>
+              <li><a href="/#privacy">Privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de privacidad</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Términos y condiciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Soporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ayuda y preguntas frecuentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos los derechos reservados.</span>
+          <span>Hecho para Android 10 y versiones posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>متتبع مصروفات دون اتصال: سجّل بلا إنترنت</title>
+    <meta
+      name="description"
+      content="Spendwise متتبع مصروفات دون اتصال لأندرويد. سجّل مصروفاتك وحدّد ميزانيتك وتتبّع التكاليف المشتركة بلا حساب ولا سحابة ولا اتصال."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/offline-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/offline-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/offline-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/offline-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/offline-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="متتبع مصروفات دون اتصال: سجّل بلا إنترنت" />
+    <meta
+      property="og:description"
+      content="ما يستطيع متتبع يعمل دون اتصال فعله في وضع الطيران، وما لا يزال يحتاج إلى اتصال، ولماذا يعيش السجل في قاعدة بيانات على الهاتف."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/offline-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="شعار Spendwise: حلقة تقدّم بيضاء مع علامة صح على تدرّج أزرق."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "متتبع المصروفات دون اتصال",
+            "item": "https://spendwise.download/ar/offline-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل يعمل Spendwise في وضع الطيران؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم. التسجيل والميزانيات والمجموعات والتقارير والتذكيرات والنسخ الاحتياطي كلها تعمل مع إيقاف الشبكة. والجزء الوحيد الذي يستخدم الشبكة هو الإعلان الواحد على شاشة التأكيد، ويعرض مكانه المحجوز حين يتعذر عرضه."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "أين تُخزَّن مصروفاتي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "في قاعدة بيانات SQLite داخل مساحة التخزين الخاصة بالتطبيق على هاتفك. لا نسخة على خادم، ولا خدمة مزامنة، ولا حساب يحتفظ بها."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ماذا يحدث عندما يعود الهاتف إلى الاتصال؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا يُرفع أي شيء. تحليلات الشاشات المجهولة، إن كنت قد أبقيتها مفعّلة، تستأنف الإرسال؛ أما السجل نفسه فلا يغادر الجهاز أبدًا إلا إذا صدّرته أو أنشأت ملف نسخة احتياطية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يمكن لهاتفين مشاركة سجل واحد دون اتصال؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ليس مباشرة. هاتف واحد يحتفظ بالسجل. يمكنك نقله إلى هاتف آخر بملف نسخة احتياطية، لكن لا مزامنة ثنائية الاتجاه، لأن المزامنة تحتاج خادمًا."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل سأفقد بياناتي إذا أزلت Spendwise؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم. إزالة التطبيق تحذف مساحة التخزين الخاصة به. أنشئ ملف نسخة احتياطية من الإعدادات، النسخ الاحتياطي والاستعادة قبل الإزالة أو تغيير الهاتف."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/offline-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/offline-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/offline-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/offline-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/offline-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/offline-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/offline-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/offline-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/offline-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/offline-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/offline-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/offline-expense-tracker" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">دون اتصال بالتصميم</p>
+          <h1>متتبع مصروفات دون اتصال لا يحتاج إلى شبكة أبدًا</h1>
+          <p class="doc-hero__lede">
+            معظم متتبعات المصروفات تطبيقات متصلة أُضيف إليها وضع دون اتصال. أما Spendwise فالأمر
+            فيه معكوس: السجل قاعدة بيانات على هاتفك، والشبكة اختيارية. وهذا بالضبط ما يمنحك إياه،
+            وما يكلّفك.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>آخر تحديث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp;
+            <strong>المنصة:</strong> أندرويد 10 وما بعده &nbsp;·&nbsp;
+            <strong>السعر:</strong> مجاني، بتمويل من إعلان واحد غير مخصص
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="what-offline-means">ما يعنيه «دون اتصال» هنا</h2>
+          <p>
+            يخزّن Spendwise كل معاملة وفئة وميزانية وشخص ومرفق إيصال في SQLite، على الجهاز، داخل
+            مساحة التخزين الخاصة بالتطبيق. وتقرأ الشاشات من تلك القاعدة. لا تسجيل دخول، ولا طابور
+            مزامنة، ولا خادم يجب أن يجيب قبل أن يعرض التطبيق ما أنفقته.
+          </p>
+          <p>
+            هذه هي البنية كلها، وهي سبب فتح التطبيق فورًا وعمله في قطار أو طائرة أو قبو أو مع شريحة
+            أجنبية بلا بيانات. وهي أيضًا سبب غياب مفتاح «الوضع دون اتصال»: لا شيء يمكن الخروج منه.
+          </p>
+
+          <h2 id="without-a-connection">ما يمكنك فعله مع إيقاف الشبكة</h2>
+          <ul>
+            <li>
+              <strong>تسجيل مصروف</strong> — المبلغ والفئة والتاريخ والملاحظة، مع صورة أو ملف PDF
+              مرفق. تأتي الصورة من منتقي معرض أندرويد، لذا لا يحتاج التطبيق إلى إذن الكاميرا.
+            </li>
+            <li>
+              <strong>وضع ميزانية شهر</strong> — حدّد ميزانية شهرية وشاهدها تحسب الفواتير المتكررة
+              التي لم تسجّلها بعد، كي يبقى الرقم صادقًا حتى يحين موعد الإيجار.
+            </li>
+            <li>
+              <strong>إدارة سجل مجموعة</strong> — رحلة أو شقة مشتركة بفئاتها وميزانيتها وأشخاصها
+              وأرصدة تسويتها.
+            </li>
+            <li>
+              <strong>تلقّي التذكيرات</strong> — التذكير اليومي الساعة 19:00 والتذكيرات المتكررة لكل
+              فئة منبّهات محلية، لا رسائل دفع من خادم.
+            </li>
+            <li>
+              <strong>قراءة التقارير وتصديرها</strong> — تقارير شهرية وسنوية تُكتب في PDF أو XLSX
+              داخل <code>Download/Spendwise</code> دون رفع أي شيء.
+            </li>
+            <li>
+              <strong>النسخ الاحتياطي والاستعادة</strong> — ملف واحد يضم كل سطر وكل مرفق، يُنشأ
+              ويُستعاد محليًا.
+            </li>
+          </ul>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="نموذج إضافة معاملة بمبلغ 47.82 $، و«مصروف» محدَّد، وفئة «بقالة» مميّزة، وتاريخ اليوم، وسطر إيصال أو مستند يتيح صورة أو ملف PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                التسجيل يحدث محليًا: يكتب النموذج في قاعدة بيانات الهاتف لحظة التأكيد.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="سجل المعاملات مجمّعًا حسب اليوم مع حقل بحث، يعرض سوق الأحد والقهوة والغداء والصيدلية والسينما، ولكل يوم صافيه."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                السجل والبحث يقرآن مباشرة من القاعدة المحلية؛ لا طلب ولا مؤشر تحميل.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="تقرير أكتوبر 2026: 2,095.50 $ مصروفة مقابل ميزانية 6,000.00 $، والدخل والصافي، ومخطط دائري للمصروفات حسب الفئة يبدأ بالإيجار عند 1,400.00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                تُبنى التقارير على الجهاز وتُصدَّر إلى PDF أو XLSX دون خادم.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="what-needs-network">الجزء الصغير الذي لا يزال يستخدم الشبكة</h2>
+          <p>شيئان ليسا محليين، ولا يحتاج التطبيق إلى أي منهما ليعمل:</p>
+          <ul>
+            <li>
+              <strong>الإعلان.</strong> Spendwise مجاني بفضل إعلان واحد غير مخصص على شاشة تأكيد
+              المعاملة. ويحتاج إلى اتصال ليُعرض. ودون اتصال يفشل الطلب وتعرض الشاشة مكانه المحجوز؛
+              ولا يتأثر التسجيل ولا الحفظ ولا زر تم.
+            </li>
+            <li>
+              <strong>تحليلات الشاشات المجهولة.</strong> تساعد في تحديد الشاشات التي تستحق التحسين.
+              وهي مفعّلة افتراضيًا، ولا تحمل معرّف تتبع ولا معرّف مستخدم، ويمكن إيقافها كليًا من
+              الإعدادات — والإيقاف يعني أن لا شيء يُرسل.
+            </li>
+          </ul>
+          <p>
+            لا يحتوي السجل نفسه على أي مسار برمجي للشبكة. هذا ادعاء قابل للاختبار لا حجة تسويقية:
+            أوقف الواي فاي وبيانات الجوال، وافتح Spendwise، وسيظل كل ما سبق يعمل.
+          </p>
+
+          <h2 id="why-offline">لماذا تختار العمل دون اتصال أصلًا</h2>
+          <p>
+            متتبعات السحابة مريحة لأن خادم شخص آخر يتولى المزامنة والنسخ الاحتياطي والاستيراد من
+            البنوك. والمقابل أن سجل إنفاقك الكامل يقيم على ذلك الخادم، مرتبطًا بحساب اضطررت إلى
+            إنشائه، وبسياسة لم تكتبها. أما العمل دون اتصال أولًا فيعكس المقابل:
+          </p>
+          <ul>
+            <li>لا حساب لإنشائه أو نسيانه أو فقدان الوصول إليه.</li>
+            <li>لا أحد تطلب منه إذنًا لقراءة بياناتك.</li>
+            <li>لا تعارض مزامنة يُسقط معاملة في صمت.</li>
+            <li>لا شيء تدفع مقابله باستمرار، لأنه لا خوادم تُشغَّل.</li>
+          </ul>
+          <p>
+            ما تتنازل عنه حقيقي: لا اتصالات بنكية، ولا تصنيف تلقائي، ولا تطبيق ويب، ولا سجل مشترك
+            مباشر بين هاتفين. وإن كان ذلك يهمك أكثر من المقابل، فإن تطبيقًا متزامنًا مثل Spendee
+            أنسب لك — <a href="/ar/expense-tracker-vs-spendee">مقارنة Spendee</a> تقول ذلك بصراحة.
+          </p>
+
+          <h2 id="backup">دون اتصال يعني أن النسخة الاحتياطية لك تحفظها</h2>
+          <p>
+            الحساب السحابي يقوم أيضًا مقام النسخة الاحتياطية. والسجل دون اتصال ليس كذلك، لذا يجعل
+            Spendwise النسخ الاحتياطي إجراءً أساسيًا:
+            <strong>الإعدادات ← النسخ الاحتياطي والاستعادة ← إنشاء ملف النسخة الاحتياطية</strong>
+            يكتب ملف <code>.spendwise</code> واحدًا يضم كل معاملة وفئة وميزانية وشخص ومجموعة ومرفق
+            إيصال. ضعه حيث تحفظ ملفاتك المهمة.
+          </p>
+          <p>
+            تحفّظان صادقان. ملف النسخة الاحتياطية غير مشفّر، فتعامل معه ككشف حساب بنكي. وإزالة
+            التطبيق تحذف السجل — والنسخة الاحتياطية ليست اختيارية إن كانت البيانات تهمك.
+          </p>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+
+          <details class="faq">
+            <summary>هل يعمل Spendwise في وضع الطيران؟</summary>
+            <div class="faq__body">
+              <p>
+                نعم. التسجيل والميزانيات والمجموعات والتقارير والتذكيرات والنسخ الاحتياطي كلها تعمل
+                مع إيقاف الشبكة. والجزء الوحيد الذي يستخدم الشبكة هو الإعلان الواحد على شاشة
+                التأكيد، ويعرض مكانه المحجوز حين يتعذر عرضه.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>أين تُخزَّن مصروفاتي؟</summary>
+            <div class="faq__body">
+              <p>
+                في قاعدة بيانات SQLite داخل مساحة التخزين الخاصة بالتطبيق على هاتفك. لا نسخة على
+                خادم، ولا خدمة مزامنة، ولا حساب يحتفظ بها.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>ماذا يحدث عندما يعود الهاتف إلى الاتصال؟</summary>
+            <div class="faq__body">
+              <p>
+                لا يُرفع أي شيء. تحليلات الشاشات المجهولة، إن كنت قد أبقيتها مفعّلة، تستأنف الإرسال؛
+                أما السجل نفسه فلا يغادر الجهاز أبدًا إلا إذا صدّرته أو أنشأت ملف نسخة احتياطية.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل يمكن لهاتفين مشاركة سجل واحد دون اتصال؟</summary>
+            <div class="faq__body">
+              <p>
+                ليس مباشرة. هاتف واحد يحتفظ بالسجل. يمكنك نقله إلى هاتف آخر بملف نسخة احتياطية، لكن
+                لا مزامنة ثنائية الاتجاه، لأن المزامنة تحتاج خادمًا. لرحلة مشتركة، اقرأ
+                <a href="/ar/split-expenses-with-friends">كيف تعمل المجموعات</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل سأفقد بياناتي إذا أزلت Spendwise؟</summary>
+            <div class="faq__body">
+              <p>
+                نعم. إزالة التطبيق تحذف مساحة التخزين الخاصة به. أنشئ ملف نسخة احتياطية من
+                الإعدادات، النسخ الاحتياطي والاستعادة قبل الإزالة أو تغيير الهاتف.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="مزيد من الأدلة">
+            <h2>مزيد من الأدلة</h2>
+            <ul>
+              <li><a href="/ar/expense-tracker-vs-spendee">Spendee مقابل Spendwise</a></li>
+              <li><a href="/ar/expense-tracker-without-signup">متتبع مصروفات دون تسجيل</a></li>
+              <li><a href="/ar/private-expense-tracker">متتبع مصروفات خاص</a></li>
+              <li><a href="/ar/split-expenses-with-friends">تقسيم المصروفات مع الأصدقاء</a></li>
+              <li><a href="/ar/expense-tracker-vs-spreadsheet">Spendwise مقابل جدول البيانات</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>جرّب متتبع مصروفات يعمل دون إشارة</h2>
+          <p>
+            مجاني، بلا حساب، بلا معرّف تتبع. يبقى السجل على هاتفك، ويأخذه معك ملف نسخة احتياطية
+            واحد.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Doffline"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ar/expense-tracker-without-signup"
+              >لماذا لا يوجد تسجيل</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>50/30/20予算計算ツール：収入を3つに分ける</title>
+    <meta
+      name="description"
+      content="手取り収入をニーズ・ウォンツ・貯蓄に50/30/20ルールで分ける無料ツール。アカウント不要で、このルールが合わなくなる場面も正直に説明します。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="50/30/20予算計算ツール：収入を3つに分ける" />
+    <meta
+      property="og:description"
+      content="無料の50/30/20計算ツール、その背後にある計算、そして家賃が手取りの半分を超えるときにどうするか。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青いグラデーションの背景に、白い進捗リングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "50/30/20予算計算ツール",
+            "item": "https://spendwise.download/ja/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "50/30/20は額面給与と手取りのどちらを基準にしますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "手取りです。税や年金、給与天引きを引いたあとに実際に口座へ入る金額です。額面給与を使うとどの枠も膨らみ、紙の上では問題ないのに銀行では破綻する予算になります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "50/30/20ルールで「必要な出費」に入るものは？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "家賃や住宅ローン、光熱費、食料品、通勤費、保険、借金の最低返済額、必要な薬です。失業中でも払い続けるものは必要な出費です。解約できるジム、動画配信のまとめ契約、2台目の車は欲しいものです。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "家賃だけで50%を超える場合は？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "このルールは出発点であって法律ではありません。物価の高い都市では、60/20/20や70/20/10が正直な形です。貯蓄と借金に本物の20%を残し、不足分はまず欲しいものから取ります。欲しいものを守るために貯蓄を削るのは、優先順位を逆さまにすることです。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "計算ツールは収入を保存しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。計算はブラウザ内で完結し、どこにも送信されず、このサイトは第三者のスクリプトを読み込みません。ページを再読み込みすれば、入力した内容はすべて消えます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseアプリは50/30/20の予算ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "厳密には違います。Spendwiseは月間予算を1つ持ち、既知の定期的な請求をそこから確保するので、残った金額が自由に使えるお金になります。このページで合計を決め、50%の数字を月間予算に設定して、支出を記録してください。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">無料ツール</p>
+          <h1>50/30/20予算計算ツール</h1>
+          <p class="doc-hero__lede">
+            手取り収入を、必要な出費・欲しいもの・貯蓄の3つに一度で分けられます。そのうえで、このルールがこぼれ落とすものも読んでください。アカウントも登録も追跡IDもなし。計算はすべてブラウザ内で終わります。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新日：</strong> 2026年10月20日 &nbsp;·&nbsp;
+            <strong>入力：</strong> 手取り収入 &nbsp;·&nbsp; <strong>費用：</strong> 無料
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">あなたの数字</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>月の手取り収入 · 税やその他の控除後</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>配分</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>必要な出費 · 50%</dt>
+                  <dd data-out="needs">2,000.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>欲しいもの · 30%</dt>
+                  <dd data-out="wants">1,200.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>貯蓄と借金返済 · 20%</dt>
+                  <dd data-out="savings">800.00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>1日あたり · 30日の月</dt>
+                  <dd data-out="day">133.33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                金額は入力した通貨のまま、通貨の最小単位に丸めます。このページは計画用の道具で、帳簿ではありません。何も保存しません。
+              </p>
+            </div>
+            <noscript>
+              <p>
+                計算ツールにはJavaScriptが必要です。ルール自体は単純です。手取り収入の50%を必要な出費、30%を欲しいもの、20%を貯蓄と借金返済に。半分、3分の1、5分の1です。
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">50/30/20ルールが実際に言っていること</h2>
+          <p>
+            このルールは、Elizabeth Warren と Amelia Warren Tyagi の
+            <em>All Your Worth</em>（2005年）を通じて広まりました。主張は狭く、そして有用です。口座に入ってくるお金のうち、半分は義務に、10分の3は自由に使える生活に、5分の1は未来に回せます。配分は給与にも国にも銀行にも左右されません。
+          </p>
+          <p>
+            強みは、これが<strong>必要な出費の上限</strong>であって、目標ではないことです。多くの家計アドバイスは「支出を減らして、もっと貯めよう」と言うだけで、その「もっと」が何を指すのか言いません。ここでは50%の線が診断になります。必需品がこの線を越えるなら、問題は構造的 — 家賃、交通、育児 — であり、クーポンアプリでは直りません。
+          </p>
+
+          <h2 id="how-to-read">3つの数字の読み方</h2>
+          <ul>
+            <li>
+              <strong>必要な出費、50%。</strong> 家賃や住宅ローン、光熱費、食料品、通勤、保険、借金の最低返済額、必要な薬。判断は簡単です。失業した最初の月にも、これを払い続けるでしょうか。
+            </li>
+            <li>
+              <strong>欲しいもの、30%。</strong> 外食、サブスクリプション、旅行、趣味、必要以上に良いスマートフォン。ほかの2つが苦しいとき、不足分を埋めるのはこの枠です。貯蓄が減ってきたときに最初に見る場所でもあります。
+            </li>
+            <li>
+              <strong>貯蓄と借金、20%。</strong> 緊急資金、老後、投資、そしてローンの最低額を超える返済。高くつく借金を返すのは、手に入る中で最も利回りの高い貯蓄なので、必要な出費ではなくここに入ります。
+            </li>
+          </ul>
+          <p>
+            月4,000なら、2,000、1,200、800です。1日あたりの数字 — およそ133 — は元のルールにはありません。1か月の金額は大きすぎて1週間の実感につながらず、「今日これを買えるか」こそが実際に人々が問うことだから、ここに置いています。
+          </p>
+
+          <h2 id="blur">カテゴリがにじむ場所</h2>
+          <p>
+            50/30/20の議論は、実際にはどれも1つの支出についての議論です。吟味に耐える判断をいくつか挙げます。
+          </p>
+          <ul>
+            <li>
+              <strong>食料品は必要、配達料は欲しいもの。</strong> 分けてください。食費に紛れたテイクアウトの習慣は、年間4桁の「欲しいもの」予算を隠しかねません。
+            </li>
+            <li>
+              <strong>車は分類が分かれます。</strong> ローン、保険、通勤の燃料は必要。上位グレードは違います。いざというときバス通勤できるなら、正直な必要額はバス代で、差額は欲しいものです。
+            </li>
+            <li>
+              <strong>ジムは欲しいもの — 医師が処方した場合を除きます。</strong> 悪い月に解約する会員権は、どれほど健康に良くても定義上は欲しいものです。
+            </li>
+            <li>
+              <strong>借金の最低返済額は必要、繰り上げ返済は貯蓄。</strong> そうしないと、大きなローンが必要な出費を50%の外へ押し出し、計画が崩れます。
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">ルールが合わないとき</h2>
+          <p>
+            50/30/20は、住居費が手取りの半分を大きく下回るという前提に立っています。ロンドン、ダブリン、トロント、シドニー、ムンバイ、サンフランシスコでは — あるいは子育て中の単一収入では — その前提がしばしば成り立ちません。正直な変形が3つあります。
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20。</strong> 住居費が必要な出費を60%まで押し上げます。欲しいものは20%に縮み、貯蓄は20%のまま。未来は借り戻せない部分だからです。
+            </li>
+            <li>
+              <strong>70/20/10。</strong> 物価の高い都市で初任給のとき。10%の貯蓄も本物の習慣です。ゼロはそうではありません。
+            </li>
+            <li>
+              <strong>ゼロベース。</strong> 月初めに、収入のすべてに役割を割り当てます。割合より手間はかかりますが、不規則な収入には向いています。
+            </li>
+          </ul>
+          <p>
+            変動収入には別の仕組みが要ります。直近で最も低かった月から予算を立て、余りは貯蓄として扱う。最も良かった月から立てて祈るのではありません。割合は年末の確認には役立ちますが、毎月の指示ではありません。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="2026年10月のSpendwiseダッシュボード。今月の支出$2,095.50、予算$6,000.00に対して「順調」、収入$5,320.00、純残高$3,224.50、グループの帯、まだ記録していない定期的な支払いが表示されている。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                月間予算は1つ。まだ記録していない請求分は、その予算から確保されます。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026年10月のレポート。予算$6,000.00に対して支出$2,095.50、収入と純残高、カテゴリ別支出のドーナツグラフ（先頭は家賃$1,400.00）。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>その月のカテゴリ。自分の配分と見比べられます。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">20%は、見る前に消す</h2>
+          <p>
+            意志に頼る配分は、口座振替に頼る配分に負けます。20%は給料日に動かし、月末に回さない。そして、少しだけ面倒な口座に置いてください。定期的な請求も同じです。家賃や光熱費が決まった日に出ていくなら、残高が何と言おうとそのお金はすでに使われています。
+          </p>
+          <p>
+            残る問い — 実際に何に使ったか — は記録の問題で、予算の問題ではありません。Spendwiseは帳簿を端末内のSQLiteデータベースとして持ち、既知の定期的な請求を確保する月間予算が1つ、19:00のリマインダー、月末のPDF・XLSX書き出しがあります。50/30/20の配分は計算しません。50%の合計を予算に設定し、使うたびに記録し、レポートを計画と比べてください。
+          </p>
+
+          <h2 id="faq">よくある質問</h2>
+          <details class="faq">
+            <summary>50/30/20は額面給与と手取りのどちらを基準にしますか？</summary>
+            <div class="faq__body">
+              <p>
+                手取りです。税や年金、給与天引きを引いたあとに実際に口座へ入る金額です。額面給与を使うとどの枠も膨らみ、紙の上では問題ないのに銀行では破綻する予算になります。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>50/30/20ルールで「必要な出費」に入るものは？</summary>
+            <div class="faq__body">
+              <p>
+                家賃や住宅ローン、光熱費、食料品、通勤費、保険、借金の最低返済額、必要な薬です。失業中でも払い続けるものは必要な出費です。解約できるジム、動画配信のまとめ契約、2台目の車は欲しいものです。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>家賃だけで50%を超える場合は？</summary>
+            <div class="faq__body">
+              <p>
+                このルールは出発点であって法律ではありません。物価の高い都市では、60/20/20や70/20/10が正直な形です。貯蓄と借金に本物の20%を残し、不足分はまず欲しいものから取ります。欲しいものを守るために貯蓄を削るのは、優先順位を逆さまにすることです。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>計算ツールは収入を保存しますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。計算はブラウザ内で完結し、どこにも送信されず、このサイトは第三者のスクリプトを読み込みません。ページを再読み込みすれば、入力した内容はすべて消えます。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwiseアプリは50/30/20の予算ですか？</summary>
+            <div class="faq__body">
+              <p>
+                厳密には違います。Spendwiseは月間予算を1つ持ち、既知の定期的な請求をそこから確保するので、残った金額が自由に使えるお金になります。このページで合計を決め、50%の数字を月間予算に設定して、支出を記録してください。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="ほかのツールとガイド">
+            <h2>ほかのツールとガイド</h2>
+            <ul>
+              <li><a href="/ja/split-bill-calculator">割り勘計算ツール</a></li>
+              <li><a href="/ja/subscription-cost-calculator">サブスク費用の計算ツール</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友達との割り勘</a></li>
+              <li><a href="/ja/offline-expense-tracker">オフライン家計簿</a></li>
+              <li><a href="/ja/expense-tracker-without-signup">登録不要の家計簿</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">家計簿アプリと表計算ソフト</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>配分を決めて、あとから実際を記録する</h2>
+          <p>
+            Spendwiseは無料で、アカウントも追跡IDもありません。予算を設定し、支出を記録し、月末を書き出すだけ。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >Google Play で入手</a
+            >
+            <a class="btn btn--ghost" href="/ja/private-expense-tracker">プライバシーページを読む</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

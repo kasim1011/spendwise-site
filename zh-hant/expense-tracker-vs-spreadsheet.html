@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>記帳工具與試算表：哪個更快</title>
+    <meta
+      name="description"
+      content="試算表免費又彈性，手機上的記帳 App 則更快。兩者各自勝出的地方，以及怎麼把數字互相搬過去。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="記帳工具與試算表：哪個更快" />
+    <meta
+      property="og:description"
+      content="試算表是最老實的預算工具。它仍然勝出的地方、記帳 App 勝過它的地方，以及怎麼讓兩者並存。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 標誌：藍色漸層底上的一個白色進度圓環與勾號。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hant/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "記帳工具與試算表：哪個更快",
+            "item": "https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "我可以把現有的試算表匯入 Spendwise 嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不行。Spendwise 沒有 CSV 或試算表匯入功能。備份還原只接受自家的 .spendwise 檔案，所以想搬移舊的試算表，只能手動補上歷史紀錄，或從這個月重新開始。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我可以把 Spendwise 的資料匯出到試算表嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。一個月或一年可匯出成 XLSX，內含一張摘要工作表與一份月度表格，另外還有 PDF，內容與畫面上的報表一致。兩者都會寫入 Android 的 Download/Spendwise。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "App 會取代試算表的公式嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不會。App 直接回答預算相關的問題並匯出數字，不會變成計算的場所。如果你需要自訂公式，就保留試算表，把資料匯出進去。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "試算表比 App 更私密嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "有可能，前提是檔案留在你的裝置上，而且你的文書軟體不會同步它。Spendwise 用另一種形式做同樣的承諾：帳本是一個本機資料庫，沒有帳號，也沒有任何副本放在伺服器上。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "家庭預算用哪一種比較好？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "如果由一個人在電腦上輸入全部資料，而且想要自訂報表，就用試算表。如果支出是在手機上隨時記錄，或需要讓不只一個人看到餘額，就用 App，因為以檔案分享的試算表很容易發生版本衝突。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hant/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主導覽">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">螢幕截圖</a>
+          <a href="/#privacy">隱私權</a>
+          <a href="/support" hreflang="en" lang="en">支援</a>
+          <a href="/privacy" hreflang="en" lang="en">隱私權政策</a>
+          <a href="/terms" hreflang="en" lang="en">條款與細則</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">比較</p>
+          <h1>記帳工具與試算表：老實的比較</h1>
+          <p class="doc-hero__lede">
+            試算表是最老實的預算工具：免費、透明，而且任你改造。它同時也要求你坐在書桌前記帳。
+            這頁要談的是這個取捨從哪裡開始行不通，又從哪裡還行得通。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong> 2026 年 10 月 20 日 &nbsp;·&nbsp; <strong>匯出：</strong>PDF 與
+            XLSX &nbsp;·&nbsp; <strong>匯入：</strong>不支援，這是刻意設計
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">試算表真正勝出的地方</h2>
+          <ul>
+            <li>
+              <strong>不必花錢，也不必安裝。</strong>你早就有一份，每個裝置上都有，而且永久可用。
+            </li>
+            <li>
+              <strong>公式由你掌握。</strong>任何你想像得到的檢視——儲蓄率、滾動平均、依發薪日拆分
+              ——都只差一個欄位。
+            </li>
+            <li>
+              <strong>一切都不經抽象化。</strong>你看得到每一個儲存格、核對每一個合計，還能直接在
+              出錯的地方修正。
+            </li>
+            <li>
+              <strong>它同時就是檔案庫。</strong>一個檔案就裝下好幾年的紀錄，格式的壽命比大多數
+              App 都長。
+            </li>
+          </ul>
+          <p>
+            如果你是那種每個星期天配著咖啡對帳的人，App 不會讓你的財務變好，只會讓你的流程換個
+            位置。
+          </p>
+
+          <h2 id="spreadsheet-breaks">哪裡開始失效</h2>
+          <p>
+            問題不在算術，而在錢離開帳戶、變成表格裡一列之間的那段摩擦。
+          </p>
+          <ul>
+            <li>
+              <strong>在收銀台前輸入。</strong>在手機上開啟檔案、找到下一個空白列、輸入日期、分類
+              與金額，再存一次檔——這是整整一分鐘的工作，沒有人在結帳時做這件事。資料於是一週後
+              才到，甚至根本沒到。
+            </li>
+            <li>
+              <strong>沒有記憶。</strong>試算表不會提醒你記帳，也不知道房租快要扣款。
+            </li>
+            <li>
+              <strong>分類靠打錯字。</strong>一個「伙食」和一個「伙時」，就能讓分類合計變成謊言，
+              而且公式不會報錯。
+            </li>
+            <li>
+              <strong>版本衝突。</strong>兩個人同時編輯「2026 預算 最終版 v3.xlsx」，就是家庭版的
+              合併衝突，由最後存檔的人決定結果。
+            </li>
+            <li>
+              <strong>週期性支出只存在你腦裡。</strong>房租的預留必須手動建模，否則月中那個「預算
+              還剩多少」的數字純屬虛構。
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">逐項對照</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">項目</th>
+                  <th scope="col">試算表</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">成本</th>
+                  <td>免費，或你已經付費的那套軟體。</td>
+                  <td>免費，由一則非個人化廣告支持。</td>
+                </tr>
+                <tr>
+                  <th scope="row">記一筆支出</th>
+                  <td>在手機上填一列：開檔、找列、日期、分類、金額、儲存。</td>
+                  <td>金額、分類、確認——確認畫面就是廣告畫面。</td>
+                </tr>
+                <tr>
+                  <th scope="row">預算檢查</th>
+                  <td>看你建立了哪些公式。</td>
+                  <td>每月預算，會先預留已知的週期性帳單。</td>
+                </tr>
+                <tr>
+                  <th scope="row">提醒</th>
+                  <td>沒有。</td>
+                  <td>每天 19:00 的提醒，以及依分類設定的週期性提醒。</td>
+                </tr>
+                <tr>
+                  <th scope="row">收據</th>
+                  <td>另一個檔案，頂多手動連結。</td>
+                  <td>照片或 PDF 附加在支出上，並隨備份一起帶走。</td>
+                </tr>
+                <tr>
+                  <th scope="row">報表</th>
+                  <td>自己建，自己解釋。</td>
+                  <td>月度與年度報表，可匯出為 PDF 或 XLSX。</td>
+                </tr>
+                <tr>
+                  <th scope="row">自訂分析</th>
+                  <td>無限。</td>
+                  <td>不是它的工作——匯出後到試算表裡算。</td>
+                </tr>
+                <tr>
+                  <th scope="row">資料放在哪</th>
+                  <td>那個檔案，你放哪就放哪。</td>
+                  <td>手機上的 SQLite 資料庫，並備份到你保存的檔案。</td>
+                </tr>
+                <tr>
+                  <th scope="row">從對方匯入</th>
+                  <td>複製貼上。</td>
+                  <td>不支援，沒有 CSV 匯入。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="新增交易表單，金額為 $47.82，已選取「支出」，「伙食」分類被標示出來，日期是今天，下方有一列收據或文件，可選擇照片或 PDF。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>一個畫面，填好金額與分類，然後確認。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026 年 10 月的報表，顯示支出 $2,095.50、預算 $6,000.00、收入與淨餘額，以及依分類呈現的環狀圖，從房租 $1,400.00 開始。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                你原本會在試算表裡做的報表，已經做好了——而且可以匯出。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="依日期分組的交易紀錄，附搜尋欄，顯示週日市場、咖啡與午餐、藥局與電影，每天都帶著自己的淨額。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>依日期分組的紀錄，可搜尋，每天都有自己的淨額。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">兩者並用：匯出就是橋樑</h2>
+          <p>
+            對多數人來說，合理的答案不是「丟掉試算表」，而是「別再手動打列，改用匯出」。
+          </p>
+          <p>
+            Spendwise 可以把一個月或一年匯出成 <strong>XLSX</strong>——內含合計與分類明細的摘要
+            工作表，加上一份月度表格——也可以匯出成<strong>PDF</strong>，內容與畫面上的報表一致。
+            兩者都會寫入 Android 的 <code>Download/Spendwise</code>，分享選單則是第二條路。你的
+            試算表成為分析層，App 成為記錄層。
+          </p>
+          <p>
+            它不會做的則是匯入。沒有 CSV 匯入，也沒有辦法載入舊的試算表，所以搬移意味著手動補上
+            過去，或從這個月重新開始。這是刻意設下的上限：要把各種試算表都解析得好，本身就是一個
+            專案，而一次糟糕的匯入會悄悄弄壞整本帳。
+          </p>
+
+          <h2 id="fit">該用哪一種</h2>
+          <ul>
+            <li>
+              <strong>留在試算表</strong>，如果你每週在書桌前記錄、需要自訂公式，而且已經信任自己
+              的流程。
+            </li>
+            <li>
+              <strong>改用 App</strong>，如果支出發生在書桌以外、你想要提醒，以及一個知道房租快到
+              的預算，或收據必須跟支出放在一起。
+            </li>
+            <li>
+              <strong>兩者並用</strong>，如果你想要快速記錄加上深入分析：手機用 App，其餘交給
+              試算表，月底匯出。
+            </li>
+          </ul>
+
+          <h2 id="faq">常見問題</h2>
+
+          <details class="faq">
+            <summary>我可以把現有的試算表匯入 Spendwise 嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不行。Spendwise 沒有 CSV 或試算表匯入功能。備份還原只接受自家的
+                <code>.spendwise</code> 檔案，所以想搬移舊的試算表，只能手動補上歷史紀錄，或從
+                這個月重新開始。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>我可以把 Spendwise 的資料匯出到試算表嗎？</summary>
+            <div class="faq__body">
+              <p>
+                可以。一個月或一年可匯出成 XLSX，內含一張摘要工作表與一份月度表格，另外還有 PDF，
+                內容與畫面上的報表一致。兩者都會寫入 Android 的
+                <code>Download/Spendwise</code>。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>App 會取代試算表的公式嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不會。App 直接回答預算相關的問題並匯出數字，不會變成計算的場所。如果你需要自訂
+                公式，就保留試算表，把資料匯出進去。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>試算表比 App 更私密嗎？</summary>
+            <div class="faq__body">
+              <p>
+                有可能，前提是檔案留在你的裝置上，而且你的文書軟體不會同步它。Spendwise 用另一種
+                形式做同樣的承諾：帳本是一個本機資料庫，沒有帳號，也沒有任何副本放在伺服器上——
+                見<a href="/zh-hant/private-expense-tracker">「私密」在這裡是什麼意思</a>。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>家庭預算用哪一種比較好？</summary>
+            <div class="faq__body">
+              <p>
+                如果由一個人在電腦上輸入全部資料，而且想要自訂報表，就用試算表。如果支出是在手機
+                上隨時記錄，或需要讓不只一個人看到餘額，就用 App，因為以檔案分享的試算表很容易
+                發生版本衝突。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hant/expense-tracker-vs-spendee">Spendee 與 Spendwise</a></li>
+              <li><a href="/zh-hant/offline-expense-tracker">離線記帳</a></li>
+              <li><a href="/zh-hant/expense-tracker-without-signup">免註冊記帳</a></li>
+              <li><a href="/zh-hant/private-expense-tracker">私密記帳</a></li>
+              <li><a href="/zh-hant/split-expenses-with-friends">和朋友分帳</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>在手機上記錄，在試算表裡分析</h2>
+          <p>
+            免費、免帳號、沒有追蹤 ID。把這個月匯出成 XLSX，讓公式留在它該在的地方。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hant&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >在 Google Play 取得</a
+            >
+            <a class="btn btn--ghost" href="/zh-hant/offline-expense-tracker">看哪些功能離線可用</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hant/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、離線優先的 Android 記帳工具。
+              你的帳本留在自己的手機上。
+            </p>
+          </div>
+          <div>
+            <h2>產品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">螢幕截圖</a></li>
+              <li><a href="/#privacy">隱私權</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律資訊</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隱私權政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">條款與細則</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>支援</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">支援與常見問題</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有權利。</span>
+          <span>專為 Android 10 以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

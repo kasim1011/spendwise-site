@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Офлайн-трекер расходов: учёт трат без интернета</title>
+    <meta
+      name="description"
+      content="Spendwise — офлайн-трекер расходов для Android. Записывай траты, веди бюджет и дели расходы с друзьями без аккаунта, облака и связи."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/offline-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/offline-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/offline-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/offline-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/offline-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Офлайн-трекер расходов: учёт трат без интернета" />
+    <meta
+      property="og:description"
+      content="Что умеет офлайн-трекер в авиарежиме, что всё ещё требует связи и почему журнал живёт в базе данных на телефоне."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/offline-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Офлайн-трекер расходов",
+            "item": "https://spendwise.download/ru/offline-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Работает ли Spendwise в авиарежиме?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Запись операций, бюджеты, группы, отчёты, напоминания и резервное копирование работают с выключенным радиомодулем. Сеть нужна только одному объявлению на экране подтверждения: если оно не может загрузиться, показывается заглушка."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где хранятся мои траты?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "В базе данных SQLite в приватном хранилище приложения на твоём телефоне. Ни копии на сервере, ни сервиса синхронизации, ни аккаунта, который бы их хранил."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что происходит, когда телефон снова подключается к сети?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ничего не загружается. Анонимная статистика экранов, если ты её не отключил, снова отправляется; сам журнал никогда не покидает устройство, если только ты не экспортируешь его или не создашь файл резервной копии."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Могут ли два телефона вести один офлайн-журнал?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "В реальном времени — нет. Журнал хранится на одном телефоне. Ты можешь перенести его на другой телефон файлом резервной копии, но двусторонней синхронизации нет, потому что для синхронизации нужен сервер."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Потеряю ли я данные, если удалю Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Удаление приложения стирает его приватное хранилище. Прежде чем удалять приложение или менять телефон, создай файл резервной копии в разделе «Настройки», «Резервное копирование и восстановление»."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/offline-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/offline-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/offline-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/offline-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/offline-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/offline-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/offline-expense-tracker" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/offline-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/offline-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/offline-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/offline-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/offline-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Офлайн по замыслу</p>
+          <h1>Офлайн-трекер расходов, которому никогда не нужна связь</h1>
+          <p class="doc-hero__lede">
+            Большинство трекеров расходов — это онлайн-приложения с прикрученным офлайн-режимом.
+            Spendwise устроен наоборот: журнал — это база данных на твоём телефоне, а сеть
+            необязательна. Вот что это тебе даёт и чего стоит.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Платформа:</strong> Android 10 и новее &nbsp;·&nbsp;
+            <strong>Цена:</strong> бесплатно, за счёт одного неперсонализированного объявления
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="what-offline-means">Что здесь значит «офлайн»</h2>
+          <p>
+            Spendwise хранит каждую операцию, категорию, бюджет, человека и вложение в SQLite — на
+            устройстве, в приватном хранилище приложения. Экраны читают из этой базы. Здесь нет
+            входа в аккаунт, очереди синхронизации и сервера, который должен ответить, прежде чем
+            приложение покажет, сколько ты потратил.
+          </p>
+          <p>
+            Это вся архитектура, и поэтому приложение открывается мгновенно и работает в поезде,
+            самолёте, подвале или с зарубежной SIM-картой без данных. И поэтому здесь нет
+            переключателя «офлайн-режим»: из него некуда выходить.
+          </p>
+
+          <h2 id="without-a-connection">Что можно делать без связи</h2>
+          <ul>
+            <li>
+              <strong>Записать операцию</strong> — сумма, категория, дата, заметка и вложенное фото
+              или PDF. Фото берётся из галереи Android, поэтому приложению не нужно разрешение на
+              камеру.
+            </li>
+            <li>
+              <strong>Спланировать месяц</strong> — задай бюджет на месяц и смотри, как он учитывает
+              регулярные счета, которые ты ещё не записал, чтобы цифра не льстила до списания
+              аренды.
+            </li>
+            <li>
+              <strong>Вести журнал группы</strong> — поездка или общая квартира с собственными
+              категориями, бюджетом, людьми и балансами взаиморасчётов.
+            </li>
+            <li>
+              <strong>Получать напоминания</strong> — ежедневное напоминание в 19:00 и повторяющиеся
+              напоминания по категориям — это локальные будильники, а не push-сообщения с сервера.
+            </li>
+            <li>
+              <strong>Читать и экспортировать отчёты</strong> — месячные и годовые отчёты пишутся в
+              PDF или XLSX в <code>Download/Spendwise</code> без загрузки куда-либо.
+            </li>
+            <li>
+              <strong>Делать резервные копии и восстанавливать</strong> — один файл со всеми строками
+              и вложениями, создаётся и восстанавливается локально.
+            </li>
+          </ul>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="Форма добавления операции с суммой 47,82 $, выбранным расходом, выделенной категорией «Продукты», сегодняшней датой и строкой чека или документа с выбором фото либо PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Запись идёт локально: форма пишет в базу телефона сразу после подтверждения.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="История операций по дням с полем поиска: воскресный рынок, кофе и обед, аптека и кино, у каждого дня свой итог."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                История и поиск читают прямо из локальной базы: ни запроса, ни индикатора загрузки.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="Отчёт за октябрь 2026: потрачено 2 095,50 $ при бюджете 6 000,00 $, доходы и итоговый баланс, а также кольцевая диаграмма расходов по категориям, начиная с аренды 1 400,00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Отчёты строятся на устройстве и экспортируются в PDF или XLSX без сервера.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="what-needs-network">Небольшая часть, которой всё ещё нужна сеть</h2>
+          <p>Две вещи не локальны, и ни одна из них не нужна для работы приложения:</p>
+          <ul>
+            <li>
+              <strong>Реклама.</strong> Spendwise бесплатен благодаря одному
+              неперсонализированному объявлению на экране подтверждения операции. Чтобы
+              загрузиться, ему нужна связь. Офлайн запрос не проходит, и экран показывает заглушку;
+              на запись, сохранение и кнопку «Готово» это не влияет.
+            </li>
+            <li>
+              <strong>Анонимная статистика экранов.</strong> Она помогает решать, какие экраны стоит
+              улучшать. Включена по умолчанию, не содержит ни идентификатора отслеживания, ни
+              идентификатора пользователя, и её можно полностью отключить в настройках: в
+              выключенном состоянии не отправляется ничего.
+            </li>
+          </ul>
+          <p>
+            У самого журнала нет сетевого кода. Это проверяемое утверждение, а не маркетинговое:
+            отключи Wi-Fi и мобильные данные, открой Spendwise — и всё перечисленное выше
+            продолжает работать.
+          </p>
+
+          <h2 id="why-offline">Зачем вообще выбирать офлайн</h2>
+          <p>
+            Облачные трекеры удобны: чужой сервер делает синхронизацию, резервные копии и импорт из
+            банка. Плата за это — вся твоя история трат лежит на том сервере, привязанная к
+            аккаунту, который пришлось создать, по политике, которую писал не ты. Офлайн-подход
+            меняет сделку:
+          </p>
+          <ul>
+            <li>Не нужно создавать аккаунт, забывать его или терять доступ.</li>
+            <li>Не нужно ни у кого спрашивать разрешения прочитать собственные данные.</li>
+            <li>Нет конфликта синхронизации, который молча теряет операцию.</li>
+            <li>Не за что платить постоянно, потому что серверов, которые нужно содержать, нет.</li>
+          </ul>
+          <p>
+            Отказ от чего-то реален: нет подключения к банку, автоматической категоризации,
+            веб-приложения и общего журнала в реальном времени между двумя телефонами. Если это
+            важнее сделки, синхронизируемое приложение вроде Spendee подойдёт лучше —
+            <a href="/ru/expense-tracker-vs-spendee">сравнение со Spendee</a> говорит об этом
+            честно.
+          </p>
+
+          <h2 id="backup">Офлайн значит, что резервная копия остаётся у тебя</h2>
+          <p>
+            Облачный аккаунт заодно служит резервной копией. Офлайн-журнал — нет, поэтому Spendwise
+            делает резервное копирование действием первого класса:
+            <strong>Настройки → Резервное копирование → Создать файл копии</strong>
+            записывает один файл <code>.spendwise</code> со всеми операциями,
+            категориями, бюджетами, людьми, группами и вложениями. Положи его туда, где хранишь
+            важные файлы.
+          </p>
+          <p>
+            Две честные оговорки. Файл резервной копии не зашифрован, так что обращайся с ним как с
+            банковской выпиской. А удаление приложения стирает журнал — если данные важны,
+            резервная копия не опция.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Работает ли Spendwise в авиарежиме?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Запись операций, бюджеты, группы, отчёты, напоминания и резервное копирование
+                работают с выключенным радиомодулем. Сеть нужна только одному объявлению на экране
+                подтверждения: если оно не может загрузиться, показывается заглушка.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Где хранятся мои траты?</summary>
+            <div class="faq__body">
+              <p>
+                В базе данных SQLite в приватном хранилище приложения на твоём телефоне. Ни копии на
+                сервере, ни сервиса синхронизации, ни аккаунта, который бы их хранил.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Что происходит, когда телефон снова подключается к сети?</summary>
+            <div class="faq__body">
+              <p>
+                Ничего не загружается. Анонимная статистика экранов, если ты её не отключил, снова
+                отправляется; сам журнал никогда не покидает устройство, если только ты не
+                экспортируешь его или не создашь файл резервной копии.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Могут ли два телефона вести один офлайн-журнал?</summary>
+            <div class="faq__body">
+              <p>
+                В реальном времени — нет. Журнал хранится на одном телефоне. Ты можешь перенести
+                его на другой телефон файлом резервной копии, но двусторонней синхронизации нет,
+                потому что для синхронизации нужен сервер. Для общей поездки читай
+                <a href="/ru/split-expenses-with-friends">как работают группы</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Потеряю ли я данные, если удалю Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Удаление приложения стирает его приватное хранилище. Прежде чем удалять
+                приложение или менять телефон, создай файл резервной копии в разделе «Настройки»,
+                «Резервное копирование и восстановление».
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Больше руководств">
+            <h2>Больше руководств</h2>
+            <ul>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Трекер расходов без регистрации</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный трекер расходов</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Делить расходы с друзьями</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Попробуй трекер расходов, который работает без сигнала</h2>
+          <p>
+            Бесплатно, без аккаунта, без идентификатора отслеживания. Журнал остаётся на телефоне, а
+            один файл резервной копии берёт его с собой.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Doffline"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/expense-tracker-without-signup"
+              >Почему здесь нет регистрации</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

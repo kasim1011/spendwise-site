@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abo-Kosten-Rechner: Monat, Jahr und fünf Jahre</title>
+    <meta
+      name="description"
+      content="Alle Abos zusammenzählen, monatlich und jährlich, und die echten Jahreskosten sehen. Kostenlos, ohne Konto, plus wie du vergessene Abos loswirst."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Abo-Kosten-Rechner: Monat, Jahr und fünf Jahre" />
+    <meta
+      property="og:description"
+      content="Jede wiederkehrende Abbuchung summieren, die Jahressumme sehen und Jahres- mit Monatszahlung vergleichen."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Abo-Kosten-Rechner",
+            "item": "https://spendwise.download/de/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist jährliche Zahlung immer günstiger?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Vergleiche den Jahrespreis mit zwölf Monatszahlungen. Ein übliches Muster sind zehn Monate für ein Jahr, rund 17 % Rabatt, aber manche Dienste verlangen für den Jahresplan einen Aufschlag oder streichen eine monatliche Funktion. Rechne nach, statt dem Abzeichen zu glauben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Warum fühlen sich Abos günstiger an, als sie sind?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weil der Preis pro Monat genannt und still abgebucht wird. Drei Dienste zu je 9,99 lesen sich als etwa zehn im Monat, nicht als 360 im Jahr. Nur die Jahressumme macht ein Abo mit einem Kauf vergleichbar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie finde ich Abos, die ich vergessen habe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Suche in deinen Kontoauszügen der letzten zwölf Monate nach wiederkehrenden Abbuchungen und prüfe dann die Abo-Liste im App Store und deine Mails auf Verlängerungsbelege. Die üblichen Verdächtigen sind Testphasen, die umgestellt wurden, weil die erste Abbuchung erst nach dem Entscheidungsmoment kommt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Sendet der Rechner meine Abos irgendwohin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Die Einträge werden in der Seite gerechnet und verlassen den Browser nie. Es gibt keine Cookies, keine Skripte von Drittanbietern und keinen Server, der eine Liste speichert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann Spendwise mich vor einer Abo-Verlängerung erinnern?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spendwise führt für bekannte Rechnungen wiederkehrende Zeitpläne und reserviert ihren Betrag im Monatsbudget, mit Erinnerungen je Kategorie. Eine Bankverbindung gibt es nicht, ein Abo muss also einmal eingetragen werden und erscheint dann als fällige Rechnung, statt automatisch erkannt zu werden."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Kostenloses Werkzeug</p>
+          <h1>Abo-Kosten-Rechner</h1>
+          <p class="doc-hero__lede">
+            Trag jede wiederkehrende Abbuchung einmal ein und sieh, was sie pro Monat, pro Jahr und
+            über fünf Jahre kostet. Kein Konto, keine Tracking-ID, und nichts von dem, was du
+            eintippst, verlässt die Seite.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Abrechnung:</strong> monatlich oder jährlich &nbsp;·&nbsp;
+            <strong>Preis:</strong> kostenlos
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">Deine Abos</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Streaming" />
+                </label>
+                <label class="tool__field">
+                  <span>Betrag</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Abrechnung</span>
+                  <select name="cycle">
+                    <option value="monthly">Monatlich</option>
+                    <option value="yearly">Jährlich</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Entfernen</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Musik" />
+                </label>
+                <label class="tool__field">
+                  <span>Betrag</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Abrechnung</span>
+                  <select name="cycle">
+                    <option value="monthly">Monatlich</option>
+                    <option value="yearly">Jährlich</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Entfernen</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Cloud-Speicher" />
+                </label>
+                <label class="tool__field">
+                  <span>Betrag</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Abrechnung</span>
+                  <select name="cycle">
+                    <option value="monthly">Monatlich</option>
+                    <option value="yearly" selected>Jährlich</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Entfernen</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              Eine jährliche Zahlung zählt als ein Zwölftel pro Monat, die Monatszahl ist also ein
+              Durchschnitt, kein Kontoauszug.
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>Abo hinzufügen</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>Die Summe</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Pro Monat</dt>
+                  <dd data-out="monthly">35,31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Pro Jahr</dt>
+                  <dd data-out="yearly">423,72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Fünf Jahre</dt>
+                  <dd data-out="five">2.118,60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Pro Tag</dt>
+                  <dd data-out="day">1,18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                Der Rechner braucht JavaScript. Von Hand: die Monatsbeträge addieren, jede
+                Jahreszahlung durch zwölf teilen und zur Monatssumme dazuzählen.
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="" placeholder="Abo" />
+                </label>
+                <label class="tool__field">
+                  <span>Betrag</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Abrechnung</span>
+                  <select name="cycle">
+                    <option value="monthly">Monatlich</option>
+                    <option value="yearly">Jährlich</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Entfernen</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">Warum nur die Jahressumme ehrlich ist</h2>
+          <p>
+            Abo-Preise sind dafür gemacht, pro Monat gelesen zu werden. Zehn im Monat fühlen sich wie
+            ein Kaffee an; es sind auch 120 im Jahr, und das ist die Zahl, die du mit einem Kauf, einem
+            Urlaub oder dem Notgroschen vergleichst, den du noch nicht angefangen hast. Der Rechner
+            ist für die eine Multiplikation da, die du nicht im Kopf machst.
+          </p>
+          <p>
+            Jährliche Zahlungen werden durch zwölf geteilt statt einzeln geführt, weil eine gemischte
+            Liste eine gemeinsame Einheit braucht. Der Haken ist real und gehört gesagt: Ein
+            Jahresplan für 99,99 zeigt sich als 8,33 im Monat, aber der Kontoauszug im März zeigt
+            99,99. Plane mit dem Durchschnitt und halte genug auf dem Konto für den Monat, in dem die
+            Abbuchung kommt.
+          </p>
+
+          <h2 id="compare">Jährlich oder monatlich zahlen</h2>
+          <p>
+            Ein Rabatt für die Zahlung eines ganzen Jahres ist üblich, aber es ist ein Preis mit
+            Bedingungen, kein Geschenk. Drei Fragen entscheiden, ob er sich lohnt:
+          </p>
+          <ul>
+            <li>
+              <strong>Wie hoch ist der Rabatt wirklich?</strong> Multipliziere den Monatspreis mit
+              zwölf und vergleich. Ein Jahr zum Preis von zehn sind rund 17 %; ein Jahr zum Preis von
+              elf etwa 8 %, und dafür lohnt es sich vielleicht nicht, das Geld wegzuschließen.
+            </li>
+            <li>
+              <strong>Nutzt du es im elften Monat noch?</strong> Die Ersparnis ist nur echt, wenn das
+              Abo so lange lebt. Einen Dienst, den du im vierten Monat gekündigt hättest, zahlst du
+              jährlich mehr, nicht weniger.
+            </li>
+            <li>
+              <strong>Kannst du die Vorleistung tragen?</strong> 120 in einem Monat zu zahlen ist
+              nicht dasselbe wie 10 im Monat, auch wenn die Summen nah beieinander liegen. Landet es
+              auf der Kreditkarte, ist der Rabatt wahrscheinlich negativ.
+            </li>
+          </ul>
+
+          <h2 id="audit">Ein Prüfdurchgang in fünfzehn Minuten, der wirklich Geld spart</h2>
+          <ol>
+            <li>
+              <strong>Finde die Abbuchungen.</strong> Suche in zwölf Monaten Kontoauszügen nach
+              demselben Anbieter, der monatlich oder jährlich auftaucht, und prüfe dann die Abo-Liste
+              im App Store und deine Mails auf Verlängerungsbelege.
+            </li>
+            <li>
+              <strong>Notiere den echten Preis, inklusive Steuer.</strong> In Dollar angegebene Preise
+              lassen die lokale Steuer oft weg, und eine Testphase, die umgestellt wurde, kann einen
+              Preis abrechnen, den du nie gewählt hast.
+            </li>
+            <li>
+              <strong>Sortiere nach Kosten pro Nutzung.</strong> Ein Dienst für 12 im Monat, den du
+              täglich nutzt, ist günstig; einer für 5, den du zweimal im Jahr öffnest, nicht — egal,
+              was das Abzeichen sagt.
+            </li>
+            <li>
+              <strong>Kündige zuerst unten auf der Liste.</strong> Das Ziel sind nicht null Abos; das
+              Ziel ist, dass jede wiederkehrende Abbuchung eine ist, für die du dich heute wieder
+              anmelden würdest.
+            </li>
+            <li>
+              <strong>Plane eine Verlängerungsprüfung.</strong> Öffne diese Seite neu, wenn eine
+              Testphase endet, oder einmal im Quartal. Die Kostensteigerung kommt schrittweise, und das ist Absicht.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="Der Tab Geld mit dem Monatsbudget zu 52 % ausgeschöpft, 27 eingebauten Kategorien, zwei erfassten Personen und acht wiederkehrenden Zeitplänen, dazu Berichte und Notizen unter Einblicke."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Wiederkehrende Rechnungen und Zeitpläne, gegen das Budget gerechnet.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Die Einstellungen mit der App-Sprache, der App-Währung USD, der Wahl zwischen System, Hell und Dunkel sowie fünf Akzentfarben."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Die App bleibt lokal: Sprache, Währung und Design sind Einstellungen des Geräts.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">Die Falle mit dem Teilen</h2>
+          <p>
+            Familienpläne und jährliche Vorauszahlung sind die Orte, an denen sich Abo-Summen
+            verstecken. Ein Familienplan für 179 im Jahr, geteilt mit vier Personen, ist pro Kopf
+            günstiger als vier Einzelpläne — aber nur, wenn jemand die Anteile einsammelt, und das ist
+            ein kleines Ledger für sich. Notiere, wer bei der Verlängerung was schuldet, sonst wird
+            der Plan ein Geschenk mit unklarer Laufzeit.
+          </p>
+          <p>
+            Dasselbe gilt für Jahresabrechnung im Haushalt: eine Karte, mehrere Nutznießer. Genau
+            dafür gibt es in Spendwise die Salden der Personen, und ein Gruppen-Ledger hält einen
+            gemeinsamen Plan getrennt von den persönlichen Ausgaben.
+          </p>
+
+          <h2 id="app">Aus der Summe eine Budgetzeile machen</h2>
+          <p>
+            Die Zahl, die diese Seite ausgibt, ist ein guter Kandidat für eine wiederkehrende Rechnung
+            in Spendwise. Trag den Zeitplan einmal ein, und das Monatsbudget reserviert ihn; die Zahl,
+            die auf der Übersicht übrig bleibt, ist Geld, das du ausgeben kannst, statt Geld, das
+            schon versprochen ist. Es gibt keine Bankverbindung und keine Abo-Erkennung: Die App weiß
+            nur, was du einträgst, und deshalb verlässt sie das Handy ohne Konto und ohne Tracking-ID.
+          </p>
+
+          <h2 id="faq">Häufige Fragen</h2>
+          <details class="faq">
+            <summary>Ist jährliche Zahlung immer günstiger?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Vergleiche den Jahrespreis mit zwölf Monatszahlungen. Ein übliches Muster sind
+                zehn Monate für ein Jahr, rund 17 % Rabatt, aber manche Dienste verlangen für den
+                Jahresplan einen Aufschlag oder streichen eine monatliche Funktion. Rechne nach, statt
+                dem Abzeichen zu glauben.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Warum fühlen sich Abos günstiger an, als sie sind?</summary>
+            <div class="faq__body">
+              <p>
+                Weil der Preis pro Monat genannt und still abgebucht wird. Drei Dienste zu je 9,99
+                lesen sich als etwa zehn im Monat, nicht als 360 im Jahr. Nur die Jahressumme macht
+                ein Abo mit einem Kauf vergleichbar.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Wie finde ich Abos, die ich vergessen habe?</summary>
+            <div class="faq__body">
+              <p>
+                Suche in deinen Kontoauszügen der letzten zwölf Monate nach wiederkehrenden
+                Abbuchungen und prüfe dann die Abo-Liste im App Store und deine Mails auf
+                Verlängerungsbelege. Die üblichen Verdächtigen sind Testphasen, die umgestellt wurden,
+                weil die erste Abbuchung erst nach dem Entscheidungsmoment kommt.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Sendet der Rechner meine Abos irgendwohin?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Die Einträge werden in der Seite gerechnet und verlassen den Browser nie. Es
+                gibt keine Cookies, keine Skripte von Drittanbietern und keinen Server, der eine Liste
+                speichert.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Kann Spendwise mich vor einer Abo-Verlängerung erinnern?</summary>
+            <div class="faq__body">
+              <p>
+                Spendwise führt für bekannte Rechnungen wiederkehrende Zeitpläne und reserviert ihren
+                Betrag im Monatsbudget, mit Erinnerungen je Kategorie. Eine Bankverbindung gibt es
+                nicht, ein Abo muss also einmal eingetragen werden und erscheint dann als fällige
+                Rechnung, statt automatisch erkannt zu werden.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Weitere Rechner und Leitfäden">
+            <h2>Weitere Rechner und Leitfäden</h2>
+            <ul>
+              <li><a href="/de/50-30-20-budget-calculator">50/30/20-Budgetrechner</a></li>
+              <li><a href="/de/split-bill-calculator">Rechnung teilen mit Trinkgeld</a></li>
+              <li><a href="/de/offline-expense-tracker">Offline-Ausgaben-Tracker</a></li>
+              <li><a href="/de/private-expense-tracker">Privater Ausgaben-Tracker</a></li>
+              <li><a href="/de/expense-tracker-without-signup">Ausgaben-Tracker ohne Anmeldung</a></li>
+              <li><a href="/de/expense-tracker-vs-spendee">Spendee vs. Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Gib der Summe eine Budgetzeile</h2>
+          <p>
+            Spendwise ist kostenlos, hat kein Konto und trägt keine Tracking-ID. Trag die Rechnung
+            einmal ein, und das Budget reserviert sie.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/de/offline-expense-tracker"
+              >Was offline funktioniert</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

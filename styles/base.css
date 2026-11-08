@@ -8,7 +8,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   src: url('../assets/fonts/inter-latin.woff2') format('woff2');
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
@@ -52,9 +52,12 @@
   --shadow: 0 4px 16px rgb(11 18 32 / 8%);
   --shadow-lg: 0 18px 48px rgb(11 18 32 / 12%);
 
+  /* Inter carries Latin; the CJK faces below are named so Japanese, Korean and Chinese text picks
+     a native face instead of falling through Arial to whatever the browser guesses. */
   --font:
     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif;
+    'Hiragino Sans', 'Yu Gothic', 'Noto Sans CJK JP', 'Apple SD Gothic Neo', 'Malgun Gothic',
+    'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
 *,
@@ -128,7 +131,8 @@ img {
 ul,
 ol {
   margin: 0 0 1rem;
-  padding-left: 1.25rem;
+  /* Logical, so an RTL locale indents from the right without an override. */
+  padding-inline-start: 1.25rem;
 }
 
 li {
@@ -144,7 +148,7 @@ li {
 /* Keyboard users can jump the shared header on every page. */
 .skip-link {
   position: absolute;
-  left: -9999px;
+  inset-inline-start: -9999px;
   top: 0;
   z-index: 100;
   padding: 0.75rem 1.25rem;
@@ -156,7 +160,7 @@ li {
 }
 
 .skip-link:focus {
-  left: 0;
+  inset-inline-start: 0;
   color: #fff;
 }
 

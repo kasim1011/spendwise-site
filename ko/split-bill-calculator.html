@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>팁 포함 더치페이 계산기: 소수점까지 정확하게</title>
+    <meta
+      name="description"
+      content="팁을 포함해 원하는 인원수로 계산서를 나눕니다. 1센트 단위로 정확히 나누고, 계정이 필요 없으며, 똑같이 나누는 게 불공평한 경우도 짚습니다."
+    />
+    <link rel="canonical" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="팁 포함 더치페이 계산기: 소수점까지 정확하게" />
+    <meta
+      property="og:description"
+      content="계산서, 팁, 인원수만 넣으면 1센트까지 나눠 드립니다. 똑같이 나누는 게 답이 아닐 때도 함께 짚습니다."
+    />
+    <meta property="og:url" content="https://spendwise.download/ko/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 로고: 파란 그라데이션 위에 흰색 진행 링과 체크 표시."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ko/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "팁 포함 더치페이 계산기",
+            "item": "https://spendwise.download/ko/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "팁은 세금 전 금액에 계산해야 하나요, 후에 계산해야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "세금 전 소계에 계산하는 것이 미국의 관행이고 두 방식 중 더 단순합니다. 이 계산기에는 세금 전 계산서 금액을 넣으면 한 번에 맞습니다. 계산서에 이미 서비스 요금이 붙어 있다면 팁을 0으로 두고 두 번 더하지 마세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "계산서를 불균등하게 나누려면 어떻게 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "각자 먹은 항목을 먼저 정산하고 남은 금액을 나눕니다. 접시마다 먹은 사람에게 배정하고, 함께 나눈 접시와 팁은 똑같이 나눈 뒤 두 부분을 더하세요. 소득에 비례해 나누는 방식은 월세에는 말이 되지만 식당 계산서에는 맞지 않습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "남는 1센트는 어떻게 처리하는 게 가장 공평한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1센트를 한 사람에게, 또는 돈을 걷는 사람에게 주세요. 모든 몫을 올림해서는 안 됩니다. 53.87 몫을 네 명이 54로 올리면 215.51 계산서에 216.00을 내게 되고, 걷는 사람이 정하지도 않은 차액을 챙기게 됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "이 계산기가 계산서를 저장하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요. 모든 계산은 페이지 안에서 끝나고 아무것도 업로드되지 않으며, 쿠키도 서드파티 스크립트도 없습니다. 탭을 닫으면 사라집니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise는 공유 지출을 어떻게 처리하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "그룹은 자체 예산과 카테고리를 가진 별도의 장부이므로, 여행이나 함께 사는 집이 개인 지출과 섞이지 않습니다. 한 사람이 장부를 관리하고, 앱은 사람별 잔액으로 누가 누구에게 얼마를 빚졌는지 추적합니다. 실시간 공동 편집은 지원하지 않으므로, 그룹에는 편집자 둘이 아니라 관리자 한 명이 필요합니다."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ko/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="/#features">기능</a>
+          <a href="/#gallery">갤러리</a>
+          <a href="/#privacy">개인정보</a>
+          <a href="/support" hreflang="en" lang="en">지원</a>
+          <a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a>
+          <a href="/terms" hreflang="en" lang="en">이용약관</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">무료 도구</p>
+          <h1>더치페이 계산기</h1>
+          <p class="doc-hero__lede">
+            계산서 하나, 팁, 인원수. 계산기가 1센트까지 나누고 남는 1센트가 어디로 가는지 정확히
+            알려 줍니다. 계정도, 추적 ID도 없고, 어떤 것도 페이지를 떠나지 않습니다.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>업데이트:</strong> 2026년 10월 20일 &nbsp;·&nbsp;
+            <strong>반올림:</strong> 정수 센트 &nbsp;·&nbsp; <strong>비용:</strong> 무료
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="{people}명에게 똑같이 나눠집니다. 1인당 {each}입니다."
+            data-msg-one="{remainder}명이 1센트를 더 내고({high}), 나머지는 {each}입니다. 합계는 정확합니다. 모든 몫을 올림해서는 안 됩니다."
+            data-msg-many="{people}명 중 {remainder}명이 1센트를 더 내고({high}), 나머지는 {each}입니다. 합계는 정확합니다. 모든 몫을 올림해서는 안 됩니다."
+          >
+            <h2 class="tool__title" id="split-heading">내 계산서</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>계산서, 팁 제외</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>팁, 퍼센트</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>인원</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>나눈 결과</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>팁</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>결제할 총액</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>1인당</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>가장 많은 금액</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                계산기에는 JavaScript가 필요합니다. 손으로 계산하려면 계산서에 팁 비율을 더한 뒤
+                인원수로 나누고, 남는 1센트는 한 사람에게 주세요.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">이 계산이 나누는 방식</h2>
+          <p>
+            팁은 세금 전 계산서 금액에 계산해 총액에 더하고, 그 총액을 인원수로 나눕니다. 순서가
+            중요합니다. 세금이 붙은 금액에 팁을 계산하면 지역 세율만큼 팁이 부풀려지고, 187.40
+            계산서에 15%를 적용하면 아무도 내려 하지 않은 4.20이 더 붙습니다.
+          </p>
+          <p>
+            나눗셈은 <strong>정수 센트</strong> 단위로 하고, 부동 소수점은 쓰지 않습니다. 215.51
+            계산서는 네 명으로 나누어떨어지지 않으므로 각자 53.87을 내고 한 명이 53.88을 냅니다.
+            다른 방법, 즉 모든 몫을 올리는 방식은 돈을 걷는 사람이 조용히 이익을 보고 단체
+            대화방에서 말다툼이 시작되는 길입니다.
+          </p>
+
+          <h2 id="tipping">팁, 서비스 요금, 계산서에 이미 포함된 것</h2>
+          <p>
+            팁 관행은 나라를 옮기면 잘 맞지 않고, 계산기가 그것을 고칠 수는 없습니다. 적어도 더
+            나쁘게 만들지는 않을 수 있습니다. 셈을 정직하게 지키는 세 가지 규칙입니다.
+          </p>
+          <ul>
+            <li>
+              <strong>서비스 요금이 있는지 먼저 확인하세요.</strong> ‘서비스 12.5%’라는 줄이
+              있다면 팁은 이미 계산서에 있습니다. 팁을 0으로 두고 총액을 나누세요. 그렇지 않으면
+              팁을 두 번 내게 됩니다.
+            </li>
+            <li>
+              <strong>세금이 아니라 소계에 팁을 계산하세요.</strong> 세금 전 금액을 넣습니다.
+              계산서에 총액만 있다면 세율에 1을 더한 값으로 나눠 세전 금액을 되살리세요.
+            </li>
+            <li>
+              <strong>카드가 나오기 전에 합의하세요.</strong> 단말기가 퍼센트를 물을 때 팁을
+              정하면 다섯 명이 25%를 내는 일이 생깁니다.
+            </li>
+          </ul>
+
+          <h2 id="unfair">똑같이 나누는 것이 틀린 답일 때</h2>
+          <p>
+            똑같이 나누는 방식은 빠르고 대개 충분히 공평합니다. 지출이 한쪽으로 쏠릴 때 공평하지
+            않아집니다. 와인 한 병, 스테이크 하나, 전채를 시키고 먼저 자리를 뜬 사람 하나처럼요.
+          </p>
+          <ul>
+            <li>
+              <strong>항목별로.</strong> 각 줄을 주문한 사람에게 배정하고, 함께 나눈 접시와 팁은
+              똑같이 나눈 뒤 더합니다. 더 정확하고 조금 어색하지만, 차이가 클 때는 이쪽이
+              맞습니다.
+            </li>
+            <li>
+              <strong>코스별로.</strong> 중간 길입니다. 음료와 디저트는 따로, 음식은 똑같이
+              나눕니다. 항목까지 세지 않고도 어색함 대부분을 해결합니다.
+            </li>
+            <li>
+              <strong>소득별로는 아닙니다.</strong> 연봉에 비례해 나누는 방식은 월세와 공과금에는
+              말이 되지만 저녁 식사에는 맞지 않습니다. 더 버는 사람이 당신의 파스타 값을 더 낼
+              이유는 없습니다.
+            </li>
+          </ul>
+          <p>
+            월세, 공과금, 함께 사는 집의 장보기처럼 되풀이되는 공유 비용도 똑같이 나누는 것이 대개
+            틀린 기본값입니다. 소비가 고르지 않기 때문입니다. 큰 방에 둘, 작은 방에 하나처럼
+            사람별로 가중치를 두는 방식이, 누군가 조용히 불만을 품는 균등 분배보다 오래갑니다.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="2026년 10월 그룹 전용 화면. 800.00 그룹 예산에 553.00을 지출해 ‘순조로움’으로 표시되고, 미정산 잔액이 있는 사람들, 지출 추가 버튼이 보입니다."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>자체 예산과 잔액을 가진 공유 장부.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="사람 화면. 245.00을 빚진 Alex와 500.00을 받을 Sam이 각각 현재 잔액과 함께 표시되고, 사람 추가 동작이 있습니다."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>빌려주고 빌린 돈을 현재 잔액으로 관리합니다.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">한 번 나누고, 한 달 내내 기록하기</h2>
+          <p>
+            계산기는 저녁 한 끼에 답합니다. 더 어려운 쪽은 함께 사는 집이나 여행입니다. 2주에 걸쳐
+            작은 결제가 스무 번 일어나고 누가 무엇을 냈는지 아무도 기억하지 못합니다. 이건 장부
+            문제이고, 채팅 스레드는 장부로 부적합합니다.
+          </p>
+          <p>
+            Spendwise에서 그룹은 자체 예산과 자체 카테고리를 가진 별도의 장부이므로, 여행이 개인
+            한 달을 오염시키지 않습니다. 그룹에 추가한 지출은 빌려주고 빌린 돈의 사람별 잔액과
+            나란히 놓이고, 그룹 화면은 누가 받을 돈이 있고 누가 갚을 돈이 있는지 보여 줍니다.
+            대가는 분명합니다. <strong>한 사람이 장부를 관리합니다</strong>. 실시간 공동 편집이
+            없으므로 그룹에는 기록하는 관리자 한 명이 필요하고, 나머지는 총액을 봅니다.
+          </p>
+          <p>
+            여행이 끝나면 숫자는 이미 그 자리에 있습니다. 스크린샷으로 다시 맞출 필요가 없고,
+            월간 리포트는 그룹 지출을 가계 예산과 따로 보여 줍니다.
+          </p>
+
+          <h2 id="faq">자주 묻는 질문</h2>
+          <details class="faq">
+            <summary>팁은 세금 전 금액에 계산해야 하나요, 후에 계산해야 하나요?</summary>
+            <div class="faq__body">
+              <p>
+                세금 전 소계에 계산하는 것이 미국의 관행이고 두 방식 중 더 단순합니다. 이
+                계산기에는 세금 전 계산서 금액을 넣으면 한 번에 맞습니다. 계산서에 이미 서비스
+                요금이 붙어 있다면 팁을 0으로 두고 두 번 더하지 마세요.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>계산서를 불균등하게 나누려면 어떻게 하나요?</summary>
+            <div class="faq__body">
+              <p>
+                각자 먹은 항목을 먼저 정산하고 남은 금액을 나눕니다. 접시마다 먹은 사람에게
+                배정하고, 함께 나눈 접시와 팁은 똑같이 나눈 뒤 두 부분을 더하세요. 소득에 비례해
+                나누는 방식은 월세에는 말이 되지만 식당 계산서에는 맞지 않습니다.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>남는 1센트는 어떻게 처리하는 게 가장 공평한가요?</summary>
+            <div class="faq__body">
+              <p>
+                1센트를 한 사람에게, 또는 돈을 걷는 사람에게 주세요. 모든 몫을 올림해서는 안
+                됩니다. 53.87 몫을 네 명이 54로 올리면 215.51 계산서에 216.00을 내게 되고, 걷는
+                사람이 정하지도 않은 차액을 챙기게 됩니다.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>이 계산기가 계산서를 저장하나요?</summary>
+            <div class="faq__body">
+              <p>
+                아니요. 모든 계산은 페이지 안에서 끝나고 아무것도 업로드되지 않으며, 쿠키도
+                서드파티 스크립트도 없습니다. 탭을 닫으면 사라집니다.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise는 공유 지출을 어떻게 처리하나요?</summary>
+            <div class="faq__body">
+              <p>
+                그룹은 자체 예산과 카테고리를 가진 별도의 장부이므로, 여행이나 함께 사는 집이 개인
+                지출과 섞이지 않습니다. 한 사람이 장부를 관리하고, 앱은 사람별 잔액으로 누가
+                누구에게 얼마를 빚졌는지 추적합니다. 실시간 공동 편집은 지원하지 않으므로, 그룹에는
+                편집자 둘이 아니라 관리자 한 명이 필요합니다. 자세한 내용은
+                <a href="/ko/split-expenses-with-friends">더 긴 글</a>에 있습니다.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="더 많은 도구와 가이드">
+            <h2>더 많은 도구와 가이드</h2>
+            <ul>
+              <li><a href="/ko/50-30-20-budget-calculator">50/30/20 예산 계산기</a></li>
+              <li><a href="/ko/subscription-cost-calculator">구독 비용 계산기</a></li>
+              <li><a href="/ko/split-expenses-with-friends">친구와 지출 나누기</a></li>
+              <li><a href="/ko/private-expense-tracker">비공개 가계부</a></li>
+              <li><a href="/ko/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ko/expense-tracker-vs-spreadsheet">Spendwise vs 스프레드시트</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>그룹 장부를 한곳에 두세요</h2>
+          <p>
+            무료, 계정 없음, 추적 ID 없음. 그룹 장부, 사람별 잔액, 내보낼 수 있는 한 달.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ko&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Google Play에서 받기</a
+            >
+            <a class="btn btn--ghost" href="/ko/split-expenses-with-friends"
+              >공유 지출은 이렇게 작동합니다</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ko/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android용 비공개 오프라인 우선 지출 기록 앱이에요. 거래 내역은 휴대폰 안에
+              그대로 남아요.
+            </p>
+          </div>
+          <div>
+            <h2>제품</h2>
+            <ul>
+              <li><a href="/#features">기능</a></li>
+              <li><a href="/#gallery">갤러리</a></li>
+              <li><a href="/#privacy">개인정보</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>법적 고지</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">이용약관</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>지원</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">지원 및 FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 모든 권리 보유.</span>
+          <span>Android 10 이상을 위해 만들었어요.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

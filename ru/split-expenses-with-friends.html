@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Разделить расходы с друзьями: группы и расчёты</title>
+    <meta
+      name="description"
+      content="Поездка или общая квартира на одном телефоне: свой журнал у каждой группы, равные и ручные доли, текущие балансы и расчёт в одно касание."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Разделить расходы с друзьями: группы и расчёты" />
+    <meta
+      property="og:description"
+      content="Как устроен журнал группы, когда он живёт на одном телефоне: доли, балансы, расчёт — и где модель останавливается."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Разделить расходы с друзьями: группы и расчёты",
+            "item": "https://spendwise.download/ru/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Нужно ли друзьям устанавливать Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Группа — это журнал на вашем телефоне, а друзья — люди, которых вы в него добавили. Никто не получает приглашения, аккаунта или уведомления, и ни на чьём телефоне нет копии."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как делятся доли?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Общий расход можно разделить сразу с несколькими людьми: поровну или с долей каждому, которую вы задаёте сами. Каждая доля обновляет текущий баланс этого человека."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Влияют ли балансы группы на мой личный журнал?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Группа — отдельный контекст со своими людьми, категориями, бюджетом и балансами. Расчёт внутри группы меняет только её, даже если человек с тем же именем есть на уровне приложения."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что происходит, когда двое делят счёт неравно?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Задайте долю каждого вместо деления поровну. Операция остаётся одним расходом в журнале группы, а баланс каждого меняется на его собственную долю."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли использовать группу для дома, а не для поездки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Группа — это именованный журнал со своим месячным бюджетом, категориями и заметками, так что общая квартира работает так же, как отпуск."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Группы и расчёты</p>
+          <h1>Разделить расходы с друзьями без ещё одного аккаунта</h1>
+          <p class="doc-hero__lede">
+            Разделить траты обычно значит затащить всех в приложение, которое они не хотят
+            устанавливать. Spendwise делает наоборот: один человек ведёт точный журнал поездки или
+            квартиры, и все видят, кто сколько должен.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Модель:</strong> локальный журнал группы &nbsp;·&nbsp;
+            <strong>Цена:</strong> бесплатно, без подписки
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">Группа — это второй журнал, а не метка</h2>
+          <p>
+            В большинстве приложений общая поездка — ярлык, который вы клеите на часть своих
+            расходов. Spendwise даёт группе собственный контекст: свои категории, свой месячный
+            бюджет, своих людей, свои операции, свои заметки и свои балансы.
+          </p>
+          <p>
+            Смысл в том, что отпуск не засоряет домашние цифры. Аренда дома — не категория в
+            «Поездке во Францию», а долг друга по поездке — не тот же баланс, что его долг по дому:
+            даже при одинаковом имени это два разных журнала.
+          </p>
+
+          <h2 id="how-a-trip-works">Как на самом деле проходит поездка</h2>
+          <ol>
+            <li>
+              <strong>Создайте группу</strong> и дайте ей имя. Она получит короткий стартовый набор
+              категорий для поездки или домашнего хозяйства.
+            </li>
+            <li>
+              <strong>Добавьте людей</strong>, с которыми делите траты. Это записи в журнале, а не
+              аккаунты: ни номера телефона, ни приглашения, ни установки приложения.
+            </li>
+            <li>
+              <strong>Задайте бюджет группы</strong> на месяц в сводке группы — отдельно от своего
+              бюджета.
+            </li>
+            <li>
+              <strong>Записывайте общие расходы.</strong> Вносите то, что заплатили вы, с категорией
+              и датой. Если вашу часть покрыл кто-то другой, запишите это в обратную сторону, чтобы
+              баланс не поехал назад.
+            </li>
+            <li>
+              <strong>Разделите расход.</strong> Отметьте людей, которые в нём участвуют — поровну
+              или с долей каждому. Каждая доля сдвигает баланс этого человека.
+            </li>
+            <li>
+              <strong>Рассчитайтесь</strong>, когда кто-то отдаёт свою часть. Действие открывает
+              форму, уже заполненную остатком долга и верным направлением, так что возврат — это
+              одно касание и одно подтверждение. Частичные платежи тоже можно.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="Вкладка «Группы» со списком Flat 4B с 8 категориями и Voyage en France с 4; на каждой карточке видно, сколько группа потратила."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Каждая группа показывает свои траты и число категорий ещё до того, как вы её
+                откроете.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="Свой экран группы за октябрь 2026: потрачено $553,00 при бюджете группы $800,00 с пометкой, что бюджет соблюдается, люди с непогашенными балансами и кнопка добавления расхода."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Сводка группы, бюджет и люди с непогашенными балансами — всё в рамках этой группы.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="Экран «Люди»: Alex должен $245,00, а Sam должны $500,00; у каждого текущий баланс и кнопка добавления человека."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Балансы выводятся из журнала, а не вводятся вручную: зелёный — вам должны, красный —
+                должны вы.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">Балансы, которые считаются, а не запоминаются</h2>
+          <p>
+            Баланс каждого человека — сумма записей в журнале, а не число, введённое руками. Записи
+            покрывают то, что реально случается: вы даёте в долг наличными, вы покрываете его часть
+            счёта, он покрывает вашу, вы занимаете, он возвращает, вы возвращаете. Положительный
+            баланс значит, что должны вам; отрицательный — что должны вы.
+          </p>
+          <p>
+            Поскольку это производная сумма, она не устаревает. Плата за это — точность: баланс
+            верен ровно настолько, насколько полно записано. Если группа забыла внести такси, журнал
+            ошибается, и спасает именно один человек, который ведёт книгу.
+          </p>
+
+          <h2 id="the-trade">Честный размен: журнал хранится на одном телефоне</h2>
+          <p>
+            Приложения для дележа с приглашениями существуют и решают другую задачу: дать каждому
+            участнику править одну общую книгу со своего телефона. Для этого нужны аккаунты и
+            сервер — ровно та архитектура, которой у Spendwise нет.
+          </p>
+          <p>Поэтому модель здесь — <strong>один журнал, один хранитель</strong>. Она подходит для:</p>
+          <ul>
+            <li>поездки, где один человек бронирует и платит за большую часть,</li>
+            <li>общей квартиры, где счета закрывает один из соседей,</li>
+            <li>любой компании, где споры рождаются из смутных воспоминаний, а не из недоверия.</li>
+          </ul>
+          <p>
+            Она не подходит для дома, где все настаивают на том, чтобы править журнал одновременно.
+            Если это требование, прочитайте
+            <a href="/ru/expense-tracker-vs-spendee">сравнение со Spendee</a> и выберите приложение
+            с синхронизацией; страница прямо говорит, где это приложение проигрывает.
+          </p>
+
+          <h2 id="limits">Чего группы намеренно не делают</h2>
+          <ul>
+            <li>
+              <strong>Никаких приглашений и совместного редактирования.</strong> Журнал на вашем
+              телефоне, так что синхронизироваться не с кем.
+            </li>
+            <li>
+              <strong>Люди не общие между контекстами.</strong> Человека можно скопировать в
+              группу, но у копии свой журнал; расчёт по одной никогда не затрагивает другую.
+            </li>
+            <li>
+              <strong>Никаких переводов между группами.</strong> Деньги двигаются между людьми, а не
+              между журналами.
+            </li>
+            <li>
+              <strong>У группы нет своей валюты.</strong> В приложении одна валюта отображения, и
+              группа отчитывается в ней. Конвертации нет.
+            </li>
+            <li>
+              <strong>Нет взаимозачёта между людьми.</strong> Если Alex должен вам, а вы должны Sam,
+              это два баланса, а не один.
+            </li>
+          </ul>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Нужно ли друзьям устанавливать Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Группа — это журнал на вашем телефоне, а друзья — люди, которых вы в него
+                добавили. Никто не получает приглашения, аккаунта или уведомления, и ни на чьём
+                телефоне нет копии.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Как делятся доли?</summary>
+            <div class="faq__body">
+              <p>
+                Общий расход можно разделить сразу с несколькими людьми: поровну или с долей
+                каждому, которую вы задаёте сами. Каждая доля обновляет текущий баланс этого
+                человека.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Влияют ли балансы группы на мой личный журнал?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Группа — отдельный контекст со своими людьми, категориями, бюджетом и
+                балансами. Расчёт внутри группы меняет только её, даже если человек с тем же именем
+                есть на уровне приложения.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Что происходит, когда двое делят счёт неравно?</summary>
+            <div class="faq__body">
+              <p>
+                Задайте долю каждого вместо деления поровну. Операция остаётся одним расходом в
+                журнале группы, а баланс каждого меняется на его собственную долю.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Можно ли использовать группу для дома, а не для поездки?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Группа — это именованный журнал со своим месячным бюджетом, категориями и
+                заметками, так что общая квартира работает так же, как отпуск. Ежедневное
+                напоминание и блокировка приложения описаны на
+                <a href="/support" hreflang="en" lang="en">странице поддержки</a>.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Больше гайдов">
+            <h2>Больше гайдов</h2>
+            <ul>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/offline-expense-tracker">Офлайн-учёт расходов</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Один журнал, без приглашений</h2>
+          <p>
+            Пусть поездка остаётся честной: записывайте доли, следите за балансом, рассчитывайтесь в
+            одно касание. Бесплатно, без аккаунта — ни для вас, ни для них.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/offline-expense-tracker"
+              >Почему это работает офлайн</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ausgaben-Tracker ohne Anmeldung und ohne Konto</title>
+    <meta
+      name="description"
+      content="Spendwise ist ein Ausgaben-Tracker für Android ohne Anmeldung, ohne E-Mail und ohne Passwort. Öffnen, Ausgaben erfassen, Ledger bleibt auf deinem Handy."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-without-signup" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Ausgaben-Tracker ohne Anmeldung und ohne Konto" />
+    <meta
+      property="og:description"
+      content="Was beim ersten Start wirklich passiert, wenn es kein Konto gibt, warum die meisten Tracker eines verlangen und was du aufgibst, wenn du ablehnst."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/expense-tracker-without-signup" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ausgaben-Tracker ohne Anmeldung",
+            "item": "https://spendwise.download/de/expense-tracker-without-signup"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Braucht Spendwise wirklich keine E-Mail-Adresse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Richtig. Es gibt keinen Anmeldebildschirm. Der erste Start fragt nach Sprache und Währung, beides später in den Einstellungen änderbar, und das ist die ganze Einrichtung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was passiert, wenn ich mein Handy verliere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das Ledger auf diesem Handy ist weg, wenn du keine Sicherungsdatei angelegt hast. Es gibt kein Konto, aus dem man es wiederherstellen könnte — derselbe Grund, aus dem niemand sonst es lesen kann."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich ein Spendwise-Ledger auf zwei Handys nutzen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nicht gleichzeitig. Eine Sicherungsdatei lässt sich auf ein zweites Handy wiederherstellen, aber die beiden synchronisieren nicht, und das Wiederherstellen ersetzt, was auf diesem Handy liegt. Mehr dazu steht unter „Wie das Offline-Ledger funktioniert“."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie verdient Spendwise Geld ohne Konten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine nicht personalisierte Anzeige auf dem Bestätigungsbildschirm. Es gibt kein Abo, keinen In-App-Kauf und keine verkauften Daten; anonyme Bildschirm-Statistiken lassen sich in den Einstellungen abschalten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lösche ich alles, was Spendwise gespeichert hat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die Deinstallation entfernt den privaten Speicher der App, oder lösche die App-Daten in den Android-Einstellungen. Spendwise hatte nie eine Kopie, die man auf einem Server löschen müsste."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-without-signup" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-without-signup" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/expense-tracker-without-signup" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-without-signup" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-without-signup" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-without-signup" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-without-signup" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-without-signup" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-without-signup" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-without-signup" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-without-signup" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-without-signup" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Kein Konto</p>
+          <h1>Ein Ausgaben-Tracker ohne Anmeldung, Konto oder E-Mail</h1>
+          <p class="doc-hero__lede">
+            Frag, warum ein Ausgaben-Tracker deine E-Mail-Adresse braucht, und die ehrliche Antwort
+            ist meistens: damit wir synchronisieren, abrechnen oder dir Werbung schicken können.
+            Spendwise macht nichts davon und fragt deshalb nach nichts. Diese Seite zeigt, wie das in
+            der Praxis aussieht.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Erster Start:</strong> nur Sprache und Währung &nbsp;·&nbsp;
+            <strong>Daten:</strong> auf deinem Handy
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="first-run">Was beim ersten Start wirklich passiert</h2>
+          <p>
+            Öffne Spendwise zum ersten Mal, und es fragt zwei Dinge: welche Sprache du liest und in
+            welcher Währung dein Geld läuft. Die Währungsliste ist der vollständige ISO-Satz, reine
+            Formatierung — 156 Codes, mit korrekten Nachkommastellen für Yen und Dinar. Beide
+            Entscheidungen lassen sich später in den Einstellungen ändern.
+          </p>
+          <p>
+            Danach bist du in der App. Kein E-Mail-Feld, kein Passwort, kein „Bestätige deine
+            Adresse“, kein Häkchen für Marketing-Einwilligung, kein Login. Die Kategorien sind schon
+            angelegt, das Dashboard ist bereit, und die erste Ausgabe ist binnen einer Minute nach
+            der Installation erfasst.
+          </p>
+
+          <h2 id="what-changes">Drei Dinge, die sich ohne Konto ändern</h2>
+          <h3>Niemand kann dich aus deiner eigenen Historie aussperren</h3>
+          <p>
+            Es gibt kein Passwort zum Zurücksetzen, keine Sitzung, die abläuft, und keinen Server,
+            der entscheiden kann, dass du nicht mehr willkommen bist. Das Ledger liegt im privaten
+            Speicher der App auf deinem Handy, also ist die Sperre des Handys das einzige Tor — und
+            wenn du ein zweites willst, fragt die App-Sperre nach PIN, Muster oder Biometrie deines
+            Geräts, bevor Spendwise aufgeht.
+          </p>
+          <h3>Das Unternehmen hat keine Kopie deiner Ausgaben</h3>
+          <p>
+            Spendwise hat kein Backend, das Buchungen speichert. Es gibt kein Profil, das deine
+            Einkäufe beschreibt, keinen Kundendatensatz, der geleakt werden könnte, und nichts, das
+            man herausgeben könnte, wenn jemand fragt. Der Weg der Daten in die App und aus ihr
+            heraus ist der, den du wählst: eine Sicherungsdatei oder ein Bericht-Export.
+          </p>
+          <h3>Der Handel: Die Sicherungsdatei gehört ganz dir</h3>
+          <p>
+            Ein Cloud-Konto ist zugleich ein Backup außerhalb des Geräts. Hier löscht die
+            Deinstallation das Ledger. Spendwise antwortet mit einer Datei:
+            <strong>Einstellungen → Sichern & Wiederherstellen → Sicherungsdatei erstellen</strong>
+            schreibt jede Buchung, jede Kategorie, jedes Budget, jede Person, jede Gruppe und jeden
+            Beleg-Anhang in eine einzige <code>.spendwise</code>-Datei. Stelle sie auf einem neuen
+            Handy wieder her, und du bist zurück. Bewahre sie sicher auf und denk daran: Sie ist
+            nicht verschlüsselt.
+          </p>
+
+          <h2 id="why-they-ask">Warum die anderen Apps ein Konto verlangen</h2>
+          <p>Das ist kein Trick von ihnen. Ein Konto ist der Weg, wie ein Tracker Folgendes anbietet:</p>
+          <ul>
+            <li><strong>Sync</strong> — dasselbe Ledger auf Handy, Tablet und Web-App.</li>
+            <li><strong>Bankanbindung</strong> — Buchungen werden automatisch hereingeholt.</li>
+            <li><strong>Abrechnung</strong> — ein Abo braucht eine Person, an die es hängt.</li>
+            <li>
+              <strong>Bindung</strong> — eine E-Mail-Adresse ist ein Weg, dich zurückzugewinnen,
+              nachdem du die App nicht mehr geöffnet hast.
+            </li>
+          </ul>
+          <p>
+            Spendwise bietet nichts von den ersten drei, also hat das vierte nichts, woran es hängen
+            könnte. Wenn du Bank-Sync und Ledger auf mehreren Geräten willst, ist ein Konto ein fairer
+            Preis — genau das sagt
+            <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en"
+              >der Vergleich mit Spendee</a
+            >. Wenn du hier bist, weil du keinen weiteren Login willst, ist der Rest dieser Seite der
+            Teil, der zählt.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Die Einstellungen mit der App-Sprache, der App-Währung USD, der Auswahl System, Hell oder Dunkel für das Erscheinungsbild und fünf Akzentfarben."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Alles, wonach der erste Start gefragt hat, ist in den Einstellungen änderbar —
+                Sprache, Währung, Erscheinungsbild, Akzent.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="Das Formular für eine neue Buchung mit dem Betrag 47,82 $, ausgewählter Ausgabe, hervorgehobener Kategorie Lebensmittel, heutigem Datum und einer Zeile für Beleg oder Dokument mit Foto- oder PDF-Auswahl."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Erfassen braucht keine Identität — nur einen Betrag und eine Kategorie.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="Der Bildschirm Sichern & Wiederherstellen mit 122 Transaktionen, 39 Kategorien und 6 Personen, dazu die Schaltflächen Sicherungsdatei erstellen und Sicherungsdatei wählen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Die Sicherungsdatei ersetzt das Konto: eine Datei, auf deinem Handy erstellt und
+                wiederhergestellt.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="money">Was stattdessen dafür bezahlt</h2>
+          <p>
+            Spendwise ist kostenlos, ohne In-App-Käufe, und verkauft keine Daten. Der Umsatz ist eine
+            einzelne, nicht personalisierte Anzeige auf dem Bestätigungsbildschirm — der eine
+            Bildschirm, auf dem die Aufgabe schon erledigt ist und die Mitte der Seite leer bleibt. Im
+            EWR und im Vereinigten Königreich regelt ein Einwilligungsdialog die Anzeige; wird die
+            Einwilligung verweigert, erscheint sie nicht.
+          </p>
+          <p>
+            Anonyme Bildschirm-Statistiken sind die andere Netzwerk-Funktion: welche Bildschirme
+            genutzt werden, an Routennamen geknüpft, ohne Nutzerkennung, ohne E-Mail, ohne Werbe-ID
+            und ohne Tracking-ID. Sie sind standardmäßig an und lassen sich in den Einstellungen
+            abschalten; danach wird nichts gesendet.
+            <a href="/privacy" hreflang="en" lang="en">Die Seite zum Datenschutz</a> listet die
+            Details.
+          </p>
+
+          <h2 id="fit">Für wen das passt — und für wen nicht</h2>
+          <p>
+            Es passt zu Menschen, die ein schnelles persönliches Ledger auf einem Handy wollen, die
+            lieber eine Ausgabe eintippen, als ihren Posteingang herauszugeben, und die bereit sind,
+            eine Sicherungsdatei zu pflegen. Es passt auch zu allen, die drei Cloud-Tracker
+            aufgegeben haben, weil die Anmeldehürde den Nutzen geschlagen hat.
+          </p>
+          <p>
+            Es passt nicht zu einer WG, in der das Handy jedes Mitglieds dasselbe Ledger live
+            aktualisieren soll, und nicht zu jemandem, der keine Ausgaben eintippen will und
+            Bankanbindung braucht. Eine synchronisierte App ist dort die richtige Antwort, und diese
+            Seite tut nicht so, als wäre es anders.
+          </p>
+
+          <h2 id="faq">Häufige Fragen</h2>
+
+          <details class="faq">
+            <summary>Braucht Spendwise wirklich keine E-Mail-Adresse?</summary>
+            <div class="faq__body">
+              <p>
+                Richtig. Es gibt keinen Anmeldebildschirm. Der erste Start fragt nach Sprache und
+                Währung, beides später in den Einstellungen änderbar, und das ist die ganze
+                Einrichtung.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Was passiert, wenn ich mein Handy verliere?</summary>
+            <div class="faq__body">
+              <p>
+                Das Ledger auf diesem Handy ist weg, wenn du keine Sicherungsdatei angelegt hast. Es
+                gibt kein Konto, aus dem man es wiederherstellen könnte — derselbe Grund, aus dem
+                niemand sonst es lesen kann.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Kann ich ein Spendwise-Ledger auf zwei Handys nutzen?</summary>
+            <div class="faq__body">
+              <p>
+                Nicht gleichzeitig. Eine Sicherungsdatei lässt sich auf ein zweites Handy
+                wiederherstellen, aber die beiden synchronisieren nicht, und das Wiederherstellen
+                ersetzt, was auf diesem Handy liegt. Lies,
+                <a href="/de/offline-expense-tracker">wie das Offline-Ledger funktioniert</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Wie verdient Spendwise Geld ohne Konten?</summary>
+            <div class="faq__body">
+              <p>
+                Eine nicht personalisierte Anzeige auf dem Bestätigungsbildschirm. Es gibt kein Abo,
+                keinen In-App-Kauf und keine verkauften Daten; anonyme Bildschirm-Statistiken lassen
+                sich in den Einstellungen abschalten.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Wie lösche ich alles, was Spendwise gespeichert hat?</summary>
+            <div class="faq__body">
+              <p>
+                Die Deinstallation entfernt den privaten Speicher der App, oder lösche die App-Daten
+                in den Android-Einstellungen. Spendwise hatte nie eine Kopie, die man auf einem
+                Server löschen müsste.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Weitere Leitfäden">
+            <h2>Weitere Leitfäden</h2>
+            <ul>
+              <li>
+                <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en"
+                  >Spendee vs Spendwise</a
+                >
+              </li>
+              <li><a href="/de/offline-expense-tracker">Offline-Ausgaben-Tracker</a></li>
+              <li>
+                <a href="/private-expense-tracker" hreflang="en" lang="en"
+                  >Privater Ausgaben-Tracker</a
+                >
+              </li>
+              <li>
+                <a href="/split-expenses-with-friends" hreflang="en" lang="en"
+                  >Ausgaben mit Freunden teilen</a
+                >
+              </li>
+              <li>
+                <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en"
+                  >Spendwise vs Tabelle</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Ohne Anmeldung, ohne E-Mail, ohne Tracking-ID</h2>
+          <p>
+            Installiere Spendwise, wähle eine Sprache und eine Währung, und leg los. Das Ledger bleibt
+            auf deinem Handy.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dno_signup"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >Datenschutzerklärung lesen</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

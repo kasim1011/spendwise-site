@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حاسبة تكلفة الاشتراكات: من الشهر إلى السنة</title>
+    <meta
+      name="description"
+      content="اجمع كل اشتراكاتك الشهرية والسنوية واعرف التكلفة السنوية الحقيقية. مجانية، بلا حساب، وكيف تقطع ما نسيته."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="حاسبة تكلفة الاشتراكات: من الشهر إلى السنة" />
+    <meta
+      property="og:description"
+      content="اجمع كل رسم متكرر، واعرف الرقم السنوي، وقارن الفوترة السنوية بالشهرية."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="شعار Spendwise: حلقة تقدم بيضاء وعلامة صح على حقل متدرج أزرق."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "حاسبة تكلفة الاشتراكات",
+            "item": "https://spendwise.download/ar/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل الفوترة السنوية أرخص دائمًا؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. قارن السعر السنوي باثني عشر دفعة شهرية. النمط الشائع هو قيمة عشرة أشهر مقابل سنة، أي خصم نحو 17%، لكن بعض الخدمات تفرض سعرًا أعلى للخطة السنوية أو تلغي ميزة شهرية. اجرِ عملية الضرب بدلًا من الثقة بالشارة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "لماذا تبدو الاشتراكات أرخص مما هي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لأن السعر يُعرض شهريًا ويُخصم بهدوء. ثلاث خدمات بـ9.99 لكل منها تُقرأ نحو عشرة شهريًا، لا 360 سنويًا. والنظرة السنوية هي المقارنة الوحيدة التي تضع الاشتراك في مواجهة عملية شراء."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف أجد اشتراكات نسيتها؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ابحث في كشوف حسابك عن آخر اثني عشر شهرًا عن رسوم متكررة، ثم افحص قائمة الاشتراكات في متجر التطبيقات وبريدك عن إيصالات التجديد. التجارب المجانية التي تحوّلت هي السبب المعتاد، لأن أول خصم يصل بعد لحظة القرار."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل ترسل الحاسبة اشتراكاتي إلى أي مكان؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. تُحسب المدخلات في الصفحة ولا تغادر المتصفح أبدًا. لا كوكيز، ولا سكربتات خارجية، ولا خادم يخزّن قائمة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يستطيع Spendwise تنبيهي قبل تجديد الاشتراك؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "يحتفظ Spendwise بجداول متكررة للفواتير المعروفة ويحجز مبالغها من الميزانية الشهرية، مع تذكيرات لكل فئة. وهو لا يتصل ببنك، فيجب إدخال الاشتراك مرة واحدة ليظهر بعدها كفاتورة مستحقة بدلًا من اكتشافه تلقائيًا."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">أداة مجانية</p>
+          <h1>حاسبة تكلفة الاشتراكات</h1>
+          <p class="doc-hero__lede">
+            اكتب كل رسم متكرر مرة واحدة واعرف تكلفته شهريًا وسنويًا وعلى خمس سنوات. بلا حساب، بلا
+            معرّف تتبّع، ولا شيء تكتبه يغادر الصفحة.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>آخر تحديث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp;
+            <strong>الفوترة:</strong> شهرية أو سنوية &nbsp;·&nbsp; <strong>السعر:</strong> مجاني
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">اشتراكاتك</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>الاسم</span>
+                  <input type="text" name="label" value="بث" />
+                </label>
+                <label class="tool__field">
+                  <span>المبلغ</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>الفوترة</span>
+                  <select name="cycle">
+                    <option value="monthly">شهري</option>
+                    <option value="yearly">سنوي</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>إزالة</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>الاسم</span>
+                  <input type="text" name="label" value="موسيقى" />
+                </label>
+                <label class="tool__field">
+                  <span>المبلغ</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>الفوترة</span>
+                  <select name="cycle">
+                    <option value="monthly">شهري</option>
+                    <option value="yearly">سنوي</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>إزالة</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>الاسم</span>
+                  <input type="text" name="label" value="تخزين سحابي" />
+                </label>
+                <label class="tool__field">
+                  <span>المبلغ</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>الفوترة</span>
+                  <select name="cycle">
+                    <option value="monthly">شهري</option>
+                    <option value="yearly" selected>سنوي</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>إزالة</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              يُحتسب الرسم السنوي بواحد على اثني عشر شهريًا، فالرقم الشهري متوسط لا كشف حساب.
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>أضف اشتراكًا</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>الإجمالي</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>لكل شهر</dt>
+                  <dd data-out="monthly">35.31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>لكل سنة</dt>
+                  <dd data-out="yearly">423.72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>خمس سنوات</dt>
+                  <dd data-out="five">2,118.60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>لكل يوم</dt>
+                  <dd data-out="day">1.18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                تحتاج الحاسبة إلى JavaScript. افعلها يدويًا: اجمع الرسوم الشهرية، واقسم كل رسم سنوي
+                على اثني عشر، وأضف الناتج إلى الإجمالي الشهري.
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>الاسم</span>
+                  <input type="text" name="label" value="" placeholder="اشتراك" />
+                </label>
+                <label class="tool__field">
+                  <span>المبلغ</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>الفوترة</span>
+                  <select name="cycle">
+                    <option value="monthly">شهري</option>
+                    <option value="yearly">سنوي</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>إزالة</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">لماذا تكون النظرة السنوية هي الصادقة الوحيدة</h2>
+          <p>
+            صُمّمت أسعار الاشتراكات لتُقرأ شهريًا. عشرة شهريًا تبدو مثل قهوة؛ وهي أيضًا 120 سنويًا،
+            وهذا هو الرقم الذي تقارنه بمشتريات أو رحلة أو صندوق الطوارئ الذي لم تبدأه. والحاسبة
+            موجودة لإجراء عملية ضرب واحدة لن تجريها في رأسك.
+          </p>
+          <p>
+            تُقسم الرسوم السنوية على اثني عشر بدلًا من إدراجها منفصلة، لأن القائمة المختلطة تحتاج
+            وحدة مشتركة. والمفاجأة حقيقية وتستحق القول: خطة سحابية سنوية بـ99.99 تظهر 8.33 شهريًا،
+            لكن كشف حساب مارس سيظهر 99.99. ضع المتوسط في الميزانية، واحتفظ في الحساب بما يكفي للشهر
+            الذي يقع فيه الخصم.
+          </p>
+
+          <h2 id="compare">الفوترة السنوية مقابل الشهرية</h2>
+          <p>
+            الخصم مقابل الدفع سنةً مقدمًا شائع، لكنه سعر بشروط لا هدية. ثلاثة أسئلة تحدد إن كان
+            يستحق:
+          </p>
+          <ul>
+            <li>
+              <strong>ما مقدار الخصم الفعلي؟</strong> اضرب السعر الشهري في اثني عشر وقارن. سنة بسعر
+              عشرة أشهر تعني نحو 17%؛ وسنة بسعر أحد عشر شهرًا نحو 8%، وقد لا تستحق حبس المال.
+            </li>
+            <li>
+              <strong>هل ستستخدمه في الشهر الحادي عشر؟</strong> التوفير حقيقي فقط إن بقي الاشتراك.
+              فالخدمة التي كنت ستلغيها في الشهر الرابع تكلفك أكثر على الفوترة السنوية، لا أقل.
+            </li>
+            <li>
+              <strong>هل تتحمل الدفعة دفعة واحدة؟</strong> دفع 120 في شهر واحد ليس كدفع 10 شهريًا،
+              حتى عندما تقترب الإجماليات. وإن كان سيقف على بطاقة ائتمان، فالخصم غالبًا سالب.
+            </li>
+          </ul>
+
+          <h2 id="audit">مراجعة في خمس عشرة دقيقة تخفض التكلفة فعلًا</h2>
+          <ol>
+            <li>
+              <strong>اعثر على الرسوم.</strong> ابحث في اثني عشر شهرًا من كشوف الحساب عن التاجر نفسه
+              يظهر شهريًا أو سنويًا، ثم افحص قائمة الاشتراكات في متجر التطبيقات وبريدك عن إيصالات
+              التجديد.
+            </li>
+            <li>
+              <strong>اكتب السعر الحقيقي، بما فيه الضريبة.</strong> الأسعار المعلنة بالدولار غالبًا
+              تستثني الضريبة المحلية، والتجربة المجانية التي تحوّلت قد تفرض سعرًا لم تختره.
+            </li>
+            <li>
+              <strong>رتّب حسب التكلفة لكل استخدام.</strong> خدمة بـ12 شهريًا تُستخدم يوميًا رخيصة؛
+              وأخرى بـ5 تُفتح مرتين في السنة ليست كذلك، مهما قالت الشارة.
+            </li>
+            <li>
+              <strong>ألغِ أسفل القائمة أولًا.</strong> الهدف ليس صفر اشتراكات؛ بل أن يكون كل رسم
+              متكرر مما ستشترك فيه مجددًا اليوم.
+            </li>
+            <li>
+              <strong>ضع موعدًا لمراجعة التجديد.</strong> أعد تشغيل هذه الصفحة قبل تحوّل تجربة
+              مجانية، أو كل ربع سنة. فالزحف تدريجي بالتصميم.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="مركز المال يعرض الميزانية الشهرية بنسبة استخدام 52%، و27 فئة مضمّنة، وشخصين قيد المتابعة، وثماني جدولة متكررة، مع التقارير والملاحظات تحت رؤى."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>الفواتير المتكررة والجداول، محسوبة على الميزانية.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="الإعدادات تعرض لغة التطبيق، وعملة التطبيق USD، واختيار المظهر تلقائي أو فاتح أو داكن، وخمسة ألوان مميزة."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                التطبيق محلي: اللغة والعملة والمظهر إعدادات جهاز.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">فخ المشاركة</h2>
+          <p>
+            الخطط العائلية والدفع السنوي المسبق هي حيث تختفي إجماليات الاشتراكات. خطة عائلية بـ179
+            سنويًا مشتركة بين أربعة أرخص للفرد من أربع خطط فردية — لكن فقط إذا جمع أحدهم الحصص، وهو
+            سجل صغير قائم بذاته. دوّن من عليه ماذا عند تجديد الخطة، وإلا صارت الخطة هدية بمدة غير
+            واضحة.
+          </p>
+          <p>
+            وينطبق الأمر على الفوترة السنوية في بيت واحد: بطاقة شخص واحد، ومنافع عدة أشخاص. أرصدة
+            الأشخاص في Spendwise موجودة لذلك بالضبط، وسجل المجموعة يبقي الخطة المشتركة منفصلة عن
+            الإنفاق الشخصي.
+          </p>
+
+          <h2 id="app">تحويل الإجمالي إلى بند في الميزانية</h2>
+          <p>
+            الرقم الذي تنتجه هذه الصفحة مرشح جيد لفاتورة متكررة في Spendwise. أدخل الجدول مرة واحدة،
+            فتحجزه الميزانية الشهرية، ويكون المتبقي في لوحة المعلومات مالًا تستطيع إنفاقه لا مالًا
+            موعودًا به. لا يوجد اتصال ببنك ولا اكتشاف تلقائي للاشتراكات: التطبيق يعرف ما تدخله فقط،
+            ولهذا أيضًا يغادر الهاتف بلا حساب وبلا معرّف تتبّع.
+          </p>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+          <details class="faq">
+            <summary>هل الفوترة السنوية أرخص دائمًا؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. قارن السعر السنوي باثني عشر دفعة شهرية. النمط الشائع هو قيمة عشرة أشهر مقابل
+                سنة، أي خصم نحو 17%، لكن بعض الخدمات تفرض سعرًا أعلى للخطة السنوية أو تلغي ميزة
+                شهرية. اجرِ عملية الضرب بدلًا من الثقة بالشارة.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>لماذا تبدو الاشتراكات أرخص مما هي؟</summary>
+            <div class="faq__body">
+              <p>
+                لأن السعر يُعرض شهريًا ويُخصم بهدوء. ثلاث خدمات بـ9.99 لكل منها تُقرأ نحو عشرة
+                شهريًا، لا 360 سنويًا. والنظرة السنوية هي المقارنة الوحيدة التي تضع الاشتراك في
+                مواجهة عملية شراء.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>كيف أجد اشتراكات نسيتها؟</summary>
+            <div class="faq__body">
+              <p>
+                ابحث في كشوف حسابك عن آخر اثني عشر شهرًا عن رسوم متكررة، ثم افحص قائمة الاشتراكات في
+                متجر التطبيقات وبريدك عن إيصالات التجديد. التجارب المجانية التي تحوّلت هي السبب
+                المعتاد، لأن أول خصم يصل بعد لحظة القرار.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>هل ترسل الحاسبة اشتراكاتي إلى أي مكان؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. تُحسب المدخلات في الصفحة ولا تغادر المتصفح أبدًا. لا كوكيز، ولا سكربتات خارجية،
+                ولا خادم يخزّن قائمة.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>هل يستطيع Spendwise تنبيهي قبل تجديد الاشتراك؟</summary>
+            <div class="faq__body">
+              <p>
+                يحتفظ Spendwise بجداول متكررة للفواتير المعروفة ويحجز مبالغها من الميزانية الشهرية،
+                مع تذكيرات لكل فئة. وهو لا يتصل ببنك، فيجب إدخال الاشتراك مرة واحدة ليظهر بعدها
+                كفاتورة مستحقة بدلًا من اكتشافه تلقائيًا.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="مزيد من الأدوات والأدلة">
+            <h2>مزيد من الأدوات والأدلة</h2>
+            <ul>
+              <li><a href="/ar/50-30-20-budget-calculator">حاسبة ميزانية 50/30/20</a></li>
+              <li><a href="/ar/split-bill-calculator">حاسبة تقسيم الفاتورة</a></li>
+              <li><a href="/ar/offline-expense-tracker">متتبّع مصاريف دون اتصال</a></li>
+              <li><a href="/ar/private-expense-tracker">متتبّع مصاريف خاص</a></li>
+              <li><a href="/ar/expense-tracker-without-signup">متتبّع مصاريف دون تسجيل</a></li>
+              <li><a href="/ar/expense-tracker-vs-spendee">Spendee مقابل Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>أعطِ الإجمالي بندًا في الميزانية</h2>
+          <p>
+            Spendwise مجاني، بلا حساب، وبلا معرّف تتبّع. أدخل الفاتورة مرة واحدة فتحجزها الميزانية.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ar/offline-expense-tracker">ما الذي يعمل دون اتصال</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

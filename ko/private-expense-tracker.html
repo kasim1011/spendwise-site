@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>비공개 지출 관리: 추적 ID 없이 기기에 저장</title>
+    <meta
+      name="description"
+      content="Spendwise는 지출을 기기 안 데이터베이스에 저장하며, 추적 ID가 없고 사용 통계는 끌 수 있습니다. '비공개'라는 말의 정직한 버전입니다."
+    />
+    <link rel="canonical" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="비공개 지출 관리: 추적 ID 없이 기기에 저장" />
+    <meta
+      property="og:description"
+      content="무엇을 수집하고 무엇을 수집하지 않는지, 앱이 요구하는 권한, 그리고 '비공개'에 한계가 있는 지점을 짚습니다."
+    />
+    <meta property="og:url" content="https://spendwise.download/ko/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 로고: 파란 그라데이션 위에 흰색 진행 링과 체크 표시."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ko/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "비공개 지출 관리: 추적 ID 없이 기기에 저장",
+            "item": "https://spendwise.download/ko/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise가 제 거래를 수집하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요. 거래, 예산, 메모, 사람, 첨부 파일은 휴대폰의 SQLite 데이터베이스에 있습니다. 어떤 서버도 이를 받지 않고, 연결할 계정도 없습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "광고가 제 광고 ID를 사용하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요. 앱이 AD_ID 권한을 제거하므로 쓸 광고 ID가 없습니다. 모든 광고 요청은 비개인화이며, EEA와 영국에서는 동의서가 광고 요청 여부 자체를 결정합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "사용 통계 스위치를 끄면 무엇이 꺼지나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "모든 사용 통계입니다. Spendwise는 경로 이름을 기준으로 익명 화면 조회를 보내며, 사용자 ID도 거래 내용도 없습니다. 설정에서 사용 통계를 끄면 그 이벤트가 완전히 멈춥니다. 끔은 절대적이며, 줄어드는 것이 아닙니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise는 어떤 권한을 요청하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "매일 알림과 정기 지출 알림을 위한 알림 권한입니다. 영수증은 권한이 필요 없는 Android의 시스템 사진 선택기와 문서 선택기로 고릅니다. 앱 잠금은 기기에 이미 설정된 PIN, 패턴, 생체 인증을 사용합니다. 연락처, 위치, 카메라, 광고 ID 권한은 없습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "백업 파일은 암호화되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요. .spendwise 파일은 데이터베이스와 첨부 파일을 담은 평범한 아카이브입니다. 은행 거래 명세서처럼 다루고, 믿을 수 있는 곳에 보관하세요."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ko/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="/#features">기능</a>
+          <a href="/#gallery">갤러리</a>
+          <a href="/#privacy">개인정보</a>
+          <a href="/support" hreflang="en" lang="en">지원</a>
+          <a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a>
+          <a href="/terms" hreflang="en" lang="en">이용약관</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">개인정보</p>
+          <h1>비공개 지출 관리: ‘비공개’라는 말의 실제 의미</h1>
+          <p class="doc-hero__lede">
+            ‘비공개’는 모든 앱이 내세우는 말입니다. 이 페이지는 구체적으로 답해 그 말을 증명하려
+            합니다. 앱이 무엇을 저장하고, 무엇이 휴대폰을 떠나며, 광고 SDK가 무엇을 볼 수 있고,
+            약속의 한계가 어디인지.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>업데이트:</strong> 2026년 10월 20일 &nbsp;·&nbsp;
+            <strong>추적 ID:</strong> 없음 &nbsp;·&nbsp;
+            <strong>광고 ID:</strong> 권한 제거됨 &nbsp;·&nbsp;
+            <strong>사용 통계:</strong> 끌 수 있음
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">데이터가 지나가는 길</h2>
+          <p>
+            Spendwise에는 백엔드가 없습니다. 모든 거래, 예산, 카테고리, 메모, 사람, 그룹, 영수증
+            첨부 파일은 앱 전용 저장 공간의 SQLite 데이터베이스에 기록되고, 모든 화면은 그
+            데이터베이스에서 읽습니다. 로그인할 것이 없으니 당신에 대한 프로필을 만들어 팔거나,
+            잃어버리거나, 넘겨줄 일도 없습니다.
+          </p>
+          <p>인터넷과 통신하는 기능은 두 가지이며, 둘 다 정확히 설명할 수 있을 만큼 작습니다:</p>
+          <ul>
+            <li>
+              <strong>광고 한 건</strong>이 거래 확인 화면에 표시되며, 비개인화 광고로 요청되고,
+              앱에서 광고 ID 권한이 제거되어 있습니다.
+            </li>
+            <li>
+              <strong>익명 화면 사용 통계</strong> — 화면 조회당 경로 이름 하나만 기록하며, 사용자
+              ID도, 거래 내용도, 광고 ID도, 추적 ID도 없습니다.
+            </li>
+          </ul>
+          <p>
+            충돌 보고 도구도, 세션 녹화도, 히트맵도 없고, 광고와 분석 라이브러리 외의 서드파티
+            SDK도 없습니다. <a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a>에 목록이
+            있으며, 목록이 짧은 만큼 문서도 짧습니다.
+          </p>
+
+          <h2 id="permissions">있는 권한과 없는 권한</h2>
+          <p>
+            Android 권한은 앱이 실제로 무엇을 할 수 있는지 보여 주는 좋은 지표입니다. Spendwise는
+            매일 알림과 정기 지출 알림이 울릴 수 있도록 알림 권한을 요청합니다. 그게 전부입니다.
+          </p>
+          <ul>
+            <li>
+              <strong>연락처 권한은 없습니다.</strong> 추적하는 사람은 당신이 만든 항목이며,
+              주소록이 아닙니다.
+            </li>
+            <li><strong>위치 권한도 없습니다.</strong> 앱에서 당신이 어디에 있는지 알아야 하는 기능은 없습니다.</li>
+            <li>
+              <strong>카메라 권한은 없습니다.</strong> 영수증을 첨부할 때는 Android의 시스템 사진
+              선택기와 문서 선택기를 쓰며, 이는 당신이 고른 파일에만 접근 권한을 줍니다.
+            </li>
+            <li>
+              <strong>광고 ID 권한은 없습니다.</strong> 매니페스트 항목이 빌드에서 제거되므로,
+              광고 네트워크가 읽을 ID 자체가 없습니다.
+            </li>
+          </ul>
+          <p>
+            한편 앱 잠금은 자체 저장 공간을 더하지 않습니다. 확인을 Android의 인증 창에 맡기므로,
+            PIN, 패턴, 생체 인증 정보가 Spendwise에 닿지 않습니다.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="앱 언어, 앱 통화 USD, 시스템·밝게·어둡게 중 화면 모드 선택, 다섯 가지 강조 색상이 보이는 설정 화면."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                설정에는 여기서 중요한 스위치가 모여 있습니다. 사용 통계, 앱 잠금, 통화이며, 어느
+                것도 계정과 연결되지 않습니다.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="월간 예산 52% 사용, 기본 제공 카테고리 27개, 추적 중인 사람 2명, 예정된 정기 지출 8개를 보여 주고, 인사이트 아래에 리포트와 메모가 있는 돈 관리 화면."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                카테고리, 사람, 정기 지출은 모두 기기 안의 행입니다. 동기화할 클라우드 사본이
+                없습니다.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="거래 122건, 카테고리 39개, 사람 6명을 보고하고 백업 파일 만들기와 백업 파일 선택 버튼이 있는 백업 및 복원 화면."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                백업과 복원은 기기 안에서 하는 작업입니다. 파일은 서버가 아니라 당신이 보내는
+                곳으로 갑니다.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">미화 없이 말하는 광고</h2>
+          <p>
+            Spendwise에는 광고가 하나 있습니다. 확인 화면에 네이티브 광고 한 건이 있고, 그것이
+            구독 없이 앱을 무료로 유지하는 방법입니다. 개인정보와 관련된 사실은 다음과 같습니다:
+          </p>
+          <ul>
+            <li>
+              <strong>모든 요청은 비개인화입니다.</strong> 동의서를 수락한 사용자의 경우도
+              마찬가지입니다. 동의는 요청을 허가할 뿐, 개인화를 사 주지 않습니다.
+            </li>
+            <li>
+              <strong>SDK가 쓸 수 있는 광고 ID가 없습니다.</strong> 권한이 빌드 시점에 제거되기
+              때문입니다.
+            </li>
+            <li>
+              <strong>EEA와 영국에서는 동의 절차가 먼저이고, 실패하면 닫힙니다.</strong> 네트워크가
+              없거나, 동의가 없거나, 설정된 메시지가 없으면 광고도 없습니다. 프레임워크가 요구하는
+              경우 설정 → 개인정보에서 동의서를 다시 열 수 있습니다.
+            </li>
+          </ul>
+          <p>
+            광고 네트워크는 요청 자체는 여전히 봅니다. IP 주소, 기기 모델, 대략적인 지역은 어떤
+            네트워크 요청에서도 피할 수 없습니다. 차이는 이쪽에서 당신의 지출 프로필을 만들어
+            거기에 붙이지 않는다는 점입니다.
+          </p>
+
+          <h2 id="analytics">실제로 끌 수 있는 사용 통계</h2>
+          <p>
+            사용 통계는 운영되고 있고, 앱은 그 사실을 숨기지 않습니다. Spendwise는 화면마다 익명
+            조회 하나를 기록합니다. 어떤 화면에 들어왔는지만 남기고 그 안의 내용은 남기지 않으며,
+            사용자 ID도, 이메일도, 거래 내용도 없습니다.
+          </p>
+          <p>
+            스위치는 설정에 있고 효과는 완전합니다. 사용 통계를 끄면 이벤트 전송이 멈춥니다.
+            줄이지도, 해시하지도, 나중을 위해 기기에 사본을 남기지도 않습니다. ‘사용 통계는 끌 수
+            있다’는 문장이 의미를 가지려면 그래야 합니다.
+          </p>
+
+          <h2 id="limits">약속이 멈추는 지점</h2>
+          <p>구호보다 정직함이 값어치 있으니, 한계를 적습니다:</p>
+          <ul>
+            <li>
+              <strong>백업 파일은 암호화되지 않습니다.</strong> 파일을 가진 사람이면 누구나 읽을 수
+              있는 <code>.spendwise</code> 아카이브입니다. 은행 거래 명세서를 두는 곳에 보관하거나,
+              파일을 포기하고 휴대폰과 함께 데이터가 사라진다는 점을 받아들이세요.
+            </li>
+            <li>
+              <strong>진짜 경계는 휴대폰 잠금 화면입니다.</strong> Spendwise는 앱 잠금을 두 번째
+              확인으로 더하지만, 잠금이 풀린 루팅 기기는 앱 데이터를 읽을 수 있는 기기입니다.
+            </li>
+            <li>
+              <strong>설치에는 여전히 Google Play가 관여합니다.</strong> 휴대폰의 Play 서비스는
+              Spendwise가 아니라 Google의 것입니다. 여기서 하는 주장은 이 앱이 당신의 데이터로
+              무엇을 하는지이지, 앱이 돌아가는 운영체제가 아닙니다.
+            </li>
+            <li>
+              <strong>첨부 파일은 파일입니다.</strong> 영수증 사진은 다른 곳에 공유하는 순간 앱을
+              떠나며, 그 메타데이터는 원래 파일에 있던 그대로입니다.
+            </li>
+          </ul>
+
+          <h2 id="controls">한곳에 모은 제어 항목</h2>
+          <ul>
+            <li><strong>사용 통계 켜기/끄기</strong> — 설정 → 개인정보.</li>
+            <li>
+              <strong>광고 동의</strong> — 설정 → 개인정보. 동의 프레임워크가 동의서로 돌아가는
+              길을 요구하는 경우에 해당합니다.
+            </li>
+            <li><strong>앱 잠금</strong> — 설정 → 보안.</li>
+            <li>
+              <strong>모두 삭제</strong> — 앱을 삭제하거나 Android 설정에서 앱 데이터를 지웁니다.
+            </li>
+          </ul>
+
+          <h2 id="faq">자주 묻는 질문</h2>
+
+          <details class="faq">
+            <summary>Spendwise가 제 거래를 수집하나요?</summary>
+            <div class="faq__body">
+              <p>
+                아니요. 거래, 예산, 메모, 사람, 첨부 파일은 휴대폰의 SQLite 데이터베이스에 있습니다.
+                어떤 서버도 이를 받지 않고, 연결할 계정도 없습니다.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>광고가 제 광고 ID를 사용하나요?</summary>
+            <div class="faq__body">
+              <p>
+                아니요. 앱이 AD_ID 권한을 제거하므로 쓸 광고 ID가 없습니다. 모든 광고 요청은
+                비개인화이며, EEA와 영국에서는 동의서가 광고 요청 여부 자체를 결정합니다.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>사용 통계 스위치를 끄면 무엇이 꺼지나요?</summary>
+            <div class="faq__body">
+              <p>
+                모든 사용 통계입니다. Spendwise는 경로 이름을 기준으로 익명 화면 조회를 보내며,
+                사용자 ID도 거래 내용도 없습니다. 설정에서 사용 통계를 끄면 그 이벤트가 완전히
+                멈춥니다. 끔은 절대적이며, 줄어드는 것이 아닙니다.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise는 어떤 권한을 요청하나요?</summary>
+            <div class="faq__body">
+              <p>
+                매일 알림과 정기 지출 알림을 위한 알림 권한입니다. 영수증은 권한이 필요 없는
+                Android의 시스템 사진 선택기와 문서 선택기로 고릅니다. 앱 잠금은 기기에 이미 설정된
+                PIN, 패턴, 생체 인증을 사용합니다. 연락처, 위치, 카메라, 광고 ID 권한은 없습니다.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>백업 파일은 암호화되나요?</summary>
+            <div class="faq__body">
+              <p>
+                아니요. <code>.spendwise</code> 파일은 데이터베이스와 첨부 파일을 담은 평범한
+                아카이브입니다. 은행 거래 명세서처럼 다루고, 믿을 수 있는 곳에 보관하세요.
+                <a href="/support" hreflang="en" lang="en">지원 FAQ</a>에 백업 절차가 있습니다.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="더 많은 가이드">
+            <h2>더 많은 가이드</h2>
+            <ul>
+              <li><a href="/ko/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ko/offline-expense-tracker">오프라인 지출 관리</a></li>
+              <li><a href="/ko/expense-tracker-without-signup">회원가입 없는 지출 관리</a></li>
+              <li><a href="/ko/split-expenses-with-friends">친구와 지출 나누기</a></li>
+              <li><a href="/ko/expense-tracker-vs-spreadsheet">Spendwise vs 스프레드시트</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>지출은 휴대폰에 머뭅니다</h2>
+          <p>
+            계정도, 추적 ID도, 클라우드 사본도 없습니다. 사용 통계는 끌 수 있고,
+            <a href="/ko/offline-expense-tracker">장부는 오프라인에서도 작동합니다</a>.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ko&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >Google Play에서 받기</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >개인정보 처리방침 읽기</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ko/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android용 비공개 오프라인 우선 지출 기록 앱이에요. 거래 내역은 휴대폰 안에
+              그대로 남아요.
+            </p>
+          </div>
+          <div>
+            <h2>제품</h2>
+            <ul>
+              <li><a href="/#features">기능</a></li>
+              <li><a href="/#gallery">갤러리</a></li>
+              <li><a href="/#privacy">개인정보</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>법적 고지</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">이용약관</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>지원</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">지원 및 FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 모든 권리 보유.</span>
+          <span>Android 10 이상을 위해 만들었어요.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

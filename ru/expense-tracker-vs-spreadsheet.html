@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Учёт расходов или таблица: что быстрее</title>
+    <meta
+      name="description"
+      content="Таблица бесплатна и гибка, приложение быстрее на телефоне. Где выигрывает каждое и как переносить цифры между ними."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Учёт расходов или таблица: что быстрее" />
+    <meta
+      property="og:description"
+      content="Таблица — самый честный инструмент бюджета. Где она всё ещё выигрывает, где её обходит приложение и как сохранить оба."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Учёт расходов или таблица: что быстрее",
+            "item": "https://spendwise.download/ru/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Можно ли импортировать мою таблицу в Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. В Spendwise нет импорта CSV или таблиц. Восстановление из резервной копии принимает только собственный файл .spendwise, поэтому перенос старой таблицы означает ручной ввод истории или чистый старт с этого месяца."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли экспортировать данные Spendwise в таблицу?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Месяц или год экспортируется в XLSX с листом Summary и месячной таблицей, а рядом — PDF, повторяющий отчёт на экране. Оба файла пишутся в Download/Spendwise на Android."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Заменяет ли приложение формулы таблицы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Приложение отвечает на вопросы о бюджете напрямую и экспортирует цифры; поверхностью для расчётов оно не становится. Если нужны свои формулы, оставьте таблицу и экспортируйте в неё."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Таблица приватнее приложения?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Может быть — если файл остаётся на устройстве, а пакет не синхронизирует его. Spendwise даёт то же обещание в другой форме: журнал — локальная база, аккаунта нет, копия не лежит на сервере."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что лучше для семейного бюджета?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Таблица, если один человек вводит всё на компьютере и хочет свои отчёты. Приложение, если расходы записывают на телефоне по мере трат или если балансы нужно видеть больше чем одному человеку: таблица, переданная файлом, приглашает конфликты версий."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Сравнение</p>
+          <h1>Учёт расходов против таблицы: честное сравнение</h1>
+          <p class="doc-hero__lede">
+            Таблица — самый честный инструмент бюджета: бесплатная, прозрачная и полностью ваша.
+            Но она требует вести учёт за письменным столом. Эта страница о том, где такой обмен
+            перестаёт работать, а где нет.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp; <strong>Экспорт:</strong> PDF и
+            XLSX &nbsp;·&nbsp; <strong>Импорт:</strong> нет, так задумано
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">Где таблица действительно выигрывает</h2>
+          <ul>
+            <li>
+              <strong>Ничего не стоит и ничего не устанавливает.</strong> Она уже у вас есть — на
+              любом устройстве, навсегда.
+            </li>
+            <li>
+              <strong>Формулы принадлежат вам.</strong> Любое представление, какое придумаете, —
+              норма сбережений, скользящее среднее, разбивка по зарплатам — в одном столбце.
+            </li>
+            <li>
+              <strong>Ничего не скрыто.</strong> Видно каждую ячейку, можно проверить каждый итог и
+              исправить ошибку там, где она живёт.
+            </li>
+            <li>
+              <strong>Она же и архив.</strong> Один файл хранит годы истории в формате, который
+              переживёт большинство приложений.
+            </li>
+          </ul>
+          <p>
+            Если вы из тех, кто каждое воскресенье сверяет таблицу за чашкой кофе, приложение не
+            улучшит ваши финансы. Оно лишь перенесёт рабочий процесс.
+          </p>
+
+          <h2 id="spreadsheet-breaks">Где она ломается</h2>
+          <p>
+            Проблема не в арифметике. Проблема в трении между моментом, когда деньги уходят со
+            счёта, и моментом, когда они становятся строкой.
+          </p>
+          <ul>
+            <li>
+              <strong>Ввод на кассе.</strong> Открыть файл, найти следующую пустую строку, ввести
+              дату, категорию и сумму, затем сохранить заново — на телефоне это минута работы,
+              которую на кассе не делает никто. Данные приходят с недельной задержкой, если вообще
+              приходят.
+            </li>
+            <li>
+              <strong>Нет памяти.</strong> Таблица не напомнит записать трату и не знает, что
+              аренда вот-вот спишется.
+            </li>
+            <li>
+              <strong>Категории с опечатками.</strong> Одна «Продукты» и одна «Продукьы» — так итог
+              по категории становится ложью без всякой ошибки в формуле.
+            </li>
+            <li>
+              <strong>Конфликты версий.</strong> Два человека в «Бюджет 2026 финал v3.xlsx» — это
+              домашний аналог конфликта слияния, который решает тот, кто сохранил последним.
+            </li>
+            <li>
+              <strong>Регулярные платежи живут в голове.</strong> Резерв под аренду нужно
+              моделировать вручную, иначе «остаток бюджета» в середине месяца — вымысел.
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">Рядом</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">Что важно</th>
+                  <th scope="col">Таблица</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Стоимость</th>
+                  <td>Бесплатно или столько, сколько уже платите за офисный пакет.</td>
+                  <td>Бесплатно, за счёт одной неперсонализированной рекламы.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Запись расхода</th>
+                  <td>Строка на телефоне: файл, строка, дата, категория, сумма, сохранение.</td>
+                  <td>Сумма, категория, подтверждение — экран подтверждения и есть экран рекламы.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Проверка бюджета</th>
+                  <td>Какие формулы вы построили.</td>
+                  <td>Месячный бюджет, который резервирует известные регулярные счета.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Напоминания</th>
+                  <td>Нет.</td>
+                  <td>Ежедневное напоминание в 19:00 и регулярные напоминания по категориям.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Чеки</th>
+                  <td>Отдельный файл, связанный вручную, если вообще связан.</td>
+                  <td>Фото или PDF, прикреплённые к расходу и попадающие в резервные копии.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Отчёты</th>
+                  <td>Ваши: сами строите, сами объясняете.</td>
+                  <td>Месячные и годовые отчёты, экспорт в PDF или XLSX.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Своя аналитика</th>
+                  <td>Без ограничений.</td>
+                  <td>Не её задача — экспортируйте и считайте в таблице.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Где живёт</th>
+                  <td>Файл, где бы вы его ни держали.</td>
+                  <td>База SQLite на телефоне, резервная копия — в файле, который храните вы.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Импорт из другого</th>
+                  <td>Копировать и вставить.</td>
+                  <td>Нет. Импорта CSV нет.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="Форма добавления операции с суммой $47.82, выбранным типом «Расход», подсвеченной категорией «Продукты», сегодняшней датой и строкой «Чек или документ» с выбором фото или PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Один экран, сумма и категория, затем подтверждение.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="Отчёт за октябрь 2026: потрачено $2 095,50 при бюджете $6 000,00, доходы и чистый баланс, а также круговая диаграмма расходов по категориям, начиная с аренды $1 400,00."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Отчёт, который вы построили бы в таблице, уже готов — и его можно экспортировать.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="История операций по дням с полем поиска: воскресный рынок, кофе и обед, аптека и кино — у каждого дня свой итог."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>История по дням с поиском и итогом за каждый день.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">Сохраните оба: экспорт — это мост</h2>
+          <p>
+            Разумный ответ для большинства — не «заменить таблицу», а «перестать вводить строки
+            вручную, а потом экспортировать».
+          </p>
+          <p>
+            Spendwise экспортирует месяц или год в <strong>XLSX</strong> — лист Summary с итогами и
+            разбивкой по категориям плюс месячная таблица — и в <strong>PDF</strong>, повторяющий
+            отчёт на экране. Оба файла пишутся в <code>Download/Spendwise</code> на Android, а
+            второй путь — через меню «Поделиться». Ваша таблица становится слоем анализа,
+            приложение — слоем сбора данных.
+          </p>
+          <p>
+            Чего оно не сделает — импорт. Импорта CSV нет, и загрузить старую таблицу нельзя, поэтому
+            переезд означает либо ручной ввод прошлого, либо чистый старт с этого месяца. Это
+            осознанный потолок: хорошо разбирать произвольные таблицы — отдельный проект, а плохой
+            импорт молча портит журнал.
+          </p>
+
+          <h2 id="fit">Что выбрать</h2>
+          <ul>
+            <li>
+              <strong>Остаться с таблицей</strong>, если вы вводите данные раз в неделю за столом,
+              хотите свои формулы и уже доверяете своему процессу.
+            </li>
+            <li>
+              <strong>Взять приложение</strong>, если расходы случаются вдали от стола, если нужны
+              напоминания и бюджет, который знает о близкой аренде, или если чеки должны жить
+              вместе с расходом.
+            </li>
+            <li>
+              <strong>Использовать оба</strong>, если нужны быстрый сбор и глубокий анализ:
+              приложение на телефоне, таблица для остального, экспорт в конце месяца.
+            </li>
+          </ul>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Можно ли импортировать мою таблицу в Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. В Spendwise нет импорта CSV или таблиц. Восстановление из резервной копии
+                принимает только собственный <code>.spendwise</code> файл, поэтому перенос старой
+                таблицы означает ручной ввод истории или чистый старт с этого месяца.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Можно ли экспортировать данные Spendwise в таблицу?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Месяц или год экспортируется в XLSX с листом Summary и месячной таблицей, а
+                рядом — PDF, повторяющий отчёт на экране. Оба файла пишутся в
+                <code>Download/Spendwise</code> на Android.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Заменяет ли приложение формулы таблицы?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Приложение отвечает на вопросы о бюджете напрямую и экспортирует цифры;
+                поверхностью для расчётов оно не становится. Если нужны свои формулы, оставьте
+                таблицу и экспортируйте в неё.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Таблица приватнее приложения?</summary>
+            <div class="faq__body">
+              <p>
+                Может быть — если файл остаётся на устройстве, а пакет не синхронизирует его.
+                Spendwise даёт то же обещание в другой форме: журнал — локальная база, аккаунта
+                нет, копия не лежит на сервере — см.
+                <a href="/ru/private-expense-tracker">что здесь значит «приватно»</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Что лучше для семейного бюджета?</summary>
+            <div class="faq__body">
+              <p>
+                Таблица, если один человек вводит всё на компьютере и хочет свои отчёты.
+                Приложение, если расходы записывают на телефоне по мере трат или если балансы нужно
+                видеть больше чем одному человеку: таблица, переданная файлом, приглашает конфликты
+                версий.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Ещё гайды">
+            <h2>Ещё гайды</h2>
+            <ul>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/offline-expense-tracker">Учёт расходов офлайн</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Записывайте на телефоне, считайте в таблице</h2>
+          <p>
+            Бесплатно, без аккаунта, без трекинг-ID. Экспортируйте месяц в XLSX и держите формулы
+            там, где им место.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/offline-expense-tracker"
+              >Посмотреть, что работает офлайн</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

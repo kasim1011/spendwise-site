@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>チップ込みの割り勘計算ツール：1セントまで正確に</title>
+    <meta
+      name="description"
+      content="チップ込みの請求を何人でも均等に割れます。1セント単位で丸め、アカウント不要。均等割りが不公平になる場面も正直に説明します。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="チップ込みの割り勘計算ツール：1セントまで正確に" />
+    <meta
+      property="og:description"
+      content="請求、チップ、人数を入れるだけで1セントまで割り勘。均等割りが正解でないときの話も。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青いグラデーションの背景に、白い進捗リングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "割り勘計算ツール",
+            "item": "https://spendwise.download/ja/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "チップは税の前と後、どちらで計算しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "税抜きの小計に対してです。アメリカの習慣であり、2つの読み方のうち単純なほうでもあります。この計算ツールに税抜きの請求額を入れれば、最初から正しくなります。請求書にサービス料がすでにある場合は、2つ目を足さずチップを0にしてください。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "請求を不均等に分けるには？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "まず品目を確定し、残りを分けます。料理を食べた人に割り当て、共有の皿とチップは均等に割り、2つを足します。収入に比例した分担は家賃には筋が通りますが、レストランの請求書には通りません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "余った1セントを扱う最も公平な方法は？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "余分な1セントを1人に、あるいは集金する人に渡します。全員の分担を切り上げてはいけません。53.87の分担を4人が54に切り上げると、215.51の請求に対して216.00を払うことになり、集金した人は決めないまま差額を手にします。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "この計算ツールは請求書を保存しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。すべてページ内で計算され、どこにもアップロードされず、Cookieも第三者のスクリプトもありません。タブを閉じれば破棄されます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseは共同の支出をどう扱いますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "グループは独自の予算とカテゴリを持つ1冊の台帳なので、旅行やシェアハウスが個人の支出と混ざりません。台帳を管理するのは1人で、アプリは人物残高を通じて誰が誰にいくら借りているかを追います。共有のリアルタイム編集はないので、グループには2人の編集者ではなく1人の管理者が必要です。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">無料ツール</p>
+          <h1>割り勘計算ツール</h1>
+          <p class="doc-hero__lede">
+            請求書が1枚、チップ、そして人数。1セント単位まで割り、余った1セントがどこへ行くかを明示します。アカウントも追跡IDもなく、入力はページの外へ出ません。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新日：</strong> 2026年10月20日 &nbsp;·&nbsp;
+            <strong>丸め：</strong> 1セント単位 &nbsp;·&nbsp; <strong>費用：</strong> 無料
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="均等に割れます。1人{each}、{people}人分です。"
+            data-msg-one="{remainder}人だけが1セント多く払い（{high}）、ほかの人は{each}です。合計は正確です — 全員の分担を切り上げてはいけません。"
+            data-msg-many="{people}人のうち{remainder}人が1セント多く払い（{high}）、ほかの人は{each}です。合計は正確です — 全員の分担を切り上げてはいけません。"
+          >
+            <h2 class="tool__title" id="split-heading">あなたの請求書</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>請求額（チップ前）</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>チップ（%）</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>人数</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>内訳</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>チップ</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>支払総額</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>1人あたり</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>最高額の分担</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                計算ツールにはJavaScriptが必要です。手でやるなら、請求額にチップの割合を足し、人数で割り、余った1セントを1人に渡します。
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">この割り勘の仕組み</h2>
+          <p>
+            チップは税抜きの請求額に対して計算し、総額に足し、その総額を人数で割ります。この順番が重要です。税込み額にチップを付けると、その地域の税率の分だけチップが膨らみます。187.40の請求で15%なら、誰も意図していなかった4.20がそこに乗ります。
+          </p>
+          <p>
+            割り算は<strong>1セント単位</strong>で行い、浮動小数点は使いません。215.51の請求を4人で割ると割り切れないので、各自53.87、1人だけ53.88を払います。逆に全員の分担を切り上げると、集金した人の手元に静かな利益が残り、グループチャットの言い争いが始まります。
+          </p>
+
+          <h2 id="tipping">チップ、サービス料、請求書にすでに入っているもの</h2>
+          <p>
+            チップの習慣は国をまたぐと崩れますし、計算ツールにはそれは直せません。せめて悪化させないことはできます。計算を正直に保つ3つのルールです。
+          </p>
+          <ul>
+            <li>
+              <strong>まずサービス料を確認する。</strong>「サービス料12.5%」とあれば、チップはすでに請求書に載っています。チップを0にして総額を割ってください。そうしないと二重にチップを払うことになります。
+            </li>
+            <li>
+              <strong>チップは小計に対して、税には付けない。</strong> 税抜きの金額を入れてください。請求書に総額しかない場合は、1に税率を足した数で割れば税抜き額に戻せます。
+            </li>
+            <li>
+              <strong>カードを出す前に合意する。</strong> 端末が割合を聞いてからチップを決めると、5人のテーブルが25%を払うことになります。
+            </li>
+          </ul>
+
+          <h2 id="unfair">均等割りが正解でないとき</h2>
+          <p>
+            均等割りは速く、たいていは十分に公平です。公平でなくなるのは、支出が偏ったとき — ワイン1本、ステーキ1枚、前菜だけ頼んで先に帰った1人。
+          </p>
+          <ul>
+            <li>
+              <strong>品目ごとに。</strong> それぞれの行を注文した人に割り当て、共有の皿とチップは均等に分け、最後に足します。より正確で、少し気まずく、差が大きいときは正しい判断です。
+            </li>
+            <li>
+              <strong>コースごとに。</strong> 中間案です。飲み物とデザートを分け、料理は均等に。品目ごとに追わずに、たいていの気まずさを処理できます。
+            </li>
+            <li>
+              <strong>収入では分けない。</strong> 給与に比例した分担は家賃や請求書には理にかないますが、夕食には向きません。稼ぎが多い人が、あなたのパスタの分を多く負う理由はありません。
+            </li>
+          </ul>
+          <p>
+            継続的な共同費 — 家賃、光熱費、シェアハウスの食料品 — でも、均等割りはたいてい間違った既定値です。消費は均等ではないからです。1人あたりの重み付き分担（広い部屋に2人、狭い部屋に1人）は、誰かが静かに不満を持つ均等割りより長持ちします。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="2026年10月のグループ専用画面。グループ予算$800.00に対して$553.00を使い「順調」と表示され、未精算残高のある人物と「取引を追加」ボタンがある。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>独自の予算と残高を持つ共有の台帳。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="人物画面。$245.00を借りているAlexと、$500.00を貸しているSamが、それぞれ推移する残高と「人物を追加」とともに並んでいる。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>貸したお金と借りたお金は、残高として積み上がります。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">一度の割り勘、1か月の記録</h2>
+          <p>
+            計算ツールが答えるのは1回の夕食です。難しいのはシェアハウスや旅行で、2週間の間に20件の小さな支払いが起き、誰が何を立て替えたか誰も覚えていない場合です。それは台帳の問題で、チャットのスレッドは台帳としては貧弱です。
+          </p>
+          <p>
+            Spendwiseではグループが1冊の台帳です — 独自の予算、独自のカテゴリ — なので、旅行が個人の月を汚しません。グループに追加した支出は、貸し借りの人物残高と並び、グループ画面には誰がプラスで誰がマイナスかが表示されます。その代わりは明確です。<strong>台帳を管理するのは1人</strong>。共有のリアルタイム編集はないので、記録する人が1人必要で、ほかの全員は合計を見ます。
+          </p>
+          <p>
+            旅行が終わるとき、数字はすでにそこにあります。スクリーンショットから作り直す必要はなく、月次レポートはグループの支出を家計の予算とは別に扱います。
+          </p>
+
+          <h2 id="faq">よくある質問</h2>
+          <details class="faq">
+            <summary>チップは税の前と後、どちらで計算しますか？</summary>
+            <div class="faq__body">
+              <p>
+                税抜きの小計に対してです。アメリカの習慣であり、2つの読み方のうち単純なほうでもあります。この計算ツールに税抜きの請求額を入れれば、最初から正しくなります。請求書にサービス料がすでにある場合は、2つ目を足さずチップを0にしてください。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>請求を不均等に分けるには？</summary>
+            <div class="faq__body">
+              <p>
+                まず品目を確定し、残りを分けます。料理を食べた人に割り当て、共有の皿とチップは均等に割り、2つを足します。収入に比例した分担は家賃には筋が通りますが、レストランの請求書には通りません。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>余った1セントを扱う最も公平な方法は？</summary>
+            <div class="faq__body">
+              <p>
+                余分な1セントを1人に、あるいは集金する人に渡します。全員の分担を切り上げてはいけません。53.87の分担を4人が54に切り上げると、215.51の請求に対して216.00を払うことになり、集金した人は決めないまま差額を手にします。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>この計算ツールは請求書を保存しますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。すべてページ内で計算され、どこにもアップロードされず、Cookieも第三者のスクリプトもありません。タブを閉じれば破棄されます。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwiseは共同の支出をどう扱いますか？</summary>
+            <div class="faq__body">
+              <p>
+                グループは独自の予算とカテゴリを持つ1冊の台帳なので、旅行やシェアハウスが個人の支出と混ざりません。台帳を管理するのは1人で、アプリは人物残高を通じて誰が誰にいくら借りているかを追います。共有のリアルタイム編集はないので、グループには2人の編集者ではなく1人の管理者が必要です。詳しくは
+                <a href="/ja/split-expenses-with-friends">こちらの記事</a>をご覧ください。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="ほかのツールとガイド">
+            <h2>ほかのツールとガイド</h2>
+            <ul>
+              <li><a href="/ja/50-30-20-budget-calculator">50/30/20予算計算ツール</a></li>
+              <li><a href="/ja/subscription-cost-calculator">サブスク費用の計算ツール</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友達との割り勘</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベートな家計簿</a></li>
+              <li><a href="/ja/expense-tracker-vs-spendee">Spendee と Spendwise</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">家計簿アプリと表計算ソフト</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>グループの台帳を1か所に</h2>
+          <p>
+            無料、アカウント不要、追跡IDなし。グループの台帳、人物の残高、書き出せる1か月。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Google Play で入手</a
+            >
+            <a class="btn btn--ghost" href="/ja/split-expenses-with-friends"
+              >共同の支出の仕組み</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

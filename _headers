@@ -30,8 +30,20 @@
 /404.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# Stylesheets are unversioned, so keep their window short.
+/50-30-20-budget-calculator.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/split-bill-calculator.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/subscription-cost-calculator.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Stylesheets and the calculator script are unversioned, so keep their window short.
 /styles/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/tools.js
   Cache-Control: public, max-age=3600, must-revalidate
 
 # Icons, fonts, the OG card and the screenshots change rarely, so cache them

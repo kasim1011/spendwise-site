@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تطبيق المصاريف أم جدول البيانات: أيهما أسرع</title>
+    <meta
+      name="description"
+      content="جدول البيانات مجاني ومرن، والتطبيق أسرع على الهاتف. أين يتفوّق كل منهما، وكيف تنقل الأرقام بينهما."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="تطبيق المصاريف أم جدول البيانات: أيهما أسرع" />
+    <meta
+      property="og:description"
+      content="جدول البيانات أصدق أداة ميزانية صُنعت يومًا. إليك أين يبقى متفوّقًا، وأين يتغلّب عليه التطبيق، وكيف تحتفظ بكليهما."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="شعار Spendwise: حلقة تقدّم بيضاء مع علامة صح على خلفية متدرّجة زرقاء."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "تطبيق المصاريف أم جدول البيانات: أيهما أسرع",
+            "item": "https://spendwise.download/ar/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل يمكنني استيراد جدول البيانات الحالي إلى Spendwise؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. لا يملك Spendwise استيرادًا من CSV أو من جداول البيانات. استعادة النسخة الاحتياطية تقبل ملف .spendwise الخاص به وحده، لذا يعني نقل جدول قديم إدخال السجل يدويًا، أو البدء من هذا الشهر."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يمكنني تصدير بيانات Spendwise إلى جدول بيانات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم. يُصدَّر شهر أو سنة إلى XLSX بورقة ملخص وجدول شهري، إلى جانب PDF يطابق التقرير على الشاشة. يُكتب الملفان في Download/Spendwise على Android."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يستبدل التطبيق صيغ جدول البيانات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. يجيب التطبيق عن أسئلة الميزانية مباشرة ويصدّر الأرقام؛ ولا يصير سطح حساب. إن احتجت صيغًا مخصصة، فأبقِ الجدول وصدّر إليه."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل جدول البيانات أكثر خصوصية من التطبيق؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "قد يكون كذلك، إن بقي الملف على جهازك ولم تزامنه حزمة البرامج. يقدّم Spendwise الوعد نفسه بشكل مختلف: السجل قاعدة بيانات محلية، ولا حساب، ولا نسخة تعيش على خادم."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "أيّهما أفضل لميزانية المنزل؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "جدول البيانات إن كان شخص واحد يدخل كل شيء على حاسوب ويريد تقارير مخصصة. والتطبيق إن كانت المصاريف تُسجَّل وقت حدوثها على هاتف، أو إن احتاج أكثر من شخص رؤية الأرصدة، لأن جدولًا يُشارك كملف يفتح باب تعارض النسخ."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">مقارنة</p>
+          <h1>تطبيق المصاريف مقابل جدول البيانات: مقارنة صادقة</h1>
+          <p class="doc-hero__lede">
+            جدول البيانات أصدق أداة ميزانية صُنعت على الإطلاق: مجاني وشفاف وبين يديك تشكّله كما
+            تشاء. لكنه يطلب منك أن تُمسك الدفاتر على مكتب. هذه الصفحة عن النقطة التي تتوقف عندها
+            هذه المقايضة، والنقطة التي تصمد فيها.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>آخر تحديث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp; <strong>التصدير:</strong> PDF
+            وXLSX &nbsp;·&nbsp; <strong>الاستيراد:</strong> لا يوجد، بحكم التصميم
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">أين يتفوّق جدول البيانات فعلًا</h2>
+          <ul>
+            <li>
+              <strong>لا يكلّف شيئًا ولا يثبّت شيئًا.</strong> لديك واحد بالفعل، على كل جهاز، إلى
+              الأبد.
+            </li>
+            <li>
+              <strong>الصيغ ملكك.</strong> أي عرض تتخيّله — معدّل ادّخار، أو متوسط متحرك، أو تقسيم
+              لكل يوم راتب — يبعد عمودًا واحدًا.
+            </li>
+            <li>
+              <strong>لا شيء مجرّد.</strong> ترى كل خلية، وتدقّق كل إجمالي، وتصلح الخطأ في موضعه.
+            </li>
+            <li>
+              <strong>يصلح أرشيفًا أيضًا.</strong> ملف واحد يحمل سنوات من السجل بصيغة تُعمّر أطول
+              من معظم التطبيقات.
+            </li>
+          </ul>
+          <p>
+            إن كنت ممّن يراجعون جدولهم كل يوم أحد مع فنجان قهوة، فلن يحسّن تطبيق مالك. سيغيّر سير
+            عملك فقط.
+          </p>
+
+          <h2 id="spreadsheet-breaks">أين يتعطّل</h2>
+          <p>
+            الخلل ليس في الحساب. الخلل في الاحتكاك بين لحظة خروج المال من حسابك ولحظة تحوّله إلى صف.
+          </p>
+          <ul>
+            <li>
+              <strong>التسجيل عند المحاسبة.</strong> فتح ملف، والعثور على الصف الفارغ التالي،
+              وكتابة تاريخ وفئة ومبلغ، ثم إعادة الحفظ — على هاتف — دقيقة عمل لا يفعلها أحد عند
+              صندوق الدفع. تصل البيانات متأخرة أسبوعًا، إن وصلت.
+            </li>
+            <li>
+              <strong>لا ذاكرة.</strong> الجدول لا يذكّرك بالتسجيل، ولا يعرف أن الإيجار على وشك أن
+              يُخصم.
+            </li>
+            <li>
+              <strong>فئات بأخطاء مطبعية.</strong> فئة «بقالة» وأخرى «بقاله» — هكذا يصير إجمالي فئة
+              كذبة دون أي خطأ في الصيغة.
+            </li>
+            <li>
+              <strong>تعارض النسخ.</strong> شخصان يعدّلان «ميزانية 2026 نهائي v3.xlsx» هو نظير
+              تعارض الدمج في المنزل، ويحسمه من يحفظ آخرًا.
+            </li>
+            <li>
+              <strong>التكاليف المتكررة في رأسك.</strong> يجب نمذجة حجز الإيجار يدويًا، وإلا كان
+              رقم «المتبقي من الميزانية» في منتصف الشهر خيالًا.
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">مقارنة مباشرة</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">ما يهم</th>
+                  <th scope="col">جدول البيانات</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">التكلفة</th>
+                  <td>مجاني، أو أي حزمة تدفع لها بالفعل.</td>
+                  <td>مجاني، يدعمه إعلان واحد غير مخصّص.</td>
+                </tr>
+                <tr>
+                  <th scope="row">تسجيل مصروف</th>
+                  <td>صف على الهاتف: ملف، صف، تاريخ، فئة، مبلغ، حفظ.</td>
+                  <td>المبلغ، الفئة، تأكيد — وشاشة التأكيد هي شاشة الإعلان.</td>
+                </tr>
+                <tr>
+                  <th scope="row">مراجعة الميزانية</th>
+                  <td>أي صيغ بنيتها.</td>
+                  <td>ميزانية شهرية تحتفظ بالفواتير المتكررة المعروفة.</td>
+                </tr>
+                <tr>
+                  <th scope="row">التذكيرات</th>
+                  <td>لا شيء.</td>
+                  <td>تذكير يومي عند 19:00، وتذكيرات متكررة لكل فئة.</td>
+                </tr>
+                <tr>
+                  <th scope="row">الإيصالات</th>
+                  <td>ملف منفصل، يُربط يدويًا إن رُبط.</td>
+                  <td>صورة أو PDF مرفقة بالمصروف، تُحمل مع النسخ الاحتياطية.</td>
+                </tr>
+                <tr>
+                  <th scope="row">التقارير</th>
+                  <td>لك أن تبنيها، ولك أن تشرحها.</td>
+                  <td>تقارير شهرية وسنوية، تُصدَّر بصيغة PDF أو XLSX.</td>
+                </tr>
+                <tr>
+                  <th scope="row">تحليل مخصص</th>
+                  <td>بلا حدود.</td>
+                  <td>ليس من مهامه — صدّر واحسب في جدول.</td>
+                </tr>
+                <tr>
+                  <th scope="row">مكان البيانات</th>
+                  <td>الملف، أينما تحتفظ به.</td>
+                  <td>قاعدة بيانات SQLite على هاتفك، يُنسخ منها احتياطيًا إلى ملف تحتفظ به.</td>
+                </tr>
+                <tr>
+                  <th scope="row">الاستيراد من الآخر</th>
+                  <td>نسخ ولصق.</td>
+                  <td>لا يوجد. لا استيراد CSV.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="نموذج إضافة معاملة بمبلغ 47.82 $، و«مصروف» محدّد، وفئة «بقالة» مميّزة، وتاريخ اليوم، وصف إيصال أو مستند يتيح صورة أو ملف PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>شاشة واحدة، المبلغ والفئة، ثم تأكيد.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="تقرير أكتوبر 2026 يعرض 2,095.50 $ مصروفة مقابل ميزانية 6,000.00 $، والدخل والصافي، ومخطط دائري للمصروف حسب الفئة يبدأ بالإيجار عند 1,400.00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                التقرير الذي كنت ستبنيه في الجدول، مبنيًا سلفًا — وقابلًا للتصدير.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="سجل المعاملات مجمّعًا باليوم مع حقل بحث، يعرض سوق الأحد، والقهوة والغداء، والصيدلية والسينما، ولكل يوم صافيه."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>السجل مجمّعًا باليوم، قابلًا للبحث، ولكل يوم صافيه.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">احتفظ بكليهما: التصدير هو الجسر</h2>
+          <p>
+            الجواب المعقول لمعظم الناس ليس «استبدل جدول البيانات». بل «توقّف عن كتابة الصفوف
+            يدويًا، ثم صدّر».
+          </p>
+          <p>
+            يُصدّر Spendwise شهرًا أو سنة بصيغة <strong>XLSX</strong> — ورقة «ملخص» فيها الإجماليات
+            وتوزيع الفئات، مع جدول شهري — وبصيغة <strong>PDF</strong> تطابق التقرير على الشاشة.
+            يُكتب الملفان في <code>Download/Spendwise</code> على Android، مع ورقة المشاركة كمسار
+            ثانٍ. يصبح جدولك طبقة التحليل، ويصبح التطبيق طبقة الالتقاط.
+          </p>
+          <p>
+            ما لن يفعله هو الاستيراد. لا استيراد CSV ولا طريقة لتحميل جدول قديم، لذا يعني الانتقال
+            إدخال الماضي يدويًا أو البدء من هذا الشهر. هذا سقف مقصود: تحليل جداول عشوائية تحليلًا
+            جيدًا مشروع قائم بذاته، والاستيراد الرديء يفسد السجل في صمت.
+          </p>
+
+          <h2 id="fit">أيّهما تستخدم</h2>
+          <ul>
+            <li>
+              <strong>ابقَ مع الجدول</strong> إن كنت تسجّل أسبوعيًا على مكتب، وتريد صيغًا مخصصة،
+              وتثق بعملتك بالفعل.
+            </li>
+            <li>
+              <strong>استخدم التطبيق</strong> إن كانت المصاريف تحدث بعيدًا عن المكتب، أو أردت
+              تذكيرات وميزانية تعرف أن الإيجار قادم، أو احتاجت الإيصالات أن تعيش مع المصروف.
+            </li>
+            <li>
+              <strong>استخدم كليهما</strong> إن أردت التقاطًا سريعًا وتحليلًا عميقًا: التطبيق على
+              الهاتف، والجدول للباقي، والتصدير في نهاية الشهر.
+            </li>
+          </ul>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+
+          <details class="faq">
+            <summary>هل يمكنني استيراد جدول البيانات الحالي إلى Spendwise؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. لا يملك Spendwise استيرادًا من CSV أو من جداول البيانات. استعادة النسخة
+                الاحتياطية تقبل ملف <code>.spendwise</code> الخاص به وحده، لذا يعني نقل جدول قديم
+                إدخال السجل يدويًا، أو البدء من هذا الشهر.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل يمكنني تصدير بيانات Spendwise إلى جدول بيانات؟</summary>
+            <div class="faq__body">
+              <p>
+                نعم. يُصدَّر شهر أو سنة إلى XLSX بورقة «ملخص» وجدول شهري، إلى جانب PDF يطابق
+                التقرير على الشاشة. يُكتب الملفان في <code>Download/Spendwise</code> على Android.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل يستبدل التطبيق صيغ جدول البيانات؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. يجيب التطبيق عن أسئلة الميزانية مباشرة ويصدّر الأرقام؛ ولا يصير سطح حساب. إن
+                احتجت صيغًا مخصصة، فأبقِ الجدول وصدّر إليه.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل جدول البيانات أكثر خصوصية من التطبيق؟</summary>
+            <div class="faq__body">
+              <p>
+                قد يكون كذلك، إن بقي الملف على جهازك ولم تزامنه حزمة البرامج. يقدّم Spendwise الوعد
+                نفسه بشكل مختلف: السجل قاعدة بيانات محلية، ولا حساب، ولا نسخة تعيش على خادم — راجع
+                <a href="/ar/private-expense-tracker">ما تعنيه الخصوصية هنا</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>أيّهما أفضل لميزانية المنزل؟</summary>
+            <div class="faq__body">
+              <p>
+                جدول البيانات إن كان شخص واحد يدخل كل شيء على حاسوب ويريد تقارير مخصصة. والتطبيق إن
+                كانت المصاريف تُسجَّل وقت حدوثها على هاتف، أو إن احتاج أكثر من شخص رؤية الأرصدة،
+                لأن جدولًا يُشارك كملف يفتح باب تعارض النسخ.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="مزيد من الأدلة">
+            <h2>مزيد من الأدلة</h2>
+            <ul>
+              <li><a href="/ar/expense-tracker-vs-spendee">Spendee مقابل Spendwise</a></li>
+              <li><a href="/ar/offline-expense-tracker">تطبيق مصاريف دون اتصال</a></li>
+              <li><a href="/ar/expense-tracker-without-signup">تطبيق مصاريف دون تسجيل</a></li>
+              <li><a href="/ar/private-expense-tracker">تطبيق مصاريف خاص</a></li>
+              <li><a href="/ar/split-expenses-with-friends">تقاسم المصاريف مع الأصدقاء</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>التقط على الهاتف، وحلّل في الجدول</h2>
+          <p>
+            مجاني، بلا حساب، بلا معرّف تتبّع. صدّر الشهر بصيغة XLSX وأبقِ صيغك حيث تنتمي.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ar/offline-expense-tracker">شاهد ما يعمل دون اتصال</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

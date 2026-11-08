@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>회원가입 없는 가계부: 계정도 이메일도 없어요</title>
+    <meta
+      name="description"
+      content="Spendwise는 가입도 이메일도 비밀번호도 없는 Android 가계부예요. 바로 열어 지출을 기록하고, 장부는 내 휴대폰에 그대로 보관하세요."
+    />
+    <link rel="canonical" href="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-without-signup" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="회원가입 없는 가계부: 계정도 이메일도 없어요" />
+    <meta
+      property="og:description"
+      content="계정이 없는 첫 실행에서 실제로 무슨 일이 일어나는지, 대부분의 가계부가 계정을 요구하는 이유, 거절하면 무엇을 포기하는지 설명해요."
+    />
+    <meta property="og:url" content="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 마크: 파란 그라데이션 위에 흰색 진행 링과 체크 표시."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ko/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "회원가입 없는 가계부",
+            "item": "https://spendwise.download/ko/expense-tracker-without-signup"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise는 정말 이메일 주소가 필요 없나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "맞아요. 가입 화면이 없어요. 첫 실행에서 묻는 것은 언어와 통화뿐이고 둘 다 나중에 설정에서 바꿀 수 있어요. 준비는 그게 전부예요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "휴대폰을 잃어버리면 어떻게 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "백업 파일을 만들어 두지 않았다면 그 휴대폰의 장부는 사라져요. 복구할 계정이 없기 때문이에요. 다른 사람도 장부를 읽을 수 없는 이유가 바로 그것이고요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "하나의 Spendwise 장부를 두 대의 휴대폰에서 쓸 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "동시에는 안 돼요. 백업 파일을 두 번째 휴대폰에 복원할 수는 있지만 둘은 동기화되지 않고, 복원하면 그 휴대폰의 내용이 바뀌어요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise는 계정 없이 어떻게 돈을 버나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "거래 확인 화면의 비개인화 광고 하나예요. 구독도 앱 내 구매도 없고 데이터를 팔지 않아요. 익명 화면 통계는 설정에서 끌 수 있어요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise가 저장한 모든 것을 어떻게 삭제하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "앱을 삭제하면 앱 전용 저장 공간이 사라져요. Android 설정에서 앱 데이터를 지워도 돼요. Spendwise는 서버에 삭제할 사본을 가진 적이 없어요."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 이동</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ko/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="/#features">기능</a>
+          <a href="/#gallery">갤러리</a>
+          <a href="/#privacy">개인정보</a>
+          <a href="/support" hreflang="en" lang="en">지원</a>
+          <a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a>
+          <a href="/terms" hreflang="en" lang="en">이용약관</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-without-signup" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-without-signup" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-without-signup" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-without-signup" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-without-signup" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-without-signup" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-without-signup" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-without-signup" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-without-signup" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+          <a href="/zh-hans/expense-tracker-without-signup" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-without-signup" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-without-signup" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">계정 없음</p>
+          <h1>회원가입도 계정도 이메일도 없는 가계부</h1>
+          <p class="doc-hero__lede">
+            가계부에 이메일 주소가 왜 필요한지 물으면, 솔직한 답은 대개 “동기화하려고, 결제받으려고, 아니면 광고하려고”예요. Spendwise는 그중 어느 것도 하지 않으니 아무것도 요구하지 않아요. 이 페이지는 그것이 실제로 어떤 모습인지 설명해요.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>업데이트:</strong> 2026년 10월 20일 &nbsp;·&nbsp;
+            <strong>첫 실행:</strong> 언어와 통화만 &nbsp;·&nbsp;
+            <strong>데이터:</strong> 휴대폰에 저장
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="first-run">첫 실행에서 실제로 보이는 것</h2>
+          <p>
+            Spendwise를 처음 열면 두 가지를 물어요. 어떤 언어로 읽는지, 돈이 어떤 통화인지요. 통화 목록은 ISO 전체 코드를 갖추고 표시 형식만 다뤄요. 156개 코드가 있고 엔과 디나르의 소수 자릿수도 정확해요. 두 선택 모두 나중에 설정에서 바꿀 수 있어요.
+          </p>
+          <p>
+            그러면 바로 앱 안이에요. 이메일 입력란도, 비밀번호도, “주소를 확인하세요”도, 마케팅 동의 체크박스도, 로그인도 없어요. 카테고리는 이미 준비돼 있고, 대시보드도 바로 쓸 수 있으며, 설치하고 1분 안에 첫 지출을 기록할 수 있어요.
+          </p>
+
+          <h2 id="what-changes">계정이 없어서 달라지는 세 가지</h2>
+          <h3>내 기록에서 나를 잠글 수 있는 사람은 없어요</h3>
+          <p>
+            재설정할 비밀번호도, 만료될 세션도, 더는 환영하지 않는다고 판단할 서버도 없어요. 장부는 휴대폰의 앱 전용 저장 공간에 있으므로 유일한 관문은 휴대폰 자체의 잠금 화면이에요. 관문을 하나 더 두고 싶다면 앱 잠금이 Spendwise를 열기 전에 기기의 PIN, 패턴 또는 생체 인증을 요구해요.
+          </p>
+          <h3>회사에는 내 지출 사본이 없어요</h3>
+          <p>
+            Spendwise에는 거래를 저장하는 백엔드가 없어요. 장보기 내역을 담은 프로필도, 유출될 고객 기록도, 누군가 요청할 때 넘겨줄 것도 없어요. 앱으로 들어오고 나가는 데이터 경로는 내가 고르는 것, 즉 백업 파일이나 리포트 내보내기뿐이에요.
+          </p>
+          <h3>그 대가: 백업은 전적으로 내 몫이에요</h3>
+          <p>
+            클라우드 계정은 기기 밖 백업도 겸해요. 여기서는 앱을 삭제하면 장부도 사라져요. Spendwise의 답은 파일 하나예요.
+            <strong>설정 → 백업 및 복원 → 백업 파일 만들기</strong>는 모든 거래, 카테고리, 예산, 사람, 그룹, 영수증 첨부를 하나의
+            <code>.spendwise</code> 파일에 기록해요. 새 휴대폰에서 복원하면 그대로 돌아와요. 안전한 곳에 보관하고, 암호화되지 않는다는 점을 기억하세요.
+          </p>
+
+          <h2 id="why-they-ask">다른 앱이 계정을 요구하는 이유</h2>
+          <p>어느 쪽도 그들이 속임수를 쓰는 게 아니에요. 계정은 가계부가 다음 기능을 제공하는 방식이에요.</p>
+          <ul>
+            <li><strong>동기화</strong> — 휴대폰, 태블릿, 웹 앱에서 같은 장부를 써요.</li>
+            <li><strong>은행 가져오기</strong> — 거래가 자동으로 들어와요.</li>
+            <li><strong>결제</strong> — 구독에는 연결할 사람이 필요해요.</li>
+            <li>
+              <strong>재방문 유도</strong> — 이메일 주소는 앱을 더는 열지 않는 사람을 다시 불러들이는 수단이에요.
+            </li>
+          </ul>
+          <p>
+            Spendwise는 앞의 세 가지를 제공하지 않으니 네 번째에 연결할 것이 없어요. 은행 동기화와 여러 기기의 장부를 원한다면 계정은 정당한 대가예요. 바로 그 점을 <a href="/ko/expense-tracker-vs-spendee">Spendee 비교</a>에서 말해요. 또 하나의 로그인이 싫어서 여기 왔다면, 이 페이지의 나머지가 중요한 부분이에요.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="설정 화면. 앱 언어, 앱 통화 USD, 시스템·밝게·어둡게 중에서 고르는 화면 모드, 다섯 가지 강조 색상이 보여요."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                첫 실행에서 물었던 모든 것은 설정에서 바꿀 수 있어요. 언어, 통화, 화면 모드, 강조 색상이에요.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="거래 추가 양식. 금액은 $47.82, 지출이 선택되고, 장보기 카테고리가 강조되며, 날짜는 오늘, 사진이나 PDF를 고를 수 있는 영수증·문서 행이 있어요."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>기록에는 신원이 필요 없어요. 금액과 카테고리만 있으면 돼요.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="백업 및 복원 화면. 거래 122건, 카테고리 39개, 사람 6명을 표시하고, 백업 파일 만들기 버튼과 백업 파일 선택 버튼이 있어요."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                백업이 계정을 대신해요. 휴대폰에서 파일 하나를 만들고 복원해요.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="money">그럼 무엇이 비용을 대나요</h2>
+          <p>
+            Spendwise는 앱 내 구매 없이 무료이고 데이터를 팔지 않아요. 수익은 거래 확인 화면에 하나만 표시되는 비개인화 광고예요. 그 화면은 작업이 이미 끝나고 페이지 가운데가 비어 있는 유일한 화면이에요. EEA와 영국에서는 동의 안내가 광고를 좌우하고, 동의를 거부하면 광고가 표시되지 않아요.
+          </p>
+          <p>
+            또 다른 네트워크 기능은 익명 화면 통계예요. 어떤 화면이 쓰이는지를 경로 이름으로 기록하며, 사용자 ID도 이메일도 광고 ID도 추적 ID도 없어요. 기본으로 켜져 있고 설정에서 끌 수 있으며, 끄면 아무것도 전송되지 않아요. 자세한 내용은 <a href="/ko/private-expense-tracker">개인정보 페이지</a>에 있어요.
+          </p>
+
+          <h2 id="fit">이런 사람에게 맞고, 이런 사람에게 맞지 않아요</h2>
+          <p>
+            한 대의 휴대폰에서 빠른 개인 장부를 원하는 사람, 받은편지함을 넘기는 대신 지출을 직접 입력하려는 사람, 백업 파일을 보관할 의향이 있는 사람에게 맞아요. 로그인의 번거로움이 이점을 넘어서 클라우드 가계부를 세 번이나 포기한 사람에게도 맞아요.
+          </p>
+          <p>
+            가족 각자의 휴대폰에서 같은 장부를 실시간으로 갱신하고 싶은 가구나, 지출을 직접 입력하지 않고 은행 가져오기가 필요한 사람에게는 맞지 않아요. 그런 경우에는 동기화되는 앱이 정답이고, 이 사이트는 아닌 척하지 않아요.
+          </p>
+
+          <h2 id="faq">자주 묻는 질문</h2>
+
+          <details class="faq">
+            <summary>Spendwise는 정말 이메일 주소가 필요 없나요?</summary>
+            <div class="faq__body">
+              <p>
+                맞아요. 가입 화면이 없어요. 첫 실행에서 묻는 것은 언어와 통화뿐이고, 둘 다 나중에 설정에서 바꿀 수 있어요. 준비는 그게 전부예요.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>휴대폰을 잃어버리면 어떻게 되나요?</summary>
+            <div class="faq__body">
+              <p>
+                백업 파일을 만들어 두지 않았다면 그 휴대폰의 장부는 사라져요. 복구할 계정이 없기 때문이에요. 다른 사람도 장부를 읽을 수 없는 이유가 바로 그것이고요.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>하나의 Spendwise 장부를 두 대의 휴대폰에서 쓸 수 있나요?</summary>
+            <div class="faq__body">
+              <p>
+                동시에는 안 돼요. 백업 파일을 두 번째 휴대폰에 복원할 수는 있지만 둘은 동기화되지 않고, 복원하면 그 휴대폰의 내용이 바뀌어요.
+                <a href="/ko/offline-expense-tracker">오프라인 장부의 작동 방식</a>을 참고하세요.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise는 계정 없이 어떻게 돈을 버나요?</summary>
+            <div class="faq__body">
+              <p>
+                거래 확인 화면의 비개인화 광고 하나예요. 구독도 앱 내 구매도 없고 데이터를 팔지 않아요. 익명 화면 통계는 설정에서 끌 수 있어요.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise가 저장한 모든 것을 어떻게 삭제하나요?</summary>
+            <div class="faq__body">
+              <p>
+                앱을 삭제하면 앱 전용 저장 공간이 사라져요. Android 설정에서 앱 데이터를 지워도 돼요. Spendwise는 서버에 삭제할 사본을 가진 적이 없어요.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="더 많은 가이드">
+            <h2>더 많은 가이드</h2>
+            <ul>
+              <li><a href="/ko/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ko/offline-expense-tracker">오프라인 가계부</a></li>
+              <li><a href="/ko/private-expense-tracker">비공개 가계부</a></li>
+              <li><a href="/ko/split-expenses-with-friends">친구와 지출 나누기</a></li>
+              <li><a href="/ko/expense-tracker-vs-spreadsheet">Spendwise vs 스프레드시트</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>가입도 이메일도 추적 ID도 없어요</h2>
+          <p>
+            Spendwise를 설치하고 언어와 통화를 고른 뒤 기록을 시작하세요. 장부는 휴대폰에 남아요.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ko&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dno_signup"
+              rel="noopener"
+              >Google Play에서 받기</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >개인정보 처리방침 읽기</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ko/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android용 비공개 오프라인 우선 지출 기록 앱이에요. 거래 내역은 휴대폰 안에
+              그대로 남아요.
+            </p>
+          </div>
+          <div>
+            <h2>제품</h2>
+            <ul>
+              <li><a href="/#features">기능</a></li>
+              <li><a href="/#gallery">갤러리</a></li>
+              <li><a href="/#privacy">개인정보</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>법적 고지</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">이용약관</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>지원</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">지원 및 FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 모든 권리 보유.</span>
+          <span>Android 10 이상을 위해 만들었어요.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>訂閱費用計算工具：月費換算年費</title>
+    <meta
+      name="description"
+      content="把每一筆訂閱加總，月繳、年繳一起看，算出真實的年支出。免費、免帳號，還有砍掉那些你早忘了的訂閱的方法。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="訂閱費用計算工具：月費換算年費" />
+    <meta
+      property="og:description"
+      content="把所有固定扣款加總、看出一年的數字，再比較年繳與月繳。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 標誌：藍色漸層上的白色進度環，環中有一個勾選符號。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hant/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "訂閱費用計算工具",
+            "item": "https://spendwise.download/zh-hant/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "年繳一定比較便宜嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不一定。把年繳價格和十二個月的月繳總額比一比。常見的做法是付十個月用一年，約 17% 的折扣，但有些服務對年繳方案加價，或砍掉某項月繳才有的功能。自己乘一遍，不要相信標章。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "為什麼訂閱費用感覺比實際便宜？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "因為價格以月為單位報出，然後安靜地扣款。三個各 9.99 的服務，讀起來大約是每月 10，而不是每年 360。換算成年費，是唯一能和單筆消費相比的算法。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "怎麼找出我已經忘記的訂閱？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "在最近十二個月的帳單裡搜尋重複扣款，再檢查應用程式商店的訂閱清單，以及電子郵件裡的續約收據。試用期自動轉成的訂閱通常是元凶，因為第一筆扣款是在你做完決定之後才來。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "計算工具會把我的訂閱資料傳出去嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不會。輸入的內容在頁面裡計算，永遠不會離開瀏覽器。沒有 Cookie、沒有第三方腳本，也沒有任何伺服器保存清單。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 能在訂閱續約前提醒我嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spendwise 會為已知帳單保存週期性排程，並把金額從每月預算中預留，還能依分類提醒。它不連銀行，所以訂閱必須手動輸入一次，之後會以到期帳單的形式出現，而不是自動偵測。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hant/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主導覽">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">螢幕截圖</a>
+          <a href="/#privacy">隱私權</a>
+          <a href="/support" hreflang="en" lang="en">支援</a>
+          <a href="/privacy" hreflang="en" lang="en">隱私權政策</a>
+          <a href="/terms" hreflang="en" lang="en">條款與細則</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">免費工具</p>
+          <h1>訂閱費用計算工具</h1>
+          <p class="doc-hero__lede">
+            把每一筆固定扣款列一次，就能看到它每月、每年、五年下來總共多少。免帳號、沒有追蹤 ID，你輸入的內容不會離開這個頁面。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新於：</strong> 2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>計費方式：</strong> 每月或每年 &nbsp;·&nbsp; <strong>費用：</strong> 免費
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">你的訂閱</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>名稱</span>
+                  <input type="text" name="label" value="串流影音" />
+                </label>
+                <label class="tool__field">
+                  <span>金額</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>計費週期</span>
+                  <select name="cycle">
+                    <option value="monthly">每月</option>
+                    <option value="yearly">每年</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>移除</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>名稱</span>
+                  <input type="text" name="label" value="音樂" />
+                </label>
+                <label class="tool__field">
+                  <span>金額</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>計費週期</span>
+                  <select name="cycle">
+                    <option value="monthly">每月</option>
+                    <option value="yearly">每年</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>移除</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>名稱</span>
+                  <input type="text" name="label" value="雲端儲存" />
+                </label>
+                <label class="tool__field">
+                  <span>金額</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>計費週期</span>
+                  <select name="cycle">
+                    <option value="monthly">每月</option>
+                    <option value="yearly" selected>每年</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>移除</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              年繳費用會除以十二計入每月，所以每月金額是平均值，不是銀行帳單上的數字。
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>新增一筆訂閱</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>總計</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>每月</dt>
+                  <dd data-out="monthly">35.31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>每年</dt>
+                  <dd data-out="yearly">423.72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>五年</dt>
+                  <dd data-out="five">2,118.60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>每日</dt>
+                  <dd data-out="day">1.18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                計算工具需要 JavaScript。也可以用手算：把月繳金額加起來，把每筆年繳金額除以十二，再加進每月總額。
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>名稱</span>
+                  <input type="text" name="label" value="" placeholder="訂閱服務" />
+                </label>
+                <label class="tool__field">
+                  <span>金額</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>計費週期</span>
+                  <select name="cycle">
+                    <option value="monthly">每月</option>
+                    <option value="yearly">每年</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>移除</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">為什麼換算成年費才看得清楚</h2>
+          <p>
+            訂閱定價本來就是設計成按月來讀的。每月十塊感覺像一杯咖啡；它同時也是一年 120，而那個數字才能拿去和一次購買、一趟旅行，或一筆你還沒開始存的緊急備用金相比。這個計算工具存在的目的，就是替你做掉那個你不會在腦中做的乘法。
+          </p>
+          <p>
+            年繳費用會除以十二，而不是另外列一行，因為混合的清單需要一個共同的單位。當中的落差是真的，也值得說清楚：99.99 的雲端年繳方案顯示為每月 8.33，但三月的銀行帳單會顯示 99.99。按平均值編預算，並讓帳戶在扣款那個月留夠錢。
+          </p>
+
+          <h2 id="compare">年繳與月繳</h2>
+          <p>
+            預付一年有折扣很常見，但那是附帶條件的價格，不是禮物。三個問題決定值不值得：
+          </p>
+          <ul>
+            <li>
+              <strong>實際折扣是多少？</strong> 把月費乘以十二再比。付十個月的錢用一年大約是 17%；付十一個月用一年大約是 8%，未必值得把這筆錢鎖住。
+            </li>
+            <li>
+              <strong>第十一個月你還會用它嗎？</strong> 只有訂閱留下來，省下的錢才是真的。一個你在第四個月就會解約的服務，改年繳只會更貴，不會更便宜。
+            </li>
+            <li>
+              <strong>你墊得起這筆錢嗎？</strong> 一個月付 120，和每月付 10 並不相同，即使總額很接近。如果這筆錢會落到信用卡上，折扣很可能是負的。
+            </li>
+          </ul>
+
+          <h2 id="audit">十五分鐘就能真正省到錢的檢查</h2>
+          <ol>
+            <li>
+              <strong>找出扣款。</strong> 在十二個月的帳單裡搜尋每月或每年重複出現的同一家商家，再檢查應用程式商店自己的訂閱清單，以及電子郵件裡的續約收據。
+            </li>
+            <li>
+              <strong>寫下含稅的真實價格。</strong> 以美元標示的價格往往不含當地稅，而自動轉成的試用方案，可能正以你從未選擇的費率扣款。
+            </li>
+            <li>
+              <strong>按每次使用的成本排序。</strong> 每月 12、天天使用的服務很便宜；每年只打開兩次、每月 5 的服務不是，不管標章怎麼寫。
+            </li>
+            <li>
+              <strong>先砍清單最下面那幾個。</strong> 目標不是零訂閱，而是每一筆固定扣款，都是你今天還會再訂一次的。
+            </li>
+            <li>
+              <strong>設一個續約檢查點。</strong> 試用期快要轉成付費時重跑這個頁面，或者每季一次。費用是刻意慢慢漲上去的。
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="「財務」頁面列出每月預算已使用 52%、27 個內建分類、兩位追蹤中的往來對象與八筆週期性排程，Insights 底下則有報表與筆記。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>週期性帳單與排程，都計入預算。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="設定畫面顯示 App 語言、USD 應用程式貨幣、系統／淺色／深色的外觀選項，以及五種強調色。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>App 是本機的：語言、貨幣與主題都是裝置上的設定。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">共享的陷阱</h2>
+          <p>
+            家庭方案與年繳預付，是訂閱總額最容易藏身的地方。一年 179 的家庭方案和四個人分，每人負擔比四份個人方案便宜——但前提是有人負責收錢，而那本身就是一本小帳。方案續約時記下誰該付多少，否則這個方案就變成一份期限不明的禮物。
+          </p>
+          <p>
+            整戶共用年繳也一樣：一個人的卡，幾個人的福利。Spendwise 的往來對象餘額正是為此存在，群組帳本則讓共用方案和個人支出分開。
+          </p>
+
+          <h2 id="app">把總額變成一條預算項目</h2>
+          <p>
+            這個頁面算出來的數字，很適合在 Spendwise 裡變成一筆週期性帳單。排程輸入一次，每月預算就會預留它，於是總覽上剩下來的數字是可以花的錢，而不是已經被承諾出去的錢。沒有銀行連線，也沒有訂閱偵測：App
+            只知道你輸入的內容，這也是它能不帶帳號、不帶追蹤 ID 離開手機的原因。
+          </p>
+
+          <h2 id="faq">常見問題</h2>
+          <details class="faq">
+            <summary>年繳一定比較便宜嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不一定。把年繳價格和十二個月的月繳總額比一比。常見的做法是付十個月用一年，約 17% 的折扣，但有些服務對年繳方案加價，或砍掉某項月繳才有的功能。自己乘一遍，不要相信標章。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>為什麼訂閱費用感覺比實際便宜？</summary>
+            <div class="faq__body">
+              <p>
+                因為價格以月為單位報出，然後安靜地扣款。三個各 9.99 的服務，讀起來大約是每月 10，而不是每年 360。換算成年費，是唯一能和單筆消費相比的算法。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>怎麼找出我已經忘記的訂閱？</summary>
+            <div class="faq__body">
+              <p>
+                在最近十二個月的帳單裡搜尋重複扣款，再檢查應用程式商店的訂閱清單，以及電子郵件裡的續約收據。試用期自動轉成的訂閱通常是元凶，因為第一筆扣款是在你做完決定之後才來。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>計算工具會把我的訂閱資料傳出去嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不會。輸入的內容在頁面裡計算，永遠不會離開瀏覽器。沒有 Cookie、沒有第三方腳本，也沒有任何伺服器保存清單。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise 能在訂閱續約前提醒我嗎？</summary>
+            <div class="faq__body">
+              <p>
+                Spendwise 會為已知帳單保存週期性排程，並把金額從每月預算中預留，還能依分類提醒。它不連銀行，所以訂閱必須手動輸入一次，之後會以到期帳單的形式出現，而不是自動偵測。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="更多工具與指南">
+            <h2>更多工具與指南</h2>
+            <ul>
+              <li><a href="/zh-hant/50-30-20-budget-calculator">50/30/20 預算計算工具</a></li>
+              <li><a href="/zh-hant/split-bill-calculator">分帳計算工具</a></li>
+              <li><a href="/zh-hant/offline-expense-tracker">離線記帳</a></li>
+              <li><a href="/zh-hant/private-expense-tracker">私密記帳</a></li>
+              <li><a href="/zh-hant/expense-tracker-without-signup">免註冊記帳</a></li>
+              <li><a href="/zh-hant/expense-tracker-vs-spendee">Spendee 與 Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>給這個總額一條預算項目</h2>
+          <p>
+            Spendwise 免費、免帳號，也沒有追蹤 ID。帳單輸入一次，預算就會預留它。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hant&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >在 Google Play 取得</a
+            >
+            <a class="btn btn--ghost" href="/zh-hant/offline-expense-tracker"
+              >看看哪些功能離線可用</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hant/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、離線優先的 Android 記帳工具。
+              你的帳本留在自己的手機上。
+            </p>
+          </div>
+          <div>
+            <h2>產品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">螢幕截圖</a></li>
+              <li><a href="/#privacy">隱私權</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律資訊</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隱私權政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">條款與細則</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>支援</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">支援與常見問題</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有權利。</span>
+          <span>專為 Android 10 以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

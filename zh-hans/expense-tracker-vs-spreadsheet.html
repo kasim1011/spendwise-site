@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>记账 App 与表格：哪个更快</title>
+    <meta
+      name="description"
+      content="电子表格免费又灵活，手机上的应用则更快。它们各自在哪些场景占优，以及如何在两者之间搬运数字。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spreadsheet" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spreadsheet" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="记账 App 与表格：哪个更快" />
+    <meta
+      property="og:description"
+      content="电子表格是有史以来最诚实的预算工具。它仍在哪些地方胜出，应用在哪里更强，以及如何两者兼用。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 标志：蓝色渐变背景上的白色进度环和对勾。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "记账 App 与表格：哪个更快",
+            "item": "https://spendwise.download/zh-hans/expense-tracker-vs-spreadsheet"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "我能把现有表格导入 Spendwise 吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不能。Spendwise 没有 CSV 或表格导入。备份恢复只接受它自己的 .spendwise 文件，所以搬旧表格意味着手动录入历史，或者从这个月开始重新记。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我能把 Spendwise 数据导出到表格吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。一个月或一年可以导出为 XLSX，包含汇总表和月度表，同时还有一份与屏幕报表一致的 PDF。两者都会写入 Android 的 Download/Spendwise。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "应用能替代表格公式吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不能。应用直接回答预算问题并导出数字；它不会变成计算界面。如果你需要自定义公式，保留表格，把数据导进去。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "表格比应用更私密吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以更私密，只要文件留在你的设备上，且办公套件不同步它。Spendwise 以另一种形式给出同样的承诺：账本是本地数据库，没有账号，服务器上也没有副本。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "家庭预算用哪个更好？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "如果由一个人在电脑上录入所有内容并想要自定义报表，用表格。如果支出是在手机上随手记下，或者不止一个人需要看余额，用应用，因为以文件形式共享的表格容易引发版本冲突。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spreadsheet" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spreadsheet" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spreadsheet" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spreadsheet" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spreadsheet" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spreadsheet" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spreadsheet" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spreadsheet" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spreadsheet" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spreadsheet" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spreadsheet" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">对比</p>
+          <h1>记账 App 与表格：一份诚实的对比</h1>
+          <p class="doc-hero__lede">
+            电子表格是有史以来最诚实的预算工具：免费、透明，随你塑造。它也要你坐在桌前做账。
+            本页讲的是这种取舍在哪里不再奏效，以及哪里依然奏效。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新于：</strong>2026 年 10 月 20 日 &nbsp;·&nbsp; <strong>导出：</strong>PDF
+            和 XLSX &nbsp;·&nbsp; <strong>导入：</strong>没有，这是刻意设计
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="spreadsheet-wins">表格真正胜出的地方</h2>
+          <ul>
+            <li>
+              <strong>不花钱，也不用安装。</strong>你早就有一个，每台设备上都有，永久可用。
+            </li>
+            <li>
+              <strong>公式归你所有。</strong>任何你能想到的视图——储蓄率、滚动平均、按发薪日拆分——
+              都只差一列。
+            </li>
+            <li>
+              <strong>没有任何抽象层。</strong>每个单元格都看得见，每个合计都能核对，错误能在它发生的
+              地方改掉。
+            </li>
+            <li>
+              <strong>它同时就是档案库。</strong>一个文件装下多年历史，格式比大多数应用活得久。
+            </li>
+          </ul>
+          <p>
+            如果你是那种每周日端着咖啡对一遍表格的人，应用不会改善你的财务状况，只会改变你的工作
+            流程。
+          </p>
+
+          <h2 id="spreadsheet-breaks">它在哪里失灵</h2>
+          <p>
+            问题不在算术，而在钱离开账户的那一刻到它变成一行记录之间的摩擦。
+          </p>
+          <ul>
+            <li>
+              <strong>收银台前的录入。</strong>打开文件、找到下一个空行、输入日期、分类和金额，再
+              保存——在手机上，这是一分钟的工作，结账时没人会做。数据会晚一周才到，甚至根本不到。
+            </li>
+            <li>
+              <strong>没有记忆。</strong>表格不会提醒你记账，也不知道房租即将扣款。
+            </li>
+            <li>
+              <strong>分类靠手滑。</strong>一个“食品杂货”和一个“食品杂获”，就能让分类合计变成谎言，
+              而且不会报公式错误。
+            </li>
+            <li>
+              <strong>版本冲突。</strong>两个人同时编辑“2026 预算 最终版 v3.xlsx”，就是家庭版的
+              合并冲突，谁最后保存谁说了算。
+            </li>
+            <li>
+              <strong>固定支出只存在你脑子里。</strong>房租预留必须手动建模，否则月中那个“剩余预算”
+              就是虚构的。
+            </li>
+          </ul>
+
+          <h2 id="side-by-side">并排对比</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">关键事项</th>
+                  <th scope="col">表格</th>
+                  <th scope="col">Spendwise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">成本</th>
+                  <td>免费，或你已付费的办公套件。</td>
+                  <td>免费，由一条非个性化广告支持。</td>
+                </tr>
+                <tr>
+                  <th scope="row">记录一笔支出</th>
+                  <td>手机上的一行：文件、行、日期、分类、金额、保存。</td>
+                  <td>金额、分类、确认——确认页就是广告页。</td>
+                </tr>
+                <tr>
+                  <th scope="row">预算检查</th>
+                  <td>你搭好的公式。</td>
+                  <td>月度预算，会为已知的固定账单预留。</td>
+                </tr>
+                <tr>
+                  <th scope="row">提醒</th>
+                  <td>无。</td>
+                  <td>每天 19:00 的提醒，按分类的周期提醒。</td>
+                </tr>
+                <tr>
+                  <th scope="row">收据</th>
+                  <td>单独的文件，最多手动关联。</td>
+                  <td>照片或 PDF 附在支出上，随备份一起带走。</td>
+                </tr>
+                <tr>
+                  <th scope="row">报表</th>
+                  <td>自己搭，自己解释。</td>
+                  <td>月度与年度报表，导出为 PDF 或 XLSX。</td>
+                </tr>
+                <tr>
+                  <th scope="row">自定义分析</th>
+                  <td>无限。</td>
+                  <td>不是它的职责——导出到表格里计算。</td>
+                </tr>
+                <tr>
+                  <th scope="row">数据存放位置</th>
+                  <td>文件，放在你选择的地方。</td>
+                  <td>手机上的 SQLite 数据库，备份到你保存的文件。</td>
+                </tr>
+                <tr>
+                  <th scope="row">从对方导入</th>
+                  <td>复制粘贴。</td>
+                  <td>无。没有 CSV 导入。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="添加交易表单，金额为 $47.82，已选择“支出”，“食品杂货”分类高亮，日期为今天，还有一行收据或文档，可选择照片或 PDF。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>一个屏幕，填金额和分类，然后确认。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026 年 10 月报表：支出 $2,095.50，预算 $6,000.00，收入与净余额，以及按分类的环形图，第一项是 $1,400.00 的房租。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                你本来要在表格里搭的报表已经搭好了——而且能导出。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="按天分组的交易历史，带搜索框，显示周日市场、咖啡和午餐、药店和电影院，每天各有自己的净额。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>按天分组的历史，可搜索，每天带净额。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="bridge">两者都留：导出就是桥梁</h2>
+          <p>
+            对大多数人来说，合理的答案不是“换掉表格”，而是“别再手动敲行了，然后导出”。
+          </p>
+          <p>
+            Spendwise 可以把一个月或一年导出为 <strong>XLSX</strong>——包含合计和分类明细的汇总表，
+            外加一张月度表——也可以导出为 <strong>PDF</strong>，内容与屏幕上的报表一致。两者都会写入
+            Android 的 <code>Download/Spendwise</code>，分享面板是第二条路径。你的表格成为分析层，
+            应用成为记录层。
+          </p>
+          <p>
+            它不会做的是导入。没有 CSV 导入，也无法载入旧表格，所以迁移意味着手动补录过去，或者从
+            这个月开始重新记。这是一条刻意设定的上限：把任意表格解析好本身就是个大工程，而糟糕的导
+            入会悄悄毁掉账本。
+          </p>
+
+          <h2 id="fit">该用哪一个</h2>
+          <ul>
+            <li>
+              <strong>继续用表格</strong>，如果你每周在桌前记录、想要自定义公式，并且已经信任自己的
+              流程。
+            </li>
+            <li>
+              <strong>用应用</strong>，如果支出发生在离开桌面的地方，如果你想要提醒和一个知道房租快
+              到的预算，或者如果收据需要和支出放在一起。
+            </li>
+            <li>
+              <strong>两者都用</strong>，如果你想要快速记录和深度分析：手机用应用，其余交给表格，
+              月底导出。
+            </li>
+          </ul>
+
+          <h2 id="faq">常见问题</h2>
+
+          <details class="faq">
+            <summary>我能把现有表格导入 Spendwise 吗？</summary>
+            <div class="faq__body">
+              <p>
+                不能。Spendwise 没有 CSV 或表格导入。备份恢复只接受它自己的
+                <code>.spendwise</code> 文件，所以搬旧表格意味着手动录入历史，或者从这个月开始重新
+                记。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>我能把 Spendwise 数据导出到表格吗？</summary>
+            <div class="faq__body">
+              <p>
+                可以。一个月或一年可以导出为 XLSX，包含汇总表和月度表，同时还有一份与屏幕报表一致
+                的 PDF。两者都会写入 Android 的 <code>Download/Spendwise</code>。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>应用能替代表格公式吗？</summary>
+            <div class="faq__body">
+              <p>
+                不能。应用直接回答预算问题并导出数字；它不会变成计算界面。如果你需要自定义公式，保
+                留表格，把数据导进去。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>表格比应用更私密吗？</summary>
+            <div class="faq__body">
+              <p>
+                可以更私密，只要文件留在你的设备上，且办公套件不同步它。Spendwise 以另一种形式给出
+                同样的承诺：账本是本地数据库，没有账号，服务器上也没有副本——看看
+                <a href="/zh-hans/private-expense-tracker">这里说的私密是什么意思</a>。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>家庭预算用哪个更好？</summary>
+            <div class="faq__body">
+              <p>
+                如果由一个人在电脑上录入所有内容并想要自定义报表，用表格。如果支出是在手机上随手记
+                下，或者不止一个人需要看余额，用应用，因为以文件形式共享的表格容易引发版本冲突。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hans/expense-tracker-vs-spendee">Spendee 与 Spendwise</a></li>
+              <li><a href="/zh-hans/offline-expense-tracker">离线记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-without-signup">无需注册的记账应用</a></li>
+              <li><a href="/zh-hans/private-expense-tracker">私密记账应用</a></li>
+              <li><a href="/zh-hans/split-expenses-with-friends">和朋友分摊支出</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>在手机上记录，在表格里分析</h2>
+          <p>
+            免费、无需账号、没有跟踪 ID。把当月导出为 XLSX，让公式留在该在的地方。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dspreadsheet"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/zh-hans/offline-expense-tracker"
+              >看看哪些功能可以离线使用</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spendee 與 Spendwise：雲端同步或本機帳本</title>
+    <meta
+      name="description"
+      content="Spendee 透過帳號與付費方案同步；Spendwise 把帳本離線留在 Android 手機上，免費且免註冊。逐項比較功能與隱私。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta
+      property="og:title"
+      content="Spendee 與 Spendwise：雲端同步，還是手機上的帳本"
+    />
+    <meta
+      property="og:description"
+      content="一款把消費紀錄存進雲端帳號，另一款留在你的手機裡。這對價格、隱私、共享，以及把資料帶走有什麼差別。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 標誌：藍色漸層上的白色進度環，環中有一個勾選符號。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hant/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Spendee 與 Spendwise：雲端同步或本機帳本",
+            "item": "https://spendwise.download/zh-hant/expense-tracker-vs-spendee"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise 和 Spendee 是同一款應用程式嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不是。Spendee 由布拉格的 SPENDEE a.s. 開發。Spendwise 是另一位開發者製作的獨立 Android 應用程式。兩個名字相似到有人在找其中一款時會找到另一款，這也是這個頁面存在的原因。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "使用 Spendwise 需要帳號嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不需要。不用註冊、不用電子郵件，也沒有密碼。第一次啟動時只會請你選擇語言與貨幣，接著就開啟應用程式。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 沒有網路也能用嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。記帳、預算、群組、報告、備份與還原全部在本機運作。確認畫面上的那一則廣告需要連線才能填入；離線時它會顯示預留位置，應用程式其餘部分不受影響。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我要怎麼把 Spendwise 的資料移到新手機？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "開啟設定 → 備份與還原 → 建立備份檔案。檔案包含交易、分類、預算、成員、群組與附加收據。在新手機上點選「選擇備份檔案」；還原會先建立安全快照，再取代目前的資料。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 免費嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "免費。沒有訂閱，也沒有應用程式內購買。交易確認畫面上的一則非個人化廣告支付了它的成本，而匿名螢幕使用統計可以在設定中關閉。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 能在 iPhone 上執行嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不能。Spendwise 是 Android 應用程式，支援 Android 10 以上。Spendee 則提供 Android、iOS 與網頁版。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hant/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主導覽">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">螢幕截圖</a>
+          <a href="/#privacy">隱私權</a>
+          <a href="/support" hreflang="en" lang="en">支援</a>
+          <a href="/privacy" hreflang="en" lang="en">隱私權政策</a>
+          <a href="/terms" hreflang="en" lang="en">條款與細則</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spendee" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spendee" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spendee" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spendee" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spendee" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spendee" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spendee" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spendee" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spendee" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spendee" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spendee" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">比較</p>
+          <h1>Spendee 與 Spendwise：雲端同步，還是手機裡的帳本</h1>
+          <p class="doc-hero__lede">
+            兩款應用程式都能記帳，也都能告訴你一個月花了多少。但它們對一件事的看法不同，其餘
+            差異都由此而來：你的消費紀錄是存在別人伺服器上的帳號裡，還是存在自己裝置上的資料庫
+            裡。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>Spendwise：</strong>Android 10 以上 &nbsp;·&nbsp;
+            <strong>Spendee 價格：</strong>取自其定價頁面，同日查證
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="short-answer">簡短回答</h2>
+          <p>
+            想要銀行交易自動匯入、帳本同時有網頁版和手機版，還有人家的伺服器幫你把兩部裝置同
+            步，就選 <strong>Spendee</strong>。寧可自己輸入消費、不想登入，希望記帳工具在飛機
+            上也能用，也不想讓訂閱費卡在已經能運作的預算前面，就選 <strong>Spendwise</strong>。
+          </p>
+          <p>
+            這篇比較由其中一款應用程式的開發者撰寫，所以請把它當成論點，而不是判決。下表也寫出
+            Spendee 確實更好的地方，不只寫它不足之處。
+          </p>
+
+          <h2 id="side-by-side">逐項比較</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">比較項目</th>
+                  <th scope="col">Spendwise</th>
+                  <th scope="col">Spendee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">帳號</th>
+                  <td>不需要。沒有電子郵件、沒有密碼、沒有個人檔案。</td>
+                  <td>應用程式與網頁版都要登入；你的資料綁在這組帳號上。</td>
+                </tr>
+                <tr>
+                  <th scope="row">紀錄存放位置</th>
+                  <td>手機上的 SQLite 資料庫。伺服器上沒有副本。</td>
+                  <td>Spendee 的雲端，會在你的裝置之間保持同步。</td>
+                </tr>
+                <tr>
+                  <th scope="row">價格</th>
+                  <td>免費。有一則非個人化廣告，沒有應用程式內購買。</td>
+                  <td>
+                    免費 Basic 方案；Plus 每月 1.99 美元或每年 14.99 美元；Premium 每月 5.99
+                    美元或每年 35.99 美元，含 7 天試用。
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">免費方案包含什麼</th>
+                  <td>應用程式的所有功能，包括群組。</td>
+                  <td>Basic 方案只有一個現金錢包和一個預算。</td>
+                </tr>
+                <tr>
+                  <th scope="row">銀行連線</th>
+                  <td>沒有。每筆消費由你自己輸入，只需幾秒。</td>
+                  <td>付費功能，匯入的交易會自動分類。</td>
+                </tr>
+                <tr>
+                  <th scope="row">與他人共用預算</th>
+                  <td>
+                    群組：一趟旅行或一個家庭有各自的帳本、成員、預算與結算，全部留在你的手機
+                    上。
+                  </td>
+                  <td>可與其他 Spendee 使用者共用錢包，需 Plus 或 Premium。</td>
+                </tr>
+                <tr>
+                  <th scope="row">平台</th>
+                  <td>Android 10 以上。</td>
+                  <td>Android、iOS，以及網頁版應用程式。</td>
+                </tr>
+                <tr>
+                  <th scope="row">匯出資料</th>
+                  <td>
+                    每月或每年的 PDF 或試算表，另外還有一份包含每一列紀錄與每張收據的單一檔案
+                    備份。
+                  </td>
+                  <td>交易匯入與匯出，三個方案都有列出。</td>
+                </tr>
+                <tr>
+                  <th scope="row">追蹤與廣告</th>
+                  <td>
+                    沒有追蹤 ID。確認畫面上有一則非個人化廣告。匿名螢幕使用統計可以關閉。
+                  </td>
+                  <td>請參閱 Spendee 自家的隱私權政策；這裡不代為概述。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="what-differs">沒有帳號之後，真正改變的是什麼</h2>
+          <p>
+            表格列的是一項項功能。選擇本機帳本的理由，在於帳號消失之後，這些功能用起來是什麼
+            感覺。
+          </p>
+
+          <h3>沒有東西要登入，也沒有東西會壞</h3>
+          <p>
+            Spendwise 一開啟是選擇語言與貨幣，接著就是你的帳本。排隊買咖啡時不會有登入畫面失
+            敗，沒有密碼要重設，也沒有工作階段會過期。這也意味著沒有人能把你鎖在自己的消費紀
+            錄之外，因為根本沒有伺服器保管它。
+          </p>
+
+          <h3>代價是真的：備份由你負責</h3>
+          <p>
+            雲端帳號本身也是一份備份。Spendwise 刻意不做這件事，而解除安裝應用程式就會刪掉帳
+            本。取而代之的是一個由你掌控的檔案：
+            <strong>設定 → 備份與還原 → 建立備份檔案</strong>會把每一筆交易、分類、預算、成
+            員、群組與附加收據寫進 <code>Download/Spendwise</code> 裡的一個
+            <code>.spendwise</code> 檔案。在新手機上還原，你就回到原本的狀態。請把它放在你會
+            存放銀行對帳單的地方，因為這個檔案沒有加密。
+          </p>
+
+          <h3>群組是內建的，而且留在本機</h3>
+          <p>
+            群組是第二本帳：一趟旅行、一間合租公寓、一場婚禮。它有自己的分類、預算、成員、備註
+            與結算，所以度假的花費永遠不會弄亂家用的數字。不需要訂閱方案才能解鎖，也沒有邀請要
+            接受。老實說，對應的代價是群組裡的其他人在自己手機上不會有即時副本——帳本由一個人
+            保管，也因為只有一個人保管，它才準確。
+          </p>
+
+          <h3>一則廣告，以及可以關掉的統計</h3>
+          <p>
+            Spendwise 靠廣告營運，也不掩飾這一點。確認畫面上有一則非個人化廣告，位置就在工作
+            已經完成之後，而且沒有追蹤 ID。匿名螢幕使用統計用來讓應用程式持續改進，在設定裡有
+            開關；關掉就是關掉，不是「減少」。隱私權政策把兩者都寫清楚了。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="Spendwise 2026 年 10 月的總覽：支出 2,095.50 美元，預算 6,000.00 美元並標示為進度正常，收入 5,320.00 美元，淨結餘 3,224.50 美元，下方還有一列群組。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                總覽先回答問題：這個月花了多少、預算還剩多少，以及接下來還有什麼要付。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="群組分頁列出 Flat 4B（8 個分類）與 Voyage en France（4 個分類），每張卡片都顯示該群組已花費的金額。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                每個群組都是獨立的脈絡，有自己的分類、預算與成員——不是主帳本上的一個標籤。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026 年 10 月的報告：支出 2,095.50 美元、預算 6,000.00 美元、收入與淨結餘，以及依分類呈現的環狀圖，第一項是房租 1,400.00 美元。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                月度與年度報告，無需帳號即可匯出成 PDF 或試算表。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="spendee-wins">Spendee 更好的地方</h2>
+          <p>有三件事沒有伺服器很難做到，而 Spendee 三件都做了：</p>
+          <ul>
+            <li>
+              <strong>銀行連線與自動分類。</strong>如果你不打算自己輸入消費，任何離線記帳工具
+              都不會勝出。Spendee 在付費方案裡會匯入交易並替你分類。
+            </li>
+            <li>
+              <strong>兩部裝置真正同步。</strong>一支手機加網頁版，再加另一個人的手機，正是帳
+              號能帶來的東西。Spendwise 的設計就是一支手機。
+            </li>
+            <li>
+              <strong>iPhone 與網頁版。</strong>Spendwise 只有 Android。如果你的裝置不是
+              Android，這場比較就已經結束了。
+            </li>
+          </ul>
+          <p>
+            Spendee 也是歷史更久、規模更大的產品，這反映在一些功能表上看不出來的地方：銀行清單
+            裡支援更多貨幣、更多年的邊界情況已經修好。兩款應用程式都能免費試用，而 Spendee 的
+            付費方案每月不到一杯咖啡的價錢，所以兩邊都試，花掉的是一個下午，不是錢。
+          </p>
+
+          <h2 id="price">價差買到什麼</h2>
+          <p>
+            Spendwise 的全部收入來自單一畫面上的一則廣告，所以應用程式免費，而且會一直免費；
+            沒有之後要賣給你的升級方案。Spendee 的免費方案是堪用的記帳工具，但限制在一個錢包
+            和一個預算，兩個付費方案才解鎖銀行同步、額外錢包與共用錢包。如果你需要這些功能，
+            每年 14.99–35.99 美元是合理的價格。如果不需要，免費方案的天花板就是該另尋他處的
+            理由。
+          </p>
+
+          <h2 id="faq">常見問題</h2>
+
+          <details class="faq">
+            <summary>Spendwise 和 Spendee 是同一款應用程式嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不是。Spendee 由布拉格的 SPENDEE a.s. 開發。Spendwise 是另一位開發者製作的獨
+                立 Android 應用程式。兩個名字相似到有人在找其中一款時會找到另一款，這也是這個
+                頁面存在的原因。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>使用 Spendwise 需要帳號嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不需要。不用註冊、不用電子郵件，也沒有密碼。第一次啟動時只會請你選擇語言與貨
+                幣，接著就開啟應用程式。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise 沒有網路也能用嗎？</summary>
+            <div class="faq__body">
+              <p>
+                可以。記帳、預算、群組、報告、備份與還原全部在本機運作。確認畫面上的那一則廣告
+                需要連線才能填入；離線時它會顯示預留位置，應用程式其餘部分不受影響。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>我要怎麼把 Spendwise 的資料移到新手機？</summary>
+            <div class="faq__body">
+              <p>
+                開啟 <strong>設定 → 備份與還原 → 建立備份檔案</strong>。檔案包含交易、分類、預
+                算、成員、群組與附加收據。在新手機上點選<strong>選擇備份檔案</strong>；還原會
+                先建立安全快照，再取代目前的資料。完整步驟在<a
+                  href="/support"
+                  hreflang="en"
+                  lang="en"
+                  >支援頁面</a
+                >上。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise 免費嗎？</summary>
+            <div class="faq__body">
+              <p>
+                免費。沒有訂閱，也沒有應用程式內購買。交易確認畫面上的一則非個人化廣告支付了它
+                的成本，而匿名螢幕使用統計可以在設定中關閉。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise 能在 iPhone 上執行嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不能。Spendwise 是 Android 應用程式，支援 Android 10 以上。Spendee 則提供
+                Android、iOS 與網頁版。
+              </p>
+            </div>
+          </details>
+
+          <h2 id="try">試試適合你的那一款</h2>
+          <p>
+            如果這個頁面達到目的，你應該已經知道自己屬於哪一欄。Spendwise 免費，安裝不到一分
+            鐘；如果不適合你，解除安裝就好，這段時間裡也沒有任何東西被上傳到別處。
+          </p>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hant/offline-expense-tracker">離線記帳工具</a></li>
+              <li><a href="/zh-hant/expense-tracker-without-signup">免註冊的記帳工具</a></li>
+              <li><a href="/zh-hant/private-expense-tracker">私密記帳工具</a></li>
+              <li><a href="/zh-hant/split-expenses-with-friends">和朋友分帳</a></li>
+              <li><a href="/zh-hant/expense-tracker-vs-spreadsheet">Spendwise 與試算表</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Google Play 上的 Spendwise</h2>
+          <p>
+            免費、無帳號、沒有追蹤 ID。帳本留在你的手機上，換手機時一個檔案就能帶走。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hant&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dvs_spendee"
+              rel="noopener"
+              >在 Google Play 取得</a
+            >
+            <a class="btn btn--ghost" href="/support" hreflang="en" lang="en">閱讀常見問題</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hant/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、離線優先的 Android 記帳工具。
+              你的帳本留在自己的手機上。
+            </p>
+          </div>
+          <div>
+            <h2>產品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">螢幕截圖</a></li>
+              <li><a href="/#privacy">隱私權</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律資訊</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隱私權政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">條款與細則</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>支援</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">支援與常見問題</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有權利。</span>
+          <span>專為 Android 10 以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор счёта с чаевыми: точные доли</title>
+    <meta
+      name="description"
+      content="Разделите счёт на любое число людей вместе с чаевыми. Округление до копейки, без аккаунта — и честно о случаях, когда ровный счёт несправедлив."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Калькулятор счёта с чаевыми: точные доли" />
+    <meta
+      property="og:description"
+      content="Счёт, чаевые и число людей — до копейки. И когда делить поровну неверно."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Калькулятор разделения счёта",
+            "item": "https://spendwise.download/ru/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Чаевые считать до налогов или после?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "От суммы до налогов: так принято в США, и это проще из двух вариантов. Введите в калькулятор сумму до налогов, и всё сойдётся с первого раза. Если сервисный сбор уже в счёте, поставьте чаевые в ноль, а не добавляйте вторые."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как разделить счёт неравно?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сначала разберитесь с позициями, а остаток делите. Отнесите каждое блюдо тому, кто его ел, разделите общие тарелки и чаевые поровну и сложите две части. Деление пропорционально доходу уместно для аренды, но не для счёта в ресторане."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как честнее всего поступить с лишней копейкой?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Отдайте лишнюю копейку одному человеку или тому, кто собирает деньги. Никогда не округляйте каждую долю вверх: четверо, округляя долю 53,87 до 54, платят 216,00 при счёте 215,51, и разница тихо остаётся у сборщика."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Этот калькулятор сохраняет счёт?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Всё считается на странице, ничего не загружается, куки и сторонних скриптов нет. Закрыли вкладку — всё пропало."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как Spendwise поступает с общими расходами?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Группа — отдельный журнал со своим бюджетом и категориями, так что поездка или общая квартира не смешиваются с личными тратами. Журнал ведёт один человек, а приложение отслеживает, кто кому должен, через балансы людей. Совместного редактирования в реальном времени нет, поэтому группе нужен один хранитель, а не два редактора."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Бесплатный инструмент</p>
+          <h1>Калькулятор разделения счёта</h1>
+          <p class="doc-hero__lede">
+            Один счёт, чаевые и число людей. Калькулятор делит сумму до копейки и точно говорит,
+            куда уходит лишняя копейка. Без аккаунта, без трекинг-ID, ничего не покидает страницу.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Округление:</strong> целые копейки &nbsp;·&nbsp; <strong>Цена:</strong> бесплатно
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Делится поровну: {each} с каждого, участников — {people}."
+            data-msg-one="{remainder} человек платит на копейку больше ({high}), остальные — по {each}. Сумма сходится точно: никогда не округляйте каждую долю вверх."
+            data-msg-many="{remainder} из {people} платят на копейку больше ({high}), остальные — по {each}. Сумма сходится точно: никогда не округляйте каждую долю вверх."
+          >
+            <h2 class="tool__title" id="split-heading">Ваш счёт</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Счёт, до чаевых</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Чаевые, процент</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Людей</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>Разбивка</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Чаевые</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>К оплате</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>С каждого</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Наибольшая доля</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                Калькулятору нужен JavaScript. Посчитайте вручную: прибавьте к счёту процент
+                чаевых, разделите на число людей и отдайте лишнюю копейку одному человеку.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Как работает это деление</h2>
+          <p>
+            Чаевые считаются от счёта до налогов, прибавляются к сумме, а сумма делится на число
+            людей. Порядок важен: чаевые с суммы после налогов завышают их на величину местного
+            налога, и на счёте 187,40 с 15% это 4,20, которые никто не собирался оставлять.
+          </p>
+          <p>
+            Деление идёт в <strong>целых копейках</strong>, никогда в числах с плавающей точкой.
+            Счёт 215,51 на четверых не делится ровно, поэтому доли по 53,87, а один человек платит
+            53,88. Альтернатива — округлить каждую долю вверх — это как раз то, из-за чего у
+            сборщика появляется тихая прибыль, а в общем чате начинается спор.
+          </p>
+
+          <h2 id="tipping">Чаевые, сервисный сбор и то, что уже включено в счёт</h2>
+          <p>
+            Нормы чаевых плохо переносятся между странами, и калькулятор это не исправит; он может
+            хотя бы не сделать хуже. Три правила, которые держат арифметику честной:
+          </p>
+          <ul>
+            <li>
+              <strong>Сначала проверьте сервисный сбор.</strong> Строка «12,5% сервис» значит, что
+              чаевые уже в счёте. Поставьте чаевые в ноль и делите итог — иначе вы оставляете их
+              дважды.
+            </li>
+            <li>
+              <strong>Считайте чаевые от суммы без налогов.</strong> Вводите сумму до налогов. Если
+              в счёте только итог, разделите его на единицу плюс ставка налога, чтобы восстановить
+              базу.
+            </li>
+            <li>
+              <strong>Договоритесь до того, как терминал у стола.</strong> Решать про чаевые, пока
+              терминал просит процент, — так стол из пяти человек платит 25%.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Когда делить поровну — неверный ответ</h2>
+          <p>
+            Делить поровну быстро и обычно достаточно честно. Это перестаёт быть честным, когда
+            траты перекошены: одна бутылка вина, один стейк, один человек, который взял закуску и
+            ушёл раньше.
+          </p>
+          <ul>
+            <li>
+              <strong>По позициям.</strong> Отнесите каждую строку тому, кто её заказал, разделите
+              общие тарелки и чаевые поровну и сложите. Точнее, немного неловко и верно, когда
+              разрыв большой.
+            </li>
+            <li>
+              <strong>По этапам.</strong> Середина пути: отдельно напитки и десерт, еда поровну.
+              Снимает большую часть неловкости без разбора по позициям.
+            </li>
+            <li>
+              <strong>Не по доходу.</strong> Делить пропорционально зарплате имеет смысл для аренды
+              и счетов, а не для ужина. Тот, кто зарабатывает больше, не должен больше за вашу
+              пасту.
+            </li>
+          </ul>
+          <p>
+            Для регулярных общих расходов — аренды, коммунальных, продуктов на квартиру — деление
+            поровну тоже обычно неверный вариант по умолчанию, потому что потребление не равно.
+            Взвешенное деление на человека (двое в большой комнате, один в маленькой) надёжнее
+            равного, на которое кто-то тихо обижается.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="Свой экран группы за октябрь 2026: потрачено $553,00 при бюджете группы $800,00 с пометкой, что бюджет соблюдается, люди с непогашенными балансами и кнопка добавления расхода."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Общий журнал со своим бюджетом и балансами.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="Экран «Люди»: Alex должен $245,00, а Sam должны $500,00; у каждого текущий баланс и действие «Добавить человека»."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Данное в долг и взятое в долг хранится как текущий баланс.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Поделить один раз — и вести весь месяц</h2>
+          <p>
+            Калькулятор отвечает про один ужин. Сложнее с общей квартирой или поездкой, где за две
+            недели случаются двадцать мелких платежей и никто не помнит, кто что покрыл. Это задача
+            журнала, а переписка в чате — плохой журнал.
+          </p>
+          <p>
+            В Spendwise группа — отдельный журнал: свой бюджет, свои категории, — поэтому поездка не
+            загрязняет личный месяц. Расходы, добавленные в группу, лежат рядом с балансами людей по
+            данному и взятому в долг, а экран группы показывает, кто в плюсе и кто в минусе.
+            Компромисс назван прямо: <strong>журнал ведёт один человек</strong>. Совместного
+            редактирования в реальном времени нет, так что группе нужен один хранитель, который
+            записывает, а все остальные видят итог.
+          </p>
+          <p>
+            Когда поездка заканчивается, числа уже на месте: не нужно восстанавливать их по
+            скриншотам, а месячный отчёт показывает траты группы отдельно от домашнего бюджета.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+          <details class="faq">
+            <summary>Чаевые считать до налогов или после?</summary>
+            <div class="faq__body">
+              <p>
+                От суммы до налогов: так принято в США, и это проще из двух вариантов. Введите в
+                калькулятор сумму до налогов, и всё сойдётся с первого раза. Если сервисный сбор
+                уже в счёте, поставьте чаевые в ноль, а не добавляйте вторые.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Как разделить счёт неравно?</summary>
+            <div class="faq__body">
+              <p>
+                Сначала разберитесь с позициями, а остаток делите. Отнесите каждое блюдо тому, кто
+                его ел, разделите общие тарелки и чаевые поровну и сложите две части. Деление
+                пропорционально доходу уместно для аренды, но не для счёта в ресторане.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Как честнее всего поступить с лишней копейкой?</summary>
+            <div class="faq__body">
+              <p>
+                Отдайте лишнюю копейку одному человеку или тому, кто собирает деньги. Никогда не
+                округляйте каждую долю вверх: четверо, округляя долю 53,87 до 54, платят 216,00 при
+                счёте 215,51, и разница тихо остаётся у сборщика.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Этот калькулятор сохраняет счёт?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Всё считается на странице, ничего не загружается, куки и сторонних скриптов
+                нет. Закрыли вкладку — всё пропало.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Как Spendwise поступает с общими расходами?</summary>
+            <div class="faq__body">
+              <p>
+                Группа — отдельный журнал со своим бюджетом и категориями, так что поездка или общая
+                квартира не смешиваются с личными тратами. Журнал ведёт один человек, а приложение
+                отслеживает, кто кому должен, через балансы людей. Совместного редактирования в
+                реальном времени нет, поэтому группе нужен один хранитель, а не два редактора — см.
+                <a href="/ru/split-expenses-with-friends">подробный разбор</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Больше инструментов и гайдов">
+            <h2>Больше инструментов и гайдов</h2>
+            <ul>
+              <li><a href="/ru/50-30-20-budget-calculator">Калькулятор бюджета 50/30/20</a></li>
+              <li><a href="/ru/subscription-cost-calculator">Калькулятор стоимости подписок</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Держите журнал группы в одном месте</h2>
+          <p>
+            Бесплатно, без аккаунта, без трекинг-ID. Журнал группы, балансы людей и месяц, который
+            можно выгрузить.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/split-expenses-with-friends"
+              >Как устроены общие расходы</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

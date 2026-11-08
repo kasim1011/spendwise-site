@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حاسبة تقسيم الفاتورة مع الإكرامية: حصص دقيقة</title>
+    <meta
+      name="description"
+      content="قسّم فاتورة بين أي عدد من الأشخاص، مع الإكرامية. تقريب بالسنت الصحيح، بلا حساب، ومع الحالات التي يكون فيها التقسيم بالتساوي ظالمًا."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="حاسبة تقسيم الفاتورة مع الإكرامية: حصص دقيقة" />
+    <meta
+      property="og:description"
+      content="الفاتورة والإكرامية وعدد الأشخاص، مقسّمة إلى السنت. ومعها متى يكون التقسيم بالتساوي جوابًا خاطئًا."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="شعار Spendwise: حلقة تقدم بيضاء وعلامة صح على حقل متدرج أزرق."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "حاسبة تقسيم الفاتورة",
+            "item": "https://spendwise.download/ar/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل تُحتسب الإكرامية قبل الضريبة أم بعدها؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "على المجموع الفرعي قبل الضريبة، وهو العرف في الولايات المتحدة وأبسط القراءتين. أدخل الفاتورة قبل الضريبة في هذه الحاسبة، فيكون الناتج صحيحًا من المحاولة الأولى. وإذا كان رسم الخدمة على الفاتورة أصلًا، فاجعل الإكرامية صفرًا بدلًا من إضافة ثانية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف أقسم فاتورة بشكل غير متساوٍ؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "سوِّ الأصناف أولًا ثم اقسم الباقي. انسب كل طبق لمن أكله، واقسم الأطباق المشتركة والإكرامية بالتساوي، ثم اجمع الجزأين. والتقسيم بحسب الدخل مقبول للإيجار، لا لفاتورة مطعم."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما أعدل طريقة للتعامل مع السنت المتبقي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "أعطِ السنت الإضافي لشخص واحد، أو لمن يجمع المبلغ. لا تُقرّب كل حصة إلى الأعلى: أربعة أشخاص يقرّبون حصة 53.87 إلى 54 يدفعون 216.00 مقابل فاتورة 215.51، ويضع المحصّل الفرق في جيبه دون أن يقرر."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تخزّن هذه الحاسبة الفاتورة؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. كل شيء يُحسب في الصفحة، ولا يُرفع شيء، ولا توجد كوكيز ولا سكربتات خارجية. إغلاق التبويب يمحوها."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف يتعامل Spendwise مع المصاريف المشتركة؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "المجموعة سجل قائم بذاته بميزانيته وفئاته، فلا تختلط الرحلة أو الشقة المشتركة بالإنفاق الشخصي. يمسك شخص واحد السجل، ويتابع التطبيق من يدين لمن عبر أرصدة الأشخاص. وهو لا يقدّم تعديلًا مشتركًا في الوقت الفعلي، فتحتاج المجموعة إلى أمين واحد لا محرّرين."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">أداة مجانية</p>
+          <h1>حاسبة تقسيم الفاتورة</h1>
+          <p class="doc-hero__lede">
+            فاتورة واحدة، وإكرامية، وعدد أشخاص. تقسمها الحاسبة إلى السنت وتخبرك أين يذهب السنت
+            الزائد بالضبط. بلا حساب، بلا معرّف تتبّع، ولا شيء يغادر الصفحة.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>آخر تحديث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp;
+            <strong>التقريب:</strong> بالسنت الصحيح &nbsp;·&nbsp; <strong>السعر:</strong> مجاني
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="تقسيم بالتساوي — عدد الأشخاص: {people}، ونصيب كل واحد: {each}."
+            data-msg-one="يدفع شخص واحد فقط سنتًا إضافيًا ({high})، ويدفع الباقون {each}. المجموع مطابق تمامًا — لا تُقرَّب كل حصة إلى الأعلى."
+            data-msg-many="يدفع {remainder} من أصل {people} سنتًا إضافيًا ({high})، ويدفع الباقون {each}. المجموع مطابق تمامًا — لا تُقرَّب كل حصة إلى الأعلى."
+          >
+            <h2 class="tool__title" id="split-heading">فاتورتك</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>الفاتورة، قبل الإكرامية</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>الإكرامية، بالنسبة المئوية</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>عدد الأشخاص</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>التقسيم</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>الإكرامية</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>الإجمالي المطلوب</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>نصيب كل شخص</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>أعلى حصة</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                تحتاج الحاسبة إلى JavaScript. افعلها يدويًا: أضف نسبة الإكرامية إلى الفاتورة، ثم
+                اقسم على عدد الأشخاص، وأعطِ السنت المتبقي لشخص واحد.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">كيف يعمل هذا التقسيم</h2>
+          <p>
+            تُحسب الإكرامية على الفاتورة قبل الضريبة، وتُضاف إلى الإجمالي، ثم يُقسم الإجمالي على عدد
+            الأشخاص. وهذا الترتيب مهم: حساب الإكرامية على المبلغ بعد الضريبة يضخّمها بمقدار نسبة
+            الضريبة المحلية، وعلى فاتورة 187.40 بإكرامية 15% يكون الفارق 4.20 لم يقصد أحد دفعها.
+          </p>
+          <p>
+            القسمة <strong>بالسنت الصحيح</strong>، لا بالفاصلة العائمة. ففاتورة 215.51 على أربعة
+            أشخاص لا تنقسم بالتساوي، لذا تكون حصة كل واحد 53.87 ويدفع أحدهم 53.88. والبديل — تقريب
+            كل حصة إلى الأعلى — هو كيف يربح المحصّل ربحًا صامتًا، وكيف تبدأ مشاجرة في مجموعة
+            الدردشة.
+          </p>
+
+          <h2 id="tipping">الإكرامية، ورسم الخدمة، وما تشمله الفاتورة أصلًا</h2>
+          <p>
+            أعراف الإكرامية تسافر سيئة، ولا تستطيع حاسبة إصلاح ذلك؛ لكنها تستطيع على الأقل ألا تزيده
+            سوءًا. ثلاث قواعد تُبقي الحساب صادقًا:
+          </p>
+          <ul>
+            <li>
+              <strong>افحص رسم الخدمة أولًا.</strong> سطر يقول «12.5% خدمة» يعني أن الإكرامية على
+              الفاتورة سلفًا. اجعل الإكرامية صفرًا واقسم الإجمالي، وإلا فأنت تدفع الإكرامية مرتين.
+            </li>
+            <li>
+              <strong>احتسب الإكرامية على المجموع الفرعي، لا على الضريبة.</strong> أدخل المبلغ قبل
+              الضريبة. وإذا أظهرت الفاتورة إجماليًا نهائيًا فقط، فاقسمه على واحد زائد نسبة الضريبة
+              لاستخراجه.
+            </li>
+            <li>
+              <strong>اتفقوا قبل وصول البطاقة.</strong> تحديد الإكرامية بينما تسأل الطرفية عن نسبة
+              هو كيف تنتهي طاولة من خمسة بدفع 25%.
+            </li>
+          </ul>
+
+          <h2 id="unfair">حين يكون التقسيم بالتساوي جوابًا خاطئًا</h2>
+          <p>
+            التقسيم بالتساوي سريع وعادل بما يكفي عادةً. ويتوقف عن العدل حين يكون الإنفاق غير متكافئ —
+            زجاجة نبيذ واحدة، أو قطعة لحم واحدة، أو شخص طلب مقبلًا وغادر مبكرًا.
+          </p>
+          <ul>
+            <li>
+              <strong>حسب الصنف.</strong> انسب كل سطر لمن طلبه، واقسم الأطباق المشتركة والإكرامية
+              بالتساوي، ثم اجمع. أدق، ومحرج قليلًا، وهو القرار الصحيح حين تكون الفجوة كبيرة.
+            </li>
+            <li>
+              <strong>حسب الطبق.</strong> طريق وسط: افصل المشروبات والحلوى، واقسم الطعام بالتساوي.
+              يعالج معظم الإحراج دون تفصيل كل صنف.
+            </li>
+            <li>
+              <strong>لا حسب الدخل.</strong> تقسيم المصاريف بحسب الراتب منطقي للإيجار والفواتير، لا
+              للعشاء. فمن يكسب أكثر لا يدين أكثر مقابل طبق المعكرونة خاصتك.
+            </li>
+          </ul>
+          <p>
+            للتكاليف المشتركة المتكررة — الإيجار، والمرافق، وبقالة الشقة — يكون التقسيم بالتساوي هو
+            الافتراضي الخاطئ أيضًا، لأن الاستهلاك ليس متساويًا. والتقسيم المرجّح للفرد (شخصان في
+            الغرفة الكبيرة، وواحد في الصغيرة) أبقى من تقسيم متساوٍ يضمره أحدهم بهدوء.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="شاشة مجموعة لشهر أكتوبر 2026: 553.00 دولارًا منفقة مقابل ميزانية مجموعة قدرها 800.00 دولار موسومة «على المسار»، والأشخاص ذوو الأرصدة المتبقية، وزر إضافة مصروف."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>سجل مشترك بميزانيته وأرصدته الخاصة.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="شاشة الأشخاص تعرض Alex المدين بـ245.00 دولارًا وSam الدائن بـ500.00 دولار، ولكل منهما رصيد جارٍ وإجراء إضافة شخص."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>المال المُقرض والمقترض، محفوظ كرصيد جارٍ.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">التقسيم مرة واحدة، والتتبّع طوال الشهر</h2>
+          <p>
+            الحاسبة تجيب عن عشاء واحد. والنسخة الأصعب شقة مشتركة أو رحلة تحدث فيها عشرون دفعة صغيرة
+            خلال أسبوعين ولا يتذكر أحد من غطّى ماذا. تلك مشكلة سجل، وخيط دردشة سجل رديء.
+          </p>
+          <p>
+            في Spendwise، المجموعة سجل قائم بذاته — ميزانيتها وفئاتها — فلا تلوّث الرحلة الشهر
+            الشخصي. وتقع المصاريف المضافة إلى المجموعة إلى جانب أرصدة الأشخاص للمال المُقرض
+            والمقترض، وتعرض شاشة المجموعة من له ومن عليه. والمقايضة صريحة:
+            <strong>شخص واحد يمسك السجل</strong>. لا يوجد تعديل مشترك في الوقت الفعلي، فتحتاج
+            المجموعة إلى أمين واحد يسجّل، ويرى الباقون الإجمالي.
+          </p>
+          <p>
+            عند انتهاء الرحلة، تكون الأرقام هناك سلفًا: بلا إعادة بناء من لقطات الشاشة، والتقرير
+            الشهري يحمل إنفاق المجموعة منفصلًا عن ميزانية المنزل.
+          </p>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+          <details class="faq">
+            <summary>هل تُحتسب الإكرامية قبل الضريبة أم بعدها؟</summary>
+            <div class="faq__body">
+              <p>
+                على المجموع الفرعي قبل الضريبة، وهو العرف في الولايات المتحدة وأبسط القراءتين. أدخل
+                الفاتورة قبل الضريبة في هذه الحاسبة، فيكون الناتج صحيحًا من المحاولة الأولى. وإذا
+                كان رسم الخدمة على الفاتورة أصلًا، فاجعل الإكرامية صفرًا بدلًا من إضافة ثانية.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>كيف أقسم فاتورة بشكل غير متساوٍ؟</summary>
+            <div class="faq__body">
+              <p>
+                سوِّ الأصناف أولًا ثم اقسم الباقي. انسب كل طبق لمن أكله، واقسم الأطباق المشتركة
+                والإكرامية بالتساوي، ثم اجمع الجزأين. والتقسيم بحسب الدخل مقبول للإيجار، لا لفاتورة
+                مطعم.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>ما أعدل طريقة للتعامل مع السنت المتبقي؟</summary>
+            <div class="faq__body">
+              <p>
+                أعطِ السنت الإضافي لشخص واحد، أو لمن يجمع المبلغ. لا تُقرّب كل حصة إلى الأعلى: أربعة
+                أشخاص يقرّبون حصة 53.87 إلى 54 يدفعون 216.00 مقابل فاتورة 215.51، ويضع المحصّل
+                الفرق في جيبه دون أن يقرر.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>هل تخزّن هذه الحاسبة الفاتورة؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. كل شيء يُحسب في الصفحة، ولا يُرفع شيء، ولا توجد كوكيز ولا سكربتات خارجية. إغلاق
+                التبويب يمحوها.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>كيف يتعامل Spendwise مع المصاريف المشتركة؟</summary>
+            <div class="faq__body">
+              <p>
+                المجموعة سجل قائم بذاته بميزانيته وفئاته، فلا تختلط الرحلة أو الشقة المشتركة بالإنفاق
+                الشخصي. يمسك شخص واحد السجل، ويتابع التطبيق من يدين لمن عبر أرصدة الأشخاص. وهو لا
+                يقدّم تعديلًا مشتركًا في الوقت الفعلي، فتحتاج المجموعة إلى أمين واحد لا محرّرين — انظر
+                <a href="/ar/split-expenses-with-friends">النسخة المطوّلة</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="مزيد من الأدوات والأدلة">
+            <h2>مزيد من الأدوات والأدلة</h2>
+            <ul>
+              <li><a href="/ar/50-30-20-budget-calculator">حاسبة ميزانية 50/30/20</a></li>
+              <li><a href="/ar/subscription-cost-calculator">حاسبة تكلفة الاشتراكات</a></li>
+              <li><a href="/ar/split-expenses-with-friends">اقتسام المصاريف مع الأصدقاء</a></li>
+              <li><a href="/ar/private-expense-tracker">متتبّع مصاريف خاص</a></li>
+              <li><a href="/ar/expense-tracker-vs-spendee">Spendee مقابل Spendwise</a></li>
+              <li><a href="/ar/expense-tracker-vs-spreadsheet">Spendwise مقابل جدول بيانات</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>احفظ سجل المجموعة في مكان واحد</h2>
+          <p>
+            مجاني، بلا حساب، بلا معرّف تتبّع. سجل مجموعة، وأرصدة أشخاص، وشهر قابل للتصدير.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ar/split-expenses-with-friends"
+              >كيف تعمل المصاريف المشتركة</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

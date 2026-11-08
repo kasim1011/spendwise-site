@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +9,8 @@
       content="How Spendwise handles your data: transactions, budgets, notes, and receipts stay on your device. Anonymous usage analytics and a non-personalized ad are the only things that leave."
     />
     <link rel="canonical" href="https://spendwise.download/privacy" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/privacy" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/privacy" />
     <meta name="theme-color" content="#004AC6" />
 
     <meta property="og:type" content="article" />
@@ -36,25 +38,32 @@
     <link rel="stylesheet" href="/styles/base.css" />
     <link rel="stylesheet" href="/styles/site.css" />
     <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://spendwise.download/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Privacy Policy",
-          "item": "https://spendwise.download/privacy"
-        }
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://spendwise.download/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy Policy",
+            "item": "https://spendwise.download/privacy"
+          }
+        ]
+      }
     </script>
   </head>
   <body>
@@ -544,6 +553,7 @@
             <h2>Support</h2>
             <ul>
               <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
               <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
             </ul>
           </div>

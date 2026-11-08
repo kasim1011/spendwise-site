@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>和朋友分摊费用：分组与结清</title>
+    <meta
+      name="description"
+      content="用一部手机记录旅行或合租开销：每个分组一本账本，可均分或自定义分摊，实时查看结余，一键结清。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="和朋友分摊费用：分组与结清" />
+    <meta
+      property="og:description"
+      content="分组账本只存在一部手机上时如何运作：分摊份额、结余、结清，以及这套模式的边界。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 标志：蓝色渐变背景上的白色进度圆环与勾选标记。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "和朋友分摊费用：分组与结清",
+            "item": "https://spendwise.download/zh-hans/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "我的朋友需要安装 Spendwise 吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不需要。分组只是你手机上的一本账本，朋友是你在其中添加的成员。没人会收到邀请、账号或通知，别人的手机也不会存有一份副本。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "份额是如何分摊的？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "一笔共同支出可以同时分给多个成员，既可以均分，也可以由你为每个人单独设定份额。每一份都会更新该成员的实时结余。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "分组结余会影响我的个人账本吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。分组是独立的情境，有各自的成员、分类、预算和结余。在分组内结清只改变该分组，即使某位成员在应用层面用了相同的名字也是如此。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "分组里两个人不等额分摊一笔账单时会怎样？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不要均分，改为分别设定每个人的份额。这笔交易在分组账本里仍然是一笔支出，每个人的结余按各自份额变动。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "分组可以用于家庭开销而不是旅行吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。分组是一本有名称的账本，有自己的月度预算、分类和笔记，所以合租和度假的用法完全一样。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">分组与结清</p>
+          <h1>和朋友分摊费用，不必再建一个账号</h1>
+          <p class="doc-hero__lede">
+            分摊开销往往意味着把每个人都拉进一个他们并不想安装的应用。Spendwise
+            反其道而行：由一个人为旅行或合租维护一本准确的账本，每个人都能看到自己的结余情况。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026 年 10 月 20 日 &nbsp;·&nbsp; <strong>模式：</strong>本地分组账本
+            &nbsp;·&nbsp; <strong>价格：</strong>免费内置，无需订阅
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">分组是第二本账本，不是标签</h2>
+          <p>
+            在大多数应用里，共享的旅行只是贴在部分支出上的标签。Spendwise
+            给分组独立的情境：独立的分类、独立的月度预算、独立的成员、独立的交易、独立的笔记和独立的结余。
+          </p>
+          <p>
+            关键在于，一次度假永远不会污染家庭账目。家里的房租不属于「Voyage en
+            France」分组里的分类，朋友在旅行中欠你的钱，也和他平时在家的借款不是同一个结余；即便名字一模一样，它们也是两本独立的账本。
+          </p>
+
+          <h2 id="how-a-trip-works">一次旅行实际怎么运转</h2>
+          <ol>
+            <li>
+              <strong>创建分组</strong>并给它起名。它会预置一组适合旅行或家庭开销的起始分类。
+            </li>
+            <li>
+              <strong>添加成员</strong>，也就是与你分摊开销的人。他们只是账本里的条目，不是账号——不需要手机号，不需要邀请，也不用安装应用。
+            </li>
+            <li>
+              <strong>设置分组预算</strong>，在分组概览上设定当月额度，与你的个人预算分开。
+            </li>
+            <li>
+              <strong>记录共同支出。</strong>输入你支付的金额，并选好分类和日期。如果是别人垫付了你那份，就按相反方向记录，这样结余才不会记反。
+            </li>
+            <li>
+              <strong>拆分这笔支出。</strong>标记涉及的成员——可以均分，也可以为每人单独设定份额。每一份都会更新该成员的实时结余。
+            </li>
+            <li>
+              <strong>结清</strong>，在有人付清自己那份时进行。该操作会打开已预填未结余额和正确方向的记录界面，因此登记一次还款只需一次点击和一次确认。部分还款也可以。
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="「分组」标签页列出 Flat 4B（8 个分类）和 Voyage en France（4 个分类），每张卡片显示该分组已花的金额。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                每个分组在打开之前就会显示自己的支出和分类数量。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="某分组 2026 年 10 月的独立屏幕：在 800.00 美元的分组预算下已花 553.00 美元，状态为「进展正常」，还列出有未结余额的成员和一个「添加支出」按钮。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                分组的概览、预算和有待结清余额的成员——全都限定在该分组内。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="「成员」屏幕列出欠你 245.00 美元的 Alex 和你欠 500.00 美元的 Sam，每人各带一行实时结余，另有「添加成员」操作。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                结余由账本推导而来，不是手动输入的：别人欠你时为绿色，你欠别人时为红色。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">结余是算出来的，不是记出来的</h2>
+          <p>
+            每个人的结余都是其账本条目的总和，而不是谁手动敲进去的数字。这些条目覆盖真实会发生的情形：你借出现金、你替对方垫付账单里的一份、对方替你垫付、你借钱、对方还你、你还对方。正数表示别人欠你，负数表示你欠别人。
+          </p>
+          <p>
+            由于它是推导出的总和，所以不会过时走样。代价是，结余的准确度取决于记录得是否完整——如果分组忘了记那趟出租车，账本就是错的，而让一个人专门管账正是解决办法。
+          </p>
+
+          <h2 id="the-trade">坦诚的取舍：账本只放在一部手机上</h2>
+          <p>
+            带邀请功能的多人分摊应用确实存在，它们解决的是另一个问题：让每位参与者都能用自己的手机编辑同一本共享账本。这需要账号和服务器，而这恰恰是 Spendwise 没有的架构。
+          </p>
+          <p>所以这里的模式是<strong>一本账本，一个人管</strong>。它适合：</p>
+          <ul>
+            <li>由一个人预订并支付大部分开销的旅行，</li>
+            <li>由一位室友统一结清账单的合租，</li>
+            <li>任何矛盾源于记忆模糊而非互不信任的小团体。</li>
+          </ul>
+          <p>
+            它不适合人人都坚持实时编辑账本的家庭。如果这是你的需求，请阅读
+            <a href="/zh-hans/expense-tracker-vs-spendee">Spendee 对比</a>，选择一款支持同步的应用；那一页会直说本应用在哪些方面落后。
+          </p>
+
+          <h2 id="limits">分组刻意不做的几件事</h2>
+          <ul>
+            <li>
+              <strong>没有邀请，也不能共同编辑。</strong>账本就在你的手机上，没有别人可以同步。
+            </li>
+            <li>
+              <strong>成员不跨情境共享。</strong>一个人可以被复制进分组，但副本有自己的账本；结清其中一个，绝不会影响另一个。
+            </li>
+            <li>
+              <strong>不支持跨分组转账。</strong>钱在人与人之间流动，不在账本与账本之间流动。
+            </li>
+            <li>
+              <strong>没有分组货币。</strong>应用只有一种显示货币，分组也以它结算。不提供换算。
+            </li>
+            <li>
+              <strong>不跨成员轧差。</strong>如果 Alex 欠你钱、你又欠 Sam 钱，那是两笔结余，不是一笔。
+            </li>
+          </ul>
+
+          <h2 id="faq">常见问题</h2>
+
+          <details class="faq">
+            <summary>我的朋友需要安装 Spendwise 吗？</summary>
+            <div class="faq__body">
+              <p>
+                不需要。分组只是你手机上的一本账本，朋友是你在其中添加的成员。没人会收到邀请、账号或通知，别人的手机也不会存有一份副本。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>份额是如何分摊的？</summary>
+            <div class="faq__body">
+              <p>
+                一笔共同支出可以同时分给多个成员，既可以均分，也可以由你为每个人单独设定份额。每一份都会更新该成员的实时结余。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>分组结余会影响我的个人账本吗？</summary>
+            <div class="faq__body">
+              <p>
+                不会。分组是独立的情境，有各自的成员、分类、预算和结余。在分组内结清只改变该分组，即使某位成员在应用层面用了相同的名字也是如此。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>两个人不等额分摊一笔账单时会怎样？</summary>
+            <div class="faq__body">
+              <p>
+                不要均分，改为分别设定每个人的份额。这笔交易在分组账本里仍然是一笔支出，每个人的结余按各自份额变动。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>分组可以用于家庭开销而不是旅行吗？</summary>
+            <div class="faq__body">
+              <p>
+                可以。分组是一本有名称的账本，有自己的月度预算、分类和笔记，所以合租和度假的用法完全一样。每日提醒和应用锁的介绍见
+                <a href="/support" hreflang="en" lang="en">技术支持页面</a>。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hans/expense-tracker-vs-spendee">Spendee 与 Spendwise 对比</a></li>
+              <li><a href="/zh-hans/offline-expense-tracker">离线记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-without-signup">无需注册的记账应用</a></li>
+              <li><a href="/zh-hans/private-expense-tracker">私密记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-vs-spreadsheet">Spendwise 与电子表格对比</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>一本账本，无需邀请</h2>
+          <p>
+            让旅行账目清清楚楚：记下分摊、盯住结余、一键结清。免费，你和朋友都不需要账号。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/zh-hans/offline-expense-tracker">为什么它能离线使用</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

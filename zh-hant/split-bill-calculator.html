@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>含小費的分帳計算工具：精確分攤</title>
+    <meta
+      name="description"
+      content="把帳單分給任意人數，小費一起算。以整數分計算、免帳號，也誠實說明平均分攤不公平的情況。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="含小費的分帳計算工具：精確分攤" />
+    <meta
+      property="og:description"
+      content="帳單、小費與人數，分到分為止。還有平均分攤其實是錯誤答案的時候。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 標誌：藍色漸層上的白色進度環，環中有一個勾選符號。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hant/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "分帳計算工具",
+            "item": "https://spendwise.download/zh-hant/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "小費應該用稅前還是稅後金額計算？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "稅前小計，這是美國的慣例，也是兩種讀法裡較單純的一種。在這個計算工具輸入稅前帳單，第一次就算對。如果帳單上已經有服務費，把小費設為零，不要再加第二筆。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "怎麼分一筆不對等的帳？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "先結清品項，再分剩下的。每道菜歸給吃的人，共享的菜和小費平均分，最後把兩部分加起來。按收入比例分攤對房租說得通，對餐廳帳單說不通。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "多出來的那一分錢，最公平的處理方式是什麼？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "把多的一分給其中一個人，或給負責收款的人。絕不把每一份都進位：四個人把 53.87 進位成 54，就會付 216.00，而帳單是 215.51，收款人沒做決定就默默賺了差額。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "這個計算工具會儲存帳單嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不會。所有計算都在頁面裡完成，不會上傳，也沒有 Cookie 或第三方腳本。關掉分頁就丟棄了。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 怎麼處理共同支出？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "群組是一本自己的帳，有自己的預算與分類，所以一趟旅行或一間合租公寓不會和個人支出混在一起。帳本由一個人保管，App 透過往來對象餘額追蹤誰欠誰。它沒有共同即時編輯，所以一個群組需要一位管帳的人，而不是兩位編輯。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hant/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主導覽">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">螢幕截圖</a>
+          <a href="/#privacy">隱私權</a>
+          <a href="/support" hreflang="en" lang="en">支援</a>
+          <a href="/privacy" hreflang="en" lang="en">隱私權政策</a>
+          <a href="/terms" hreflang="en" lang="en">條款與細則</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">免費工具</p>
+          <h1>分帳計算工具</h1>
+          <p class="doc-hero__lede">
+            一張帳單、一筆小費、幾個人。計算工具會分到分，並告訴你多出來的那一分錢到底落在誰身上。免帳號、沒有追蹤 ID，什麼都不會離開這個頁面。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新於：</strong> 2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>進位方式：</strong> 整數分 &nbsp;·&nbsp; <strong>費用：</strong> 免費
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="平均分攤：{people} 人各付 {each}。"
+            data-msg-one="有 {remainder} 人要多付一分（{high}），其餘的人各付 {each}。總額分毫不差——絕不把每一份都進位。"
+            data-msg-many="{people} 人之中有 {remainder} 人要多付一分（{high}），其餘的人各付 {each}。總額分毫不差——絕不把每一份都進位。"
+          >
+            <h2 class="tool__title" id="split-heading">你的帳單</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>帳單金額，小費前</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>小費，百分比</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>人數</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>分攤結果</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>小費</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>應付總額</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>每人應付</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>最高的一份</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                計算工具需要 JavaScript。也可以用手算：把帳單加上小費百分比，再除以人數，多出來的那一分就給其中一個人。
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">這個分攤是怎麼算的</h2>
+          <p>
+            小費以稅前帳單計算，加到總額，再把總額除以人數。順序很重要：用稅後金額算小費，會依當地稅率把小費墊高；在 187.40 的帳單上以 15% 計算，就是多出 4.20，沒有人打算給這筆錢。
+          </p>
+          <p>
+            除法以<strong>整分</strong>進行，絕不用浮點數。215.51 的帳單分給四個人無法整除，所以每人是 53.87，其中一人付 53.88。另一個做法——把每一份都進位——就是收款人默默多賺一筆、群組對話開始吵架的原因。
+          </p>
+
+          <h2 id="tipping">小費、服務費，以及帳單裡已經包含的東西</h2>
+          <p>
+            小費的慣例各地差很多，計算工具解決不了這件事；它至少不會讓情況更糟。三條讓算術保持誠實的規則：
+          </p>
+          <ul>
+            <li>
+              <strong>先確認有沒有服務費。</strong> 帳單上寫著「12.5% 服務費」，代表小費已經在裡面了。把小費設為零再分攤總額，否則你就是付了兩次小費。
+            </li>
+            <li>
+              <strong>用未稅金額算小費，不是稅額。</strong> 輸入稅前金額。如果帳單只顯示總額，除以（1 加稅率）就能還原。
+            </li>
+            <li>
+              <strong>在刷卡機遞過來之前先講好。</strong> 等終端機問你要幾%時才決定小費，就是五個人的一桌最後付了 25% 的原因。
+            </li>
+          </ul>
+
+          <h2 id="unfair">平均分攤是錯誤答案的時候</h2>
+          <p>
+            平均分攤很快，通常也夠公平。當花費明顯不對等時，它就不再公平——一瓶酒、一份牛排，或是一個人點了前菜卻先走。
+          </p>
+          <ul>
+            <li>
+              <strong>按品項分。</strong> 每一行歸給點的人，共享的菜和小費平均分，最後再加總。更精確、稍微尷尬，差距很大時就該這樣做。
+            </li>
+            <li>
+              <strong>按餐序分。</strong> 折衷做法：飲料和甜點分開算，餐點平均分。不必逐項列出，也能處理大部分的尷尬。
+            </li>
+            <li>
+              <strong>不要按收入分。</strong> 按薪水比例分攤適合房租和帳單，不適合晚餐。收入較高的人，不該為你的義大利麵付更多。
+            </li>
+          </ul>
+          <p>
+            對於固定分攤的共同支出——房租、水電、一間合租公寓的生鮮雜貨——平均分攤通常也是錯誤的預設，因為消耗並不平均。按人加權的分法（兩個人住大房間、一個人住小房間）比一個人默默不滿的平均分法更長久。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="某個群組在 2026 年 10 月的專屬畫面：已花費 $553.00，對照 $800.00 的群組預算並標示為「進度正常」，列出仍有未結餘額的往來對象，還有一個「新增支出」按鈕。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>一本有自己的預算與餘額的共用帳本。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="「往來對象」畫面列出 Alex（欠 $245.00）與 Sam（被欠 $500.00），各自有累計餘額，並有「新增往來對象」動作。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>借出與借入的錢，以累計餘額保存。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">分一次帳，追蹤一整個月</h2>
+          <p>
+            計算工具只回答一頓晚餐。更難的版本是一間合租公寓或一趟旅行：兩週內發生二十筆小額付款，沒有人記得誰墊了什麼。這是帳本的問題，而聊天串是很糟的帳本。
+          </p>
+          <p>
+            在 Spendwise 裡，群組就是一本自己的帳——自己的預算、自己的分類——所以一趟旅行不會污染個人的月份。加進群組的支出會和往來對象的借還餘額並列，群組畫面會顯示誰還欠錢、誰被欠錢。代價說得很明白：<strong>帳本由一個人管</strong>。沒有共同即時編輯，所以群組需要一位負責記錄的人，其他人看總額。
+          </p>
+          <p>
+            旅程結束時，數字已經在那裡：不必從截圖拼湊，每月報表也會把群組花費和家庭預算分開呈現。
+          </p>
+
+          <h2 id="faq">常見問題</h2>
+          <details class="faq">
+            <summary>小費應該用稅前還是稅後金額計算？</summary>
+            <div class="faq__body">
+              <p>
+                稅前小計，這是美國的慣例，也是兩種讀法裡較單純的一種。在這個計算工具輸入稅前帳單，第一次就算對。如果帳單上已經有服務費，把小費設為零，不要再加第二筆。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>怎麼分一筆不對等的帳？</summary>
+            <div class="faq__body">
+              <p>
+                先結清品項，再分剩下的。每道菜歸給吃的人，共享的菜和小費平均分，最後把兩部分加起來。按收入比例分攤對房租說得通，對餐廳帳單說不通。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>多出來的那一分錢，最公平的處理方式是什麼？</summary>
+            <div class="faq__body">
+              <p>
+                把多的一分給其中一個人，或給負責收款的人。絕不把每一份都進位：四個人把 53.87 進位成 54，就會付 216.00，而帳單是 215.51，收款人沒做決定就默默賺了差額。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>這個計算工具會儲存帳單嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不會。所有計算都在頁面裡完成，不會上傳，也沒有 Cookie 或第三方腳本。關掉分頁就丟棄了。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise 怎麼處理共同支出？</summary>
+            <div class="faq__body">
+              <p>
+                群組是一本自己的帳，有自己的預算與分類，所以一趟旅行或一間合租公寓不會和個人支出混在一起。帳本由一個人保管，App
+                透過往來對象餘額追蹤誰欠誰。它沒有共同即時編輯，所以一個群組需要一位管帳的人，而不是兩位編輯——詳見<a
+                  href="/zh-hant/split-expenses-with-friends"
+                  >完整的說明</a
+                >。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="更多工具與指南">
+            <h2>更多工具與指南</h2>
+            <ul>
+              <li><a href="/zh-hant/50-30-20-budget-calculator">50/30/20 預算計算工具</a></li>
+              <li><a href="/zh-hant/subscription-cost-calculator">訂閱費用計算工具</a></li>
+              <li><a href="/zh-hant/split-expenses-with-friends">和朋友分帳</a></li>
+              <li><a href="/zh-hant/private-expense-tracker">私密記帳</a></li>
+              <li><a href="/zh-hant/expense-tracker-vs-spendee">Spendee 與 Spendwise</a></li>
+              <li><a href="/zh-hant/expense-tracker-vs-spreadsheet">Spendwise 與試算表</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>把群組的帳本放在同一個地方</h2>
+          <p>
+            免費、免帳號、沒有追蹤 ID。一本群組帳本、往來對象餘額，還有一個可以匯出的月份。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hant&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >在 Google Play 取得</a
+            >
+            <a class="btn btn--ghost" href="/zh-hant/split-expenses-with-friends"
+              >共同支出怎麼運作</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hant/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、離線優先的 Android 記帳工具。
+              你的帳本留在自己的手機上。
+            </p>
+          </div>
+          <div>
+            <h2>產品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">螢幕截圖</a></li>
+              <li><a href="/#privacy">隱私權</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律資訊</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隱私權政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">條款與細則</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>支援</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">支援與常見問題</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有權利。</span>
+          <span>專為 Android 10 以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

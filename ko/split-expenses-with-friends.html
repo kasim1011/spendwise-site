@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>친구와 지출 나누기：그룹과 정산</title>
+    <meta
+      name="description"
+      content="여행이나 셰어하우스 비용을 한 대의 휴대폰에서 관리하세요。그룹별 장부, 균등 또는 개별 분담, 잔액 계산, 탭 한 번으로 정산。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="친구와 지출 나누기：그룹과 정산" />
+    <meta
+      property="og:description"
+      content="그룹 장부가 한 대의 휴대폰에 있을 때의 구조：분담, 잔액, 정산, 그리고 이 방식이 멈추는 지점。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ko/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 마크：파란 그라데이션 배경 위의 흰색 진행 링과 체크 표시。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ko/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "친구와 지출 나누기：그룹과 정산",
+            "item": "https://spendwise.download/ko/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "친구도 Spendwise를 설치해야 하나요？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요。그룹은 내 휴대폰에 있는 장부이고, 친구는 거기에 추가하는 사람일 뿐입니다。누구에게도 초대나 계정, 알림이 가지 않고, 다른 사람의 휴대폰에 사본이 남지도 않습니다。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "분담은 어떻게 나누나요？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "공유 지출은 여러 사람과 한 번에 나눌 수 있습니다。균등하게 나누거나 사람마다 분담액을 직접 정할 수 있습니다。각 분담액은 그 사람의 잔액을 바꿉니다。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "그룹 잔액이 내 개인 장부에 영향을 주나요？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요。그룹은 고유한 사람, 카테고리, 예산, 잔액을 가진 별도의 범위입니다。그룹 안에서 정산해도 바뀌는 것은 그 그룹뿐이며, 앱 전체에 같은 이름의 사람이 있어도 마찬가지입니다。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "그룹의 두 사람이 청구서를 불균등하게 나누면 어떻게 되나요？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "균등하게 나누는 대신 사람마다 분담액을 정하세요。거래는 그룹 장부에 하나의 지출로 남고, 각자의 잔액은 자기 분담액만큼만 움직입니다。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "여행이 아니라 가계에 그룹을 써도 되나요？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네。그룹은 고유한 월 예산과 카테고리, 메모를 가진 이름 있는 장부이므로 셰어하우스도 휴가와 똑같이 쓸 수 있습니다。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ko/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="/#features">기능</a>
+          <a href="/#gallery">갤러리</a>
+          <a href="/#privacy">개인정보</a>
+          <a href="/support" hreflang="en" lang="en">지원</a>
+          <a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a>
+          <a href="/terms" hreflang="en" lang="en">이용약관</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">그룹과 정산</p>
+          <h1>또 다른 계정 없이 친구와 지출 나누기</h1>
+          <p class="doc-hero__lede">
+            비용을 나누려면 보통은 모두를, 아무도 설치하고 싶어 하지 않는 앱으로 초대해야
+            합니다。Spendwise는 반대로 갑니다。한 사람이 여행이나 집의 장부를 정확하게 기록하고,
+            모두가 자기 위치를 확인할 수 있습니다。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>업데이트：</strong>2026년 10월 20일 &nbsp;·&nbsp; <strong>방식：</strong>로컬
+            그룹 장부 &nbsp;·&nbsp; <strong>가격：</strong>무료로 포함, 구독 없음
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">그룹은 태그가 아니라 두 번째 장부</h2>
+          <p>
+            대부분의 앱에서 함께 떠난 여행은 내 지출 일부에 붙이는 라벨일 뿐입니다。Spendwise는
+            그룹에 자체적인 맥락을 줍니다。고유한 카테고리, 고유한 월 예산, 고유한 사람, 고유한
+            거래, 고유한 메모, 고유한 잔액입니다。
+          </p>
+          <p>
+            핵심은 여행이 가계 숫자를 절대 흐리지 않는다는 점입니다。집의 월세는 'Voyage en
+            France'의 카테고리가 아니고, 여행에서 친구가 갚을 돈은 집에서의 대출 잔액과 다른
+            잔액입니다。이름이 같아도 두 개의 별도 장부입니다。
+          </p>
+
+          <h2 id="how-a-trip-works">여행은 실제로 이렇게 진행됩니다</h2>
+          <ol>
+            <li>
+              <strong>그룹을 만들고</strong> 이름을 붙입니다。여행이나 가계에 맞는 짧은 기본
+              카테고리가 준비됩니다。
+            </li>
+            <li>
+              비용을 함께 쓰는 <strong>사람을 추가</strong>합니다。계정이 아니라 장부의 항목입니다。
+              전화번호도, 초대도, 앱 설치도 필요 없습니다。
+            </li>
+            <li>
+              그룹 요약에서 그 달의 <strong>그룹 예산을 설정</strong>합니다。내 예산과는
+              별개입니다。
+            </li>
+            <li>
+              <strong>공유 지출을 기록합니다。</strong>내가 낸 금액을 카테고리, 날짜와 함께
+              입력합니다。다른 사람이 내 몫을 대신 냈다면 그 방향으로 기록해 잔액이 거꾸로 흐르지
+              않게 합니다。
+            </li>
+            <li>
+              <strong>지출을 나눕니다。</strong>관련된 사람을 지정합니다。균등하게 나누거나
+              사람마다 분담액을 직접 정할 수 있습니다。각 분담액이 그 사람의 잔액을 바꿉니다。
+            </li>
+            <li>
+              누군가 자기 몫을 내면 <strong>정산합니다。</strong>이 동작은 미정산 잔액과 올바른
+              방향이 미리 채워진 입력 화면을 엽니다。상환 기록은 탭 한 번과 확인 한 번이면
+              됩니다。일부만 갚아도 괜찮습니다。
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="그룹 탭：카테고리 8개의 Flat 4B와 카테고리 4개의 Voyage en France가 나란히 있고, 각 카드에 그룹이 쓴 금액이 표시되어 있다。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                각 그룹은 열기 전에 자기 지출액과 카테고리 수를 보여 줍니다。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="2026년 10월의 그룹 전용 화면：그룹 예산 $800.00에 $553.00을 써서 '순조로움'으로 표시되고, 미정산 잔액이 있는 사람들과 '거래 추가' 버튼이 있다。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                그룹의 요약, 예산, 미정산 잔액이 있는 사람까지 모두 그 그룹 범위에만 속합니다。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="사람 화면：$245.00을 갚을 Alex와 $500.00을 받을 Sam이 각자의 잔액과 '새 사람' 동작과 함께 나열되어 있다。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                잔액은 입력하는 값이 아니라 장부에서 계산됩니다。받을 돈이 있으면 초록, 갚을 돈이
+                있으면 빨강입니다。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">잔액은 기억하는 것이 아니라 계산되는 것</h2>
+          <p>
+            각 사람의 잔액은 그 사람의 장부 항목을 더한 값이며, 누가 입력한 숫자가 아닙니다。항목은
+            실제로 벌어지는 상황을 담습니다。현금을 빌려주고, 상대 몫을 대신 내고, 상대가 내 몫을
+            대신 내고, 빌리고, 상대가 갚고, 내가 갚는 일입니다。잔액이 양수면 받을 돈이 있고,
+            음수면 갚을 돈이 있습니다。
+          </p>
+          <p>
+            계산된 합계이므로 시간이 지나도 어긋나지 않습니다。대신 잔액은 기록된 만큼만
+            정확합니다。그룹이 택시비 입력을 잊으면 장부는 틀린 채로 남습니다。한 사람이 장부를
+            맡는 것이 이를 막습니다。
+          </p>
+
+          <h2 id="the-trade">솔직한 맞바꿈：장부는 한 대의 휴대폰에 있습니다</h2>
+          <p>
+            초대 기능이 있는 분담 앱도 있고, 그것은 다른 문제를 풉니다。참가자 모두가 자기
+            휴대폰에서 같은 공유 장부를 편집하게 하는 것입니다。그러려면 계정과 서버가 필요하고,
+            Spendwise에는 바로 그것이 없습니다。
+          </p>
+          <p>그래서 여기의 방식은 <strong>장부 하나, 관리자 한 명</strong>입니다。어울리는 경우：</p>
+          <ul>
+            <li>한 사람이 대부분의 예약과 결제를 맡는 여행,</li>
+            <li>한 명의 룸메이트가 청구서를 정산하는 셰어하우스,</li>
+            <li>말다툼의 원인이 불신이 아니라 흐릿한 기억인 모든 그룹。</li>
+          </ul>
+          <p>
+            모두가 장부를 실시간으로 편집해야 하는 가계에는 맞지 않습니다。그게 필요하다면
+            <a href="/ko/expense-tracker-vs-spendee">Spendee 비교</a>를 읽고 동기화 앱을 고르세요。
+            이 페이지는 이 앱이 어디서 지는지 분명히 적고 있습니다。
+          </p>
+
+          <h2 id="limits">그룹이 의도적으로 하지 않는 일</h2>
+          <ul>
+            <li>
+              <strong>초대도 공동 편집도 없습니다。</strong>장부가 내 휴대폰에 있으니 동기화할
+              상대가 없습니다。
+            </li>
+            <li>
+              <strong>맥락 사이에서 사람을 공유하지 않습니다。</strong>사람을 그룹에 복사할 수
+              있지만 복사본은 자기 장부를 가집니다。한쪽을 정산해도 다른 쪽은 그대로입니다。
+            </li>
+            <li>
+              <strong>그룹 간 이체는 없습니다。</strong>돈은 장부 사이가 아니라 사람 사이를
+              오갑니다。
+            </li>
+            <li>
+              <strong>그룹 통화는 없습니다。</strong>앱에는 표시 통화가 하나뿐이고 그룹도 그 통화로
+              표시됩니다。환산은 없습니다。
+            </li>
+            <li>
+              <strong>사람 간 상계는 없습니다。</strong>Alex가 나에게 갚을 돈이 있고 내가 Sam에게
+              갚을 돈이 있으면, 그것은 하나가 아니라 두 개의 잔액입니다。
+            </li>
+          </ul>
+
+          <h2 id="faq">자주 묻는 질문</h2>
+
+          <details class="faq">
+            <summary>친구도 Spendwise를 설치해야 하나요？</summary>
+            <div class="faq__body">
+              <p>
+                아니요。그룹은 내 휴대폰에 있는 장부이고, 친구는 거기에 추가하는 사람일 뿐입니다。
+                누구에게도 초대나 계정, 알림이 가지 않고, 다른 사람의 휴대폰에 사본이 남지도
+                않습니다。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>분담은 어떻게 나누나요？</summary>
+            <div class="faq__body">
+              <p>
+                공유 지출은 여러 사람과 한 번에 나눌 수 있습니다。균등하게 나누거나 사람마다
+                분담액을 직접 정할 수 있습니다。각 분담액은 그 사람의 잔액을 바꿉니다。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>그룹 잔액이 내 개인 장부에 영향을 주나요？</summary>
+            <div class="faq__body">
+              <p>
+                아니요。그룹은 고유한 사람, 카테고리, 예산, 잔액을 가진 별도의 범위입니다。그룹
+                안에서 정산해도 바뀌는 것은 그 그룹뿐이며, 앱 전체에 같은 이름의 사람이 있어도
+                마찬가지입니다。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>그룹의 두 사람이 청구서를 불균등하게 나누면 어떻게 되나요？</summary>
+            <div class="faq__body">
+              <p>
+                균등하게 나누는 대신 사람마다 분담액을 정하세요。거래는 그룹 장부에 하나의 지출로
+                남고, 각자의 잔액은 자기 분담액만큼만 움직입니다。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>여행이 아니라 가계에 그룹을 써도 되나요？</summary>
+            <div class="faq__body">
+              <p>
+                네。그룹은 고유한 월 예산과 카테고리, 메모를 가진 이름 있는 장부이므로 셰어하우스도
+                휴가와 똑같이 쓸 수 있습니다。매일 알림과 앱 잠금은
+                <a href="/support" hreflang="en" lang="en">지원 페이지</a>에서 설명합니다。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="더 많은 가이드">
+            <h2>더 많은 가이드</h2>
+            <ul>
+              <li><a href="/ko/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ko/offline-expense-tracker">오프라인 지출 관리</a></li>
+              <li><a href="/ko/expense-tracker-without-signup">가입 없는 지출 관리</a></li>
+              <li><a href="/ko/private-expense-tracker">비공개 지출 관리</a></li>
+              <li><a href="/ko/expense-tracker-vs-spreadsheet">Spendwise vs 스프레드시트</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>장부 하나, 초대 없음</h2>
+          <p>
+            여행의 돈을 정확하게。분담을 기록하고 잔액을 보며 탭 한 번으로 정산하세요。무료이고,
+            나에게도 친구에게도 계정이 필요 없습니다。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ko&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >Google Play에서 받기</a
+            >
+            <a class="btn btn--ghost" href="/ko/offline-expense-tracker"
+              >오프라인에서도 되는 이유</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ko/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android용 비공개 오프라인 우선 지출 기록 앱이에요. 거래 내역은 휴대폰 안에
+              그대로 남아요.
+            </p>
+          </div>
+          <div>
+            <h2>제품</h2>
+            <ul>
+              <li><a href="/#features">기능</a></li>
+              <li><a href="/#gallery">갤러리</a></li>
+              <li><a href="/#privacy">개인정보</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>법적 고지</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">개인정보 처리방침</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">이용약관</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>지원</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">지원 및 FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 모든 권리 보유.</span>
+          <span>Android 10 이상을 위해 만들었어요.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

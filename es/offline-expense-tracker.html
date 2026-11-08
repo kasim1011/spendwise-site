@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de gastos sin conexión: anotar sin internet</title>
+    <meta
+      name="description"
+      content="Spendwise es un registro de gastos sin conexión para Android. Anota gastos, presupuestos y cuentas compartidas sin cuenta, sin nube y sin conexión."
+    />
+    <link rel="canonical" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/offline-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/offline-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/offline-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/offline-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/offline-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Registro de gastos sin conexión: anotar sin internet" />
+    <meta
+      property="og:description"
+      content="Qué puede hacer un registro offline en modo avión, qué sigue necesitando conexión y por qué el libro vive en una base de datos del teléfono."
+    />
+    <meta property="og:url" content="https://spendwise.download/es/offline-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La marca de Spendwise: un anillo de progreso blanco con una marca de verificación sobre un degradado azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Registro de gastos sin conexión",
+            "item": "https://spendwise.download/es/offline-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Spendwise funciona en modo avión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Anotar gastos, presupuestos, grupos, informes, recordatorios y copias de seguridad funcionan con la radio apagada. La única parte que usa la red es el anuncio de la pantalla de confirmación, que muestra su marcador de posición cuando no puede cargarse."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Dónde se guardan mis gastos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En una base de datos SQLite dentro del almacenamiento privado de la app en tu teléfono. No hay copia en un servidor, ni servicio de sincronización, ni cuenta que los guarde."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa cuando el teléfono vuelve a conectarse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No se sube nada. Las estadísticas anónimas de pantalla, si las dejaste activadas, vuelven a enviarse; el registro solo sale del dispositivo si lo exportas o creas un archivo de copia de seguridad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Pueden dos teléfonos compartir un registro sin conexión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No en vivo. Un teléfono guarda el registro. Puedes pasarlo a otro teléfono con un archivo de copia de seguridad, pero no hay sincronización en dos direcciones, porque sincronizar necesita un servidor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Pierdo mis datos si desinstalo Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Desinstalar borra el almacenamiento privado de la app. Crea un archivo de copia de seguridad en Ajustes, Copia de seguridad y restauración antes de desinstalar o cambiar de teléfono."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/es/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/#features">Funciones</a>
+          <a href="/#gallery">Galería</a>
+          <a href="/#privacy">Privacidad</a>
+          <a href="/support" hreflang="en" lang="en">Soporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de privacidad</a>
+          <a href="/terms" hreflang="en" lang="en">Términos y condiciones</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/offline-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/offline-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/offline-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/offline-expense-tracker" hreflang="es" lang="es" aria-current="true">Español</a>
+          <a href="/it/offline-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/offline-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/offline-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/offline-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/offline-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/offline-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/offline-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/offline-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Sin conexión por diseño</p>
+          <h1>Un registro de gastos sin conexión que nunca necesita internet</h1>
+          <p class="doc-hero__lede">
+            La mayoría de los registros de gastos son apps en línea con un modo sin conexión añadido.
+            Spendwise lo hace al revés: el registro es una base de datos en tu teléfono y la red es
+            opcional. Aquí tienes exactamente qué te aporta eso y qué cuesta.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Actualizado:</strong> 20 de octubre de 2026 &nbsp;·&nbsp;
+            <strong>Plataforma:</strong> Android 10 y versiones posteriores &nbsp;·&nbsp;
+            <strong>Precio:</strong> gratis, con un anuncio no personalizado
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="what-offline-means">Qué significa «sin conexión» aquí</h2>
+          <p>
+            Spendwise guarda cada transacción, categoría, presupuesto, persona y recibo adjunto en
+            SQLite, en el dispositivo, en el almacenamiento privado de la app. Las pantallas leen de
+            esa base de datos. No hay inicio de sesión, ni cola de sincronización, ni servidor que
+            tenga que responder antes de que la app te muestre lo que gastaste.
+          </p>
+          <p>
+            Esa es toda la arquitectura, y por eso la app abre al instante y funciona en un tren, en
+            un avión, en un sótano o con una SIM extranjera sin datos. También por eso no hay un
+            interruptor de «modo sin conexión»: no hay nada de lo que desconectarse.
+          </p>
+
+          <h2 id="without-a-connection">Qué puedes hacer con la radio apagada</h2>
+          <ul>
+            <li>
+              <strong>Anotar un gasto</strong>: monto, categoría, fecha, nota y una foto o un PDF
+              adjunto. La foto viene del selector de galería de Android, así que la app no necesita
+              permiso de cámara.
+            </li>
+            <li>
+              <strong>Presupuestar un mes</strong>: fija un presupuesto mensual y míralo contar las
+              facturas recurrentes que aún no anotaste, para que la cifra no sea halagadora hasta que
+              llegue el alquiler.
+            </li>
+            <li>
+              <strong>Llevar un registro de grupo</strong>: un viaje o un piso compartido con sus
+              propias categorías, presupuesto, personas y saldos de liquidación.
+            </li>
+            <li>
+              <strong>Recibir recordatorios</strong>: el recordatorio diario a las 19:00 y los
+              recordatorios recurrentes por categoría son alarmas locales, no mensajes push de un
+              servidor.
+            </li>
+            <li>
+              <strong>Leer y exportar informes</strong>: informes mensuales y anuales, escritos en un
+              PDF o un XLSX en <code>Download/Spendwise</code> sin subir nada.
+            </li>
+            <li>
+              <strong>Hacer copia de seguridad y restaurar</strong>: un solo archivo con cada fila y
+              cada adjunto, creado y restaurado localmente.
+            </li>
+          </ul>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="El formulario de nueva transacción con un monto de $47,82, Gasto seleccionado, la categoría Supermercado resaltada, la fecha de hoy y una fila de recibo o documento con opción de foto o PDF."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Anotar ocurre en local: el formulario escribe en la base de datos del teléfono en
+                cuanto confirmas.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="El historial de transacciones agrupado por día con un campo de búsqueda: el mercado del domingo, café y almuerzo, la farmacia y el cine, cada día con su propio saldo."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                El historial y la búsqueda leen directamente de la base de datos local; sin
+                peticiones, sin indicador de carga.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="El informe de octubre de 2026: $2.095,50 gastados frente a un presupuesto de $6.000,00, ingresos y saldo neto, y un gráfico de anillo de gastos por categoría que empieza con Alquiler por $1.400,00."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Los informes se generan en el dispositivo y se exportan a PDF o XLSX sin servidor.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="what-needs-network">La pequeña parte que sí usa la red</h2>
+          <p>Dos cosas no son locales, y ninguna hace falta para que la app funcione:</p>
+          <ul>
+            <li>
+              <strong>El anuncio.</strong> Spendwise es gratis gracias a un solo anuncio no
+              personalizado en la pantalla de confirmación de la transacción. Necesita conexión para
+              cargarse. Sin conexión, la petición falla y la pantalla muestra su marcador de
+              posición; anotar, guardar y el botón Listo no se ven afectados.
+            </li>
+            <li>
+              <strong>Estadísticas anónimas de pantalla.</strong> Ayudan a decidir qué pantallas
+              merecen una mejora. Están activadas de forma predeterminada, no llevan ID de
+              seguimiento ni identificador de usuario, y se pueden desactivar por completo en
+              Ajustes: desactivadas significa que no se envía nada.
+            </li>
+          </ul>
+          <p>
+            El registro en sí no tiene ninguna ruta de código de red. Es una afirmación comprobable,
+            no de marketing: apaga el Wi-Fi y los datos móviles, abre Spendwise y todo lo anterior
+            sigue funcionando.
+          </p>
+
+          <h2 id="why-offline">Por qué elegir sin conexión</h2>
+          <p>
+            Los registros en la nube son cómodos porque el servidor de otra persona hace la
+            sincronización, la copia de seguridad y las importaciones bancarias. El precio es que tu
+            historial completo de gastos está en ese servidor, atado a una cuenta que tuviste que
+            crear, bajo una política que no escribiste. El enfoque sin conexión invierte el trato:
+          </p>
+          <ul>
+            <li>Ninguna cuenta que crear, olvidar o cuyo acceso perder.</li>
+            <li>Nadie a quien pedir permiso para leer tus propios datos.</li>
+            <li>Ningún conflicto de sincronización que se trague una transacción en silencio.</li>
+            <li>Nada por lo que seguir pagando, porque no hay servidores que mantener.</li>
+          </ul>
+          <p>
+            Lo que renuncias es real: sin conexión bancaria, sin categorización automática, sin app
+            web y sin un registro compartido en vivo entre dos teléfonos. Si eso importa más que el
+            trato, una app sincronizada como Spendee encaja mejor; la
+            <a href="/es/expense-tracker-vs-spendee">comparación con Spendee</a> lo dice con
+            honestidad.
+          </p>
+
+          <h2 id="backup">Sin conexión significa que la copia de seguridad es tuya</h2>
+          <p>
+            Una cuenta en la nube también hace de copia de seguridad. Un registro sin conexión no, así
+            que Spendwise convierte la copia en una acción de primer nivel:
+            <strong>Ajustes → Copia de seguridad y restauración → Crear archivo de copia</strong>
+            escribe un archivo <code>.spendwise</code> con cada transacción, categoría, presupuesto,
+            persona, grupo y recibo adjunto. Guárdalo donde guardes tus archivos importantes.
+          </p>
+          <p>
+            Dos advertencias honestas. El archivo de copia de seguridad no está cifrado, así que
+            trátalo como un extracto bancario. Y desinstalar la app borra el registro: la copia de
+            seguridad no es opcional si los datos importan.
+          </p>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <details class="faq">
+            <summary>¿Spendwise funciona en modo avión?</summary>
+            <div class="faq__body">
+              <p>
+                Sí. Anotar gastos, presupuestos, grupos, informes, recordatorios y copias de
+                seguridad funcionan con la radio apagada. La única parte que usa la red es el anuncio
+                de la pantalla de confirmación, que muestra su marcador de posición cuando no puede
+                cargarse.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Dónde se guardan mis gastos?</summary>
+            <div class="faq__body">
+              <p>
+                En una base de datos SQLite dentro del almacenamiento privado de la app en tu
+                teléfono. No hay copia en un servidor, ni servicio de sincronización, ni cuenta que
+                los guarde.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Qué pasa cuando el teléfono vuelve a conectarse?</summary>
+            <div class="faq__body">
+              <p>
+                No se sube nada. Las estadísticas anónimas de pantalla, si las dejaste activadas,
+                vuelven a enviarse; el registro solo sale del dispositivo si lo exportas o creas un
+                archivo de copia de seguridad.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Pueden dos teléfonos compartir un registro sin conexión?</summary>
+            <div class="faq__body">
+              <p>
+                No en vivo. Un teléfono guarda el registro. Puedes pasarlo a otro teléfono con un
+                archivo de copia de seguridad, pero no hay sincronización en dos direcciones, porque
+                sincronizar necesita un servidor. Para un viaje compartido, lee
+                <a href="/es/split-expenses-with-friends">cómo funcionan los grupos</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Pierdo mis datos si desinstalo Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Sí. Desinstalar borra el almacenamiento privado de la app. Crea un archivo de copia de
+                seguridad en Ajustes, Copia de seguridad y restauración antes de desinstalar o
+                cambiar de teléfono.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Más guías">
+            <h2>Más guías</h2>
+            <ul>
+              <li><a href="/es/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/es/expense-tracker-without-signup">Registro de gastos sin registro</a></li>
+              <li><a href="/es/private-expense-tracker">Registro de gastos privado</a></li>
+              <li><a href="/es/split-expenses-with-friends">Compartir gastos con amigos</a></li>
+              <li><a href="/es/expense-tracker-vs-spreadsheet">Spendwise vs hoja de cálculo</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Prueba un registro de gastos que funciona sin señal</h2>
+          <p>
+            Gratis, sin cuenta y sin ID de seguimiento. El registro se queda en tu teléfono; un
+            archivo de copia de seguridad se lo lleva.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=es&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Doffline"
+              rel="noopener"
+              >Descárgalo en Google Play</a
+            >
+            <a class="btn btn--ghost" href="/es/expense-tracker-without-signup"
+              >Por qué no hay que crear una cuenta</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/es/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un registro de gastos privado y sin conexión para Android. Tus cuentas pertenecen a tu
+              teléfono.
+            </p>
+          </div>
+          <div>
+            <h2>Producto</h2>
+            <ul>
+              <li><a href="/#features">Funciones</a></li>
+              <li><a href="/#gallery">Galería</a></li>
+              <li><a href="/#privacy">Privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de privacidad</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Términos y condiciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Soporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ayuda y preguntas frecuentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos los derechos reservados.</span>
+          <span>Hecho para Android 10 y versiones posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

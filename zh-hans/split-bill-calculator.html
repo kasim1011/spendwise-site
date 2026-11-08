@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>含小费的账单分摊计算器：精确到分</title>
+    <meta
+      name="description"
+      content="把账单按任意人数分摊，包含小费，按整数分取整，无需账号；也直说均分什么时候不公平。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="含小费的账单分摊计算器：精确到分" />
+    <meta
+      property="og:description"
+      content="账单、小费和人数，精确分到分。还有均分为什么有时是错答案。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 标志：蓝色渐变上的白色进度环，环中有一个对勾。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "账单分摊计算器",
+            "item": "https://spendwise.download/zh-hans/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "小费该按税前还是税后算？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "按税前小计，这是美国的习惯，也是两种算法里更简单的一种。在这个计算器里输入税前账单，第一次就是对的。如果账单上已经有服务费，把小费设成 0，而不是再加一笔。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "怎样不均匀地分账？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "先结清各自的项目，再分剩下的部分。每道菜归给吃它的人，共享的菜和小费均分，然后把两部分相加。按收入比例分摊对房租说得通，对餐厅账单说不通。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "多出来的那一分钱，怎么处理最公平？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "把多出的一分给一个人，或者给负责收款的人。绝不要给每一份都向上取整：四个人把 53.87 的一份凑成 54，就要付 216.00，而账单是 215.51，收款人没做决定就多收了差额。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "这个计算器会保存账单吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。一切都在页面里算完，什么都不上传，也没有 cookie 或第三方脚本。关掉标签页就没了。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 怎么处理共同开销？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "群组是一本独立的账本，有自己的预算和分类，所以一次旅行或一个合租不会和个人支出混在一起。由一个人保管账本，应用通过联系人余额记录谁欠谁。它不提供共享的实时编辑，所以一个群组需要一个管账的人，而不是两个编辑。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">免费工具</p>
+          <h1>账单分摊计算器</h1>
+          <p class="doc-hero__lede">
+            一张账单、一笔小费、几个人。计算器把它分到分，并明确告诉你多出来的那一分钱去了哪里。没有账号，没有跟踪 ID，什么都不离开这个页面。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>取整：</strong>整数分 &nbsp;·&nbsp; <strong>价格：</strong>免费
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="均分：{people} 人，每人 {each}。"
+            data-msg-one="有 {remainder} 人比其余人多付一分（{high}），其他人各付 {each}。总额分毫不差——绝不要给每一份都向上取整。"
+            data-msg-many="{people} 人中有 {remainder} 人比其余人多付一分（{high}），其他人各付 {each}。总额分毫不差——绝不要给每一份都向上取整。"
+          >
+            <h2 class="tool__title" id="split-heading">你的账单</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>账单，不含小费</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>小费，百分比</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>人数</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>分配结果</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>小费</dt>
+                  <dd data-out="tip">28.11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>应付总额</dt>
+                  <dd data-out="total">215.51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>每人支付</dt>
+                  <dd data-out="each">53.87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>最高一份</dt>
+                  <dd data-out="high">53.88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                计算器需要 JavaScript。手动算也行：把账单加上小费百分比，再除以人数，把剩下的一分钱给其中一个人。
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">这个分法是怎么算的</h2>
+          <p>
+            小费按税前账单计算，加到总额上，再除以人数。顺序很重要：按税后金额给小费，会按当地税率把小费抬高；在一张 187.40 的账单上按 15% 算，多出来的 4.20 是谁都没打算给的。
+          </p>
+          <p>
+            除法以<strong>整分</strong>为单位，绝不用浮点数。215.51 的账单分给四个人除不尽，所以每人 53.87，其中一人付 53.88。另一种做法——把每一份都向上取整——正是收款人悄悄多赚一点、群里开始吵架的原因。
+          </p>
+
+          <h2 id="tipping">小费、服务费，以及账单里已经包含的东西</h2>
+          <p>
+            小费的习惯换个地方就失灵，计算器修不好这一点；它至少不会让情况更糟。三条让算术保持诚实的规则：
+          </p>
+          <ul>
+            <li>
+              <strong>先看有没有服务费。</strong>账单上写着「12.5% 服务费」，就意味着小费已经算进去了。把小费设成 0 再分总额，否则你给了两次小费。
+            </li>
+            <li>
+              <strong>按小计给小费，不是按税。</strong>输入税前金额。如果账单只给了一个总数，除以 1 加税率就能还原。
+            </li>
+            <li>
+              <strong>在卡递过来之前先说好。</strong>等刷卡机问你要百分比时才决定小费，五个人一桌就是这么付到 25% 的。
+            </li>
+          </ul>
+
+          <h2 id="unfair">均分是错答案的时候</h2>
+          <p>
+            均分快，通常也够公平。当消费明显不平衡时，它就不再公平——一瓶酒、一份牛排、一个人点了前菜又先走。
+          </p>
+          <ul>
+            <li>
+              <strong>按项目分。</strong>每一行归给点它的人，共享的菜和小费均分，然后相加。更精确，稍微有点尴尬，差距大的时候就该这样。
+            </li>
+            <li>
+              <strong>按餐段分。</strong>折中的办法：酒水和甜点分开，菜均分。不用逐项列，也能处理大部分尴尬。
+            </li>
+            <li>
+              <strong>不要按收入分。</strong>按薪水比例分摊适合房租和账单，不适合一顿饭。赚得多的人，不因为你那份意面就欠得更多。
+            </li>
+          </ul>
+          <p>
+            对于周期性共同开销——房租、水电、合租的食品杂货——均分通常也是错误的默认值，因为消耗并不平均。按人加权（两个人住大房间、一个人住小房间）比一个有人默默不满的均分更长久。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="某群组 2026 年 10 月的独立屏幕：在 800.00 美元的群组预算下已花 553.00 美元，状态为「进展正常」，列出有未结余额的联系人，还有一个「添加支出」按钮。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>一本共享账本，有自己的预算和余额。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="「联系人」屏幕列出欠 245.00 美元的 Alex 和被欠 500.00 美元的 Sam，每人各带一行实时余额，另有「添加联系人」操作。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>借出和借入的钱，记成一行实时余额。</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">分一次账，记一整个月</h2>
+          <p>
+            计算器只回答一顿饭的事。更难的是合租或一次旅行：两周里发生二十笔小额支付，没人记得谁垫了哪笔。那是账本问题，而聊天记录是个很差的账本。
+          </p>
+          <p>
+            在 Spendwise 里，群组就是一本独立的账本——自己的预算、自己的分类——所以旅行不会污染个人的月份。加进群组的支出，和记录借出借入的联系人余额放在一起，群组页面显示谁该收、谁该付。取舍很明确：<strong>账本由一个人保管</strong>。没有共享的实时编辑，所以群组需要一个管账的人来记录，其他人看总额。
+          </p>
+          <p>
+            旅行结束时，数字已经在那里：不用从截图里重建，月度报告也会把群组支出和家庭预算分开。
+          </p>
+
+          <h2 id="faq">常见问题</h2>
+          <details class="faq">
+            <summary>小费该按税前还是税后算？</summary>
+            <div class="faq__body">
+              <p>
+                按税前小计，这是美国的习惯，也是两种算法里更简单的一种。在这个计算器里输入税前账单，第一次就是对的。如果账单上已经有服务费，把小费设成 0，而不是再加一笔。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>怎样不均匀地分账？</summary>
+            <div class="faq__body">
+              <p>
+                先结清各自的项目，再分剩下的部分。每道菜归给吃它的人，共享的菜和小费均分，然后把两部分相加。按收入比例分摊对房租说得通，对餐厅账单说不通。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>多出来的那一分钱，怎么处理最公平？</summary>
+            <div class="faq__body">
+              <p>
+                把多出的一分给一个人，或者给负责收款的人。绝不要给每一份都向上取整：四个人把 53.87 的一份凑成 54，就要付 216.00，而账单是 215.51，收款人没做决定就多收了差额。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>这个计算器会保存账单吗？</summary>
+            <div class="faq__body">
+              <p>
+                不会。一切都在页面里算完，什么都不上传，也没有 cookie 或第三方脚本。关掉标签页就没了。
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise 怎么处理共同开销？</summary>
+            <div class="faq__body">
+              <p>
+                群组是一本独立的账本，有自己的预算和分类，所以一次旅行或一个合租不会和个人支出混在一起。由一个人保管账本，应用通过联系人余额记录谁欠谁。它不提供共享的实时编辑，所以一个群组需要一个管账的人，而不是两个编辑——详见
+                <a href="/zh-hans/split-expenses-with-friends">更完整的那一篇</a>。
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="更多工具和指南">
+            <h2>更多工具和指南</h2>
+            <ul>
+              <li><a href="/zh-hans/50-30-20-budget-calculator">50/30/20 预算计算器</a></li>
+              <li><a href="/zh-hans/subscription-cost-calculator">订阅费用计算器</a></li>
+              <li><a href="/zh-hans/split-expenses-with-friends">和朋友分摊费用</a></li>
+              <li><a href="/zh-hans/private-expense-tracker">私密记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-vs-spendee">Spendee 与 Spendwise 对比</a></li>
+              <li><a href="/zh-hans/expense-tracker-vs-spreadsheet">Spendwise 与电子表格对比</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>把群组的账本放在一个地方</h2>
+          <p>
+            免费，无需账号，没有跟踪 ID。一本群组账本、联系人余额，以及一个可以导出的月份。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/zh-hans/split-expenses-with-friends"
+              >共同开销是怎么运作的</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

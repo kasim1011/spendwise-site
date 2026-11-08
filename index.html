@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +9,19 @@
       content="Private, offline expense tracker for Android. Log spending in seconds, budget by month, split group costs. No account, no tracking ID."
     />
     <link rel="canonical" href="https://spendwise.download/" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/" />
     <meta name="theme-color" content="#004AC6" />
 
     <meta property="og:type" content="website" />
@@ -34,74 +47,106 @@
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/site.css" />    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Spendwise",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Android 10 and above",
-      "description": "An offline-first personal expense tracker. Log spending, set monthly budgets, manage recurring bills, keep a group ledger for a trip or a shared home, and track money lent and borrowed — all stored on your device.",
-      "url": "https://spendwise.download/",
-      "installUrl": "https://play.google.com/store/apps/details?id=com.gripxtech.spendwise",
-      "image": "https://spendwise.download/assets/icon-512.png",
-      "license": "https://spendwise.download/terms",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Offline expense tracking",
-        "Monthly budgets",
-        "Group ledgers for shared spending",
-        "Twelve app languages",
-        "Any device currency",
-        "Recurring expense reminders",
-        "Daily logging reminders",
-        "Settle-up reminders",
-        "Borrow and lend tracking",
-        "Notes and checklists",
-        "Receipt and document attachments",
-        "Monthly and yearly reports",
-        "PDF and spreadsheet export",
-        "Backup and restore",
-        "Biometric app lock"
-      ],
-      "sameAs": [
-        "https://play.google.com/store/apps/details?id=com.gripxtech.spendwise",
-        "https://github.com/kasim1011/spendwise-site"
-      ],
-      "screenshot": [
-        "https://spendwise.download/screenshot/01-dashboard.png",
-        "https://spendwise.download/screenshot/02-groups.png",
-        "https://spendwise.download/screenshot/03-group-detail.png",
-        "https://spendwise.download/screenshot/04-money.png",
-        "https://spendwise.download/screenshot/05-add-transaction.png",
-        "https://spendwise.download/screenshot/06-history.png",
-        "https://spendwise.download/screenshot/07-reports.png",
-        "https://spendwise.download/screenshot/08-people.png",
-        "https://spendwise.download/screenshot/09-notes.png",
-        "https://spendwise.download/screenshot/10-settings.png",
-        "https://spendwise.download/screenshot/11-backup-restore.png"
-      ],
-      "softwareVersion": "1.0.6",
-      "inLanguage": [
-        "en",
-        "ar",
-        "de",
-        "es",
-        "fr",
-        "it",
-        "ja",
-        "ko",
-        "pt-BR",
-        "ru",
-        "zh-Hans",
-        "zh-Hant"
-      ],
-      "datePublished": "2026-09-19"
-    }
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Spendwise",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android 10 and above",
+        "description": "An offline-first personal expense tracker. Log spending, set monthly budgets, manage recurring bills, keep a group ledger for a trip or a shared home, and track money lent and borrowed — all stored on your device.",
+        "url": "https://spendwise.download/",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.gripxtech.spendwise",
+        "image": "https://spendwise.download/assets/icon-512.png",
+        "license": "https://spendwise.download/terms",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Offline expense tracking",
+          "Monthly budgets",
+          "Group ledgers for shared spending",
+          "35 app languages",
+          "Any device currency",
+          "Recurring expense reminders",
+          "Daily logging reminders",
+          "Settle-up reminders",
+          "Borrow and lend tracking",
+          "Notes and checklists",
+          "Receipt and document attachments",
+          "Monthly and yearly reports",
+          "PDF and spreadsheet export",
+          "Backup and restore",
+          "Biometric app lock"
+        ],
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.gripxtech.spendwise",
+          "https://github.com/kasim1011/spendwise-site",
+          "https://www.youtube.com/@getspendwise"
+        ],
+        "screenshot": [
+          "https://spendwise.download/screenshot/spendwise-dashboard.png",
+          "https://spendwise.download/screenshot/spendwise-groups.png",
+          "https://spendwise.download/screenshot/spendwise-group-detail.png",
+          "https://spendwise.download/screenshot/spendwise-money-hub.png",
+          "https://spendwise.download/screenshot/spendwise-add-transaction.png",
+          "https://spendwise.download/screenshot/spendwise-history.png",
+          "https://spendwise.download/screenshot/spendwise-reports.png",
+          "https://spendwise.download/screenshot/spendwise-people.png",
+          "https://spendwise.download/screenshot/spendwise-notes.png",
+          "https://spendwise.download/screenshot/spendwise-settings.png",
+          "https://spendwise.download/screenshot/spendwise-backup-restore.png"
+        ],
+        "softwareVersion": "1.0.8",
+        "inLanguage": [
+          "am",
+          "ar",
+          "bg",
+          "cs",
+          "da",
+          "de",
+          "el",
+          "en",
+          "es",
+          "fa",
+          "fil",
+          "fr",
+          "ha",
+          "hu",
+          "id",
+          "it",
+          "ja",
+          "ko",
+          "ms",
+          "nl",
+          "pl",
+          "pt-BR",
+          "pt-PT",
+          "ro",
+          "ru",
+          "sk",
+          "sr",
+          "sv",
+          "sw",
+          "th",
+          "tr",
+          "uk",
+          "vi",
+          "zh-Hans",
+          "zh-Hant"
+        ],
+        "datePublished": "2026-09-19"
+      }
     </script>
   </head>
   <body>
@@ -120,6 +165,20 @@
           <a href="/support">Support</a>
           <a href="/privacy">Privacy policy</a>
           <a href="/terms">Terms</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/" hreflang="en" lang="en" aria-current="true">English</a>
+          <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/it/" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
         </nav>
       </div>
     </header>
@@ -153,13 +212,16 @@
           <div class="hero__art">
             <div class="phone">
               <a class="phone__link" href="#shot-01">
-                <img
-                  src="/screenshot/01-dashboard.png"
-                  alt="The Spendwise dashboard for October 2026 showing $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and the recurring bills still to log."
-                  width="1080"
-                  height="2400"
-                  fetchpriority="high"
-                />
+                <picture>
+                  <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                  <img
+                    src="/screenshot/spendwise-dashboard.png"
+                    alt="The Spendwise dashboard for October 2026 showing $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and the recurring bills still to log."
+                    width="1080"
+                    height="2400"
+                    fetchpriority="high"
+                  />
+                </picture>
               </a>
             </div>
           </div>
@@ -414,7 +476,10 @@
               <p>
                 A trip, a household, a shared flat — each group keeps its own people, categories,
                 transactions, budget and notes. A group's balances stay separate from the same
-                person's balance in your personal ledger.
+                person's balance in your personal ledger. Coming from an app that syncs through an
+                account instead?
+                <a href="/expense-tracker-vs-spendee">Spendee vs Spendwise</a> walks through what
+                that changes.
               </p>
             </article>
 
@@ -546,9 +611,9 @@
               </div>
               <h3>Speaks your language, reads your currency</h3>
               <p>
-                Choose the app language from twelve translations — including right-to-left Arabic —
-                and set the currency every amount is shown in. Changing currency reformats your
-                figures; it never converts them.
+                Choose the app language from 35 translations — including right-to-left Arabic and
+                Persian — and set the currency every amount is shown in. Changing currency reformats
+                your figures; it never converts them.
               </p>
             </article>
 
@@ -596,13 +661,16 @@
             <li id="shot-01">
               <figure class="shot">
                 <a class="shot__open" href="#shot-01">
-                  <img
-                    src="/screenshot/01-dashboard.png"
-                    alt="The Spendwise dashboard for October 2026 showing $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and the recurring bills still to log."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-dashboard.png"
+                      alt="The Spendwise dashboard for October 2026 showing $2,095.50 spent this month against a $6,000.00 budget marked On track, income of $5,320.00 and a net balance of $3,224.50, a strip of groups, and the recurring bills still to log."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Dashboard</strong>
@@ -630,13 +698,16 @@
             <li id="shot-02">
               <figure class="shot">
                 <a class="shot__open" href="#shot-02">
-                  <img
-                    src="/screenshot/02-groups.png"
-                    alt="The Groups tab listing two groups, Flat 4B with 8 categories and Voyage en France with 4, each card showing what the group has spent."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-groups.png"
+                      alt="The Groups tab listing two groups, Flat 4B with 8 categories and Voyage en France with 4, each card showing what the group has spent."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Groups</strong>
@@ -664,13 +735,16 @@
             <li id="shot-03">
               <figure class="shot">
                 <a class="shot__open" href="#shot-03">
-                  <img
-                    src="/screenshot/03-group-detail.png"
-                    alt="A group's own screen for October 2026: $553.00 spent against an $800.00 group budget marked On track, the people with outstanding balances, and an Add Expense button."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-group-detail.png"
+                      alt="A group's own screen for October 2026: $553.00 spent against an $800.00 group budget marked On track, the people with outstanding balances, and an Add Expense button."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Group detail</strong>
@@ -698,13 +772,16 @@
             <li id="shot-04">
               <figure class="shot">
                 <a class="shot__open" href="#shot-04">
-                  <img
-                    src="/screenshot/04-money.png"
-                    alt="The Money hub listing the monthly budget at 52% used, 27 built-in categories, two tracked people and eight recurring schedules, with Reports and Notes under Insights."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-money-hub.png"
+                      alt="The Money hub listing the monthly budget at 52% used, 27 built-in categories, two tracked people and eight recurring schedules, with Reports and Notes under Insights."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Money hub</strong>
@@ -732,13 +809,16 @@
             <li id="shot-05">
               <figure class="shot">
                 <a class="shot__open" href="#shot-05">
-                  <img
-                    src="/screenshot/05-add-transaction.png"
-                    alt="The add transaction form with an amount of $47.82, Expense selected, the Groceries category highlighted, today's date, and a receipt or document row offering a photo or a PDF."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-add-transaction.png"
+                      alt="The add transaction form with an amount of $47.82, Expense selected, the Groceries category highlighted, today's date, and a receipt or document row offering a photo or a PDF."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Add transaction</strong>
@@ -766,13 +846,16 @@
             <li id="shot-06">
               <figure class="shot">
                 <a class="shot__open" href="#shot-06">
-                  <img
-                    src="/screenshot/06-history.png"
-                    alt="Transaction history grouped by day with a search field, showing the Sunday market, coffee and lunch, the pharmacy and the cinema, each day carrying its own net."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-history.png"
+                      alt="Transaction history grouped by day with a search field, showing the Sunday market, coffee and lunch, the pharmacy and the cinema, each day carrying its own net."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>History</strong>
@@ -800,13 +883,16 @@
             <li id="shot-07">
               <figure class="shot">
                 <a class="shot__open" href="#shot-07">
-                  <img
-                    src="/screenshot/07-reports.png"
-                    alt="The October 2026 report showing $2,095.50 spent against a $6,000.00 budget, income and net balance, and a spending-by-category doughnut chart whose legend begins with Rent at $1,400.00."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-reports.png"
+                      alt="The October 2026 report showing $2,095.50 spent against a $6,000.00 budget, income and net balance, and a spending-by-category doughnut chart whose legend begins with Rent at $1,400.00."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Reports</strong>
@@ -834,13 +920,16 @@
             <li id="shot-08">
               <figure class="shot">
                 <a class="shot__open" href="#shot-08">
-                  <img
-                    src="/screenshot/08-people.png"
-                    alt="The People screen listing Alex, who owes $245.00, and Sam, who is owed $500.00, each with a running balance and an Add Person action."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-people.png"
+                      alt="The People screen listing Alex, who owes $245.00, and Sam, who is owed $500.00, each with a running balance and an Add Person action."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>People</strong>
@@ -868,13 +957,16 @@
             <li id="shot-09">
               <figure class="shot">
                 <a class="shot__open" href="#shot-09">
-                  <img
-                    src="/screenshot/09-notes.png"
-                    alt="The notes grid with a take-a-note row and four cards, including a Monthly admin checklist showing two of four items done and a colour-coded October budget note."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-notes.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-notes.png"
+                      alt="The notes grid with a take-a-note row and four cards, including a Monthly admin checklist showing two of four items done and a colour-coded October budget note."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Notes</strong>
@@ -902,13 +994,16 @@
             <li id="shot-10">
               <figure class="shot">
                 <a class="shot__open" href="#shot-10">
-                  <img
-                    src="/screenshot/10-settings.png"
-                    alt="Settings showing the app language, the USD app currency, a System, Light or Dark appearance choice, and five accent colours."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-settings.png"
+                      alt="Settings showing the app language, the USD app currency, a System, Light or Dark appearance choice, and five accent colours."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Settings</strong>
@@ -936,13 +1031,16 @@
             <li id="shot-11">
               <figure class="shot">
                 <a class="shot__open" href="#shot-11">
-                  <img
-                    src="/screenshot/11-backup-restore.png"
-                    alt="The Backup & Restore screen reporting 122 transactions, 39 categories and 6 people, with a Create backup file button and a Choose backup file button."
-                    width="1080"
-                    height="2400"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                    <img
+                      src="/screenshot/spendwise-backup-restore.png"
+                      alt="The Backup & Restore screen reporting 122 transactions, 39 categories and 6 people, with a Create backup file button and a Choose backup file button."
+                      width="1080"
+                      height="2400"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
                 <figcaption>
                   <strong>Backup &amp; restore</strong>
@@ -1093,6 +1191,30 @@
         </div>
       </section>
 
+      <!-- ================= Guides ================= -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="eyebrow">Guides</span>
+            <h2>The detail behind the claims</h2>
+            <p>One page per question, with the trade-offs written down rather than buried.</p>
+          </div>
+          <nav class="related" aria-label="Guides">
+            <ul>
+              <li><a href="/offline-expense-tracker">Offline expense tracker</a></li>
+              <li><a href="/expense-tracker-without-signup">Expense tracker without signup</a></li>
+              <li><a href="/private-expense-tracker">Private expense tracker</a></li>
+              <li><a href="/split-expenses-with-friends">Split expenses with friends</a></li>
+              <li><a href="/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/expense-tracker-vs-spreadsheet">Spendwise vs spreadsheet</a></li>
+              <li><a href="/50-30-20-budget-calculator">50/30/20 budget calculator</a></li>
+              <li><a href="/split-bill-calculator">Split bill calculator</a></li>
+              <li><a href="/subscription-cost-calculator">Subscription cost calculator</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
       <!-- ================= CTA ================= -->
       <section class="cta">
         <div class="wrap">
@@ -1146,6 +1268,7 @@
             <h2>Support</h2>
             <ul>
               <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
               <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
             </ul>
           </div>
@@ -1156,5 +1279,23 @@
         </div>
       </div>
     </footer>
+    <!--
+      Product Hunt's "Visit website" link arrives as /?ref=producthunt. The Play CTAs are static,
+      so this rewrites their referrer value once on load; every other visit keeps site/organic.
+      Without it a launch install lands in the `site` bucket and the stop rule cannot judge the
+      channel. See docs/marketing/organic-growth-checklist.md.
+    -->
+    <script>
+      if (new URLSearchParams(location.search).get('ref') === 'producthunt') {
+        const tag = 'utm_source=producthunt&utm_medium=social&utm_campaign=launch_producthunt';
+        for (const link of document.querySelectorAll('a[href*="play.google.com"]')) {
+          const url = new URL(link.href);
+          if (url.searchParams.has('referrer')) {
+            url.searchParams.set('referrer', tag);
+            link.href = url.href;
+          }
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Split expenses with friends: groups and settle-up</title>
+    <meta
+      name="description"
+      content="Track a trip or shared flat on one phone: a ledger per group, equal or custom splits, running balances, and settle up in one tap."
+    />
+    <link rel="canonical" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Split expenses with friends: groups and settle-up" />
+    <meta
+      property="og:description"
+      content="How a group ledger works when it lives on one phone: shares, balances, settle up, and where the model stops."
+    />
+    <meta property="og:url" content="https://spendwise.download/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Spendwise mark: a white progress ring and tick on a blue gradient field."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Split expenses with friends",
+            "item": "https://spendwise.download/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do my friends need to install Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A group is a ledger on your phone; your friends are people you add to it. Nobody gets an invitation, an account or a notification, and nobody else's phone holds a copy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are shares split?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A shared expense can be split with several people at once, either equally or with one share per person that you set yourself. Each share updates that person's running balance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do group balances affect my personal ledger?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A group is a separate scope with its own people, categories, budget and balances. Settling up inside a group changes only that group, even if a person has the same name at the app level."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when two people in a group split a bill unevenly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Set each person's share instead of splitting equally. The transaction stays one expense in the group's ledger, and each person's balance moves by their own share."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use a group for a household rather than a trip?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A group is a named ledger with its own monthly budget, categories and notes, so a shared flat works the same way as a holiday."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#features">Features</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en" aria-current="true">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Groups and settle-up</p>
+          <h1>Split expenses with friends without another account</h1>
+          <p class="doc-hero__lede">
+            Splitting costs usually means inviting everyone into an app they do not want to install.
+            Spendwise takes the opposite approach: one person keeps a precise ledger for the trip or
+            the flat, and everyone can see where they stand.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Updated:</strong> 20 October 2026 &nbsp;·&nbsp; <strong>Model:</strong> local
+            group ledger &nbsp;·&nbsp; <strong>Price:</strong> included free, no subscription
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">A group is a second ledger, not a tag</h2>
+          <p>
+            In most apps, a shared trip is a label you stick on some of your expenses. Spendwise
+            gives a group its own context: its own categories, its own monthly budget, its own
+            people, its own transactions, its own notes and its own balances.
+          </p>
+          <p>
+            The point is that a holiday never pollutes the household numbers. Rent at home is not a
+            category in "Voyage en France", and a friend's outstanding balance on the trip is not
+            the same balance as their loan at home — even when the name is identical, they are two
+            separate ledgers.
+          </p>
+
+          <h2 id="how-a-trip-works">How a trip actually runs</h2>
+          <ol>
+            <li>
+              <strong>Create the group</strong> and give it a name. It seeds a short starting set of
+              categories for a trip or household.
+            </li>
+            <li>
+              <strong>Add the people</strong> you share costs with. They are entries in the ledger,
+              not accounts — no phone number, no invitation, no app install.
+            </li>
+            <li>
+              <strong>Set a group budget</strong> for the month on the group's summary, separate
+              from your own budget.
+            </li>
+            <li>
+              <strong>Log the shared expenses.</strong> Enter what you paid, with the category and
+              date. When someone else covered your part, record that direction instead, so the
+              balance does not run backwards.
+            </li>
+            <li>
+              <strong>Split the expense.</strong> Tag it with the people involved — equally, or with
+              a share each. Every share moves that person's running balance.
+            </li>
+            <li>
+              <strong>Settle up</strong> when someone pays their part. The action opens the composer
+              pre-filled with the outstanding balance and the correct direction, so recording a
+              repayment is one tap and one confirmation. Partial payments are fine.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="The Groups tab listing Flat 4B with 8 categories and Voyage en France with 4, each card showing what the group has spent."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Each group shows its own spend and category count before you open it.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="A group's own screen for October 2026: $553.00 spent against an $800.00 group budget marked On track, the people with outstanding balances, and an Add Expense button."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                A group's summary, budget and the people with outstanding balances — all scoped to
+                that group.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="The People screen listing Alex, who owes $245.00, and Sam, who is owed $500.00, each with a running balance and an Add Person action."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Balances are derived from the ledger, not typed in: green when you are owed, red
+                when you owe.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">Balances that are calculated, not remembered</h2>
+          <p>
+            Every person's balance is the sum of their ledger entries, not a number someone typed.
+            The entries cover the situations that actually happen: you lend cash, you cover their
+            share of a bill, they cover yours, you borrow, they repay you, you repay them. A
+            positive balance means you are owed; negative means you owe.
+          </p>
+          <p>
+            Because it is a derived sum, it cannot drift out of date. The trade is that a balance is
+            only as good as what has been logged — if the group forgets to enter the taxi, the
+            ledger is wrong, and one person keeping the book is what fixes that.
+          </p>
+
+          <h2 id="the-trade">The honest trade: one phone holds the ledger</h2>
+          <p>
+            Group splitting apps with invitations exist, and they solve a different problem: letting
+            every participant edit the same shared book from their own phone. That requires accounts
+            and a server, which is exactly the architecture Spendwise does not have.
+          </p>
+          <p>So the model here is <strong>one ledger, one keeper</strong>. It suits:</p>
+          <ul>
+            <li>a trip where one person books and pays for most things,</li>
+            <li>a shared flat where one housemate settles the bills,</li>
+            <li>any group where arguments come from fuzzy memory rather than mistrust.</li>
+          </ul>
+          <p>
+            It does not suit a household where everyone insists on editing the ledger live. If that
+            is the requirement, read
+            <a href="/expense-tracker-vs-spendee">the Spendee comparison</a> and pick a synced app;
+            the page says plainly where this one loses.
+          </p>
+
+          <h2 id="limits">What groups deliberately do not do</h2>
+          <ul>
+            <li>
+              <strong>No invitations or shared editing.</strong> The ledger is on your phone, so
+              there is no one else to sync with.
+            </li>
+            <li>
+              <strong>No people shared between contexts.</strong> A person can be copied into a
+              group, but the copy has its own ledger; settling one never touches the other.
+            </li>
+            <li>
+              <strong>No cross-group transfers.</strong> Money moves between people, not between
+              ledgers.
+            </li>
+            <li>
+              <strong>No group currency.</strong> The app has one display currency, and a group
+              reports in it. There is no conversion.
+            </li>
+            <li>
+              <strong>No netting across people.</strong> If Alex owes you and you owe Sam, those are
+              two balances, not one.
+            </li>
+          </ul>
+
+          <h2 id="faq">Frequently asked questions</h2>
+
+          <details class="faq">
+            <summary>Do my friends need to install Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                No. A group is a ledger on your phone; your friends are people you add to it. Nobody
+                gets an invitation, an account or a notification, and nobody else's phone holds a
+                copy.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>How are shares split?</summary>
+            <div class="faq__body">
+              <p>
+                A shared expense can be split with several people at once, either equally or with
+                one share per person that you set yourself. Each share updates that person's running
+                balance.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Do group balances affect my personal ledger?</summary>
+            <div class="faq__body">
+              <p>
+                No. A group is a separate scope with its own people, categories, budget and
+                balances. Settling up inside a group changes only that group, even if a person has
+                the same name at the app level.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>What happens when two people split a bill unevenly?</summary>
+            <div class="faq__body">
+              <p>
+                Set each person's share instead of splitting equally. The transaction stays one
+                expense in the group's ledger, and each person's balance moves by their own share.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Can I use a group for a household rather than a trip?</summary>
+            <div class="faq__body">
+              <p>
+                Yes. A group is a named ledger with its own monthly budget, categories and notes, so
+                a shared flat works the same way as a holiday. The daily reminder and App Lock are
+                described on the <a href="/support">support page</a>.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="More guides">
+            <h2>More guides</h2>
+            <ul>
+              <li><a href="/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/offline-expense-tracker">Offline expense tracker</a></li>
+              <li><a href="/expense-tracker-without-signup">Expense tracker without signup</a></li>
+              <li><a href="/private-expense-tracker">Private expense tracker</a></li>
+              <li><a href="/expense-tracker-vs-spreadsheet">Spendwise vs spreadsheet</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>One ledger, no invitations</h2>
+          <p>
+            Keep the trip honest: log the split, watch the balance, settle in a tap. Free, with no
+            account for you or for them.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=en_US&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >Get it on Google Play</a
+            >
+            <a class="btn btn--ghost" href="/offline-expense-tracker">Why it works offline</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              A private, offline-first expense tracker for Android. Your ledger belongs on your
+              phone.
+            </p>
+          </div>
+          <div>
+            <h2>Product</h2>
+            <ul>
+              <li><a href="/#features">Features</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
+              <li><a href="/#privacy">Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy">Privacy policy</a></li>
+              <li><a href="/terms">Terms &amp; conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Support</h2>
+            <ul>
+              <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. All rights reserved.</span>
+          <span>Made for Android 10 and above.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

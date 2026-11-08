@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora 50/30/20: divida qualquer renda</title>
+    <meta
+      name="description"
+      content="Transforme o salário líquido em necessidades, desejos e poupança com a regra 50/30/20. Grátis, sem conta e honesta sobre quando a regra deixa de servir."
+    />
+    <link rel="canonical" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Calculadora 50/30/20: divida qualquer renda" />
+    <meta
+      property="og:description"
+      content="Uma calculadora 50/30/20 gratuita, a matemática por trás dela e o que fazer quando o aluguel consome mais da metade do salário."
+    />
+    <meta property="og:url" content="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="A marca do Spendwise: um anel de progresso branco com um visto sobre um degradê azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/pt-br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculadora 50/30/20",
+            "item": "https://spendwise.download/pt-br/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A regra 50/30/20 usa o salário bruto ou o líquido?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O líquido: o valor que de fato cai na sua conta depois de impostos e de qualquer desconto de previdência ou de folha. Usar o salário bruto infla todos os grupos e produz um orçamento que parece bom no papel e falha no banco."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que conta como necessidade na regra 50/30/20?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aluguel ou financiamento, contas de consumo, mercado, transporte até o trabalho, seguro, pagamentos mínimos de dívidas e remédios necessários. Tudo o que você continuaria pagando desempregado é necessidade. Uma academia que você poderia cancelar, um pacote de streaming e um segundo carro são desejos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se só o aluguel passar de 50%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A regra é um ponto de partida, não uma lei. Numa cidade cara, 60/20/20 ou 70/20/10 é a versão honesta: mantenha 20% reais para poupança e dívidas e tire o que falta dos desejos primeiro. Cortar a poupança para proteger os desejos inverte a prioridade."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A calculadora guarda a minha renda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. A conta roda no seu navegador, nada é enviado a lugar nenhum e o site não carrega script de terceiros. Recarregar a página apaga tudo o que você digitou."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O app Spendwise é um orçamento 50/30/20?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não diretamente. O Spendwise mantém um orçamento mensal e reserva contra ele as contas recorrentes conhecidas, então o número que sobra é o que você pode gastar à vontade. Use esta página para escolher os totais, defina o valor dos 50% como orçamento mensal e registre os gastos contra ele."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/pt-br/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="/#features">Recursos</a>
+          <a href="/#gallery">Galeria</a>
+          <a href="/#privacy">Privacidade</a>
+          <a href="/support" hreflang="en" lang="en">Suporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de Privacidade</a>
+          <a href="/terms" hreflang="en" lang="en">Termos</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Ferramenta gratuita</p>
+          <h1>Calculadora 50/30/20</h1>
+          <p class="doc-hero__lede">
+            Divida o salário líquido em necessidades, desejos e poupança em um passo — e depois leia
+            o que a regra deixa de fora. Sem conta, sem cadastro, sem ID de rastreamento: a conta
+            acontece no seu navegador.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Atualizado:</strong> 20 de outubro de 2026 &nbsp;·&nbsp;
+            <strong>Entrada:</strong> salário líquido &nbsp;·&nbsp; <strong>Custo:</strong> gratuito
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">Seus números</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>Salário líquido mensal · depois de impostos e outros descontos</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>A divisão</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Necessidades · 50%</dt>
+                  <dd data-out="needs">2.000,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Desejos · 30%</dt>
+                  <dd data-out="wants">1.200,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Poupança e dívidas · 20%</dt>
+                  <dd data-out="savings">800,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Por dia · mês de 30 dias</dt>
+                  <dd data-out="day">133,33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                Os valores ficam na moeda que você digitar e são arredondados ao centavo. Esta página
+                é uma ferramenta de planejamento, não um livro-caixa: ela não guarda nada.
+              </p>
+            </div>
+            <noscript>
+              <p>
+                A calculadora precisa de JavaScript. A regra continua simples: 50% do salário
+                líquido para necessidades, 30% para desejos, 20% para poupança e quitação de dívidas
+                — metade, um terço, um quinto.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">O que a regra 50/30/20 diz de fato</h2>
+          <p>
+            A regra ficou conhecida com <em>All Your Worth</em> (2005), de Elizabeth Warren e Amelia
+            Warren Tyagi. A proposta é estreita e útil: do dinheiro que chega à sua conta, metade
+            pode ir para obrigações, três décimos para a vida discricionária e um quinto para o
+            futuro. Nada na divisão depende do seu salário, do seu país ou do seu banco.
+          </p>
+          <p>
+            A força dela é ser um <strong>teto para as necessidades</strong>, não uma meta para
+            elas. Quase todo conselho de orçamento manda gastar menos e poupar mais sem dizer o que
+            “menos” significa. Aqui, a linha dos 50% é um diagnóstico: se as necessidades passam
+            dela, o problema é estrutural — aluguel, transporte, creche — e nenhum app de cupom
+            resolve.
+          </p>
+
+          <h2 id="how-to-read">Como ler os três números</h2>
+          <ul>
+            <li>
+              <strong>Necessidades, 50%.</strong> Aluguel ou financiamento, contas de consumo,
+              mercado, transporte até o trabalho, seguro, pagamentos mínimos de dívidas, remédios
+              essenciais. O teste é simples: você ainda pagaria isso no primeiro mês de desemprego?
+            </li>
+            <li>
+              <strong>Desejos, 30%.</strong> Restaurantes, assinaturas, viagens, hobbies, um celular
+              melhor do que você precisa. É o grupo que paga o déficit quando os outros dois apertam
+              — e o primeiro lugar a olhar quando a poupança escorrega.
+            </li>
+            <li>
+              <strong>Poupança e dívidas, 20%.</strong> Reserva de emergência, aposentadoria,
+              investimentos e tudo o que passar do mínimo de um empréstimo. Quitar dívida caro é a
+              poupança de maior retorno disponível, então isso fica aqui, e não em necessidades.
+            </li>
+          </ul>
+          <p>
+            Com 4.000 por mês, são 2.000, 1.200 e 800. O valor diário — cerca de 133,33 — não faz
+            parte da regra original. Ele está ali porque um número mensal é grande demais para se
+            sentir durante uma semana, e “cabe no orçamento hoje?” é a pergunta que as pessoas de
+            fato fazem.
+          </p>
+
+          <h2 id="blur">Onde as categorias se confundem</h2>
+          <p>
+            Toda discussão sobre 50/30/20 é, na verdade, uma discussão sobre uma despesa. Algumas
+            decisões que resistem ao escrutínio:
+          </p>
+          <ul>
+            <li>
+              <strong>Mercado é necessidade; a taxa de entrega é desejo.</strong> Separe as duas. Um
+              hábito de pedir comida registrado como alimentação pode esconder um orçamento anual de
+              desejos de quatro dígitos.
+            </li>
+            <li>
+              <strong>O carro é misto.</strong> O financiamento, o seguro e o combustível do
+              deslocamento são necessidades; a versão mais completa não é. Se você conseguiria ir de
+              ônibus num aperto, a necessidade honesta é a passagem, e a diferença é desejo.
+            </li>
+            <li>
+              <strong>Academia é desejo — a menos que um médico tenha indicado.</strong>
+              Mensalidades que você cancelaria num mês ruim são desejo por definição, por mais
+              saudáveis que sejam.
+            </li>
+            <li>
+              <strong>Pagamentos mínimos de dívida são necessidade; o excedente é poupança.</strong>
+              Caso contrário, um empréstimo grande empurra as necessidades além dos 50% e o plano
+              desmorona.
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">Quando a regra não serve</h2>
+          <p>
+            A divisão 50/30/20 supõe que a moradia consome bem menos da metade do salário. Em
+            Londres, Dublin, Toronto, Sydney, Mumbai ou São Francisco — ou com uma renda só e filhos
+            pequenos — essa suposição muitas vezes é falsa. Três variantes honestas:
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20.</strong> A moradia empurra as necessidades para 60%. Os desejos
+              encolhem para 20% e a poupança fica em 20%, porque o futuro é a parte que você não
+              pode pedir emprestada de volta.
+            </li>
+            <li>
+              <strong>70/20/10.</strong> Cidade cara com salário de entrada. Poupar 10% ainda é um
+              hábito real; zero não é.
+            </li>
+            <li>
+              <strong>Base zero.</strong> Dê uma função a cada unidade de renda no começo do mês. Dá
+              mais trabalho que um percentual e funciona melhor com renda irregular.
+            </li>
+          </ul>
+          <p>
+            Renda variável pede outra mecânica: faça o orçamento pelo mês mais baixo dos últimos
+            tempos e trate o excedente como poupança, em vez de orçar pelo melhor mês e torcer. O
+            percentual continua útil como conferência no fim do ano, não como instrução mensal.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="O painel do Spendwise de outubro de 2026: US$ 2.095,50 gastos no mês contra um orçamento de US$ 6.000,00 marcado como Dentro do previsto, receita de US$ 5.320,00 e saldo líquido de US$ 3.224,50, uma faixa de grupos e as contas recorrentes ainda por registrar."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Um orçamento mensal, com as contas ainda por registrar reservadas contra ele.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="O relatório de outubro de 2026 mostrando US$ 2.095,50 gastos de um orçamento de US$ 6.000,00, receitas e saldo líquido, e um gráfico de rosca de gastos por categoria, começando por Aluguel com US$ 1.400,00."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                As categorias do mês, prontas para comparar com a sua divisão.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">Faça os 20% saírem antes de você vê-los</h2>
+          <p>
+            Uma divisão que depende de força de vontade perde para uma que depende de um débito
+            automático. Mova os 20% no dia do pagamento, não no fim do mês, e deixe o dinheiro numa
+            conta levemente incômoda de acessar. Vale o mesmo para as contas recorrentes: se aluguel
+            e contas de consumo saem em datas conhecidas, o dinheiro delas já está gasto, diga o que
+            disser o saldo.
+          </p>
+          <p>
+            A pergunta que resta — quanto eu gastei de fato? — é um problema de registro, não de
+            orçamento. O Spendwise mantém o livro-caixa como um banco de dados SQLite local no
+            celular, com um orçamento mensal que reserva as contas recorrentes conhecidas, um
+            lembrete às 19:00 e exportação em PDF ou XLSX no fim do mês. Ele não calcula uma divisão
+            50/30/20; defina o total dos 50% como orçamento, registre conforme gasta e compare o
+            relatório com o plano.
+          </p>
+
+          <h2 id="faq">Perguntas frequentes</h2>
+          <details class="faq">
+            <summary>A regra 50/30/20 usa o salário bruto ou o líquido?</summary>
+            <div class="faq__body">
+              <p>
+                O líquido: o valor que de fato cai na sua conta depois de impostos e de qualquer
+                desconto de previdência ou de folha. Usar o salário bruto infla todos os grupos e
+                produz um orçamento que parece bom no papel e falha no banco.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>O que conta como necessidade na regra 50/30/20?</summary>
+            <div class="faq__body">
+              <p>
+                Aluguel ou financiamento, contas de consumo, mercado, transporte até o trabalho,
+                seguro, pagamentos mínimos de dívidas e remédios necessários. Tudo o que você
+                continuaria pagando desempregado é necessidade. Uma academia que você poderia
+                cancelar, um pacote de streaming e um segundo carro são desejos.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>E se só o aluguel passar de 50%?</summary>
+            <div class="faq__body">
+              <p>
+                A regra é um ponto de partida, não uma lei. Numa cidade cara, 60/20/20 ou 70/20/10 é
+                a versão honesta: mantenha 20% reais para poupança e dívidas e tire o que falta dos
+                desejos primeiro. Cortar a poupança para proteger os desejos inverte a prioridade.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>A calculadora guarda a minha renda?</summary>
+            <div class="faq__body">
+              <p>
+                Não. A conta roda no seu navegador, nada é enviado a lugar nenhum e o site não
+                carrega script de terceiros. Recarregar a página apaga tudo o que você digitou.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>O app Spendwise é um orçamento 50/30/20?</summary>
+            <div class="faq__body">
+              <p>
+                Não diretamente. O Spendwise mantém um orçamento mensal e reserva contra ele as
+                contas recorrentes conhecidas, então o número que sobra é o que você pode gastar à
+                vontade. Use esta página para escolher os totais, defina o valor dos 50% como
+                orçamento mensal e registre os gastos contra ele.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Mais ferramentas e guias">
+            <h2>Mais ferramentas e guias</h2>
+            <ul>
+              <li><a href="/pt-br/split-bill-calculator">Calculadora de divisão de conta</a></li>
+              <li><a href="/pt-br/subscription-cost-calculator">Calculadora de assinaturas</a></li>
+              <li><a href="/pt-br/split-expenses-with-friends">Dividir gastos com amigos</a></li>
+              <li><a href="/pt-br/offline-expense-tracker">Registro de gastos offline</a></li>
+              <li><a href="/pt-br/expense-tracker-without-signup">Registro de gastos sem cadastro</a></li>
+              <li><a href="/pt-br/expense-tracker-vs-spreadsheet">Spendwise vs planilha</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Planeje a divisão e depois acompanhe o que acontece</h2>
+          <p>
+            O Spendwise é gratuito, não pede conta e não carrega ID de rastreamento. Defina o
+            orçamento, registre os gastos, exporte o mês.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=pt-BR&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >Baixar no Google Play</a
+            >
+            <a class="btn btn--ghost" href="/pt-br/private-expense-tracker"
+              >Ler a página de privacidade</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/pt-br/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Um registrador de despesas privado e offline para Android. Seu histórico fica no seu
+              celular.
+            </p>
+          </div>
+          <div>
+            <h2>Produto</h2>
+            <ul>
+              <li><a href="/#features">Recursos</a></li>
+              <li><a href="/#gallery">Galeria</a></li>
+              <li><a href="/#privacy">Privacidade</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Jurídico</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de Privacidade</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Termos e condições</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Suporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ajuda e perguntas frequentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos os direitos reservados.</span>
+          <span>Feito para Android 10 e versões posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

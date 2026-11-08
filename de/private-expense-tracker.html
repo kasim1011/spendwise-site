@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privater Ausgaben-Tracker: lokal, ohne Tracking-ID</title>
+    <meta
+      name="description"
+      content="Spendwise hält deine Ausgaben in einer lokalen Datenbank — ohne Tracking-ID, mit abschaltbaren anonymen Bildschirm-Statistiken. Das ehrliche „privat“."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Privater Ausgaben-Tracker: lokal, ohne Tracking-ID" />
+    <meta
+      property="og:description"
+      content="Was gesammelt wird, was nicht, welche Berechtigungen die App anfragt und wo die Grenzen von „privat“ liegen, die du kennen solltest."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privater Ausgaben-Tracker",
+            "item": "https://spendwise.download/de/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Sammelt Spendwise meine Buchungen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Buchungen, Budgets, Notizen, Personen und Anhänge liegen in einer SQLite-Datenbank auf dem Handy. Kein Server empfängt sie, und es gibt kein Konto, dem man sie zuordnen könnte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Nutzt die Anzeige meine Werbe-ID?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Die App entfernt die AD_ID-Berechtigung, es gibt also keine Werbe-ID, die man nutzen könnte. Jede Anfrage ist nicht personalisiert, und im EWR und in Großbritannien regelt ein Einwilligungsformular, ob überhaupt eine Anzeige angefragt wird."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was schaltet der Schalter für die Statistiken ab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alle anonymen Bildschirm-Statistiken. Spendwise sendet anonyme Bildschirmaufrufe, die an Routennamen hängen, ohne Nutzerkennung und ohne Buchungsinhalt. Schaltest du die Statistiken in den Einstellungen aus, hören diese Ereignisse ganz auf; aus heißt aus, nicht weniger."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Berechtigungen fragt Spendwise an?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Benachrichtigungen, für die tägliche Erinnerung und Erinnerungen an wiederkehrende Rechnungen. Belege kommen über Androids System-Fotoauswahl und Dokumentauswahl, die keine Berechtigung brauchen. Die App-Sperre nutzt deine vorhandene Geräte-PIN, dein Muster oder deine Biometrie. Es gibt keine Berechtigung für Kontakte, Standort, Kamera oder Werbe-ID."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist die Sicherungsdatei verschlüsselt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Die .spendwise-Datei ist ein unverschlüsseltes Archiv der Datenbank und deiner Anhänge. Behandle sie wie einen Kontoauszug und bewahre sie an einem Ort auf, dem du vertraust."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Privatsphäre</p>
+          <h1>Ein privater Ausgaben-Tracker: was „privat“ hier heißt</h1>
+          <p class="doc-hero__lede">
+            „Privat“ behauptet jede App. Diese Seite versucht, das Wort zu verdienen, indem sie
+            konkret wird: was die App speichert, was das Handy verlässt, was das Anzeigen-SDK sehen
+            kann und wo die Grenzen des Versprechens liegen.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Tracking-ID:</strong> keine &nbsp;·&nbsp;
+            <strong>Werbe-ID:</strong> Berechtigung entfernt &nbsp;·&nbsp;
+            <strong>Bildschirm-Statistiken:</strong> abschaltbar
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">Der Weg der Daten</h2>
+          <p>
+            Spendwise hat kein Backend. Jede Buchung, jedes Budget, jede Kategorie, jede Notiz, jede
+            Person, jede Gruppe und jeder Beleg-Anhang wird in eine SQLite-Datenbank im privaten
+            Speicher der App geschrieben, und jeder Bildschirm liest aus dieser Datenbank. Es gibt
+            nichts, wo man sich anmelden müsste, also auch kein Profil von dir, das man aufbauen,
+            verkaufen, verlieren oder herausgeben könnte.
+          </p>
+          <p>
+            Zwei Funktionen sprechen mit dem Internet, und beide sind klein genug, um sie genau zu
+            benennen:
+          </p>
+          <ul>
+            <li>
+              <strong>Eine einzelne Anzeige</strong> auf dem Bestätigungsbildschirm, angefragt als
+              nicht personalisiert, mit der aus der App entfernten Werbe-ID-Berechtigung.
+            </li>
+            <li>
+              <strong>Anonyme Bildschirm-Statistiken</strong> — ein Routenname pro
+              Bildschirmaufruf, keine Nutzerkennung, kein Buchungsinhalt, keine Werbe-ID, keine
+              Tracking-ID.
+            </li>
+          </ul>
+          <p>
+            Es gibt keinen Absturzbericht, keine Sitzungsaufzeichnung, keine Heatmap und kein
+            Drittanbieter-SDK außer den Bibliotheken für Anzeige und Statistiken. Die
+            <a href="/privacy" hreflang="en" lang="en"
+              >Datenschutzerklärung</a
+            >
+            zählt sie auf, und sie ist kurz, weil die Liste kurz ist.
+          </p>
+
+          <h2 id="permissions">Die Berechtigungen — und die, die fehlen</h2>
+          <p>
+            Android-Berechtigungen sind ein guter Hinweis darauf, was eine App wirklich tun kann.
+            Spendwise fragt nach Benachrichtigungen, damit die tägliche Erinnerung und Erinnerungen
+            an wiederkehrende Rechnungen auslösen können. Das ist die ganze Liste.
+          </p>
+          <ul>
+            <li>
+              <strong>Keine Kontakt-Berechtigung.</strong> Personen, die du verfolgst, sind Einträge,
+              die du anlegst, nicht dein Adressbuch.
+            </li>
+            <li><strong>Kein Standort.</strong> Nichts in der App muss wissen, wo du bist.</li>
+            <li>
+              <strong>Keine Kamera-Berechtigung.</strong> Einen Beleg anzuhängen nutzt Androids
+              System-Fotoauswahl und Dokumentauswahl, die der App Zugriff auf die von dir gewählte
+              Datei geben und auf nichts sonst.
+            </li>
+            <li>
+              <strong>Keine Werbe-ID-Berechtigung.</strong> Der Manifest-Eintrag wird im Build
+              entfernt, es gibt also keine ID, die ein Werbenetzwerk lesen könnte.
+            </li>
+          </ul>
+          <p>
+            Die App-Sperre fügt dabei keinen eigenen Speicher hinzu: Sie übergibt die Prüfung an
+            Androids eigene Authentifizierungsabfrage, deine PIN, dein Muster oder deine Biometrie
+            berühren Spendwise also nie.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Einstellungen mit der App-Sprache, der App-Währung USD, der Auswahl für System, Hell oder Dunkel und fünf Akzentfarben."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                In den Einstellungen sitzen die Schalter, die hier zählen: Statistiken, App-Sperre
+                und Währung — keiner davon hängt an einem Konto.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="Der Bereich Geld mit dem Monatsbudget bei 52 % Verbrauch, 27 eingebauten Kategorien, zwei erfassten Personen und acht wiederkehrenden Zeitplänen, darunter Berichte und Notizen unter Einblicke."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Kategorien, Personen und Zeitpläne sind lokale Zeilen — es gibt keine Cloud-Kopie zum
+                Synchronisieren.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="Der Bildschirm Sichern & Wiederherstellen mit 122 Transaktionen, 39 Kategorien und 6 Personen, dazu die Schaltflächen Sicherungsdatei erstellen und Sicherungsdatei wählen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Sichern und Wiederherstellen sind lokale Aktionen; die Datei landet dort, wo du sie
+                hinschickst, nicht auf einem Server.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">Die Anzeige, ohne Beschönigung</h2>
+          <p>
+            Spendwise ist nicht werbefrei. Eine einzelne native Anzeige sitzt auf dem
+            Bestätigungsbildschirm, und so bleibt die App ohne Abo kostenlos. Die
+            datenschutzrelevanten Fakten:
+          </p>
+          <ul>
+            <li>
+              <strong>Jede Anfrage ist nicht personalisiert</strong>, auch für jemanden, der dem
+              Einwilligungsformular zugestimmt hat. Die Einwilligung erlaubt eine Anfrage; sie kauft
+              niemals Personalisierung.
+            </li>
+            <li>
+              <strong>Keine Werbe-ID</strong> steht dem SDK zur Verfügung, weil die Berechtigung zur
+              Build-Zeit entfernt wird.
+            </li>
+            <li>
+              <strong>Im EWR und in Großbritannien kommt zuerst die Einwilligung</strong>, und sie
+              schließt im Fehlerfall: kein Netz, keine Einwilligung oder keine konfigurierte Meldung
+              bedeutet keine Anzeige. Unter Einstellungen → Datenschutz lässt sich das Formular dort
+              erneut öffnen, wo das Framework es verlangt.
+            </li>
+          </ul>
+          <p>
+            Das Werbenetzwerk sieht die Anfrage selbst trotzdem — eine IP-Adresse, ein Gerätemodell
+            und eine ungefähre Region sind in jeder Netzwerkanfrage unvermeidbar. Der Unterschied
+            ist, dass auf dieser Seite niemand ein Profil deiner Ausgaben baut, das man daran hängen
+            könnte.
+          </p>
+
+          <h2 id="analytics">Anonyme Bildschirm-Statistiken, die du wirklich abschalten kannst</h2>
+          <p>
+            Anonyme Bildschirm-Statistiken gibt es, und die App sagt das, statt es zu verschweigen.
+            Spendwise zeichnet pro Route einen anonymen Bildschirmaufruf auf — welche Bildschirme
+            erreicht werden, nicht was darauf steht — ohne Nutzerkennung, ohne E-Mail und ohne
+            Buchungsinhalt.
+          </p>
+          <p>
+            Der Schalter sitzt in den Einstellungen, und seine Wirkung ist absolut: Mit
+            ausgeschalteten Statistiken werden die Ereignisse nicht mehr gesendet. Es reduziert sie
+            nicht, hasht sie nicht und legt keine lokale Kopie für später an. Wenn der Satz
+            „Statistiken lassen sich abschalten“ etwas bedeuten soll, dann muss er das bedeuten.
+          </p>
+
+          <h2 id="limits">Wo das Versprechen aufhört</h2>
+          <p>Ehrlichkeit ist mehr wert als ein Slogan, deshalb hier die Grenzen:</p>
+          <ul>
+            <li>
+              <strong>Die Sicherungsdatei ist nicht verschlüsselt.</strong> Sie ist ein
+              <code>.spendwise</code>-Archiv, das jeder lesen kann, der die Datei hat. Bewahre sie
+              dort auf, wo du einen Kontoauszug aufbewahren würdest, oder verzichte auf die Datei und
+              akzeptiere, dass die Daten mit dem Handy sterben.
+            </li>
+            <li>
+              <strong>Die Sperre deines Handys ist der eigentliche Perimeter.</strong> Spendwise
+              ergänzt die App-Sperre als zweite Prüfung, aber ein entsperrtes und gerootetes Gerät
+              ist ein Gerät, dessen App-Daten gelesen werden können.
+            </li>
+            <li>
+              <strong>Google Play ist an der Installation weiterhin beteiligt</strong>, und die
+              Play-Dienste auf deinem Handy sind Googles, nicht die von Spendwise. Die Aussage hier
+              betrifft das, was diese App mit deinen Daten tut, nicht das Betriebssystem, auf dem sie
+              läuft.
+            </li>
+            <li>
+              <strong>Anhänge sind Dateien.</strong> Ein Belegfoto verlässt die App, wenn du es
+              woanders teilst, und seine Metadaten sind das, was die Datei schon hatte.
+            </li>
+          </ul>
+
+          <h2 id="controls">Die Kontrollen an einem Ort</h2>
+          <ul>
+            <li><strong>Statistiken an/aus</strong> — Einstellungen → Datenschutz.</li>
+            <li>
+              <strong>Einwilligung zur Anzeige</strong> — Einstellungen → Datenschutz, wo das
+              Einwilligungs-Framework einen Weg zurück ins Formular verlangt.
+            </li>
+            <li><strong>App-Sperre</strong> — Einstellungen → Sicherheit.</li>
+            <li>
+              <strong>Alles löschen</strong> — deinstalliere die App oder lösche ihre Daten in den
+              Android-Einstellungen.
+            </li>
+          </ul>
+
+          <h2 id="faq">Häufige Fragen</h2>
+
+          <details class="faq">
+            <summary>Sammelt Spendwise meine Buchungen?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Buchungen, Budgets, Notizen, Personen und Anhänge liegen in einer
+                SQLite-Datenbank auf dem Handy. Kein Server empfängt sie, und es gibt kein Konto, dem
+                man sie zuordnen könnte.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Nutzt die Anzeige meine Werbe-ID?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Die App entfernt die AD_ID-Berechtigung, es gibt also keine Werbe-ID, die man
+                nutzen könnte. Jede Anfrage ist nicht personalisiert, und im EWR und in
+                Großbritannien regelt ein Einwilligungsformular, ob überhaupt eine Anzeige angefragt
+                wird.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Was schaltet der Schalter für die Statistiken ab?</summary>
+            <div class="faq__body">
+              <p>
+                Alle anonymen Bildschirm-Statistiken. Spendwise sendet anonyme Bildschirmaufrufe,
+                die an Routennamen hängen, ohne Nutzerkennung und ohne Buchungsinhalt. Schaltest du
+                die Statistiken in den Einstellungen aus, hören diese Ereignisse ganz auf; aus heißt
+                aus, nicht weniger.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Welche Berechtigungen fragt Spendwise an?</summary>
+            <div class="faq__body">
+              <p>
+                Benachrichtigungen, für die tägliche Erinnerung und Erinnerungen an wiederkehrende
+                Rechnungen. Belege kommen über Androids System-Fotoauswahl und Dokumentauswahl, die
+                keine Berechtigung brauchen. Die App-Sperre nutzt deine vorhandene Geräte-PIN, dein
+                Muster oder deine Biometrie. Es gibt keine Berechtigung für Kontakte, Standort,
+                Kamera oder Werbe-ID.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Ist die Sicherungsdatei verschlüsselt?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Die <code>.spendwise</code>-Datei ist ein unverschlüsseltes Archiv der
+                Datenbank und deiner Anhänge. Behandle sie wie einen Kontoauszug und bewahre sie an
+                einem Ort auf, dem du vertraust. Die Schritte zum Sichern stehen in der
+                <a href="/support" hreflang="en" lang="en">FAQ zum Support</a>.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Weitere Leitfäden">
+            <h2>Weitere Leitfäden</h2>
+            <ul>
+              <li>
+                <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en"
+                  >Spendee vs Spendwise</a
+                >
+              </li>
+              <li>
+                <a href="/de/offline-expense-tracker"
+                  >Offline expense tracker</a
+                >
+              </li>
+              <li>
+                <a href="/expense-tracker-without-signup" hreflang="en" lang="en"
+                  >Expense tracker without signup</a
+                >
+              </li>
+              <li>
+                <a href="/split-expenses-with-friends" hreflang="en" lang="en"
+                  >Split expenses with friends</a
+                >
+              </li>
+              <li>
+                <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en"
+                  >Spendwise vs spreadsheet</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Ausgaben, die auf deinem Handy bleiben</h2>
+          <p>
+            Kein Konto, keine Tracking-ID, keine Cloud-Kopie. Statistiken lassen sich abschalten, und
+            das <a href="/de/offline-expense-tracker">Ledger funktioniert offline</a>.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >Datenschutzerklärung lesen</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

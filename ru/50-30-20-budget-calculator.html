@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор бюджета 50/30/20: разделить доход</title>
+    <meta
+      name="description"
+      content="Разложите зарплату на нужды, желания и накопления по правилу 50/30/20. Бесплатно, без аккаунта — и честно о том, когда правило перестаёт подходить."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/50-30-20-budget-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/50-30-20-budget-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Калькулятор бюджета 50/30/20: разделить доход" />
+    <meta
+      property="og:description"
+      content="Бесплатный калькулятор 50/30/20, математика за ним и что делать, когда аренда съедает больше половины зарплаты."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/50-30-20-budget-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Калькулятор бюджета 50/30/20",
+            "item": "https://spendwise.download/ru/50-30-20-budget-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "50/30/20 — это от зарплаты до налогов или на руки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На руки: столько, сколько действительно приходит на счёт после налогов и любых вычетов в пенсионный фонд или по месту работы. Зарплата до налогов раздувает каждую часть, и бюджет, который красиво выглядит на бумаге, не сходится в банке."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что считается нуждой в правиле 50/30/20?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Аренда или ипотека, коммунальные услуги, продукты, дорога на работу, страховка, минимальные платежи по долгам и необходимые лекарства. Нужда — всё, что вы продолжили бы платить, оставшись без работы. Спортзал, от которого можно отказаться, подписка на стриминг и вторая машина — желания."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "А если одна только аренда больше 50%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Правило — отправная точка, а не закон. В дорогом городе честная версия — 60/20/20 или 70/20/10: сохраните настоящие 20% на накопления и долги, а нехватку возьмите прежде всего из желаний. Урезать накопления, чтобы защитить желания, — перевёрнутый приоритет."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Калькулятор сохраняет мой доход?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Вычисления идут в вашем браузере, никуда ничего не отправляется, и сайт не загружает сторонних скриптов. Перезагрузка страницы стирает всё, что вы ввели."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Приложение Spendwise — это бюджет 50/30/20?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Не совсем. Spendwise ведёт один месячный бюджет и резервирует под него известные регулярные платежи, так что остаток — это то, что можно свободно тратить. Выберите здесь итоговые суммы, затем задайте цифру 50% как месячный бюджет и записывайте расходы против него."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/50-30-20-budget-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/50-30-20-budget-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/50-30-20-budget-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/50-30-20-budget-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/50-30-20-budget-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/50-30-20-budget-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/50-30-20-budget-calculator" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/50-30-20-budget-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/50-30-20-budget-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/50-30-20-budget-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/50-30-20-budget-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/50-30-20-budget-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Бесплатный инструмент</p>
+          <h1>Калькулятор бюджета 50/30/20</h1>
+          <p class="doc-hero__lede">
+            Разложите зарплату на руки на нужды, желания и накопления за один шаг — а потом
+            прочитайте, что правило оставляет за скобками. Без аккаунта, без регистрации, без
+            трекинг-ID: все вычисления идут в вашем браузере.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Ввод:</strong> зарплата на руки &nbsp;·&nbsp; <strong>Цена:</strong> бесплатно
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="budget" aria-labelledby="budget-heading">
+            <h2 class="tool__title" id="budget-heading">Ваши числа</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="budget-income">
+                <span>Зарплата на руки за месяц · после налогов и других вычетов</span>
+                <input
+                  id="budget-income"
+                  name="income"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="4000"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>Разбивка</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Нужды · 50%</dt>
+                  <dd data-out="needs">2 000,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Желания · 30%</dt>
+                  <dd data-out="wants">1 200,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Накопления и долги · 20%</dt>
+                  <dd data-out="savings">800,00</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>В день · месяц из 30 дней</dt>
+                  <dd data-out="day">133,33</dd>
+                </div>
+              </dl>
+              <p class="tool__note">
+                Суммы указаны в той валюте, которую вы вводите, и округляются до копейки. Это
+                плановый инструмент, а не бухгалтерская книга: он ничего не сохраняет.
+              </p>
+            </div>
+            <noscript>
+              <p>
+                Калькулятору нужен JavaScript. Правило при этом простое: 50% зарплаты на руки —
+                нужды, 30% — желания, 20% — накопления и выплаты по долгам. Половина, треть,
+                пятая часть.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="what-it-is">Что на самом деле говорит правило 50/30/20</h2>
+          <p>
+            Правило стало известным благодаря книге Elizabeth Warren и Amelia Warren Tyagi
+            <em>All Your Worth</em> (2005). Утверждение узкое и полезное: из денег, которые
+            приходят на счёт, половину можно отдать обязательствам, три десятых — повседневной
+            жизни, а пятую часть — будущему. В этой разбивке ничего не зависит от вашей зарплаты,
+            страны или банка.
+          </p>
+          <p>
+            Сила правила в том, что это <strong>потолок для нужд</strong>, а не цель. Большинство
+            советов по бюджету говорят тратить меньше и откладывать больше, не объясняя, что значит
+            «меньше». Здесь линия 50% — диагностика: если необходимые расходы её перешли, проблема
+            структурная — аренда, дорога, детский сад, — и никакое приложение со скидками её не
+            решает.
+          </p>
+
+          <h2 id="how-to-read">Как читать три числа</h2>
+          <ul>
+            <li>
+              <strong>Нужды, 50%.</strong> Аренда или ипотека, коммунальные услуги, продукты, дорога
+              на работу, страховка, минимальные платежи по долгам, необходимые лекарства. Проверка
+              простая: вы платили бы за это в первый месяц без работы?
+            </li>
+            <li>
+              <strong>Желания, 30%.</strong> Рестораны, подписки, путешествия, хобби, телефон лучше,
+              чем нужен. Эта часть платит за нехватку, когда две другие стеснены, — и сюда же стоит
+              смотреть первым, если накопления проседают.
+            </li>
+            <li>
+              <strong>Накопления и долги, 20%.</strong> Резервный фонд, пенсия, инвестиции и всё,
+              что сверх минимума по кредиту. Погашение дорогого долга — самая доходная форма
+              накоплений, поэтому оно здесь, а не в нуждах.
+            </li>
+          </ul>
+          <p>
+            На 4 000 в месяц это 2 000, 1 200 и 800. Дневная цифра — около 133 — не из исходного
+            правила. Она нужна потому, что месячная сумма слишком велика, чтобы почувствовать её за
+            неделю, а вопрос «хватит ли мне на это сегодня» люди задают чаще всего.
+          </p>
+
+          <h2 id="blur">Где категории расплываются</h2>
+          <p>
+            Любой спор о 50/30/20 — на самом деле спор об одной трате. Несколько решений, которые
+            выдерживают проверку:
+          </p>
+          <ul>
+            <li>
+              <strong>Продукты — нужда, доставка — желание.</strong> Разделяйте их. Привычка
+              заказывать еду, записанная в «продукты», может скрывать четырёхзначный годовой бюджет
+              желаний.
+            </li>
+            <li>
+              <strong>Машина — смешанный случай.</strong> Кредит, страховка и топливо для дороги на
+              работу — нужды; улучшенная комплектация — нет. Если в крайнем случае можно ездить
+              автобусом, честная цифра нужд — стоимость проезда, а разница — желание.
+            </li>
+            <li>
+              <strong>Спортзал — желание, если его не назначил врач.</strong> Абонементы, от которых
+              вы отказались бы в плохой месяц, по определению желания, какими бы полезными они ни
+              были.
+            </li>
+            <li>
+              <strong>Минимальные платежи по долгам — нужды; досрочные — накопления.</strong> Иначе
+              крупный кредит выталкивает необходимые расходы за 50% и план рушится.
+            </li>
+          </ul>
+
+          <h2 id="when-it-fails">Когда правило не подходит</h2>
+          <p>
+            Разбивка 50/30/20 предполагает, что жильё стоит заметно меньше половины вашей зарплаты.
+            В Лондоне, Дублине, Торонто, Сиднее, Мумбаи или Сан-Франциско — или с одним доходом и
+            ребёнком — это предположение часто неверно. Три честных варианта:
+          </p>
+          <ul>
+            <li>
+              <strong>60/20/20.</strong> Жильё поднимает нужды до 60%. Желания сжимаются до 20%, а
+              накопления остаются на 20%, потому что будущее — единственная часть, которую нельзя
+              занять обратно.
+            </li>
+            <li>
+              <strong>70/20/10.</strong> Дорогой город и стартовая зарплата. Десять процентов — уже
+              привычка; ноль — нет.
+            </li>
+            <li>
+              <strong>Метод нулевой суммы.</strong> В начале месяца каждая единица дохода получает
+              назначение. Больше работы, чем с процентами, и лучше для нерегулярной оплаты.
+            </li>
+          </ul>
+          <p>
+            Переменный доход требует другой механики: считайте бюджет от самого низкого месяца за
+            последнее время, а излишек отправляйте в накопления — вместо того чтобы считать от
+            лучшего месяца и надеяться. Процент остаётся полезной проверкой в конце года, а не
+            месячной инструкцией.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="Обзор Spendwise за октябрь 2026: потрачено $2 095,50 за месяц при бюджете $6 000,00 с пометкой, что бюджет соблюдается, доход $5 320,00 и чистый остаток $3 224,50, полоса групп и регулярные платежи, которые ещё предстоит записать."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Один месячный бюджет, из которого заранее зарезервированы ещё не записанные платежи.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="Отчёт за октябрь 2026: потрачено $2 095,50 при бюджете $6 000,00, доход и чистое сальдо, а круговая диаграмма расходов по категориям начинается с аренды — $1 400,00."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Категории месяца — их удобно сравнить с вашей разбивкой.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="automate">Пусть 20% уходят раньше, чем вы их увидите</h2>
+          <p>
+            Разбивка, которая держится на силе воли, проигрывает той, что держится на регулярном
+            переводе. Переводите 20% в день зарплаты, а не в конце месяца, и держите их на счёте, до
+            которого слегка лень добираться. То же с регулярными платежами: если аренда и
+            коммунальные уходят в известные даты, эти деньги уже потрачены, что бы ни показывал
+            баланс.
+          </p>
+          <p>
+            Остаётся вопрос — сколько я на самом деле потратил. Это задача учёта, а не планирования.
+            Spendwise хранит журнал как локальную базу SQLite на телефоне, с одним месячным
+            бюджетом, который резервирует известные регулярные платежи, напоминанием в 19:00 и
+            экспортом в PDF или XLSX в конце месяца. Приложение не считает разбивку 50/30/20:
+            задайте 50% как бюджет, записывайте траты и сравнивайте отчёт с планом.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+          <details class="faq">
+            <summary>50/30/20 — это от зарплаты до налогов или на руки?</summary>
+            <div class="faq__body">
+              <p>
+                На руки: столько, сколько действительно приходит на счёт после налогов и любых
+                вычетов в пенсионный фонд или по месту работы. Зарплата до налогов раздувает каждую
+                часть, и бюджет, который красиво выглядит на бумаге, не сходится в банке.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Что считается нуждой в правиле 50/30/20?</summary>
+            <div class="faq__body">
+              <p>
+                Аренда или ипотека, коммунальные услуги, продукты, дорога на работу, страховка,
+                минимальные платежи по долгам и необходимые лекарства. Нужда — всё, что вы
+                продолжили бы платить, оставшись без работы. Спортзал, от которого можно отказаться,
+                подписка на стриминг и вторая машина — желания.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>А если одна только аренда больше 50%?</summary>
+            <div class="faq__body">
+              <p>
+                Правило — отправная точка, а не закон. В дорогом городе честная версия — 60/20/20
+                или 70/20/10: сохраните настоящие 20% на накопления и долги, а нехватку возьмите
+                прежде всего из желаний. Урезать накопления, чтобы защитить желания, — перевёрнутый
+                приоритет.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Калькулятор сохраняет мой доход?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Вычисления идут в вашем браузере, никуда ничего не отправляется, и сайт не
+                загружает сторонних скриптов. Перезагрузка страницы стирает всё, что вы ввели.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Приложение Spendwise — это бюджет 50/30/20?</summary>
+            <div class="faq__body">
+              <p>
+                Не совсем. Spendwise ведёт один месячный бюджет и резервирует под него известные
+                регулярные платежи, так что остаток — это то, что можно свободно тратить. Выберите
+                здесь итоговые суммы, затем задайте цифру 50% как месячный бюджет и записывайте
+                расходы против него.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Больше инструментов и гайдов">
+            <h2>Больше инструментов и гайдов</h2>
+            <ul>
+              <li><a href="/ru/split-bill-calculator">Калькулятор разделения счёта</a></li>
+              <li><a href="/ru/subscription-cost-calculator">Калькулятор стоимости подписок</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+              <li><a href="/ru/offline-expense-tracker">Офлайн-учёт расходов</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Сначала план, потом учёт трат</h2>
+          <p>
+            Spendwise бесплатен, аккаунт не нужен, трекинг-ID нет. Задайте бюджет, записывайте
+            траты, выгружайте месяц.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dbudget_50_30_20"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/private-expense-tracker">Читать страницу о приватности</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

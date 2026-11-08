@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calcolatrice per dividere il conto: quote esatte</title>
+    <meta
+      name="description"
+      content="Dividi un conto tra quante persone vuoi, mancia inclusa. Arrotondamento al centesimo intero, nessun account, e i casi in cui la divisione equa è ingiusta."
+    />
+    <link rel="canonical" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-bill-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-bill-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-bill-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-bill-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-bill-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-bill-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-bill-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-bill-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-bill-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-bill-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-bill-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-bill-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Calcolatrice per dividere il conto: quote esatte" />
+    <meta
+      property="og:description"
+      content="Conto, mancia e numero di persone, divisi al centesimo. E quando la divisione equa è la risposta sbagliata."
+    />
+    <meta property="og:url" content="https://spendwise.download/it/split-bill-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Il marchio Spendwise: un anello di avanzamento bianco con segno di spunta su un campo sfumato blu."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/it/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calcolatrice per dividere il conto",
+            "item": "https://spendwise.download/it/split-bill-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "La mancia si calcola prima o dopo le tasse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sul subtotale al netto delle tasse, che è l'usanza negli Stati Uniti e la più semplice delle due letture. Inserisci qui il conto al netto delle tasse ed è corretto al primo colpo. Dove il conto include già un servizio, metti la mancia a zero invece di aggiungerne una seconda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Come divido un conto in modo non uniforme?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prima salda le voci, poi dividi il resto. Assegna ogni piatto a chi l'ha mangiato, dividi in parti uguali i piatti condivisi e la mancia, e somma le due parti. Le divisioni proporzionali al reddito sono difendibili per l'affitto, non per un conto al ristorante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual è il modo più giusto di gestire il centesimo rimasto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dai il centesimo in più a una persona, o a chi raccoglie le quote. Mai arrotondare per eccesso ogni quota: quattro persone che arrotondano una quota di 53,87 a 54 pagano 216,00 contro un conto di 215,51, e chi raccoglie si intasca la differenza senza averlo deciso."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Questa calcolatrice conserva il conto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Tutto è calcolato nella pagina, nulla viene caricato e non ci sono cookie né script di terze parti. Chiudendo la scheda i dati spariscono."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Come gestisce Spendwise le spese condivise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un gruppo è un registro a sé con budget e categorie propri, così un viaggio o una casa condivisa non si mescolano alle spese personali. Una persona tiene il registro, e l'app segue chi deve cosa attraverso i saldi delle persone. Non offre modifica condivisa in tempo reale, quindi un gruppo ha bisogno di un custode e non di due redattori."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Vai al contenuto</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/it/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navigazione principale">
+          <a href="/#features">Funzioni</a>
+          <a href="/#gallery">Galleria</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/support" hreflang="en" lang="en">Assistenza</a>
+          <a href="/privacy" hreflang="en" lang="en">Informativa sulla privacy</a>
+          <a href="/terms" hreflang="en" lang="en">Termini e condizioni</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-bill-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/split-bill-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-bill-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-bill-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-bill-calculator" hreflang="it" lang="it" aria-current="true">Italiano</a>
+          <a href="/pt-br/split-bill-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-bill-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-bill-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-bill-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-bill-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-bill-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-bill-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Strumento gratuito</p>
+          <h1>Calcolatrice per dividere il conto</h1>
+          <p class="doc-hero__lede">
+            Un conto, una mancia e un numero di persone. La calcolatrice divide al centesimo e dice
+            esattamente dove finisce il centesimo rimasto. Nessun account, nessun ID di tracciamento,
+            nulla lascia la pagina.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aggiornato:</strong> 20 ottobre 2026 &nbsp;·&nbsp;
+            <strong>Arrotondamento:</strong> centesimi interi &nbsp;·&nbsp;
+            <strong>Costo:</strong> gratuito
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form
+            class="tool"
+            data-calc="split"
+            aria-labelledby="split-heading"
+            data-msg-even="Divisione esatta: {each} ciascuno, {people} in tutto."
+            data-msg-one="{remainder} persona paga un centesimo in più ({high}); alle altre tocca {each}. Il totale è esatto: non arrotondare mai per eccesso tutte le quote."
+            data-msg-many="{remainder} delle {people} persone pagano un centesimo in più ({high}); alle altre tocca {each}. Il totale è esatto: non arrotondare mai per eccesso tutte le quote."
+          >
+            <h2 class="tool__title" id="split-heading">Il tuo conto</h2>
+            <div class="tool__grid">
+              <label class="tool__field" for="split-bill">
+                <span>Conto, mancia esclusa</span>
+                <input
+                  id="split-bill"
+                  name="bill"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  value="187.40"
+                />
+              </label>
+              <label class="tool__field" for="split-tip">
+                <span>Mancia, percentuale</span>
+                <input
+                  id="split-tip"
+                  name="tip"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="15"
+                />
+              </label>
+              <label class="tool__field" for="split-people">
+                <span>Persone</span>
+                <input
+                  id="split-people"
+                  name="people"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="4"
+                />
+              </label>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>La divisione</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Mancia</dt>
+                  <dd data-out="tip">28,11</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Totale da pagare</dt>
+                  <dd data-out="total">215,51</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Quota a testa</dt>
+                  <dd data-out="each">53,87</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Quota più alta</dt>
+                  <dd data-out="high">53,88</dd>
+                </div>
+              </dl>
+              <p class="tool__note" data-note="split"></p>
+            </div>
+            <noscript>
+              <p>
+                La calcolatrice richiede JavaScript. Fallo a mano: aggiungi la percentuale di mancia
+                al conto, poi dividi per il numero di persone e dai il centesimo rimasto a una sola
+                persona.
+              </p>
+            </noscript>
+          </form>
+
+          <h2 id="how">Come funziona questa divisione</h2>
+          <p>
+            La mancia si calcola sul conto al netto delle tasse, si aggiunge al totale e il totale si
+            divide per il numero di persone. L'ordine conta: calcolare la mancia sull'importo tasse
+            incluse gonfia la mancia di quanto vale l'aliquota locale, e su un conto di 187,40 con il
+            15% sono 4,20 che nessuno intendeva lasciare.
+          </p>
+          <p>
+            La divisione è in <strong>centesimi interi</strong>, mai in virgola mobile. Un conto di
+            215,51 diviso tra quattro persone non si divide in parti uguali, quindi le quote sono
+            53,87 ciascuna e una persona paga 53,88. L'alternativa — arrotondare per eccesso ogni
+            quota — è come chi raccoglie finisce con un profitto silenzioso, e come nasce una
+            discussione nella chat del gruppo.
+          </p>
+
+          <h2 id="tipping">Mancia, servizio e cosa il conto include già</h2>
+          <p>
+            Le usanze sulla mancia viaggiano male, e una calcolatrice non può rimediare; può almeno
+            non peggiorare le cose. Tre regole che tengono onesta l'aritmetica:
+          </p>
+          <ul>
+            <li>
+              <strong>Controlla prima se c'è il servizio.</strong> Una riga che dice «servizio 12,5%»
+              significa che la mancia è già sul conto. Metti la mancia a zero e dividi il totale,
+              altrimenti stai lasciando la mancia due volte.
+            </li>
+            <li>
+              <strong>Mancia sul subtotale, non sulle tasse.</strong> Inserisci la cifra al netto
+              delle tasse. Se il conto mostra solo il totale, dividi per uno più l'aliquota per
+              ricavarla.
+            </li>
+            <li>
+              <strong>Mettetevi d'accordo prima che arrivi il POS.</strong> Decidere la mancia mentre
+              il terminale chiede una percentuale è come un tavolo da cinque finisce per pagare il
+              25%.
+            </li>
+          </ul>
+
+          <h2 id="unfair">Quando una divisione equa è la risposta sbagliata</h2>
+          <p>
+            Una divisione equa è veloce e di solito abbastanza giusta. Smette di esserlo quando la
+            spesa è sbilanciata — una bottiglia di vino, una bistecca, una persona che ha ordinato un
+            antipasto ed è andata via prima.
+          </p>
+          <ul>
+            <li>
+              <strong>Per voce.</strong> Assegna ogni riga a chi l'ha ordinata, dividi in parti uguali
+              i piatti condivisi e la mancia, poi somma. Più preciso, un po' imbarazzante, e la scelta
+              giusta quando la differenza è grande.
+            </li>
+            <li>
+              <strong>Per portata.</strong> Una via di mezzo: separa bevande e dessert, dividi il cibo
+              in parti uguali. Gestisce gran parte dell'imbarazzo senza fare il conto voce per voce.
+            </li>
+            <li>
+              <strong>Non per reddito.</strong> Le divisioni proporzionali allo stipendio hanno senso
+              per affitto e bollette, non per una cena. Chi guadagna di più non deve di più per la tua
+              pasta.
+            </li>
+          </ul>
+          <p>
+            Per i costi condivisi ricorrenti — affitto, utenze, la spesa di una casa — anche la
+            divisione equa è di solito la scelta sbagliata, perché il consumo non è equo. Una
+            divisione ponderata per persona (due nella stanza grande, una in quella piccola) dura più
+            di una uguale che qualcuno cova in silenzio.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="La schermata di un gruppo per ottobre 2026: 553,00 $ spesi su un budget di gruppo di 800,00 $ contrassegnato come In linea, le persone con saldi aperti e un pulsante Aggiungi spesa."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Un registro condiviso con budget e saldi propri.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="La schermata Persone con Alex, che deve 245,00 $, e Sam, a cui sono dovuti 500,00 $, ciascuno con il saldo aggiornato e un'azione Aggiungi persona."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Denaro prestato e preso in prestito, tenuto come saldo aggiornato.</figcaption>
+            </figure>
+          </div>
+
+          <h2 id="tracking">Dividere una volta, tenere il conto tutto il mese</h2>
+          <p>
+            Una calcolatrice risponde a una cena. La versione difficile è una casa condivisa o un
+            viaggio dove venti piccoli pagamenti si susseguono in due settimane e nessuno ricorda chi
+            ha coperto cosa. È un problema di registro, e una chat è un pessimo registro.
+          </p>
+          <p>
+            In Spendwise un gruppo è un registro a sé — budget proprio, categorie proprie — così un
+            viaggio non contamina il mese personale. Le spese aggiunte al gruppo convivono con i saldi
+            delle persone per il denaro prestato e preso in prestito, e la schermata del gruppo mostra
+            chi è in attivo e chi in passivo. Lo scambio è esplicito:
+            <strong>una persona tiene il registro</strong>. Non c'è modifica condivisa in tempo reale,
+            quindi il gruppo ha bisogno di un custode che registri, e tutti gli altri vedono il
+            totale.
+          </p>
+          <p>
+            Quando il viaggio finisce, i numeri sono già lì: nessuna ricostruzione da screenshot, e il
+            report mensile porta la spesa del gruppo separata dal budget domestico.
+          </p>
+
+          <h2 id="faq">Domande frequenti</h2>
+          <details class="faq">
+            <summary>La mancia si calcola prima o dopo le tasse?</summary>
+            <div class="faq__body">
+              <p>
+                Sul subtotale al netto delle tasse, che è l'usanza negli Stati Uniti e la più semplice
+                delle due letture. Inserisci qui il conto al netto delle tasse ed è corretto al primo
+                colpo. Dove il conto include già un servizio, metti la mancia a zero invece di
+                aggiungerne una seconda.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Come divido un conto in modo non uniforme?</summary>
+            <div class="faq__body">
+              <p>
+                Prima salda le voci, poi dividi il resto. Assegna ogni piatto a chi l'ha mangiato,
+                dividi in parti uguali i piatti condivisi e la mancia, e somma le due parti. Le
+                divisioni proporzionali al reddito sono difendibili per l'affitto, non per un conto al
+                ristorante.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Qual è il modo più giusto di gestire il centesimo rimasto?</summary>
+            <div class="faq__body">
+              <p>
+                Dai il centesimo in più a una persona, o a chi raccoglie le quote. Mai arrotondare per
+                eccesso ogni quota: quattro persone che arrotondano una quota di 53,87 a 54 pagano
+                216,00 contro un conto di 215,51, e chi raccoglie si intasca la differenza senza
+                averlo deciso.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Questa calcolatrice conserva il conto?</summary>
+            <div class="faq__body">
+              <p>
+                No. Tutto è calcolato nella pagina, nulla viene caricato e non ci sono cookie né
+                script di terze parti. Chiudendo la scheda i dati spariscono.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Come gestisce Spendwise le spese condivise?</summary>
+            <div class="faq__body">
+              <p>
+                Un gruppo è un registro a sé con budget e categorie propri, così un viaggio o una casa
+                condivisa non si mescolano alle spese personali. Una persona tiene il registro, e
+                l'app segue chi deve cosa attraverso i saldi delle persone. Non offre modifica
+                condivisa in tempo reale, quindi un gruppo ha bisogno di un custode e non di due
+                redattori — vedi
+                <a href="/it/split-expenses-with-friends">la versione più lunga</a>.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Altri strumenti e guide">
+            <h2>Altri strumenti e guide</h2>
+            <ul>
+              <li>
+                <a href="/it/50-30-20-budget-calculator">Calcolatrice budget 50/30/20</a>
+              </li>
+              <li>
+                <a href="/it/subscription-cost-calculator"
+                  >Calcolatrice del costo degli abbonamenti</a
+                >
+              </li>
+              <li><a href="/it/split-expenses-with-friends">Dividere le spese con gli amici</a></li>
+              <li><a href="/it/private-expense-tracker">Registro spese privato</a></li>
+              <li><a href="/it/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/it/expense-tracker-vs-spreadsheet">Spendwise vs foglio di calcolo</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Tieni il registro del gruppo in un solo posto</h2>
+          <p>
+            Gratuito, senza account, nessun ID di tracciamento. Un registro di gruppo, i saldi delle
+            persone e un mese che puoi esportare.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=it&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit_bill_calculator"
+              rel="noopener"
+              >Scarica su Google Play</a
+            >
+            <a class="btn btn--ghost" href="/it/split-expenses-with-friends"
+              >Come funzionano le spese condivise</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/it/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un tracker di spese privato per Android, che funziona senza internet. Le tue spese
+              appartengono al tuo telefono.
+            </p>
+          </div>
+          <div>
+            <h2>Prodotto</h2>
+            <ul>
+              <li><a href="/#features">Funzioni</a></li>
+              <li><a href="/#gallery">Galleria</a></li>
+              <li><a href="/#privacy">Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Note legali</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Informativa sulla privacy</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Termini e condizioni</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Assistenza</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Assistenza e FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Tutti i diritti riservati.</span>
+          <span>Per Android 10 e versioni successive.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

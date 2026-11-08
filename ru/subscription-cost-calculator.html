@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор стоимости подписок: месяц и год</title>
+    <meta
+      name="description"
+      content="Сложите все подписки, месячные и годовые, и увидите настоящую сумму за год. Бесплатно, без аккаунта, и как сократить забытые."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Калькулятор стоимости подписок: месяц и год" />
+    <meta
+      property="og:description"
+      content="Соберите все регулярные списания, посмотрите годовую сумму и сравните годовую оплату с месячной."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Калькулятор стоимости подписок",
+            "item": "https://spendwise.download/ru/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Годовая оплата всегда дешевле?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Сравните годовую цену с двенадцатью месячными платежами. Частый вариант — десять месяцев по цене года, скидка около 17%, но некоторые сервисы берут надбавку за годовой тариф или убирают из него месячную функцию. Считайте сами, а не верьте значку."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Почему подписки кажутся дешевле, чем они есть?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Потому что цену называют за месяц, а списывают тихо. Три сервиса по 9,99 читаются как примерно десять в месяц, а не 360 в год. Пересчёт на год — единственный взгляд, который сравнивает подписку с покупкой."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как найти подписки, о которых я забыл?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Поищите в выписках за последние двенадцать месяцев повторяющиеся списания, затем проверьте список подписок в магазине приложений и письма о продлении. Обычно виноваты пробные периоды, которые конвертировались: первое списание приходит уже после того, как решение принято."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Калькулятор куда-то отправляет мои подписки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Всё считается на странице и никогда не покидает браузер. Куки, сторонних скриптов и сервера, который хранил бы список, нет."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise напомнит о продлении подписки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spendwise хранит регулярные расписания для известных платежей и резервирует их сумму в месячном бюджете, с напоминаниями по категориям. К банку он не подключается, поэтому подписку нужно внести один раз — дальше она появляется как платёж к оплате, а не находится автоматически."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Бесплатный инструмент</p>
+          <h1>Калькулятор стоимости подписок</h1>
+          <p class="doc-hero__lede">
+            Внесите каждое регулярное списание один раз и увидите, во сколько оно обходится в месяц,
+            в год и за пять лет. Без аккаунта, без трекинг-ID, и ничего из введённого не покидает
+            страницу.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Периодичность:</strong> месяц или год &nbsp;·&nbsp;
+            <strong>Цена:</strong> бесплатно
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">Ваши подписки</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Название</span>
+                  <input type="text" name="label" value="Стриминг" />
+                </label>
+                <label class="tool__field">
+                  <span>Сумма</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Списание</span>
+                  <select name="cycle">
+                    <option value="monthly">Ежемесячно</option>
+                    <option value="yearly">Ежегодно</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Удалить</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Название</span>
+                  <input type="text" name="label" value="Музыка" />
+                </label>
+                <label class="tool__field">
+                  <span>Сумма</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Списание</span>
+                  <select name="cycle">
+                    <option value="monthly">Ежемесячно</option>
+                    <option value="yearly">Ежегодно</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Удалить</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Название</span>
+                  <input type="text" name="label" value="Облачное хранилище" />
+                </label>
+                <label class="tool__field">
+                  <span>Сумма</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Списание</span>
+                  <select name="cycle">
+                    <option value="monthly">Ежемесячно</option>
+                    <option value="yearly" selected>Ежегодно</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Удалить</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              Годовое списание считается как одна двенадцатая в месяц, поэтому месячная сумма —
+              усреднённая, а не выписка из банка.
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>Добавить подписку</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>Итог</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>В месяц</dt>
+                  <dd data-out="monthly">35,31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>В год</dt>
+                  <dd data-out="yearly">423,72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Пять лет</dt>
+                  <dd data-out="five">2 118,60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>В день</dt>
+                  <dd data-out="day">1,18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                Калькулятору нужен JavaScript. Посчитайте вручную: сложите месячные списания,
+                разделите каждое годовое на двенадцать и прибавьте к месячной сумме.
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Название</span>
+                  <input type="text" name="label" value="" placeholder="Подписка" />
+                </label>
+                <label class="tool__field">
+                  <span>Сумма</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Списание</span>
+                  <select name="cycle">
+                    <option value="monthly">Ежемесячно</option>
+                    <option value="yearly">Ежегодно</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Удалить</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">Почему честный взгляд — только годовой</h2>
+          <p>
+            Цены на подписки рассчитаны на то, что их читают за месяц. Десять в месяц ощущаются как
+            кофе; это ещё и 120 в год, и именно эту цифру стоит сравнивать с покупкой, отпуском или
+            резервным фондом, который вы так и не начали. Калькулятор нужен для одного умножения,
+            которое вы не сделаете в уме.
+          </p>
+          <p>
+            Годовые списания делятся на двенадцать, а не указываются отдельно, потому что смешанному
+            списку нужна одна общая единица. Подвох реальный, и о нём стоит сказать: годовой тариф
+            99,99 в облаке показывается как 8,33 в месяц, но в выписке за март будет 99,99.
+            Бюджетируйте среднее и держите на счёте запас на месяц, когда списание придёт.
+          </p>
+
+          <h2 id="compare">Годовая оплата против месячной</h2>
+          <p>
+            Скидка за оплату года вперёд — обычное дело, но это цена с условиями, а не подарок. Взять
+            её или нет, решают три вопроса:
+          </p>
+          <ul>
+            <li>
+              <strong>Какова скидка на самом деле?</strong> Умножьте месячную цену на двенадцать и
+              сравните. Год по цене десяти — примерно 17%; год по цене одиннадцати — около 8%, и,
+              возможно, не стоит замораживать деньги ради этого.
+            </li>
+            <li>
+              <strong>Будете ли вы этим пользоваться на одиннадцатом месяце?</strong> Экономия
+              реальна, только если подписка доживёт. Сервис, от которого вы отказались бы на
+              четвёртом месяце, при годовой оплате стоит дороже, а не дешевле.
+            </li>
+            <li>
+              <strong>Можете ли вы позволить себе заморозить сумму?</strong> Заплатить 120 за месяц —
+              не то же, что платить 10 в месяц, даже когда суммы близки. Если это ляжет на
+              кредитную карту, скидка, скорее всего, отрицательная.
+            </li>
+          </ul>
+
+          <h2 id="audit">Аудит на пятнадцать минут, который правда сокращает расходы</h2>
+          <ol>
+            <li>
+              <strong>Найдите списания.</strong> Просмотрите выписки за двенадцать месяцев в поисках
+              одного и того же продавца, который появляется раз в месяц или раз в год, затем
+              проверьте список подписок в магазине приложений и письма о продлении в почте.
+            </li>
+            <li>
+              <strong>Запишите настоящую цену, с налогом.</strong> Цены в долларах часто указаны без
+              местного налога, а конвертировавшийся пробный период может списывать по ставке,
+              которую вы не выбирали.
+            </li>
+            <li>
+              <strong>Сортируйте по цене одного использования.</strong> Сервис за 12 в месяц,
+              которым пользуются каждый день, дёшев; сервис за 5, который открывают дважды в год, —
+              нет, что бы ни говорил значок.
+            </li>
+            <li>
+              <strong>Сначала отменяйте внизу списка.</strong> Цель не в нуле подписок, а в том,
+              чтобы каждое регулярное списание было таким, на которое вы подписались бы снова
+              сегодня.
+            </li>
+            <li>
+              <strong>Назначьте проверку продлений.</strong> Возвращайтесь на эту страницу, когда
+              пробный период вот-вот станет платным, или раз в квартал. Расползание происходит
+              постепенно — так и задумано.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="Раздел «Деньги»: месячный бюджет использован на 52%, 27 встроенных категорий, два человека и восемь регулярных расписаний, а под «Аналитикой» — отчёты и заметки."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Регулярные платежи и расписания, учтённые в бюджете.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Настройки: язык приложения, валюта USD, выбор оформления — «Системное», «Светлое» или «Тёмное», и пять акцентных цветов."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Приложение локальное: язык, валюта и тема — настройки устройства.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">Ловушка совместных тарифов</h2>
+          <p>
+            Семейные тарифы и годовая предоплата — вот где прячутся суммы подписок. Семейный тариф
+            за 179 в год на четверых дешевле на человека, чем четыре отдельных, — но только если
+            кто-то собирает доли, а это свой маленький журнал. Запишите, кто сколько должен при
+            продлении, или тариф станет подарком с неясным сроком.
+          </p>
+          <p>
+            То же с годовой оплатой на всю семью: карта одного человека, выгода нескольких. Балансы
+            людей в Spendwise существуют ровно для этого, а журнал группы держит общий тариф
+            отдельно от личных трат.
+          </p>
+
+          <h2 id="app">Как превратить итог в строку бюджета</h2>
+          <p>
+            Число, которое выдаёт эта страница, — хороший кандидат в регулярный платёж в Spendwise.
+            Внесите расписание один раз, и месячный бюджет зарезервирует его: сумма на экране обзора
+            — это деньги, которые можно тратить, а не уже обещанные. Подключения к банку и
+            автоматического поиска подписок нет: приложение знает только то, что вы ввели, поэтому и
+            уходит с телефона без аккаунта и трекинг-ID.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+          <details class="faq">
+            <summary>Годовая оплата всегда дешевле?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Сравните годовую цену с двенадцатью месячными платежами. Частый вариант —
+                десять месяцев по цене года, скидка около 17%, но некоторые сервисы берут надбавку
+                за годовой тариф или убирают из него месячную функцию. Считайте сами, а не верьте
+                значку.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Почему подписки кажутся дешевле, чем они есть?</summary>
+            <div class="faq__body">
+              <p>
+                Потому что цену называют за месяц, а списывают тихо. Три сервиса по 9,99 читаются
+                как примерно десять в месяц, а не 360 в год. Пересчёт на год — единственный взгляд,
+                который сравнивает подписку с покупкой.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Как найти подписки, о которых я забыл?</summary>
+            <div class="faq__body">
+              <p>
+                Поищите в выписках за последние двенадцать месяцев повторяющиеся списания, затем
+                проверьте список подписок в магазине приложений и письма о продлении. Обычно
+                виноваты пробные периоды, которые конвертировались: первое списание приходит уже
+                после того, как решение принято.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Калькулятор куда-то отправляет мои подписки?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Всё считается на странице и никогда не покидает браузер. Куки, сторонних
+                скриптов и сервера, который хранил бы список, нет.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Spendwise напомнит о продлении подписки?</summary>
+            <div class="faq__body">
+              <p>
+                Spendwise хранит регулярные расписания для известных платежей и резервирует их сумму
+                в месячном бюджете, с напоминаниями по категориям. К банку он не подключается,
+                поэтому подписку нужно внести один раз — дальше она появляется как платёж к оплате,
+                а не находится автоматически.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="Больше инструментов и гайдов">
+            <h2>Больше инструментов и гайдов</h2>
+            <ul>
+              <li><a href="/ru/50-30-20-budget-calculator">Калькулятор бюджета 50/30/20</a></li>
+              <li><a href="/ru/split-bill-calculator">Калькулятор разделения счёта</a></li>
+              <li><a href="/ru/offline-expense-tracker">Офлайн-учёт расходов</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/expense-tracker-vs-spendee">Spendee против Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Дайте итогу строку бюджета</h2>
+          <p>
+            Spendwise бесплатен, аккаунт не нужен, трекинг-ID нет. Внесите платёж один раз — и
+            бюджет зарезервирует его.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/ru/offline-expense-tracker">Что работает без сети</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

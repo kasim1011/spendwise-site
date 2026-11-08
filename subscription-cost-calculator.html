@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscription cost calculator: monthly to yearly</title>
+    <meta
+      name="description"
+      content="Add up every subscription, monthly and yearly, and see the real annual cost. Free, no account, and how to cut the ones you forgot about."
+    />
+    <link rel="canonical" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/subscription-cost-calculator" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/subscription-cost-calculator" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Subscription cost calculator: monthly to yearly" />
+    <meta
+      property="og:description"
+      content="Total every recurring charge, see the yearly figure, and compare annual billing against monthly."
+    />
+    <meta property="og:url" content="https://spendwise.download/subscription-cost-calculator" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Spendwise mark: a white progress ring and tick on a blue gradient field."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="/tools.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Subscription cost calculator",
+            "item": "https://spendwise.download/subscription-cost-calculator"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is annual billing always cheaper?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Compare the annual price with twelve monthly payments. A common pattern is ten months' worth for a year, about a 17% discount, but some services charge a premium for the annual plan or remove a monthly feature. Do the multiplication rather than trusting the badge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do subscriptions feel cheaper than they are?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because the price is quoted per month and charged quietly. Three services at 9.99 each read as roughly ten a month, not 360 a year. Annualising is the only view that compares a subscription with a purchase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I find subscriptions I forgot about?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Search your statements for the last twelve months for repeating charges, then check the app store's subscription list and your email for renewal receipts. Free trials that converted are the usual culprits, because the first charge arrives after the decision moment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the calculator send my subscriptions anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Entries are computed in the page and never leave the browser. There are no cookies, no third-party scripts and no server storing a list."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Spendwise remind me before a subscription renews?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spendwise keeps recurring schedules for known bills and reserves their amount against the monthly budget, with per-category reminders. It does not connect to a bank, so a subscription must be entered once and then appears as a bill due rather than being detected automatically."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#features">Features</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/subscription-cost-calculator" hreflang="en" lang="en" aria-current="true">English</a>
+          <a href="/de/subscription-cost-calculator" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/subscription-cost-calculator" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/subscription-cost-calculator" hreflang="es" lang="es">Español</a>
+          <a href="/it/subscription-cost-calculator" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/subscription-cost-calculator" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/subscription-cost-calculator" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/subscription-cost-calculator" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/subscription-cost-calculator" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/subscription-cost-calculator" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/subscription-cost-calculator" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/subscription-cost-calculator" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Free tool</p>
+          <h1>Subscription cost calculator</h1>
+          <p class="doc-hero__lede">
+            List every recurring charge once and see what it costs per month, per year and over five
+            years. No account, no tracking ID, and nothing you type leaves the page.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Updated:</strong> 20 October 2026 &nbsp;·&nbsp;
+            <strong>Billing:</strong> monthly or yearly &nbsp;·&nbsp; <strong>Cost:</strong> free
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <form class="tool" data-calc="subscriptions" aria-labelledby="subs-heading">
+            <h2 class="tool__title" id="subs-heading">Your subscriptions</h2>
+            <div class="tool__rows" data-rows>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Streaming" />
+                </label>
+                <label class="tool__field">
+                  <span>Amount</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="15.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Billed</span>
+                  <select name="cycle">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Remove</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Music" />
+                </label>
+                <label class="tool__field">
+                  <span>Amount</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="10.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Billed</span>
+                  <select name="cycle">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Remove</button>
+              </div>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="Cloud storage" />
+                </label>
+                <label class="tool__field">
+                  <span>Amount</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value="99.99"
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Billed</span>
+                  <select name="cycle">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly" selected>Yearly</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Remove</button>
+              </div>
+            </div>
+            <p class="tool__note">
+              A yearly charge is counted as one twelfth per month, so the monthly figure is an
+              average rather than a bank statement.
+            </p>
+            <div class="tool__actions">
+              <button class="btn btn--ghost" type="button" data-add>Add a subscription</button>
+            </div>
+            <div class="tool__out" aria-live="polite">
+              <h3>The total</h3>
+              <dl class="tool__figures">
+                <div class="tool__figure">
+                  <dt>Per month</dt>
+                  <dd data-out="monthly">35.31</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Per year</dt>
+                  <dd data-out="yearly">423.72</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Five years</dt>
+                  <dd data-out="five">2,118.60</dd>
+                </div>
+                <div class="tool__figure">
+                  <dt>Per day</dt>
+                  <dd data-out="day">1.18</dd>
+                </div>
+              </dl>
+            </div>
+            <noscript>
+              <p>
+                The calculator needs JavaScript. Do it by hand: add the monthly charges, divide each
+                yearly charge by twelve, and add that to the monthly total.
+              </p>
+            </noscript>
+            <template data-template>
+              <div class="tool__row" data-row>
+                <label class="tool__field tool__field--name">
+                  <span>Name</span>
+                  <input type="text" name="label" value="" placeholder="Subscription" />
+                </label>
+                <label class="tool__field">
+                  <span>Amount</span>
+                  <input
+                    type="number"
+                    inputmode="decimal"
+                    name="amount"
+                    min="0"
+                    step="0.01"
+                    value=""
+                  />
+                </label>
+                <label class="tool__field">
+                  <span>Billed</span>
+                  <select name="cycle">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                  </select>
+                </label>
+                <button class="tool__remove" type="button" data-remove>Remove</button>
+              </div>
+            </template>
+          </form>
+
+          <h2 id="annualise">Why annualising is the only honest view</h2>
+          <p>
+            Subscription pricing is designed to be read per month. Ten a month feels like a coffee;
+            it is also 120 a year, and that is the number to compare with a purchase, a holiday, or
+            the emergency fund you have not started. The calculator exists to do one multiplication
+            you will not do in your head.
+          </p>
+          <p>
+            Yearly charges are divided by twelve rather than listed separately, because a mixed list
+            needs one common unit. The catch is real and worth saying: a 99.99 annual cloud plan
+            shows as 8.33 a month, but the bank statement in March will show 99.99. Budget the
+            average, and keep enough in the account for the month it lands.
+          </p>
+
+          <h2 id="compare">Annual versus monthly billing</h2>
+          <p>
+            A discount for paying a year up front is common, but it is a price with conditions, not
+            a gift. Three questions decide whether it is worth taking:
+          </p>
+          <ul>
+            <li>
+              <strong>What is the actual discount?</strong> Multiply the monthly price by twelve and
+              compare. A year for the price of ten is roughly 17%; a year for the price of eleven is
+              about 8%, which may not be worth locking the money away.
+            </li>
+            <li>
+              <strong>Will you still be using it in month eleven?</strong> The saving is only real
+              if the subscription survives. A service you would have cancelled in month four costs
+              more on annual billing, not less.
+            </li>
+            <li>
+              <strong>Can you afford the float?</strong> Paying 120 in one month is not the same as
+              paying 10 a month, even when the totals are close. If it would sit on a credit card,
+              the discount is probably negative.
+            </li>
+          </ul>
+
+          <h2 id="audit">A fifteen-minute audit that actually cuts cost</h2>
+          <ol>
+            <li>
+              <strong>Find the charges.</strong> Search twelve months of statements for the same
+              merchant appearing monthly or yearly, then check the app store's own subscription list
+              and your email for renewal receipts.
+            </li>
+            <li>
+              <strong>Write down the real price, including tax.</strong> Prices quoted in dollars
+              often exclude local tax, and a trial that converted may be charging a rate you never
+              chose.
+            </li>
+            <li>
+              <strong>Rank by cost per use.</strong> A 12 monthly service used daily is cheap; a 5
+              one opened twice a year is not, whatever the badge says.
+            </li>
+            <li>
+              <strong>Cancel the bottom of the list first.</strong> The goal is not zero
+              subscriptions; it is that every recurring charge is one you would sign up for again
+              today.
+            </li>
+            <li>
+              <strong>Set a renewal check.</strong> Re-run this page when a free trial is about to
+              convert, or once a quarter. Creep is gradual by design.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="The Money hub listing the monthly budget at 52% used, 27 built-in categories, two tracked people and eight recurring schedules, with Reports and Notes under Insights."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Recurring bills and schedules, counted against the budget.</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="Settings showing the app language, the USD app currency, a System, Light or Dark appearance choice, and five accent colours."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                The app is local: language, currency and theme are device settings.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="sharing">The sharing trap</h2>
+          <p>
+            Family plans and annual prepay are where subscription totals hide. A family plan at 179
+            a year shared with four people is cheaper per head than four individual plans — but only
+            if someone collects the shares, which is a small ledger of its own. Note who owes what
+            when the plan renews, or the plan becomes a gift with an unclear duration.
+          </p>
+          <p>
+            The same applies to annual billing across a household: one person's card, several
+            people's benefits. Spendwise's people balances exist for exactly that, and a group
+            ledger keeps a shared plan separate from personal spending.
+          </p>
+
+          <h2 id="app">Turning the total into a budget line</h2>
+          <p>
+            The number this page produces is a good candidate for a recurring bill in Spendwise.
+            Enter the schedule once, and the monthly budget reserves it, so the figure left on the
+            dashboard is money you can spend rather than money that is already promised. There is no
+            bank connection and no subscription detection: the app knows only what you enter, which
+            is also why it leaves the phone with no account and no tracking ID.
+          </p>
+
+          <h2 id="faq">Frequently asked questions</h2>
+          <details class="faq">
+            <summary>Is annual billing always cheaper?</summary>
+            <div class="faq__body">
+              <p>
+                No. Compare the annual price with twelve monthly payments. A common pattern is ten
+                months' worth for a year, about a 17% discount, but some services charge a premium
+                for the annual plan or remove a monthly feature. Do the multiplication rather than
+                trusting the badge.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Why do subscriptions feel cheaper than they are?</summary>
+            <div class="faq__body">
+              <p>
+                Because the price is quoted per month and charged quietly. Three services at 9.99
+                each read as roughly ten a month, not 360 a year. Annualising is the only view that
+                compares a subscription with a purchase.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>How do I find subscriptions I forgot about?</summary>
+            <div class="faq__body">
+              <p>
+                Search your statements for the last twelve months for repeating charges, then check
+                the app store's subscription list and your email for renewal receipts. Free trials
+                that converted are the usual culprits, because the first charge arrives after the
+                decision moment.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Does the calculator send my subscriptions anywhere?</summary>
+            <div class="faq__body">
+              <p>
+                No. Entries are computed in the page and never leave the browser. There are no
+                cookies, no third-party scripts and no server storing a list.
+              </p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>Can Spendwise remind me before a subscription renews?</summary>
+            <div class="faq__body">
+              <p>
+                Spendwise keeps recurring schedules for known bills and reserves their amount
+                against the monthly budget, with per-category reminders. It does not connect to a
+                bank, so a subscription must be entered once and then appears as a bill due rather
+                than being detected automatically.
+              </p>
+            </div>
+          </details>
+
+          <nav class="related" aria-label="More tools and guides">
+            <h2>More tools and guides</h2>
+            <ul>
+              <li><a href="/50-30-20-budget-calculator">50/30/20 budget calculator</a></li>
+              <li><a href="/split-bill-calculator">Split bill calculator</a></li>
+              <li><a href="/offline-expense-tracker">Offline expense tracker</a></li>
+              <li><a href="/private-expense-tracker">Private expense tracker</a></li>
+              <li><a href="/expense-tracker-without-signup">Expense tracker without signup</a></li>
+              <li><a href="/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Give the total a budget line</h2>
+          <p>
+            Spendwise is free, has no account and carries no tracking ID. Enter the bill once and
+            the budget reserves it.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=en_US&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsubscription_cost_calculator"
+              rel="noopener"
+              >Get it on Google Play</a
+            >
+            <a class="btn btn--ghost" href="/offline-expense-tracker">See what works offline</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              A private, offline-first expense tracker for Android. Your ledger belongs on your
+              phone.
+            </p>
+          </div>
+          <div>
+            <h2>Product</h2>
+            <ul>
+              <li><a href="/#features">Features</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
+              <li><a href="/#privacy">Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy">Privacy policy</a></li>
+              <li><a href="/terms">Terms &amp; conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Support</h2>
+            <ul>
+              <li><a href="/support">Help &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. All rights reserved.</span>
+          <span>Made for Android 10 and above.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

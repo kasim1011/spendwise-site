@@ -112,7 +112,7 @@
 .doc td {
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--line);
-  text-align: left;
+  text-align: start;
   vertical-align: top;
 }
 
@@ -132,7 +132,7 @@
   margin: 1.5rem 0;
   padding: 1.1rem 1.25rem;
   border: 1px solid var(--line);
-  border-left: 4px solid var(--brand);
+  border-inline-start: 4px solid var(--brand);
   border-radius: var(--radius-sm);
   background: var(--bg-soft);
 }
@@ -149,12 +149,12 @@
 }
 
 .note--warn {
-  border-left-color: var(--danger);
+  border-inline-start-color: var(--danger);
   background: var(--danger-tint);
 }
 
 .note--good {
-  border-left-color: var(--success);
+  border-inline-start-color: var(--success);
   background: var(--success-tint);
 }
 

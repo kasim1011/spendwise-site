@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spendee против Spendwise: офлайн-учёт расходов</title>
+    <meta
+      name="description"
+      content="Spendee синхронизирует данные через аккаунт и платные тарифы. Spendwise хранит журнал офлайн на Android, бесплатно и без регистрации."
+    />
+    <link rel="canonical" href="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta
+      property="og:title"
+      content="Spendee против Spendwise: облако или журнал на телефоне"
+    />
+    <meta
+      property="og:description"
+      content="Одно приложение хранит расходы в аккаунте в облаке, другое — на телефоне. Что это меняет в цене, приватности, общих расходах и выгрузке данных."
+    />
+    <meta property="og:url" content="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Знак Spendwise: белое кольцо прогресса с галочкой на синем градиенте."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Spendee против Spendwise: офлайн-учёт расходов",
+            "item": "https://spendwise.download/ru/expense-tracker-vs-spendee"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise — то же приложение, что Spendee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Spendee выпускает SPENDEE a.s. в Праге. Spendwise — отдельное Android-приложение другого разработчика. Названия достаточно похожи, поэтому люди находят одно, ища другое, — именно поэтому эта страница существует."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужен ли аккаунт, чтобы пользоваться Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Нет регистрации, нет e-mail и нет пароля. При первом запуске приложение спрашивает язык и валюту, а затем открывает журнал."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise работает без интернета?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Запись, бюджеты, группы, отчёты, резервное копирование и восстановление работают локально. Единственной рекламе на экране подтверждения нужна связь, чтобы загрузиться; офлайн она показывает заглушку, а остальное приложение это не затрагивает."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как перенести данные Spendwise на новый телефон?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Настройки, Резервное копирование, Создать файл копии. В файле — операции, категории, бюджеты, люди, группы и прикреплённые чеки. На новом телефоне выберите «Выбрать файл копии»; восстановление заменит текущие данные после страховочной копии."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise бесплатный?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Без подписки и без покупок в приложении. Одна неперсонализированная реклама на экране подтверждения операции оплачивает его, а анонимную статистику экранов можно выключить в настройках."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise работает на iPhone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Spendwise — приложение для Android 10 и выше. Spendee доступен на Android, iOS и в веб-версии."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ru/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/#features">Возможности</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#privacy">Конфиденциальность</a>
+          <a href="/support" hreflang="en" lang="en">Поддержка</a>
+          <a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a>
+          <a href="/terms" hreflang="en" lang="en">Условия использования</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spendee" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spendee" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spendee" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-vs-spendee" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spendee" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spendee" hreflang="ru" lang="ru" aria-current="true">Русский</a>
+          <a href="/ja/expense-tracker-vs-spendee" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spendee" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spendee" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spendee" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spendee" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Сравнение</p>
+          <h1>Spendee против Spendwise: облако или журнал на телефоне</h1>
+          <p class="doc-hero__lede">
+            Оба приложения записывают расходы, и оба скажут, во сколько обошёлся месяц. Они
+            расходятся в одном, из чего следует всё остальное: живут ли ваши траты в аккаунте на
+            чужом сервере или в базе данных на вашем устройстве.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Обновлено:</strong> 20 октября 2026 &nbsp;·&nbsp;
+            <strong>Spendwise:</strong> Android 10 и выше &nbsp;·&nbsp;
+            <strong>Тарифы Spendee:</strong> с его страницы тарифов, проверено в тот же день
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="short-answer">Короткий ответ</h2>
+          <p>
+            Выбирайте <strong>Spendee</strong>, если хотите, чтобы банковские операции подтягивались
+            за вас, журнал был и в веб-версии, и на телефоне, а чужие серверы держали два устройства
+            синхронизированными. Выбирайте <strong>Spendwise</strong>, если предпочитаете ввести
+            расход вручную, а не входить в аккаунт; если хотите, чтобы трекер работал в самолёте; и
+            если не хотите подписки между собой и бюджетом, который и так работает.
+          </p>
+          <p>
+            Это сравнение написал разработчик одного из двух приложений, поэтому читайте его как
+            аргумент, а не как приговор. Таблица ниже показывает, где Spendee действительно лучше,
+            а не только где он хуже.
+          </p>
+
+          <h2 id="side-by-side">Бок о бок</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">Что важно</th>
+                  <th scope="col">Spendwise</th>
+                  <th scope="col">Spendee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Аккаунт</th>
+                  <td>Нет. Без e-mail, пароля и профиля.</td>
+                  <td>Вход в приложение и в веб-версию; данные привязаны к аккаунту.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Где хранятся записи</th>
+                  <td>База данных SQLite на вашем телефоне. Копии на сервере нет.</td>
+                  <td>Облако Spendee, синхронизированное между вашими устройствами.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Цена</th>
+                  <td>Бесплатно. Одна неперсонализированная реклама, без покупок в приложении.</td>
+                  <td>
+                    Бесплатный тариф Basic; Plus — 1,99 $ в месяц или 14,99 $ в год; Premium — 5,99 $
+                    в месяц или 35,99 $ в год, с 7-дневной пробной версией.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Что входит в бесплатный тариф</th>
+                  <td>Все функции приложения, включая группы.</td>
+                  <td>Один денежный кошелёк и один бюджет на Basic.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Подключение банков</th>
+                  <td>Нет. Вы вводите каждую операцию — это занимает несколько секунд.</td>
+                  <td>
+                    Платная функция с автоматической категоризацией импортированных операций.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Общий бюджет с кем-то</th>
+                  <td>
+                    Группы: у поездки или общего быта свой журнал, свои люди, бюджет и расчёты — всё
+                    на вашем телефоне.
+                  </td>
+                  <td>Общие кошельки с другими пользователями Spendee на Plus и Premium.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Платформы</th>
+                  <td>Android 10 и выше.</td>
+                  <td>Android, iOS и веб-версия.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Выгрузка данных</th>
+                  <td>
+                    PDF или таблица за месяц или год плюс резервная копия одним файлом, где каждая
+                    запись и каждый чек.
+                  </td>
+                  <td>Импорт и экспорт операций, заявленные во всех трёх тарифах.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Отслеживание и реклама</th>
+                  <td>
+                    Без трекинг-ID. Одна неперсонализированная реклама на экране подтверждения.
+                    Анонимная статистика экранов, которую можно отключить.
+                  </td>
+                  <td>Смотрите политику конфиденциальности Spendee; здесь её нет в пересказе.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="what-differs">Что на самом деле меняет отсутствие аккаунта</h2>
+          <p>
+            Таблица — это список функций. Причина выбирать локальный журнал в том, какими эти
+            функции становятся, когда аккаунта нет.
+          </p>
+
+          <h3>Входить некуда, и ломаться нечему</h3>
+          <p>
+            Spendwise открывается выбором языка и валюты, а затем вашим журналом. Нет экрана входа,
+            который откажет, пока вы стоите в очереди за кофе, нет сброса пароля и нет сессии,
+            которая истечёт. Это также значит, что никто не может закрыть вам доступ к вашей же
+            истории расходов, потому что сервера, который её хранит, нет.
+          </p>
+
+          <h3>Обмен реальный: резервная копия ваша</h3>
+          <p>
+            Облачный аккаунт — это ещё и резервная копия. Spendwise намеренно устроен иначе, и
+            удаление приложения стирает журнал. Замена — файл, которым управляете вы:
+            <strong>Настройки → Резервное копирование → Создать файл копии</strong> записывает каждую
+            операцию, категорию, бюджет, человека, группу и прикреплённый чек в один файл
+            <code>.spendwise</code> в <code>Download/Spendwise</code>. Восстановите его на новом
+            телефоне — и вы там же, где были. Храните его там, где хранили бы банковскую выписку:
+            файл не зашифрован.
+          </p>
+
+          <h3>Группы включены и работают локально</h3>
+          <p>
+            Группа — это второй журнал: поездка, общая квартира, свадьба. У неё свои категории,
+            бюджет, люди, заметки и расчёты, поэтому отпуск никогда не путает цифры домашнего
+            бюджета. Нет тарифа, который надо разблокировать, и приглашения, которое надо принять.
+            Честная оговорка: остальные участники группы не получают её живую копию на своих
+            телефонах — журнал ведёт один человек, и он точен именно потому, что его ведёт один
+            человек.
+          </p>
+
+          <h3>Одна реклама и аналитика, которую можно выключить</h3>
+          <p>
+            Spendwise не свободен от рекламы и не утверждает обратного. На экране подтверждения —
+            одна неперсонализированная реклама, размещённая там, где задача уже выполнена, и
+            никакого трекинг-ID. Анонимная статистика экранов помогает улучшать приложение, и у неё
+            есть переключатель в настройках; выключено значит выключено, а не «меньше». Политика
+            конфиденциальности описывает и то, и другое.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="Обзор Spendwise за октябрь 2026: потрачено 2 095,50 $ при бюджете 6 000,00 $ с отметкой «в графике», доход 5 320,00 $, чистый баланс 3 224,50 $ и полоса групп."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Обзор отвечает первым: сколько стоил месяц, сколько бюджета осталось и что ещё
+                впереди.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="Вкладка «Группы»: Flat 4B с 8 категориями и Voyage en France с 4, на каждой карточке — сколько потратила группа."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Каждая группа — свой контекст со своими категориями, бюджетом и людьми, а не метка
+                на основном журнале.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="Отчёт за октябрь 2026: потрачено 2 095,50 $ при бюджете 6 000,00 $, доход и чистый баланс, и кольцевая диаграмма расходов по категориям, начиная с «Аренды» — 1 400,00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Месячные и годовые отчёты можно экспортировать в PDF или таблицу без аккаунта.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="spendee-wins">Где Spendee — лучший выбор</h2>
+          <p>Три вещи трудно сделать без сервера, и Spendee умеет все три:</p>
+          <ul>
+            <li>
+              <strong>Подключение банков и автоматическая категоризация.</strong> Если вы не готовы
+              вводить расходы вручную, офлайн-трекер не победит. Spendee импортирует операции и
+              сортирует их за вас на платном тарифе.
+            </li>
+            <li>
+              <strong>Два устройства, действительно синхронизированные.</strong> Телефон плюс
+              веб-версия плюс телефон второго человека — именно это и покупает аккаунт. Spendwise по
+              замыслу — один телефон.
+            </li>
+            <li>
+              <strong>iPhone и веб.</strong> Spendwise только для Android. Если ваши устройства не
+              Android, это сравнение уже закончено.
+            </li>
+          </ul>
+          <p>
+            Spendee ещё и старше и крупнее, и это видно в вещах, которые трудно разглядеть в таблице
+            функций: больше валют в банковском списке, больше лет исправленных крайних случаев. Оба
+            приложения можно попробовать бесплатно, а платные тарифы Spendee начинаются дешевле
+            чашки кофе в месяц, так что попробовать оба стоит послеобеденного времени, а не денег.
+          </p>
+
+          <h2 id="price">Что покупает разница в цене</h2>
+          <p>
+            Весь доход Spendwise — одна реклама на одном экране, поэтому приложение бесплатное и
+            остаётся таким; апгрейда, который вам потом продадут, нет. Бесплатный тариф Spendee —
+            настоящий трекер, но он ограничивает вас одним кошельком и одним бюджетом, а банковскую
+            синхронизацию, дополнительные кошельки и общие кошельки открывают два платных тарифа.
+            Если эти функции нужны, 14,99–35,99 $ в год — честная за них цена. Если нет, потолок
+            бесплатного тарифа и есть причина искать другое.
+          </p>
+
+          <h2 id="faq">Частые вопросы</h2>
+
+          <details class="faq">
+            <summary>Spendwise — то же приложение, что Spendee?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Spendee выпускает SPENDEE a.s. в Праге. Spendwise — отдельное Android-приложение
+                другого разработчика. Названия достаточно похожи, поэтому люди находят одно, ища
+                другое, — именно поэтому эта страница существует.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Нужен ли аккаунт, чтобы пользоваться Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Нет регистрации, нет e-mail и нет пароля. При первом запуске приложение
+                спрашивает язык и валюту, а затем открывает журнал.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise работает без интернета?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Запись, бюджеты, группы, отчёты, резервное копирование и восстановление работают
+                локально. Единственной рекламе на экране подтверждения нужна связь, чтобы
+                загрузиться; офлайн она показывает заглушку, а остальное приложение это не
+                затрагивает.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Как перенести данные Spendwise на новый телефон?</summary>
+            <div class="faq__body">
+              <p>
+                Откройте <strong>Настройки → Резервное копирование → Создать файл копии</strong>. В
+                файле — операции, категории, бюджеты, люди, группы и прикреплённые чеки. На новом
+                телефоне выберите <strong>Выбрать файл копии</strong>; восстановление заменит
+                текущие данные после страховочной копии. Полные шаги — на
+                <a href="/support" hreflang="en" lang="en">странице поддержки</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise бесплатный?</summary>
+            <div class="faq__body">
+              <p>
+                Да. Без подписки и без покупок в приложении. Одна неперсонализированная реклама на
+                экране подтверждения операции оплачивает его, а анонимную статистику экранов можно
+                выключить в настройках.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise работает на iPhone?</summary>
+            <div class="faq__body">
+              <p>
+                Нет. Spendwise — приложение для Android 10 и выше. Spendee доступен на Android, iOS
+                и в веб-версии.
+              </p>
+            </div>
+          </details>
+
+          <h2 id="try">Попробуйте подходящее</h2>
+          <p>
+            Если эта страница сделала своё дело, вы уже знаете, в какой вы колонке. Spendwise
+            бесплатен и устанавливается меньше чем за минуту; если он вам не подходит, удалите его —
+            и за это время ничего никуда не было отправлено.
+          </p>
+          <nav class="related" aria-label="Другие гайды">
+            <h2>Другие гайды</h2>
+            <ul>
+              <li><a href="/ru/offline-expense-tracker">Учёт расходов офлайн</a></li>
+              <li><a href="/ru/expense-tracker-without-signup">Учёт расходов без регистрации</a></li>
+              <li><a href="/ru/private-expense-tracker">Приватный учёт расходов</a></li>
+              <li><a href="/ru/split-expenses-with-friends">Разделить расходы с друзьями</a></li>
+              <li><a href="/ru/expense-tracker-vs-spreadsheet">Spendwise против таблицы</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Spendwise в Google Play</h2>
+          <p>
+            Бесплатно, без аккаунта, без трекинг-ID. Журнал остаётся на телефоне, и один файл
+            переносит его, когда вы меняете телефон.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ru&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dvs_spendee"
+              rel="noopener"
+              >Скачать в Google Play</a
+            >
+            <a class="btn btn--ghost" href="/support" hreflang="en" lang="en">Читать FAQ</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ru/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Приватный трекер расходов, созданный для работы офлайн на Android. Твои записи
+              остаются на телефоне.
+            </p>
+          </div>
+          <div>
+            <h2>Продукт</h2>
+            <ul>
+              <li><a href="/#features">Возможности</a></li>
+              <li><a href="/#gallery">Галерея</a></li>
+              <li><a href="/#privacy">Конфиденциальность</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Правовая информация</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Политика конфиденциальности</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Условия использования</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Поддержка</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Поддержка и вопросы</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Все права защищены.</span>
+          <span>Создано для Android 10 и новее.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

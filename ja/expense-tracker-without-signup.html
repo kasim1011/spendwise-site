@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登録不要の家計簿アプリ：アカウントもメールもなし</title>
+    <meta
+      name="description"
+      content="Spendwiseは登録もメールもパスワードも不要のAndroid家計簿アプリです。開いてすぐ記録でき、帳簿は自分のスマートフォンに残ります。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-without-signup" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-without-signup" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="登録不要の家計簿アプリ：アカウントもメールもなし" />
+    <meta
+      property="og:description"
+      content="アカウントがない初回起動で実際に何が起きるのか、なぜ多くの家計簿アプリがアカウントを求めるのか、断ることで何を手放すのかを説明します。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/expense-tracker-without-signup" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青のグラデーションの上に白い進捗リングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "登録不要の家計簿アプリ：アカウントもメールもなし",
+            "item": "https://spendwise.download/ja/expense-tracker-without-signup"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwiseは本当にメールアドレスが不要ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "そのとおりです。登録画面はありません。初回起動で尋ねられるのは言語と通貨だけで、どちらも後から設定で変更できます。準備はそれだけです。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "スマートフォンをなくしたらどうなりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "バックアップファイルを作っていなければ、その端末の帳簿は失われます。復元元になるアカウントがないのです。それは、他の誰も帳簿を読めない理由でもあります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "1つのSpendwiseの帳簿を2台のスマートフォンで使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "同時には使えません。バックアップファイルは2台目に復元できますが、2台は同期せず、復元するとその端末の内容は置き換わります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseはアカウントなしでどうやって収益を得ていますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "取引の確認画面に表示される非パーソナライズ広告が1つだけです。サブスクリプションもアプリ内課金もなく、データの販売もありません。匿名の画面統計は設定でオフにできます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwiseが保存したものをすべて削除するには？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "アプリをアンインストールすると専用ストレージが削除されます。Androidの設定でアプリのデータを消去する方法もあります。Spendwiseはサーバー上に削除すべきコピーを一度も持ちませんでした。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-without-signup" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-without-signup" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-without-signup" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-without-signup" hreflang="es" lang="es">Español</a>
+          <a href="/it/expense-tracker-without-signup" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-without-signup" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-without-signup" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-without-signup" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/expense-tracker-without-signup" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-without-signup" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-without-signup" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-without-signup" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">アカウントなし</p>
+          <h1>登録もアカウントもメールもいらない家計簿アプリ</h1>
+          <p class="doc-hero__lede">
+            家計簿アプリにメールアドレスが必要な理由を尋ねると、正直な答えはたいてい「同期のため、課金のため、あるいは宣伝のため」です。Spendwiseはそのどれもしないので、何も求めません。このページでは、それが実際にどう見えるかを説明します。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong>2026年10月20日 &nbsp;·&nbsp;
+            <strong>初回起動：</strong>言語と通貨のみ &nbsp;·&nbsp;
+            <strong>データ：</strong>スマートフォン内
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="first-run">初回起動で実際に表示されるもの</h2>
+          <p>
+            Spendwiseを初めて開くと、尋ねられるのは2つだけです。どの言語で読むか、そしてお金がどの通貨かです。通貨リストはISOの全コードを備え、表示形式だけを扱います。156コードがあり、円やディナールの小数桁も正しく表示します。どちらの選択も後から設定で変更できます。
+          </p>
+          <p>
+            あとはもうアプリの中です。メールの入力欄も、パスワードも、「アドレスを確認してください」も、宣伝目的の同意チェックボックスも、ログインもありません。カテゴリは最初から用意され、ダッシュボードはすぐ使え、インストールから1分以内に最初の支出を記録できます。
+          </p>
+
+          <h2 id="what-changes">アカウントがないことで変わる3つのこと</h2>
+          <h3>自分の履歴から締め出されることはない</h3>
+          <p>
+            再設定すべきパスワードも、失効するセッションも、あなたをもう歓迎しないと判断するサーバーもありません。帳簿はスマートフォンのアプリ専用ストレージにあるので、唯一の関門は端末自体のロック画面です。もう一段の関門が欲しければ、アプリロックがSpendwiseを開く前に端末のPIN、パターン、生体認証を求めます。
+          </p>
+          <h3>会社の手元に支出のコピーは残らない</h3>
+          <p>
+            Spendwiseには取引を保存するバックエンドがありません。食料品の買い物を記録したプロフィールも、漏えいしうる顧客レコードも、誰かに求められて渡すものもありません。アプリに入り、出ていくデータの経路は自分が選ぶもの、つまりバックアップファイルかレポートの書き出しだけです。
+          </p>
+          <h3>その代わり：バックアップは完全に自分のもの</h3>
+          <p>
+            クラウドのアカウントは、端末外のバックアップも兼ねます。ここではアプリを削除すると帳簿も消えます。Spendwiseの答えは1つのファイルです。
+            <strong>設定 → バックアップと復元 → バックアップファイルを作成</strong>が、すべての取引、カテゴリ、予算、人物、グループ、レシートの添付を1つの
+            <code>.spendwise</code>ファイルに書き出します。新しいスマートフォンで復元すれば元通りです。安全な場所に保管し、暗号化されていないことを忘れないでください。
+          </p>
+
+          <h2 id="why-they-ask">他のアプリがアカウントを求める理由</h2>
+          <p>これはどれも、彼らが仕掛けているわけではありません。アカウントは、家計簿アプリが次の機能を提供するための仕組みです。</p>
+          <ul>
+            <li><strong>同期</strong> — スマートフォン、タブレット、ウェブアプリで同じ帳簿を使えます。</li>
+            <li><strong>銀行の取り込み</strong> — 取引が自動で取り込まれます。</li>
+            <li><strong>課金</strong> — サブスクリプションには紐づける相手が必要です。</li>
+            <li>
+              <strong>つなぎとめ</strong> — メールアドレスは、アプリを開かなくなった人を呼び戻す手段です。
+            </li>
+          </ul>
+          <p>
+            Spendwiseは最初の3つを提供しないので、4つ目に紐づけるものがありません。銀行同期と複数端末の帳簿が欲しいなら、アカウントは妥当な対価です。まさにそれが<a href="/ja/expense-tracker-vs-spendee">Spendeeとの比較</a>に書いてあることです。もう1つのログインがいやでここに来たのなら、このページの残りが大事な部分です。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="設定画面。アプリの言語、アプリの通貨USD、システム・ライト・ダークから選ぶ外観、5つのアクセントカラーが表示されている。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                初回起動で尋ねられたことはすべて設定で変更できます。言語、通貨、外観、アクセントカラーです。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="取引の追加フォーム。金額は$47.82、支出を選択、カテゴリの食料品が強調され、日付は今日、写真またはPDFを選べるレシート・書類の行がある。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>記録に身元は要りません。金額とカテゴリだけで足ります。</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="バックアップと復元の画面。取引122件、カテゴリ39件、人物6人を表示し、バックアップファイルを作成とバックアップファイルを選択のボタンがある。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                バックアップがアカウントの代わりです。1つのファイルをスマートフォン上で作成し、復元します。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="money">代わりに何が費用を賄うのか</h2>
+          <p>
+            Spendwiseは無料で、アプリ内課金もなく、データを売りません。収益は取引の確認画面に1つだけ表示される非パーソナライズ広告です。その画面では作業がすでに終わり、ページの真ん中が空いています。EEAと英国では同意の確認が広告を左右し、同意が拒否されれば広告は表示されません。
+          </p>
+          <p>
+            もう1つのネットワーク機能は匿名の画面統計です。どの画面が使われたかをルート名で記録し、ユーザーIDもメールも広告IDも追跡IDもありません。既定で有効で、設定でオフにでき、オフにすると何も送信されません。<a href="/ja/private-expense-tracker">プライバシーのページ</a>に詳細があります。
+          </p>
+
+          <h2 id="fit">向いている人、向いていない人</h2>
+          <p>
+            1台のスマートフォンで素早く個人の帳簿をつけたい人、受信箱を渡すより支出を入力したい人、バックアップファイルを保管してよい人に向いています。ログインの手間が利点を上回ってクラウドの家計簿アプリを3つもやめた人にも向いています。
+          </p>
+          <p>
+            家族それぞれのスマートフォンから同じ帳簿をリアルタイムに更新したい世帯や、支出を手入力せず銀行の取り込みが必要な人には向いていません。そこでは同期するアプリが正解であり、このサイトはそうでないふりをしません。
+          </p>
+
+          <h2 id="faq">よくある質問</h2>
+
+          <details class="faq">
+            <summary>Spendwiseは本当にメールアドレスが不要ですか？</summary>
+            <div class="faq__body">
+              <p>
+                そのとおりです。登録画面はありません。初回起動で尋ねられるのは言語と通貨だけで、どちらも後から設定で変更できます。準備はそれだけです。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>スマートフォンをなくしたらどうなりますか？</summary>
+            <div class="faq__body">
+              <p>
+                バックアップファイルを作っていなければ、その端末の帳簿は失われます。復元元になるアカウントがないのです。それは、他の誰も帳簿を読めない理由でもあります。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>1つのSpendwiseの帳簿を2台のスマートフォンで使えますか？</summary>
+            <div class="faq__body">
+              <p>
+                同時には使えません。バックアップファイルは2台目に復元できますが、2台は同期せず、復元するとその端末の内容は置き換わります。<a href="/ja/offline-expense-tracker">オフラインの帳簿の仕組み</a>をご覧ください。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseはアカウントなしでどうやって収益を得ていますか？</summary>
+            <div class="faq__body">
+              <p>
+                取引の確認画面に表示される非パーソナライズ広告が1つだけです。サブスクリプションもアプリ内課金もなく、データの販売もありません。匿名の画面統計は設定でオフにできます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwiseが保存したものをすべて削除するには？</summary>
+            <div class="faq__body">
+              <p>
+                アプリをアンインストールすると専用ストレージが削除されます。Androidの設定でアプリのデータを消去する方法もあります。Spendwiseはサーバー上に削除すべきコピーを一度も持ちませんでした。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="他のガイド">
+            <h2>他のガイド</h2>
+            <ul>
+              <li><a href="/ja/expense-tracker-vs-spendee">SpendeeとSpendwiseの比較</a></li>
+              <li><a href="/ja/offline-expense-tracker">オフライン家計簿</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベート家計簿</a></li>
+              <li><a href="/ja/split-expenses-with-friends">友人との割り勘</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">Spendwiseと表計算ソフトの比較</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>登録もメールも追跡IDもなし</h2>
+          <p>
+            Spendwiseをインストールし、言語と通貨を選んで、記録を始めてください。帳簿はスマートフォンに残ります。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dno_signup"
+              rel="noopener"
+              >Google Playで入手</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >プライバシーポリシーを読む</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

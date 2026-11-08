@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>私密记账：不设跟踪 ID，数据留在本机</title>
+    <meta
+      name="description"
+      content="Spendwise 把支出存放在本机数据库里，不设跟踪 ID，使用分析也可随时关闭。这就是我们对“私密”的诚实交代。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="私密记账：不设跟踪 ID，数据留在本机" />
+    <meta property="og:description" content="收集了什么、没有收集什么、应用会申请哪些权限，以及“私密”这个词在哪里有边界。" />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Spendwise 标志：蓝色渐变背景上的白色进度圆环和勾号。" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "私密记账：不设跟踪 ID，数据留在本机",
+            "item": "https://spendwise.download/zh-hans/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise 会收集我的交易吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。交易、预算、笔记、成员和附件都存放在手机上的 SQLite 数据库里。没有服务器会收到它们，也没有账号可以把它们关联起来。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "广告会使用我的广告 ID 吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。应用已在构建时移除 AD_ID 权限，因此广告标识符并不存在。每次广告请求都是非个性化的；在欧洲经济区和英国，是否有广告请求由同意表单决定。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "关闭分析会关掉什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "全部使用分析。Spendwise 发送的匿名屏幕浏览以路由名称为键，不含用户 ID，也不含交易内容。在设置中关闭分析后，这些事件会完全停止；关闭就是彻底关闭，不是减少。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Spendwise 会申请哪些权限？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "通知权限，用于每日提醒和定期账单提醒。收据通过 Android 系统照片选择器和文档选择器选取，无需任何权限。应用锁使用设备上已有的 PIN、图案或生物识别。不会申请通讯录、位置、相机或广告 ID 权限。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "备份文件加密了吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "没有。.spendwise 文件是数据库和附件的普通归档。请像对待银行对账单一样保管它，放在你信任的地方。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">隐私</p>
+          <h1>私密记账工具：这里的“私密”指什么</h1>
+          <p class="doc-hero__lede">
+            “私密”这个词，每个应用都在用。这一页想用具体的事实配得上它：应用存了什么、什么会离开手机、广告 SDK 能看到什么，以及这份承诺的边界在哪里。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新：</strong> 2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>跟踪 ID：</strong>无 &nbsp;·&nbsp;
+            <strong>广告 ID：</strong>权限已移除 &nbsp;·&nbsp;
+            <strong>分析：</strong>可关闭
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">数据的流向</h2>
+          <p>
+            Spendwise 没有后端。每一笔交易、预算、分类、笔记、成员、分组和收据附件都写入应用私有存储中的 SQLite 数据库，所有屏幕都从这个数据库读取。没有需要登录的账号，也就没有关于你的画像可供建立、出售、丢失或移交。
+          </p>
+          <p>只有两项功能会联网，而且都可以准确说清：</p>
+          <ul>
+            <li>
+              <strong>一条广告</strong>，位于交易确认屏幕，按非个性化方式请求，广告标识符权限已在构建时从应用中移除。
+            </li>
+            <li>
+              <strong>匿名屏幕分析</strong>——每次屏幕浏览只记录一个路由名称，没有用户 ID，没有交易内容，不含广告标识符，也没有跟踪 ID。
+            </li>
+          </ul>
+          <p>
+            应用里没有崩溃上报、没有会话录制、没有热图，除广告和分析库之外也没有其他第三方 SDK。<a href="/privacy" hreflang="en" lang="en">隐私政策</a>逐条列出了它们，篇幅很短，因为清单本来就短。
+          </p>
+
+          <h2 id="permissions">申请了哪些权限，又有哪些完全没有</h2>
+          <p>
+            Android 权限能很好地说明一个应用实际能做什么。Spendwise 申请通知权限，是为了让每日提醒和定期账单提醒能够触发。清单就这些。
+          </p>
+          <ul>
+            <li>
+              <strong>没有通讯录权限。</strong>你记录的成员是你自己创建的条目，不是你的通讯录。
+            </li>
+            <li><strong>没有位置权限。</strong>应用里没有任何功能需要知道你在哪里。</li>
+            <li>
+              <strong>没有相机权限。</strong>添加收据使用的是 Android 系统照片选择器和文档选择器，它们只授予应用访问你所选文件的权限，别的什么都不给。
+            </li>
+            <li>
+              <strong>不申请广告标识符权限。</strong>清单中的这一项在构建时已被移除，广告网络读不到任何 ID。
+            </li>
+          </ul>
+          <p>
+            应用锁同样不额外存储任何东西：它把验证交给 Android 自带的身份验证提示，所以你的 PIN、图案或生物识别永远不会经过 Spendwise。
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="设置屏幕，显示应用语言、USD 应用货币、跟随系统、浅色或深色的外观选择，以及五种强调色。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                这里最关键的几个开关都在设置里：分析、应用锁和货币，没有一个与账号绑定。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="财务中心列出月度预算已用 52%、27 个内置分类、两位已记录的成员和八项定期安排，洞察下有报告和笔记。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                分类、成员和定期安排都是本机数据行——没有云端副本需要同步。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="备份与恢复屏幕显示 122 笔交易、39 个分类和 6 位成员，并有创建备份文件和选择备份文件两个按钮。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                备份和恢复都是本地操作；文件会去你指定的地方，而不是服务器。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">广告，不绕弯子</h2>
+          <p>
+            Spendwise 并不隐瞒广告。交易确认屏幕上有一条原生广告，应用正是靠它保持免费，无需订阅。与隐私相关的事实如下：
+          </p>
+          <ul>
+            <li>
+              <strong>每次请求都是非个性化的</strong>，即使对已接受同意表单的用户也是如此。同意只授权发起请求，从不等于购买个性化。
+            </li>
+            <li>
+              <strong>SDK 拿不到任何广告标识符</strong>，因为该权限在构建时已被移除。
+            </li>
+            <li>
+              <strong>在欧洲经济区和英国，会先经过同意关卡</strong>，而且默认拒绝：没有网络、没有同意或没有配置好消息，就不会有广告。“设置 → 隐私”可以在框架要求时重新打开该表单。
+            </li>
+          </ul>
+          <p>
+            广告网络仍然会看到请求本身——IP 地址、设备型号和大致地区在任何网络请求中都不可避免。区别在于，我们这一侧不会建立你的消费画像并附在请求上。
+          </p>
+
+          <h2 id="analytics">真的可以关掉的分析</h2>
+          <p>
+            使用分析确实存在，应用也如实说明。Spendwise 会为每条路由记录一次匿名屏幕浏览——记录到达了哪些屏幕，而不是屏幕上有什么——不含用户 ID、邮箱和交易内容。
+          </p>
+          <p>
+            开关在设置里，效果是彻底的：关闭分析后，事件就不再发送。它不会减少、不会哈希，也不会留一份本地副本等以后再发。如果“分析可以关闭”这句话要有意义，就必须是这个意思。
+          </p>
+
+          <h2 id="limits">承诺止步的地方</h2>
+          <p>诚实比口号更有价值，所以边界也写在这里：</p>
+          <ul>
+            <li>
+              <strong>备份文件没有加密。</strong>它是一个 <code>.spendwise</code> 归档，拿到文件的人都能读取。请放在你会放银行对账单的地方；或者干脆不用文件，接受数据随手机一起消失。
+            </li>
+            <li>
+              <strong>你手机的锁屏才是真正的边界。</strong>Spendwise 的应用锁只是第二道检查，但一台已解锁并被 root 的设备，其应用数据是可以被读取的。
+            </li>
+            <li>
+              <strong>安装过程仍然涉及 Google Play</strong>，你手机上的 Play 服务属于 Google，而不是 Spendwise。这里说的是这个应用如何处理你的数据，不是它所运行的操作系统。
+            </li>
+            <li>
+              <strong>附件就是文件。</strong>收据照片在你分享到别处时就会离开应用，而它的元数据仍然是文件原本就有的那些。
+            </li>
+          </ul>
+
+          <h2 id="controls">所有开关，集中在一处</h2>
+          <ul>
+            <li><strong>分析开/关</strong> —— 设置 → 隐私。</li>
+            <li>
+              <strong>广告同意</strong> —— 设置 → 隐私，同意框架要求提供返回表单的入口时就在这里。
+            </li>
+            <li><strong>应用锁</strong> —— 设置 → 安全。</li>
+            <li>
+              <strong>删除全部数据</strong> —— 卸载应用，或在 Android 设置中清除它的数据。
+            </li>
+          </ul>
+
+          <h2 id="faq">常见问题</h2>
+
+          <details class="faq">
+            <summary>Spendwise 会收集我的交易吗？</summary>
+            <div class="faq__body">
+              <p>
+                不会。交易、预算、笔记、成员和附件都存放在手机上的 SQLite 数据库里。没有服务器会收到它们，也没有账号可以把它们关联起来。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>广告会使用我的广告 ID 吗？</summary>
+            <div class="faq__body">
+              <p>
+                不会。应用已在构建时移除 AD_ID 权限，因此广告标识符并不存在。每次广告请求都是非个性化的；在欧洲经济区和英国，是否有广告请求由同意表单决定。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>关闭分析会关掉什么？</summary>
+            <div class="faq__body">
+              <p>
+                全部使用分析。Spendwise 发送的匿名屏幕浏览以路由名称为键，不含用户 ID，也不含交易内容。在设置中关闭分析后，这些事件会完全停止；关闭就是彻底关闭，不是减少。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Spendwise 会申请哪些权限？</summary>
+            <div class="faq__body">
+              <p>
+                通知权限，用于每日提醒和定期账单提醒。收据通过 Android 系统照片选择器和文档选择器选取，无需任何权限。应用锁使用设备上已有的 PIN、图案或生物识别。不会申请通讯录、位置、相机或广告 ID 权限。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>备份文件加密了吗？</summary>
+            <div class="faq__body">
+              <p>
+                没有。<code>.spendwise</code> 文件是数据库和附件的普通归档。请像对待银行对账单一样保管它，放在你信任的地方。<a href="/support" hreflang="en" lang="en">支持页面</a>里有备份步骤。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hans/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/zh-hans/offline-expense-tracker">离线记账</a></li>
+              <li><a href="/zh-hans/expense-tracker-without-signup">无需注册的记账工具</a></li>
+              <li><a href="/zh-hans/split-expenses-with-friends">和朋友分摊费用</a></li>
+              <li><a href="/zh-hans/expense-tracker-vs-spreadsheet">Spendwise vs 表格</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>支出留在你的手机上</h2>
+          <p>
+            没有账号，没有跟踪 ID，没有云端副本。分析可以关闭，<a href="/zh-hans/offline-expense-tracker">账本离线也能用</a>。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >阅读隐私政策</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

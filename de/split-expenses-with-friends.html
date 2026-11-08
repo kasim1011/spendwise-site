@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ausgaben mit Freunden teilen: Gruppen und Ausgleich</title>
+    <meta
+      name="description"
+      content="Reise oder WG auf einem Handy: ein Ledger pro Gruppe, gleiche oder eigene Anteile, laufende Salden und Ausgleich mit einem Tipp."
+    />
+    <link rel="canonical" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Ausgaben mit Freunden teilen: Gruppen und Ausgleich" />
+    <meta
+      property="og:description"
+      content="Wie ein Gruppen-Ledger funktioniert, wenn es auf einem Handy liegt: Anteile, Salden, Ausgleich und wo das Modell endet."
+    />
+    <meta property="og:url" content="https://spendwise.download/de/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Das Spendwise-Zeichen: ein weißer Fortschrittsring mit Haken auf blauem Verlauf."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ausgaben mit Freunden teilen",
+            "item": "https://spendwise.download/de/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Müssen meine Freunde Spendwise installieren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Eine Gruppe ist ein Ledger auf deinem Handy; deine Freunde sind Personen, die du ihm hinzufügst. Niemand bekommt eine Einladung, ein Konto oder eine Benachrichtigung, und auf keinem anderen Handy liegt eine Kopie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie werden Anteile aufgeteilt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine geteilte Ausgabe lässt sich mit mehreren Personen auf einmal teilen, entweder gleichmäßig oder mit einem Anteil pro Person, den du selbst festlegst. Jeder Anteil verändert den laufenden Saldo dieser Person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Beeinflussen Gruppensalden mein persönliches Ledger?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Eine Gruppe ist ein eigener Bereich mit eigenen Personen, Kategorien, eigenem Budget und eigenen Salden. Der Ausgleich in einer Gruppe ändert nur diese Gruppe, auch wenn eine Person auf App-Ebene denselben Namen hat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was passiert, wenn zwei Personen in einer Gruppe eine Rechnung ungleich teilen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lege den Anteil jeder Person fest, statt gleichmäßig zu teilen. Die Buchung bleibt eine Ausgabe im Ledger der Gruppe, und der Saldo jeder Person bewegt sich um ihren eigenen Anteil."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich eine Gruppe für eine WG statt für eine Reise nutzen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Eine Gruppe ist ein benanntes Ledger mit eigenem Monatsbudget, eigenen Kategorien und Notizen, eine WG funktioniert also genauso wie ein Urlaub."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/de/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#features">Funktionen</a>
+          <a href="/#gallery">Galerie</a>
+          <a href="/#privacy">Datenschutz</a>
+          <a href="/support" hreflang="en" lang="en">Hilfe</a>
+          <a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a>
+          <a href="/terms" hreflang="en" lang="en">AGB</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de" aria-current="true">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Gruppen und Ausgleich</p>
+          <h1>Ausgaben mit Freunden teilen, ohne ein weiteres Konto</h1>
+          <p class="doc-hero__lede">
+            Kosten zu teilen heißt meistens, alle in eine App einzuladen, die sie nicht installieren
+            wollen. Spendwise macht es umgekehrt: Eine Person führt für die Reise oder die WG ein
+            genaues Ledger, und alle sehen, wo sie stehen.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Aktualisiert:</strong> 20. Oktober 2026 &nbsp;·&nbsp;
+            <strong>Modell:</strong> lokales Gruppen-Ledger &nbsp;·&nbsp;
+            <strong>Preis:</strong> kostenlos inklusive, kein Abo
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">Eine Gruppe ist ein zweites Ledger, kein Etikett</h2>
+          <p>
+            In den meisten Apps ist eine gemeinsame Reise ein Label, das du auf einige deiner
+            Ausgaben klebst. Spendwise gibt einer Gruppe einen eigenen Kontext: eigene Kategorien,
+            eigenes Monatsbudget, eigene Personen, eigene Buchungen, eigene Notizen und eigene
+            Salden.
+          </p>
+          <p>
+            Der Punkt ist, dass ein Urlaub die Zahlen der WG nie verunreinigt. Die Miete zu Hause
+            ist keine Kategorie in „Voyage en France“, und der offene Saldo eines Freundes auf der
+            Reise ist nicht derselbe Saldo wie sein Darlehen zu Hause — auch bei identischem Namen
+            sind es zwei getrennte Ledger.
+          </p>
+
+          <h2 id="how-a-trip-works">Wie eine Reise tatsächlich läuft</h2>
+          <ol>
+            <li>
+              <strong>Lege die Gruppe an</strong> und gib ihr einen Namen. Sie startet mit einem
+              kurzen Grundset an Kategorien für eine Reise oder einen Haushalt.
+            </li>
+            <li>
+              <strong>Füge die Personen hinzu</strong>, mit denen du Kosten teilst. Sie sind
+              Einträge im Ledger, keine Konten — keine Telefonnummer, keine Einladung, keine
+              App-Installation.
+            </li>
+            <li>
+              <strong>Setze ein Gruppen-Budget</strong> für den Monat in der Übersicht der Gruppe,
+              getrennt von deinem eigenen Budget.
+            </li>
+            <li>
+              <strong>Erfasse die geteilten Ausgaben.</strong> Trage ein, was du bezahlt hast, mit
+              Kategorie und Datum. Hat jemand anderes deinen Teil übernommen, erfasse stattdessen
+              diese Richtung, damit der Saldo nicht rückwärts läuft.
+            </li>
+            <li>
+              <strong>Teile die Ausgabe.</strong> Markiere sie mit den beteiligten Personen —
+              gleichmäßig oder mit einem Anteil pro Person. Jeder Anteil bewegt den laufenden Saldo
+              dieser Person.
+            </li>
+            <li>
+              <strong>Gleiche aus</strong>, wenn jemand seinen Teil zahlt. Die Aktion öffnet das
+              Formular vorausgefüllt mit dem offenen Saldo und der richtigen Richtung, eine
+              Rückzahlung zu erfassen ist also ein Tipp und eine Bestätigung. Teilzahlungen sind in
+              Ordnung.
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="Der Tab Gruppen mit Flat 4B und 8 Kategorien sowie Voyage en France mit 4: jede Karte zeigt, was die Gruppe ausgegeben hat."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Jede Gruppe zeigt ihre eigenen Ausgaben und ihre Kategoriezahl, bevor du sie
+                öffnest.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="Der eigene Bildschirm einer Gruppe für Oktober 2026: 553,00 $ ausgegeben bei einem Gruppen-Budget von 800,00 $, markiert als auf Kurs, dazu die Personen mit offenen Salden und ein Knopf Ausgabe hinzufügen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Übersicht, Budget und die Personen mit offenen Salden einer Gruppe — alles auf diese
+                Gruppe begrenzt.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="Der Bildschirm Personen mit Alex, der 245,00 $ schuldet, und Sam, dem 500,00 $ zustehen, jeweils mit laufendem Saldo, dazu eine Aktion Person hinzufügen."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Salden entstehen aus dem Ledger, sie werden nicht eingetippt: grün, wenn dir etwas
+                zusteht, rot, wenn du schuldest.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">Salden, die berechnet werden, nicht gemerkt</h2>
+          <p>
+            Der Saldo jeder Person ist die Summe ihrer Ledger-Einträge, keine Zahl, die jemand
+            eingetippt hat. Die Einträge decken die Situationen ab, die wirklich passieren: Du leihst
+            Bargeld, du übernimmst ihren Anteil an einer Rechnung, sie übernehmen deinen, du leihst
+            dir etwas, sie zahlen dir zurück, du zahlst ihnen zurück. Ein positiver Saldo heißt, dir
+            steht etwas zu; negativ heißt, du schuldest etwas.
+          </p>
+          <p>
+            Weil es eine abgeleitete Summe ist, kann er nicht veralten. Der Preis dafür: Ein Saldo
+            ist nur so gut wie das, was erfasst wurde — vergisst die Gruppe das Taxi, ist das Ledger
+            falsch, und genau das behebt eine Person, die das Buch führt.
+          </p>
+
+          <h2 id="the-trade">Der ehrliche Kompromiss: Ein Handy hält das Ledger</h2>
+          <p>
+            Es gibt Apps zum Teilen von Gruppenkosten mit Einladungen, und sie lösen ein anderes
+            Problem: Jeder Teilnehmer soll dasselbe gemeinsame Buch vom eigenen Handy aus bearbeiten.
+            Das braucht Konten und einen Server, also genau die Architektur, die Spendwise nicht hat.
+          </p>
+          <p>Das Modell hier ist also <strong>ein Ledger, eine Person führt es</strong>. Es passt zu:</p>
+          <ul>
+            <li>einer Reise, bei der eine Person das meiste bucht und bezahlt,</li>
+            <li>einer WG, in der ein Mitbewohner die Rechnungen begleicht,</li>
+            <li>jeder Gruppe, in der Streit aus unscharfer Erinnerung kommt und nicht aus Misstrauen.</li>
+          </ul>
+          <p>
+            Es passt nicht zu einem Haushalt, in dem alle darauf bestehen, das Ledger live zu
+            bearbeiten. Wenn das die Anforderung ist, lies
+            <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en"
+              >den Vergleich mit Spendee</a
+            >
+            und nimm eine synchronisierte App; die Seite sagt offen, wo diese hier verliert.
+          </p>
+
+          <h2 id="limits">Was Gruppen bewusst nicht tun</h2>
+          <ul>
+            <li>
+              <strong>Keine Einladungen, kein gemeinsames Bearbeiten.</strong> Das Ledger liegt auf
+              deinem Handy, es gibt also niemanden, mit dem zu synchronisieren wäre.
+            </li>
+            <li>
+              <strong>Keine Personen, die zwischen Kontexten geteilt werden.</strong> Eine Person
+              lässt sich in eine Gruppe kopieren, aber die Kopie hat ihr eigenes Ledger; ein
+              Ausgleich in der einen berührt die andere nie.
+            </li>
+            <li>
+              <strong>Keine Umbuchungen zwischen Gruppen.</strong> Geld wandert zwischen Personen,
+              nicht zwischen Ledgern.
+            </li>
+            <li>
+              <strong>Keine Gruppen-Währung.</strong> Die App hat eine Anzeigewährung, und eine
+              Gruppe berichtet in ihr. Es gibt keine Umrechnung.
+            </li>
+            <li>
+              <strong>Keine Verrechnung zwischen Personen.</strong> Wenn Alex dir schuldet und du
+              Sam schuldest, sind das zwei Salden, nicht einer.
+            </li>
+          </ul>
+
+          <h2 id="faq">Häufige Fragen</h2>
+
+          <details class="faq">
+            <summary>Müssen meine Freunde Spendwise installieren?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Eine Gruppe ist ein Ledger auf deinem Handy; deine Freunde sind Personen, die
+                du ihm hinzufügst. Niemand bekommt eine Einladung, ein Konto oder eine
+                Benachrichtigung, und auf keinem anderen Handy liegt eine Kopie.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Wie werden Anteile aufgeteilt?</summary>
+            <div class="faq__body">
+              <p>
+                Eine geteilte Ausgabe lässt sich mit mehreren Personen auf einmal teilen, entweder
+                gleichmäßig oder mit einem Anteil pro Person, den du selbst festlegst. Jeder Anteil
+                verändert den laufenden Saldo dieser Person.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Beeinflussen Gruppensalden mein persönliches Ledger?</summary>
+            <div class="faq__body">
+              <p>
+                Nein. Eine Gruppe ist ein eigener Bereich mit eigenen Personen, Kategorien, eigenem
+                Budget und eigenen Salden. Der Ausgleich in einer Gruppe ändert nur diese Gruppe,
+                auch wenn eine Person auf App-Ebene denselben Namen hat.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Was passiert, wenn zwei Personen eine Rechnung ungleich teilen?</summary>
+            <div class="faq__body">
+              <p>
+                Lege den Anteil jeder Person fest, statt gleichmäßig zu teilen. Die Buchung bleibt
+                eine Ausgabe im Ledger der Gruppe, und der Saldo jeder Person bewegt sich um ihren
+                eigenen Anteil.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Kann ich eine Gruppe für eine WG statt für eine Reise nutzen?</summary>
+            <div class="faq__body">
+              <p>
+                Ja. Eine Gruppe ist ein benanntes Ledger mit eigenem Monatsbudget, eigenen
+                Kategorien und Notizen, eine WG funktioniert also genauso wie ein Urlaub. Die
+                tägliche Erinnerung und die App-Sperre sind auf der
+                <a href="/support" hreflang="en" lang="en">Support-Seite</a> beschrieben.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="Weitere Leitfäden">
+            <h2>Weitere Leitfäden</h2>
+            <ul>
+              <li>
+                <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en">Spendee vs Spendwise</a>
+              </li>
+              <li>
+                <a href="/de/offline-expense-tracker">Offline expense tracker</a>
+              </li>
+              <li>
+                <a href="/expense-tracker-without-signup" hreflang="en" lang="en"
+                  >Expense tracker without signup</a
+                >
+              </li>
+              <li>
+                <a href="/private-expense-tracker" hreflang="en" lang="en"
+                  >Private expense tracker</a
+                >
+              </li>
+              <li>
+                <a href="/expense-tracker-vs-spreadsheet" hreflang="en" lang="en"
+                  >Spendwise vs spreadsheet</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Ein Ledger, keine Einladungen</h2>
+          <p>
+            Halte die Reise ehrlich: Anteil erfassen, Saldo beobachten, mit einem Tipp ausgleichen.
+            Kostenlos, ohne Konto für dich und für sie.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >Bei Google Play laden</a
+            >
+            <a class="btn btn--ghost" href="/de/offline-expense-tracker"
+              >Warum es offline funktioniert</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/de/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Ein privater Ausgaben-Tracker für Android, der ohne Internet funktioniert. Deine
+              Ausgaben gehören auf dein Handy.
+            </p>
+          </div>
+          <div>
+            <h2>Produkt</h2>
+            <ul>
+              <li><a href="/#features">Funktionen</a></li>
+              <li><a href="/#gallery">Galerie</a></li>
+              <li><a href="/#privacy">Datenschutz</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Rechtliches</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Datenschutzerklärung</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Allgemeine Geschäftsbedingungen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Hilfe</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Hilfe &amp; FAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Alle Rechte vorbehalten.</span>
+          <span>Für Android 10 und höher.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

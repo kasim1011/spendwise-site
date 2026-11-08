@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>متتبع مصاريف خاص: دون معرّف تتبع وبيانات محلية</title>
+    <meta
+      name="description"
+      content="يحفظ Spendwise مصاريفك في قاعدة بيانات محلية، دون معرّف تتبع، مع تحليلات يمكن إيقافها. النسخة الصادقة من كلمة «خاص»."
+    />
+    <link rel="canonical" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/private-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/private-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/private-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/private-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/private-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/private-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/private-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/private-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/private-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/private-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/private-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/private-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="متتبع مصاريف خاص: دون معرّف تتبع وبيانات محلية" />
+    <meta
+      property="og:description"
+      content="ما يُجمع وما لا يُجمع، وما الأذونات التي يطلبها التطبيق، وأين تنتهي حدود كلمة «خاص»."
+    />
+    <meta property="og:url" content="https://spendwise.download/ar/private-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="علامة Spendwise: حلقة تقدّم بيضاء وعلامة صح على تدرّج أزرق."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "متتبع مصاريف خاص: دون معرّف تتبع وبيانات محلية",
+            "item": "https://spendwise.download/ar/private-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل يجمع Spendwise معاملاتي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. تعيش المعاملات والميزانيات والملاحظات والأشخاص والمرفقات في قاعدة بيانات SQLite على الهاتف. لا يستقبلها أي خادم، ولا يوجد حساب ترتبط به."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يستخدم الإعلان معرّف الإعلان الخاص بي؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. يحذف التطبيق إذن AD_ID، فلا يبقى معرّف إعلان يُستخدم. كل طلب إعلان غير مخصص، وفي المنطقة الاقتصادية الأوروبية والمملكة المتحدة يحكم نموذج الموافقة ما إذا كان الإعلان سيُطلب أصلًا."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ماذا يوقف مفتاح التحليلات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "كل تحليلات الاستخدام. يرسل Spendwise ظهور شاشات مجهولًا مرتبطًا بأسماء المسارات، دون معرّف مستخدم ودون محتوى معاملات. وإيقاف التحليلات في الإعدادات يوقف تلك الأحداث تمامًا؛ الإيقاف مطلق لا مخفّض."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما الأذونات التي يطلبها Spendwise؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "الإشعارات، من أجل التذكير اليومي وتذكيرات الفواتير المتكررة. تُختار الإيصالات عبر منتقي الصور ومنتقي المستندات في Android، وهما لا يحتاجان إلى إذن. ويستخدم قفل التطبيق رقمك السري أو نمطك أو بصمتك الحالية على الجهاز. لا يوجد إذن لجهات الاتصال أو الموقع أو الكاميرا أو معرّف الإعلان."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل ملف النسخة الاحتياطية مشفّر؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. ملف .spendwise أرشيف عادي لقاعدة البيانات ومرفقاتك. تعامل معه ككشف حساب مصرفي واحفظه في مكان تثق به."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ar/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="التنقل الرئيسي">
+          <a href="/#features">الميزات</a>
+          <a href="/#gallery">المعرض</a>
+          <a href="/#privacy">الخصوصية</a>
+          <a href="/support" hreflang="en" lang="en">الدعم</a>
+          <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a>
+          <a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/private-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/private-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/private-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/private-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/private-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/private-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/private-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/private-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/private-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/private-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/private-expense-tracker" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/private-expense-tracker" hreflang="ar" lang="ar" aria-current="true">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">الخصوصية</p>
+          <h1>متتبع مصاريف خاص: ماذا تعني كلمة «خاص» هنا</h1>
+          <p class="doc-hero__lede">
+            كلمة «خاص» شعار ترفعه كل التطبيقات. وتحاول هذه الصفحة أن تستحقّها بالدقة: ما يخزّنه
+            التطبيق، وما يغادر الهاتف، وما يمكن لحزمة الإعلانات أن تراه، وأين تنتهي حدود الوعد.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>محدَّث:</strong> 20 أكتوبر 2026 &nbsp;·&nbsp;
+            <strong>معرّف التتبع:</strong> لا يوجد &nbsp;·&nbsp;
+            <strong>معرّف الإعلان:</strong> الإذن محذوف &nbsp;·&nbsp;
+            <strong>التحليلات:</strong> قابلة للإيقاف
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="data-path">مسار البيانات</h2>
+          <p>
+            لا يملك Spendwise أي خادم خلفي. تُكتب كل معاملة وميزانية وفئة وملاحظة وشخص ومجموعة
+            ومرفق إيصال في قاعدة بيانات SQLite داخل مساحة التخزين الخاصة بالتطبيق، وكل شاشة تقرأ
+            من تلك القاعدة. لا يوجد ما تسجّل الدخول إليه، فلا يوجد ملف تعريفي بك ليُبنى أو يُباع
+            أو يُفقد أو يُسلَّم.
+          </p>
+          <p>ثمة ميزتان تتصلان بالإنترنت، وكلتاهما صغيرة بما يكفي لوصفها بدقة:</p>
+          <ul>
+            <li>
+              <strong>إعلان واحد</strong> في شاشة تأكيد المعاملة، يُطلب بوصفه غير مخصص، بعد حذف
+              إذن معرّف الإعلان من التطبيق.
+            </li>
+            <li>
+              <strong>تحليلات شاشات مجهولة الهوية</strong> — اسم مسار لكل ظهور شاشة، دون معرّف
+              مستخدم، ودون محتوى معاملة، ودون معرّف إعلان، ودون معرّف تتبع.
+            </li>
+          </ul>
+          <p>
+            لا يوجد مُبلِّغ أعطال، ولا تسجيل جلسات، ولا خريطة حرارية، ولا أي حزمة تطوير خارجية سوى
+            مكتبتي الإعلان والتحليلات. وتعدّد
+            <a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a> تلك المكتبات، وهي
+            قصيرة لأن القائمة قصيرة.
+          </p>
+
+          <h2 id="permissions">الأذونات، وتلك الغائبة</h2>
+          <p>
+            أذونات Android مؤشر جيد على ما يستطيع التطبيق فعله حقًا. يطلب Spendwise إذن
+            الإشعارات كي يعمل التذكير اليومي وتذكيرات الفواتير المتكررة. وهذه هي القائمة.
+          </p>
+          <ul>
+            <li>
+              <strong>لا إذن لجهات الاتصال.</strong> الأشخاص الذين تتابعهم إدخالات تنشئها أنت،
+              وليس دفتر عناوينك.
+            </li>
+            <li><strong>لا موقع.</strong> لا شيء في التطبيق يحتاج إلى معرفة مكانك.</li>
+            <li>
+              <strong>لا إذن للكاميرا.</strong> إرفاق إيصال يستخدم منتقي الصور ومنتقي المستندات
+              في Android، وهما يمنحان التطبيق حق الوصول إلى الملف الذي تختاره وحده.
+            </li>
+            <li>
+              <strong>لا إذن لمعرّف الإعلان.</strong> يُحذف سطر البيان وقت البناء، فلا يبقى معرّف
+              تقرأه شبكة إعلانات.
+            </li>
+          </ul>
+          <p>
+            أما قفل التطبيق فلا يضيف تخزينًا خاصًا به: بل يسلّم التحقق إلى مربع المصادقة في
+            Android نفسه، فلا يصل رقمك السري أو نمطك أو بصمتك إلى Spendwise أبدًا.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-settings.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-settings.png"
+                  alt="الإعدادات تعرض لغة التطبيق، وعملة التطبيق USD، واختيار المظهر: النظام أو فاتح أو داكن، وخمسة ألوان تمييز."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                تحتوي الإعدادات على المفاتيح المهمة هنا: التحليلات وقفل التطبيق والعملة، ولا
+                شيء منها مرتبط بحساب.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-money-hub.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-money-hub.png"
+                  alt="مركز المال يعرض الميزانية الشهرية بنسبة استخدام 52%، و27 فئة مضمّنة، وشخصين قيد المتابعة، وثماني جدولة متكررة، مع التقارير والملاحظات تحت رؤى."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                الفئات والأشخاص والجداول صفوف محلية — لا توجد نسخة سحابية للمزامنة.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-backup-restore.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-backup-restore.png"
+                  alt="شاشة النسخ الاحتياطي والاستعادة تذكر 122 معاملة و39 فئة و6 أشخاص، مع زر إنشاء ملف النسخة الاحتياطية وزر اختيار ملف نسخة احتياطية."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                النسخ الاحتياطي والاستعادة إجراءان محليان؛ يذهب الملف حيث ترسله، لا إلى خادم.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="ad">الإعلان، بلا تلطيف</h2>
+          <p>
+            Spendwise ليس خاليًا من الإعلانات. ثمّة إعلان أصلي واحد في شاشة التأكيد، وهو السبيل
+            إلى بقاء التطبيق مجانيًا دون اشتراك. والحقائق المتعلقة بالخصوصية:
+          </p>
+          <ul>
+            <li>
+              <strong>كل طلب غير مخصص</strong>، حتى لمستخدم قبِل نموذج الموافقة. فالموافقة تأذن
+              بطلب، ولا تشتري تخصيصًا أبدًا.
+            </li>
+            <li>
+              <strong>لا معرّف إعلان</strong> متاح لحزمة التطوير، لأن الإذن يُحذف وقت البناء.
+            </li>
+            <li>
+              <strong>في المنطقة الاقتصادية الأوروبية والمملكة المتحدة تأتي بوابة الموافقة أولًا</strong>
+              وتفشل مغلقة: لا شبكة، أو لا موافقة، أو لا رسالة مُعدّة يعني لا إعلان. ويمكن لـ
+              الإعدادات ← الخصوصية إعادة فتح النموذج حيث يقتضي الإطار ذلك.
+            </li>
+          </ul>
+          <p>
+            لا تزال شبكة الإعلانات ترى الطلب نفسه — عنوان IP وطراز جهاز ومنطقة تقريبية أمور لا
+            مفر منها في أي طلب شبكة. الفرق أن لا شيء في هذا الجانب يبني ملفًا تعريفيًا بإنفاقك
+            لإرفاقه بالطلب.
+          </p>
+
+          <h2 id="analytics">تحليلات يمكنك إيقافها فعلًا</h2>
+          <p>
+            التحليلات موجودة، والتطبيق يعلن ذلك صراحةً بدلًا من إنكاره. يسجّل Spendwise ظهور شاشة
+            مجهولًا لكل مسار — أي الشاشات تُفتح، لا ما تعرضه كل منها — دون معرّف مستخدم، ودون
+            بريد إلكتروني، ودون محتوى معاملة.
+          </p>
+          <p>
+            المفتاح في الإعدادات وأثره مطلق: عند إيقاف التحليلات تتوقف الأحداث عن الإرسال. وهي لا
+            تقلّلها ولا تُعمّيها ولا تحتفظ بنسخة محلية لوقت لاحق. وإن كان لمقولة «يمكن إيقاف
+            التحليلات» أن تعني شيئًا، فهذا ما تعنيه.
+          </p>
+
+          <h2 id="limits">أين يتوقف الوعد</h2>
+          <p>الصدق أنفع من الشعار، فهذه هي الحدود:</p>
+          <ul>
+            <li>
+              <strong>ملف النسخة الاحتياطية غير مشفّر.</strong> هو أرشيف <code>.spendwise</code>
+              يستطيع أي شخص يحمله أن يقرأه. احفظه حيث تحفظ كشف حسابك المصرفي، أو استغن عن الملف
+              وسلّم بأن البيانات تموت مع الهاتف.
+            </li>
+            <li>
+              <strong>شاشة القفل في هاتفك هي الحدود الحقيقية.</strong> يضيف Spendwise قفل التطبيق
+              كتحقق ثانٍ، لكن جهازًا مفتوح القفل ومُجذَّرًا (rooted) يمكن قراءة بيانات تطبيقاته.
+            </li>
+            <li>
+              <strong>Google Play لا يزال طرفًا في التثبيت</strong>، وخدمات Play على هاتفك تعود
+              إلى Google لا إلى Spendwise. والادعاء هنا يخص ما يفعله هذا التطبيق ببياناتك، لا نظام
+              التشغيل الذي يعمل عليه.
+            </li>
+            <li>
+              <strong>المرفقات ملفات.</strong> تخرج صورة الإيصال من التطبيق حين تشاركها في مكان
+              آخر، وبياناتها الوصفية ما كان فيها أصلًا.
+            </li>
+          </ul>
+
+          <h2 id="controls">أدوات التحكم، في مكان واحد</h2>
+          <ul>
+            <li><strong>التحليلات مفعّلة أو متوقفة</strong> — الإعدادات ← الخصوصية.</li>
+            <li>
+              <strong>الموافقة على الإعلانات</strong> — الإعدادات ← الخصوصية، حيث يقتضي إطار
+              الموافقة سبيلًا للعودة إلى النموذج.
+            </li>
+            <li><strong>قفل التطبيق</strong> — الإعدادات ← الأمان.</li>
+            <li>
+              <strong>حذف كل شيء</strong> — أزل التطبيق أو امسح بياناته في إعدادات Android.
+            </li>
+          </ul>
+
+          <h2 id="faq">الأسئلة الشائعة</h2>
+
+          <details class="faq">
+            <summary>هل يجمع Spendwise معاملاتي؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. تعيش المعاملات والميزانيات والملاحظات والأشخاص والمرفقات في قاعدة بيانات
+                SQLite على الهاتف. لا يستقبلها أي خادم، ولا يوجد حساب ترتبط به.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل يستخدم الإعلان معرّف الإعلان الخاص بي؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. يحذف التطبيق إذن AD_ID، فلا يبقى معرّف إعلان يُستخدم. كل طلب إعلان غير مخصص،
+                وفي المنطقة الاقتصادية الأوروبية والمملكة المتحدة يحكم نموذج الموافقة ما إذا كان
+                الإعلان سيُطلب أصلًا.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>ماذا يوقف مفتاح التحليلات؟</summary>
+            <div class="faq__body">
+              <p>
+                كل تحليلات الاستخدام. يرسل Spendwise ظهور شاشات مجهولًا مرتبطًا بأسماء المسارات،
+                دون معرّف مستخدم ودون محتوى معاملات. وإيقاف التحليلات في الإعدادات يوقف تلك
+                الأحداث تمامًا؛ الإيقاف مطلق لا مخفّض.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>ما الأذونات التي يطلبها Spendwise؟</summary>
+            <div class="faq__body">
+              <p>
+                الإشعارات، من أجل التذكير اليومي وتذكيرات الفواتير المتكررة. تُختار الإيصالات عبر
+                منتقي الصور ومنتقي المستندات في Android، وهما لا يحتاجان إلى إذن. ويستخدم قفل
+                التطبيق رقمك السري أو نمطك أو بصمتك الحالية على الجهاز. لا يوجد إذن لجهات الاتصال
+                أو الموقع أو الكاميرا أو معرّف الإعلان.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>هل ملف النسخة الاحتياطية مشفّر؟</summary>
+            <div class="faq__body">
+              <p>
+                لا. ملف <code>.spendwise</code> أرشيف عادي لقاعدة البيانات ومرفقاتك. تعامل معه
+                ككشف حساب مصرفي واحفظه في مكان تثق به. وفي
+                <a href="/support" hreflang="en" lang="en">الأسئلة الشائعة للدعم</a> خطوات النسخ
+                الاحتياطي.
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="مزيد من الأدلة">
+            <h2>مزيد من الأدلة</h2>
+            <ul>
+              <li><a href="/ar/expense-tracker-vs-spendee">Spendee مقابل Spendwise</a></li>
+              <li><a href="/ar/offline-expense-tracker">تتبع المصاريف دون اتصال</a></li>
+              <li><a href="/ar/expense-tracker-without-signup">تتبع المصاريف دون تسجيل</a></li>
+              <li><a href="/ar/split-expenses-with-friends">تقسيم المصاريف مع الأصدقاء</a></li>
+              <li><a href="/ar/expense-tracker-vs-spreadsheet">Spendwise مقابل جدول بيانات</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>إنفاق يبقى على هاتفك</h2>
+          <p>
+            لا حساب، ولا معرّف تتبع، ولا نسخة سحابية. يمكن إيقاف التحليلات، و
+            <a href="/ar/offline-expense-tracker">السجل يعمل دون اتصال</a>.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ar&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dprivate"
+              rel="noopener"
+              >احصل عليه من Google Play</a
+            >
+            <a class="btn btn--ghost" href="/privacy" hreflang="en" lang="en"
+              >اقرأ سياسة الخصوصية</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ar/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              تطبيق خاص لتتبع المصروفات، مصمم للعمل دون اتصال على Android. تبقى مصروفاتك على
+              هاتفك.
+            </p>
+          </div>
+          <div>
+            <h2>المنتج</h2>
+            <ul>
+              <li><a href="/#features">الميزات</a></li>
+              <li><a href="/#gallery">المعرض</a></li>
+              <li><a href="/#privacy">الخصوصية</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>المعلومات القانونية</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">سياسة الخصوصية</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>الدعم</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">المساعدة والأسئلة الشائعة</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. جميع الحقوق محفوظة.</span>
+          <span>صُمّم لنظام Android 10 والإصدارات الأحدث.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

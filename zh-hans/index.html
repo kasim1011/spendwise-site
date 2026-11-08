@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spendwise 简体中文指南：离线记账，无需云端</title>
+    <meta
+      name="description"
+      content="Spendwise 是离线 Android 记账工具，账本存在手机上。这里收录已经翻译成简体中文的指南：记一笔、预算、备份和隐私。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hans/" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="Spendwise 简体中文指南：离线记账，无需云端" />
+    <meta
+      property="og:description"
+      content="Spendwise 是离线 Android 记账工具，账本存在手机上。这里收录已经翻译成简体中文的指南：记一笔、预算、备份和隐私。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hans/" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 标志：蓝色渐变上的白色进度环，环中有一个对勾。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hans/"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hans/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">图库</a>
+          <a href="/#privacy">隐私</a>
+          <a href="/support" hreflang="en" lang="en">技术支持</a>
+          <a href="/privacy" hreflang="en" lang="en">隐私政策</a>
+          <a href="/terms" hreflang="en" lang="en">条款与条件</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/" hreflang="en" lang="en">English</a>
+          <a href="/de/" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/it/" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+          <a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">简体中文</p>
+          <h1>Spendwise 的简体中文指南</h1>
+          <p class="doc-hero__lede">
+            Spendwise 是一款离线 Android 记账工具：所有数据都存放在手机本地的数据库里，不需要账号，也不依赖云服务。这里只收录已经翻译成简体中文的指南——并非每篇都已翻译，英文页面会明确标注。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新于：</strong>2026 年 10 月 25 日 &nbsp;·&nbsp;
+            <strong>平台：</strong>Android 10 及以上 &nbsp;·&nbsp;
+            <strong>价格：</strong>免费，由一条非个性化广告支持
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="guides">指南</h2>
+          <ul>
+            <li>
+              <a href="/zh-hans/offline-expense-tracker"
+                >离线记账：没有网络也能记一笔</a
+              >
+              ——哪些功能断网照常可用，哪些仍要联网，以及账本为什么只留在设备上。
+            </li>
+            <li>
+              <a href="/zh-hans/expense-tracker-without-signup"
+                >不用注册、不用账号的记账工具</a
+              >
+              ——为什么第一次打开只需要选择语言和货币。
+            </li>
+            <li>
+              <a href="/zh-hans/private-expense-tracker">私密记账：本地保存，没有跟踪 ID</a>
+              ——“私密”在这里指什么，也包括它的边界。
+            </li>
+            <li>
+              <a href="/zh-hans/split-expenses-with-friends"
+                >和朋友分摊费用：分组与结算</a
+              >
+              ——账本由一个人保管，余额又是怎么产生的。
+            </li>
+            <li>
+              <a href="/zh-hans/expense-tracker-vs-spendee"
+                >Spendee 与 Spendwise：云端同步还是本地账本</a
+              >
+              ——逐项对比，实话实说。
+            </li>
+            <li>
+              <a href="/zh-hans/expense-tracker-vs-spreadsheet"
+                >记账工具与电子表格：哪个更快</a
+              >
+              ——什么时候表格够用，什么时候它只是在耗时间。
+            </li>
+          </ul>
+
+          <h2 id="tools">计算器</h2>
+          <p>
+            三个免费计算器现在都提供简体中文版：计算全部在浏览器里完成，不会上传任何数据。
+          </p>
+          <ul>
+            <li>
+              <a href="/zh-hans/50-30-20-budget-calculator">50/30/20 预算计算器</a>
+            </li>
+            <li>
+              <a href="/zh-hans/split-bill-calculator">账单分摊计算器</a>
+            </li>
+            <li>
+              <a href="/zh-hans/subscription-cost-calculator">订阅费用计算器</a>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>没有网络，也能把每一笔记下来</h2>
+          <p>
+            免费，无需账号，没有跟踪 ID。账本留在你的手机上；一份备份文件可以随身带走。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hans&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dzh-Hans_hub"
+              rel="noopener"
+              >在 Google Play 获取</a
+            >
+            <a class="btn btn--ghost" href="/zh-hans/offline-expense-tracker"
+              >阅读离线指南</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hans/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、离线优先的 Android 记账工具。
+              你的账本留在自己的手机上。
+            </p>
+          </div>
+          <div>
+            <h2>产品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">图库</a></li>
+              <li><a href="/#privacy">隐私</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律信息</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隐私政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">条款与条件</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>技术支持</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">技术支持与常见问题</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有权利。</span>
+          <span>专为 Android 10 及以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

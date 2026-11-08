@@ -1,0 +1,170 @@
+/* Spendwise site — the three free calculators: budget, split bill, subscriptions. */
+
+.tool {
+  margin: 2rem 0 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  scroll-margin-top: 90px;
+}
+
+.tool__title {
+  margin: 0 0 1.25rem;
+  font-size: 1.1rem;
+}
+
+.tool__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.tool__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tool__field span {
+  font-weight: 400;
+  color: var(--body);
+}
+
+.tool input[type='number'],
+.tool input[type='text'],
+.tool select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.tool input:focus-visible,
+.tool select:focus-visible,
+.tool button:focus-visible {
+  outline: 3px solid var(--brand-bright);
+  outline-offset: 2px;
+}
+
+.tool__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.tool__row {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.tool__row .tool__field {
+  gap: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.tool__remove {
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.tool__remove:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.tool__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.tool__actions .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tool__out {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.tool__out h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--body);
+}
+
+.tool__figures {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin: 0;
+}
+
+.tool__figure {
+  padding: 0.85rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.tool__figure dt {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.tool__figure dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.tool__note {
+  margin: 0.9rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.tool__note[hidden] {
+  display: none;
+}
+
+.tool noscript p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 560px) {
+  .tool__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .tool__row .tool__field--name {
+    grid-column: 1 / -1;
+  }
+}

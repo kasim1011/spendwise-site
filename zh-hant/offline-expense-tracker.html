@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>離線記帳：沒有網路也能記一筆</title>
+    <meta
+      name="description"
+      content="Spendwise 是 Android 的離線記帳 App。不用帳號、不用雲端、不需連線，就能記一筆、編預算，還能管理群組開銷。"
+    />
+    <link rel="canonical" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/offline-expense-tracker" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/offline-expense-tracker" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/offline-expense-tracker" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/offline-expense-tracker" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/offline-expense-tracker" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/offline-expense-tracker" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/offline-expense-tracker" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/offline-expense-tracker" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="離線記帳：沒有網路也能記一筆" />
+    <meta
+      property="og:description"
+      content="離線優先的記帳工具在飛航模式下能做什麼、哪些功能仍要連線，以及為什麼帳本存放在手機上的資料庫裡。"
+    />
+    <meta property="og:url" content="https://spendwise.download/zh-hant/offline-expense-tracker" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwise 標誌：藍色漸層底上的白色進度環與勾選記號。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/zh-hant/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "離線記帳：沒有網路也能記一筆",
+            "item": "https://spendwise.download/zh-hant/offline-expense-tracker"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Spendwise 在飛航模式下能用嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。關閉無線通訊時，記一筆、預算、群組、報表、提醒與備份都能正常運作。唯一會用到網路的是確認螢幕上的那一則廣告，無法填入時它會顯示預留位置。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我的消費紀錄存在哪裡？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "存在手機上 App 私有儲存空間的 SQLite 資料庫裡。沒有伺服器副本、沒有同步服務，也沒有任何帳號持有它。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "手機重新連上網路後會發生什麼事？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不會上傳任何東西。如果你保持開啟匿名螢幕統計，它會恢復傳送；帳本本身永遠不會離開裝置，除非你自己匯出或建立備份檔案。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "兩支手機可以共用同一本離線帳本嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不行，無法即時共用。帳本只存在單一手機上。你可以用備份檔案把它搬到另一支手機，但沒有雙向同步，因為同步需要伺服器。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "解除安裝 Spendwise 會失去資料嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "會。解除安裝會刪除 App 的私有儲存空間。解除安裝或換手機之前，請先從設定、備份與還原建立備份檔案。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/zh-hant/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="主導覽">
+          <a href="/#features">功能</a>
+          <a href="/#gallery">螢幕截圖</a>
+          <a href="/#privacy">隱私權</a>
+          <a href="/support" hreflang="en" lang="en">支援</a>
+          <a href="/privacy" hreflang="en" lang="en">隱私權政策</a>
+          <a href="/terms" hreflang="en" lang="en">條款與細則</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/offline-expense-tracker" hreflang="en" lang="en">English</a>
+          <a href="/de/offline-expense-tracker" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/offline-expense-tracker" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/offline-expense-tracker" hreflang="es" lang="es">Español</a>
+          <a href="/it/offline-expense-tracker" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/offline-expense-tracker" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/offline-expense-tracker" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/offline-expense-tracker" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/offline-expense-tracker" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/offline-expense-tracker" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/offline-expense-tracker" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a>
+          <a href="/ar/offline-expense-tracker" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">離線，是設計的前提</p>
+          <h1>永遠不需要連線的離線記帳 App</h1>
+          <p class="doc-hero__lede">
+            大多數記帳 App 其實是線上服務，再硬塞一個離線模式。Spendwise 剛好相反：帳本就是你
+            手機上的資料庫，網路可有可無。以下說明這樣的設計能換到什麼，又得付出什麼。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新於：</strong> 2026 年 10 月 20 日 &nbsp;·&nbsp;
+            <strong>平台：</strong> Android 10 以上 &nbsp;·&nbsp;
+            <strong>價格：</strong> 免費，由一則非個人化廣告支持
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="what-offline-means">這裡說的「離線」是什麼意思</h2>
+          <p>
+            Spendwise 把每一筆交易、分類、預算、成員與收據附件，都存在裝置上 App 私有儲存空間
+            的 SQLite 資料庫裡。每個螢幕都從這個資料庫讀取。沒有登入、沒有同步佇列，也不需要
+            先等伺服器回應，App 才能顯示你花了多少錢。
+          </p>
+          <p>
+            這就是全部的架構，也是 App 能瞬間開啟、在火車上、飛機上、地下室，或沒有數據漫遊的
+            外國 SIM 卡下都照常運作的原因。同樣因為如此，App 裡沒有「離線模式」開關：根本沒有
+            連線狀態可以切換出去。
+          </p>
+
+          <h2 id="without-a-connection">關掉網路也能做的事</h2>
+          <ul>
+            <li>
+              <strong>記一筆支出</strong>——金額、分類、日期、備註，以及附加的照片或 PDF。照片
+              來自 Android 的相簿選擇器，因此 App 不需要相機權限。
+            </li>
+            <li>
+              <strong>編列每月預算</strong>——設定每月預算後，它會把你還沒記下的週期性帳單先算
+              進去，這樣在房租扣款前，數字不會顯得太過樂觀。
+            </li>
+            <li>
+              <strong>管理群組帳本</strong>——一趟旅行或一間合租公寓，各自擁有分類、預算、成員
+              與結算餘額。
+            </li>
+            <li>
+              <strong>收到提醒</strong>——每天 19:00 的提醒，以及依分類設定的週期提醒，都是本機
+              鬧鐘，不是伺服器送來的推播。
+            </li>
+            <li>
+              <strong>查看並匯出報表</strong>——月度與年度報表會直接寫成
+              <code>Download/Spendwise</code> 裡的 PDF 或 XLSX，不必上傳任何東西。
+            </li>
+            <li>
+              <strong>備份與還原</strong>——單一檔案包含每一筆紀錄與每一個附件，完全在本機建立
+              與還原。
+            </li>
+          </ul>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-add-transaction.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-add-transaction.png"
+                  alt="新增交易表單，金額為 $47.82，已選取「支出」，並醒目顯示「日常雜貨」分類，日期為今天，下方有一列收據或文件，可選擇照片或 PDF。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                記錄完全在本機完成：你一按下確認，表單就寫入手機的資料庫。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-history.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-history.png"
+                  alt="依日期分組的交易紀錄，附有搜尋欄位，顯示週日市集、咖啡與午餐、藥局與電影院，每天都各自帶有淨額。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                紀錄與搜尋直接讀取本機資料庫；沒有網路請求，也沒有載入轉圈。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="2026 年 10 月報表：支出 $2,095.50，預算 $6,000.00，顯示收入與淨餘額，以及依分類的支出環形圖，第一項是 $1,400.00 的房租。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                報表在裝置上產生，不需伺服器就能匯出成 PDF 或 XLSX。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="what-needs-network">仍會用到網路的一小部分</h2>
+          <p>有兩件事不在本機完成，但兩者都不是 App 運作的必要條件：</p>
+          <ul>
+            <li>
+              <strong>廣告。</strong>Spendwise 之所以免費，是因為交易確認螢幕上有一則非個人化
+              廣告。它需要連線才能填入。離線時請求會失敗，螢幕顯示預留位置；記一筆、儲存與「完成」
+              按鈕都不受影響。
+            </li>
+            <li>
+              <strong>匿名螢幕統計。</strong>這些資料用來判斷哪些螢幕值得改進。預設開啟，不帶
+              追蹤 ID，也不含使用者 ID，而且可以在設定中完全關閉——關閉後就不會送出任何資料。
+            </li>
+          </ul>
+          <p>
+            帳本本身沒有任何會走網路的程式路徑。這是可以實測的說法，不是行銷話術：關掉 Wi-Fi
+            與行動數據，打開 Spendwise，上面說的每件事照樣運作。
+          </p>
+
+          <h2 id="why-offline">為什麼要選擇離線</h2>
+          <p>
+            雲端記帳之所以方便，是因為別人的伺服器替你處理同步、備份與銀行匯入。代價是：你的
+            完整消費歷史放在那台伺服器上，綁在你不得不註冊的帳號底下，適用一份你沒參與制定的
+            政策。離線優先則把這個交換反過來：
+          </p>
+          <ul>
+            <li>沒有帳號要註冊、要忘記，或要擔心失去存取權。</li>
+            <li>不必向任何人請求權限，才能讀自己的資料。</li>
+            <li>沒有會默默弄丟一筆交易的同步衝突。</li>
+            <li>沒有需要持續付費的東西，因為沒有伺服器要養。</li>
+          </ul>
+          <p>
+            你放棄的東西很實際：沒有銀行連線、沒有自動分類、沒有網頁版 App，兩支手機之間也沒有
+            即時共用的帳本。如果這些比那個交換更重要，像 Spendee 這種會同步的 App 更適合你——
+            <a href="/zh-hant/expense-tracker-vs-spendee">與 Spendee 的比較</a>把話說得很白。
+          </p>
+
+          <h2 id="backup">離線，代表備份由你自己保管</h2>
+          <p>
+            雲端帳號本身也兼作備份，離線帳本沒有這層保障，所以 Spendwise 把備份當成主要功能：
+            <strong>設定 → 備份與還原 → 建立備份檔案</strong>會寫出一個
+            <code>.spendwise</code> 檔案，裡面有每一筆交易、分類、預算、成員、群組與收據附件。
+            請把它放在你存放重要檔案的地方。
+          </p>
+          <p>
+            有兩點得誠實說明。備份檔案沒有加密，請把它當成銀行對帳單一樣看待。另外，解除安裝
+            App 會刪除帳本——如果資料重要，備份就不是選項。
+          </p>
+
+          <h2 id="faq">常見問題</h2>
+
+          <details class="faq">
+            <summary>Spendwise 在飛航模式下能用嗎？</summary>
+            <div class="faq__body">
+              <p>
+                可以。關閉無線通訊時，記一筆、預算、群組、報表、提醒與備份都能正常運作。唯一
+                會用到網路的是確認螢幕上的那一則廣告，無法填入時它會顯示預留位置。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>我的消費紀錄存在哪裡？</summary>
+            <div class="faq__body">
+              <p>
+                存在手機上 App 私有儲存空間的 SQLite 資料庫裡。沒有伺服器副本、沒有同步服務，
+                也沒有任何帳號持有它。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>手機重新連上網路後會發生什麼事？</summary>
+            <div class="faq__body">
+              <p>
+                不會上傳任何東西。如果你保持開啟匿名螢幕統計，它會恢復傳送；帳本本身永遠不會
+                離開裝置，除非你自己匯出或建立備份檔案。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>兩支手機可以共用同一本離線帳本嗎？</summary>
+            <div class="faq__body">
+              <p>
+                不行，無法即時共用。帳本只存在單一手機上。你可以用備份檔案把它搬到另一支手機，
+                但沒有雙向同步，因為同步需要伺服器。多人一起出遊時，請看
+                <a href="/zh-hant/split-expenses-with-friends">群組怎麼運作</a>。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>解除安裝 Spendwise 會失去資料嗎？</summary>
+            <div class="faq__body">
+              <p>
+                會。解除安裝會刪除 App 的私有儲存空間。解除安裝或換手機之前，請先從設定、備份
+                與還原建立備份檔案。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="更多指南">
+            <h2>更多指南</h2>
+            <ul>
+              <li><a href="/zh-hant/expense-tracker-vs-spendee">Spendee 與 Spendwise 比較</a></li>
+              <li><a href="/zh-hant/expense-tracker-without-signup">不用註冊的記帳 App</a></li>
+              <li><a href="/zh-hant/private-expense-tracker">私密記帳 App</a></li>
+              <li><a href="/zh-hant/split-expenses-with-friends">與朋友分攤開支</a></li>
+              <li><a href="/zh-hant/expense-tracker-vs-spreadsheet">Spendwise 與試算表比較</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>試試沒有訊號也能用的記帳 App</h2>
+          <p>
+            免費、不需要帳號、沒有追蹤 ID。帳本留在你的手機上；一個備份檔案就能帶著走。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=zh-Hant&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Doffline"
+              rel="noopener"
+              >在 Google Play 取得</a
+            >
+            <a class="btn btn--ghost" href="/zh-hant/expense-tracker-without-signup"
+              >為什麼不需要註冊</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/zh-hant/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              私密、離線優先的 Android 記帳工具。
+              你的帳本留在自己的手機上。
+            </p>
+          </div>
+          <div>
+            <h2>產品</h2>
+            <ul>
+              <li><a href="/#features">功能</a></li>
+              <li><a href="/#gallery">螢幕截圖</a></li>
+              <li><a href="/#privacy">隱私權</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法律資訊</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">隱私權政策</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">條款與細則</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>支援</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">支援與常見問題</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 保留所有權利。</span>
+          <span>專為 Android 10 以上版本打造。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

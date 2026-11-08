@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>友達と支出を分ける：グループと精算</title>
+    <meta
+      name="description"
+      content="旅行やシェアハウスを1台の端末で管理。グループごとの台帳、均等または個別の割り勘、残高は自動計算、精算はワンタップ。"
+    />
+    <link rel="canonical" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/split-expenses-with-friends" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/split-expenses-with-friends" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta property="og:title" content="友達と支出を分ける：グループと精算" />
+    <meta
+      property="og:description"
+      content="グループの台帳が1台の端末にあるときの仕組み：分担、残高、精算、そしてこの方式が止まる場所。"
+    />
+    <meta property="og:url" content="https://spendwise.download/ja/split-expenses-with-friends" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Spendwiseのマーク：青いグラデーションの背景に白いプログレスリングとチェック。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/ja/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "友達と支出を分ける：グループと精算",
+            "item": "https://spendwise.download/ja/split-expenses-with-friends"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "友達はSpendwiseをインストールする必要がありますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。グループはあなたの端末上の台帳で、友達はそこに追加する人物です。誰にも招待、アカウント、通知は届かず、他人の端末にコピーが残ることもありません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "分担はどう分けますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "共有の支出は複数人で一度に分割できます。均等に分けることも、1人ずつ分担額を自分で設定することもできます。各分担額はその人物の変動残高を更新します。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "グループの残高は個人の台帳に影響しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。グループは独自の人物、カテゴリ、予算、残高を持つ別のスコープです。グループ内で精算しても変わるのはそのグループだけで、アプリ全体で同じ名前の人物がいても変わりません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "グループの2人が請求を不均等に分けるとどうなりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "均等に分ける代わりに、1人ずつの分担額を設定します。取引はグループの台帳で1件の支出のままで、各人の残高は自分の分担額の分だけ動きます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "旅行ではなく家庭にグループを使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。グループは独自の月次予算、カテゴリ、メモを持つ名前つきの台帳なので、シェアハウスも休暇と同じように使えます。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">コンテンツへスキップ</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/ja/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/#features">機能</a>
+          <a href="/#gallery">ギャラリー</a>
+          <a href="/#privacy">プライバシー</a>
+          <a href="/support" hreflang="en" lang="en">サポート</a>
+          <a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a>
+          <a href="/terms" hreflang="en" lang="en">利用規約</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/split-expenses-with-friends" hreflang="en" lang="en">English</a>
+          <a href="/de/split-expenses-with-friends" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/split-expenses-with-friends" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/split-expenses-with-friends" hreflang="es" lang="es">Español</a>
+          <a href="/it/split-expenses-with-friends" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/split-expenses-with-friends" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/split-expenses-with-friends" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/split-expenses-with-friends" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+          <a href="/ko/split-expenses-with-friends" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/split-expenses-with-friends" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/split-expenses-with-friends" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/split-expenses-with-friends" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">グループと精算</p>
+          <h1>もう1つのアカウントなしで、友達と支出を分ける</h1>
+          <p class="doc-hero__lede">
+            費用を分けるというと、たいていは友達全員を、誰も入れたがらないアプリに招待することになります。Spendwiseは逆を行きます。1人が旅行やシェアハウスの台帳を正確につけ、全員が自分の立ち位置を確認できます。
+          </p>
+          <p class="doc-hero__meta">
+            <strong>更新日：</strong>2026年10月20日 &nbsp;·&nbsp;
+            <strong>方式：</strong>ローカルのグループ台帳 &nbsp;·&nbsp;
+            <strong>価格：</strong>無料で利用可能、サブスクリプションなし
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="two-ledgers">グループはタグではなく、2冊目の台帳</h2>
+          <p>
+            多くのアプリでは、共有の旅行は自分の支出のいくつかに貼るラベルにすぎません。Spendwiseはグループに独自のコンテキストを与えます。独自のカテゴリ、独自の月次予算、独自の人物、独自の取引、独自のメモ、独自の残高です。
+          </p>
+          <p>
+            要点は、旅行が家計の数字を決して汚さないことです。自宅の家賃は「Voyage en France」のカテゴリではありませんし、旅行での友達の未精算残高は、自宅でのその人の貸し借りとは別の残高です。名前が同じでも、2つの別々の台帳です。
+          </p>
+
+          <h2 id="how-a-trip-works">旅行は実際どう進むか</h2>
+          <ol>
+            <li>
+              <strong>グループを作成</strong>し、名前をつけます。旅行や家庭向けの短い開始カテゴリが用意されます。
+            </li>
+            <li>
+              費用を分ける<strong>人物を追加</strong>します。人物は台帳の項目であってアカウントではありません。電話番号も招待もアプリのインストールも不要です。
+            </li>
+            <li>
+              グループのサマリーで、その月の<strong>グループ予算を設定</strong>します。自分の予算とは別です。
+            </li>
+            <li>
+              <strong>共有の支出を記録します。</strong>自分が払った金額を、カテゴリと日付とともに入力します。誰かが自分の分を立て替えたときは、その向きで記録します。残高が逆に進まないようにするためです。
+            </li>
+            <li>
+              <strong>支出を分割します。</strong>関係する人物をタグ付けします。均等でも、1人ずつ分担額を指定してもかまいません。各分担額がその人物の変動残高を動かします。
+            </li>
+            <li>
+              誰かが自分の分を支払ったら<strong>精算します。</strong>この操作は、未精算残高と正しい向きが入力済みの作成画面を開きます。返済の記録はタップ1回と確認1回で済みます。一部の支払いでもかまいません。
+            </li>
+          </ol>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="グループタブに並ぶ、カテゴリ8件のFlat 4Bとカテゴリ4件のVoyage en France。各カードにグループの支出額が表示されている。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                各グループは開く前に、その支出額とカテゴリ数が表示されます。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-group-detail.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-group-detail.png"
+                  alt="2026年10月のグループ専用画面。グループ予算$800.00に対して$553.00を使い「順調」と表示され、未精算残高のある人物と「取引を追加」ボタンがある。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                グループのサマリー、予算、未精算残高のある人物。すべてそのグループの範囲に限定されています。
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-people.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-people.png"
+                  alt="人物画面に、$245.00を借りているAlexと、$500.00を貸しているSamが並び、それぞれに変動残高と「新しい人物」操作がある。"
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                残高は入力された数字ではなく台帳から計算されます。貸しているときは緑、借りているときは赤で表示されます。
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="balances">残高は覚えておくものではなく、計算されるもの</h2>
+          <p>
+            各人物の残高は、その人の台帳項目の合計であり、誰かが入力した数字ではありません。項目は実際に起きる状況をカバーします。現金を貸す、相手の分担分を立て替える、相手が自分の分を立て替える、借りる、相手が返す、自分が返す。残高がプラスなら貸している状態、マイナスなら借りている状態です。
+          </p>
+          <p>
+            導出された合計なので、古くなってずれることはありません。その代わり、残高は記録された内容の分だけ正確です。グループがタクシーの入力を忘れれば台帳は間違ったままです。1人が帳簿をつけることで、それが防げます。
+          </p>
+
+          <h2 id="the-trade">正直なトレードオフ：台帳は1台の端末にある</h2>
+          <p>
+            招待機能つきの割り勘アプリは存在し、別の問題を解決します。参加者全員が自分の端末から同じ共有の帳簿を編集できるようにすることです。それにはアカウントとサーバーが必要で、それはまさにSpendwiseが持たない構成です。
+          </p>
+          <p>つまりここでの方式は<strong>1つの台帳、1人の管理者</strong>です。向いているのは：</p>
+          <ul>
+            <li>ほとんどの手配と支払いを1人が行う旅行、</li>
+            <li>1人の同居人が請求を精算するシェアハウス、</li>
+            <li>言い争いの原因が不信ではなく曖昧な記憶であるようなグループ。</li>
+          </ul>
+          <p>
+            全員がリアルタイムで台帳を編集することにこだわる家庭には向きません。それが要件なら、<a href="/ja/expense-tracker-vs-spendee">Spendeeとの比較</a>を読んで同期型のアプリを選んでください。このページは、このアプリがどこで負けるかを率直に書いています。
+          </p>
+
+          <h2 id="limits">グループが意図的にやらないこと</h2>
+          <ul>
+            <li>
+              <strong>招待も共同編集もありません。</strong>台帳はあなたの端末にあるので、同期する相手がいません。
+            </li>
+            <li>
+              <strong>コンテキスト間で人物は共有されません。</strong>人物をグループにコピーできますが、コピーは独自の台帳を持ちます。片方を精算しても、もう片方には影響しません。
+            </li>
+            <li>
+              <strong>グループ間の送金はありません。</strong>お金は台帳の間ではなく、人物の間を動きます。
+            </li>
+            <li>
+              <strong>グループ通貨はありません。</strong>アプリの表示通貨は1つで、グループもその通貨で表示されます。換算はありません。
+            </li>
+            <li>
+              <strong>人物間の相殺はありません。</strong>Alexがあなたに借りていて、あなたがSamに借りている場合、それは2つの残高であって1つではありません。
+            </li>
+          </ul>
+
+          <h2 id="faq">よくある質問</h2>
+
+          <details class="faq">
+            <summary>友達はSpendwiseをインストールする必要がありますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。グループはあなたの端末上の台帳で、友達はそこに追加する人物です。誰にも招待、アカウント、通知は届かず、他人の端末にコピーが残ることもありません。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>分担はどう分けますか？</summary>
+            <div class="faq__body">
+              <p>
+                共有の支出は複数人で一度に分割できます。均等に分けることも、1人ずつ分担額を自分で設定することもできます。各分担額はその人物の変動残高を更新します。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>グループの残高は個人の台帳に影響しますか？</summary>
+            <div class="faq__body">
+              <p>
+                いいえ。グループは独自の人物、カテゴリ、予算、残高を持つ別のスコープです。グループ内で精算しても変わるのはそのグループだけで、アプリ全体で同じ名前の人物がいても変わりません。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>2人が請求を不均等に分けるとどうなりますか？</summary>
+            <div class="faq__body">
+              <p>
+                均等に分ける代わりに、1人ずつの分担額を設定します。取引はグループの台帳で1件の支出のままで、各人の残高は自分の分担額の分だけ動きます。
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>旅行ではなく家庭にグループを使えますか？</summary>
+            <div class="faq__body">
+              <p>
+                はい。グループは独自の月次予算、カテゴリ、メモを持つ名前つきの台帳なので、シェアハウスも休暇と同じように使えます。毎日のリマインダーとアプリロックについては<a href="/support" hreflang="en" lang="en">サポートページ</a>で説明しています。
+              </p>
+            </div>
+          </details>
+          <nav class="related" aria-label="その他のガイド">
+            <h2>その他のガイド</h2>
+            <ul>
+              <li><a href="/ja/expense-tracker-vs-spendee">Spendee vs Spendwise</a></li>
+              <li><a href="/ja/offline-expense-tracker">オフラインの支出管理</a></li>
+              <li><a href="/ja/expense-tracker-without-signup">登録なしの支出管理</a></li>
+              <li><a href="/ja/private-expense-tracker">プライベートな支出管理</a></li>
+              <li><a href="/ja/expense-tracker-vs-spreadsheet">Spendwise vs 表計算ソフト</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>台帳は1つ、招待はなし</h2>
+          <p>
+            旅行のお金を正確に。分担を記録し、残高を見て、タップで精算。無料で、あなたにも友達にもアカウントは不要です。
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=ja&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dsplit"
+              rel="noopener"
+              >Google Playで入手</a
+            >
+            <a class="btn btn--ghost" href="/ja/offline-expense-tracker"
+              >オフラインで動く理由</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/ja/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Android向けの、オフラインを前提としたプライベートな家計簿です。記録は端末から
+              出ません。
+            </p>
+          </div>
+          <div>
+            <h2>製品</h2>
+            <ul>
+              <li><a href="/#features">機能</a></li>
+              <li><a href="/#gallery">ギャラリー</a></li>
+              <li><a href="/#privacy">プライバシー</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>法的情報</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">プライバシーポリシー</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">利用規約</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>サポート</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">ヘルプとFAQ</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. 無断転載を禁じます。</span>
+          <span>Android 10以降向けに作られています。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

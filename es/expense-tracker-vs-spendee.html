@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spendee vs Spendwise: gastos sin conexión comparados</title>
+    <meta
+      name="description"
+      content="Spendee sincroniza con cuenta y planes de pago. Spendwise guarda el registro sin conexión en Android, gratis y sin cuenta. Compara funciones y privacidad."
+    />
+    <link rel="canonical" href="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="en" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="de" href="https://spendwise.download/de/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="fr" href="https://spendwise.download/fr/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="es" href="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="it" href="https://spendwise.download/it/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="pt-BR" href="https://spendwise.download/pt-br/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ru" href="https://spendwise.download/ru/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ja" href="https://spendwise.download/ja/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ko" href="https://spendwise.download/ko/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://spendwise.download/zh-hans/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://spendwise.download/zh-hant/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="ar" href="https://spendwise.download/ar/expense-tracker-vs-spendee" />
+    <link rel="alternate" hreflang="x-default" href="https://spendwise.download/expense-tracker-vs-spendee" />
+    <meta name="theme-color" content="#004AC6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Spendwise" />
+    <meta
+      property="og:title"
+      content="Spendee vs Spendwise: sincronización en la nube o un registro en tu teléfono"
+    />
+    <meta
+      property="og:description"
+      content="Una app guarda tus gastos en una cuenta en la nube; la otra los mantiene en tu teléfono. Qué cambia eso en precio, privacidad, cómo compartir y cómo sacar tus datos."
+    />
+    <meta property="og:url" content="https://spendwise.download/es/expense-tracker-vs-spendee" />
+    <meta property="og:image" content="https://spendwise.download/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La marca de Spendwise: un anillo de progreso blanco y una marca de verificación sobre un degradado azul."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="stylesheet" href="/styles/legal.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Spendwise",
+            "item": "https://spendwise.download/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Spendee vs Spendwise: gastos sin conexión comparados",
+            "item": "https://spendwise.download/es/expense-tracker-vs-spendee"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Spendwise es la misma app que Spendee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Spendee está hecha por SPENDEE a.s. en Praga. Spendwise es una app de Android independiente de otro desarrollador. Los nombres se parecen lo suficiente como para que la gente encuentre una cuando busca la otra, y por eso existe esta página."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito una cuenta para usar Spendwise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. No hay que registrarse, ni correo electrónico, ni contraseña. En el primer inicio se eligen el idioma y la moneda, y luego se abre la app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Spendwise funciona sin conexión a internet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. El registro, los presupuestos, los grupos, los informes, la copia de seguridad y la restauración son locales. El único anuncio de la pantalla de confirmación necesita conexión para cargarse; sin conexión muestra su marcador de posición y el resto de la app no se ve afectado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo paso los datos de Spendwise a un teléfono nuevo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ajustes, Copia de seguridad y restauración, Crear archivo de copia. El archivo contiene transacciones, categorías, presupuestos, personas, grupos y recibos adjuntos. En el teléfono nuevo, elige Elegir archivo de copia; la restauración reemplaza los datos actuales tras crear una instantánea de seguridad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Spendwise es gratis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. No hay suscripción ni compras dentro de la app. Un anuncio no personalizado en la pantalla de confirmación de transacciones lo financia, y los análisis anónimos de pantallas se pueden desactivar en Ajustes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Spendwise funciona en iPhone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Spendwise es una app de Android para Android 10 y versiones posteriores. Spendee está disponible en Android, iOS y la web."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/es/">
+          <img src="/assets/logo.svg" alt="" width="32" height="32" />
+          Spendwise
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/#features">Funciones</a>
+          <a href="/#gallery">Galería</a>
+          <a href="/#privacy">Privacidad</a>
+          <a href="/support" hreflang="en" lang="en">Soporte</a>
+          <a href="/privacy" hreflang="en" lang="en">Política de privacidad</a>
+          <a href="/terms" hreflang="en" lang="en">Términos y condiciones</a>
+        </nav>
+        <nav class="site-lang" aria-label="Language">
+          <a href="/expense-tracker-vs-spendee" hreflang="en" lang="en">English</a>
+          <a href="/de/expense-tracker-vs-spendee" hreflang="de" lang="de">Deutsch</a>
+          <a href="/fr/expense-tracker-vs-spendee" hreflang="fr" lang="fr">Français</a>
+          <a href="/es/expense-tracker-vs-spendee" hreflang="es" lang="es" aria-current="true">Español</a>
+          <a href="/it/expense-tracker-vs-spendee" hreflang="it" lang="it">Italiano</a>
+          <a href="/pt-br/expense-tracker-vs-spendee" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+          <a href="/ru/expense-tracker-vs-spendee" hreflang="ru" lang="ru">Русский</a>
+          <a href="/ja/expense-tracker-vs-spendee" hreflang="ja" lang="ja">日本語</a>
+          <a href="/ko/expense-tracker-vs-spendee" hreflang="ko" lang="ko">한국어</a>
+          <a href="/zh-hans/expense-tracker-vs-spendee" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="/zh-hant/expense-tracker-vs-spendee" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="/ar/expense-tracker-vs-spendee" hreflang="ar" lang="ar">العربية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="doc-hero">
+        <div class="wrap">
+          <p class="eyebrow">Comparativa</p>
+          <h1>Spendee vs Spendwise: sincronización en la nube o un registro en tu teléfono</h1>
+          <p class="doc-hero__lede">
+            Las dos apps registran gastos y ambas te dirán cuánto costó un mes. No coinciden en una
+            cosa de la que depende todo lo demás: si tus gastos viven en una cuenta en el servidor de
+            otra persona o en una base de datos en tu dispositivo.
+          </p>
+          <p class="doc-hero__meta">
+            <strong>Actualizado:</strong> 20 de octubre de 2026 &nbsp;·&nbsp;
+            <strong>Spendwise:</strong> Android 10 y versiones posteriores &nbsp;·&nbsp;
+            <strong>Precios de Spendee:</strong> de su propia página de precios, consultada el mismo día
+          </p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <article class="doc">
+          <h2 id="short-answer">La respuesta breve</h2>
+          <p>
+            Elige <strong>Spendee</strong> si quieres que tus transacciones bancarias se importen
+            solas, tu registro también en una app web además del teléfono, y que los servidores de
+            otra persona mantengan dos dispositivos sincronizados. Elige <strong>Spendwise</strong> si
+            prefieres escribir el gasto tú mismo antes que iniciar sesión, si quieres que el registro
+            funcione en un avión y si no quieres una suscripción entre tú y un presupuesto que ya
+            funciona.
+          </p>
+          <p>
+            Esta comparativa la escribe el creador de una de las dos apps, así que léela como un
+            argumento y no como un veredicto. La tabla de abajo dice dónde Spendee es realmente la
+            mejor herramienta, no solo dónde no lo es.
+          </p>
+
+          <h2 id="side-by-side">Lado a lado</h2>
+          <div class="compare-scroll">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col">Lo que importa</th>
+                  <th scope="col">Spendwise</th>
+                  <th scope="col">Spendee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cuenta</th>
+                  <td>Ninguna. Sin correo, sin contraseña, sin perfil.</td>
+                  <td>Inicia sesión en la app y en la app web; tus datos están vinculados a ella.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dónde viven los registros</th>
+                  <td>Una base de datos SQLite en tu teléfono. Sin copia en un servidor.</td>
+                  <td>La nube de Spendee, sincronizada entre tus dispositivos.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Precio</th>
+                  <td>Gratis. Un anuncio no personalizado, sin compras dentro de la app.</td>
+                  <td>
+                    Nivel Basic gratuito; Plus por 1,99 $ al mes o 14,99 $ al año; Premium por 5,99 $
+                    al mes o 35,99 $ al año, con una prueba de 7 días.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Qué incluye el nivel gratuito</th>
+                  <td>Todas las funciones de la app, incluidos los grupos.</td>
+                  <td>Un monedero en efectivo y un presupuesto en Basic.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Conexiones bancarias</th>
+                  <td>Ninguna. Tú introduces cada gasto, lo que lleva unos segundos.</td>
+                  <td>Una función de pago, con categorización automática de las transacciones importadas.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Compartir un presupuesto con alguien</th>
+                  <td>
+                    Grupos: un viaje o un hogar tiene su propio registro, personas, presupuesto y
+                    saldos, todo en tu teléfono.
+                  </td>
+                  <td>Monederos compartidos con otros usuarios de Spendee en Plus y Premium.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Plataformas</th>
+                  <td>Android 10 y versiones posteriores.</td>
+                  <td>Android, iOS y una app web.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sacar los datos</th>
+                  <td>
+                    Un PDF o una hoja de cálculo por mes o por año, además de una copia de seguridad
+                    en un solo archivo con cada fila y cada recibo.
+                  </td>
+                  <td>Importación y exportación de transacciones, incluidas en los tres niveles.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Seguimiento y anuncios</th>
+                  <td>
+                    Sin identificador de seguimiento. Un anuncio no personalizado en la pantalla de
+                    confirmación. Análisis anónimos de pantallas que se pueden desactivar.
+                  </td>
+                  <td>Consulta la política de privacidad de Spendee; aquí no se resume.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="what-differs">Qué cambia realmente no tener cuenta</h2>
+          <p>
+            La tabla es una lista de funciones. La razón para elegir un registro local es cómo se
+            sienten esas funciones cuando la cuenta desaparece.
+          </p>
+
+          <h3>No hay nada en lo que iniciar sesión ni nada que se rompa</h3>
+          <p>
+            Spendwise se abre con una elección de idioma y moneda, y luego en tu registro. No hay una
+            pantalla de inicio de sesión que falle mientras haces fila por un café, ni un
+            restablecimiento de contraseña, ni una sesión que caduque. También significa que nadie
+            puede dejarte fuera de tu propio historial de gastos, porque no hay un servidor que lo
+            guarde.
+          </p>
+
+          <h3>El intercambio es real: la copia de seguridad es tuya</h3>
+          <p>
+            Una cuenta en la nube también es una copia de seguridad. Spendwise no lo es a propósito, y
+            desinstalar la app borra el registro. La alternativa es un archivo que controlas:
+            <strong>Ajustes → Copia de seguridad y restauración → Crear archivo de copia</strong>
+            escribe cada transacción, categoría, presupuesto, persona, grupo y recibo adjunto en un
+            único archivo <code>.spendwise</code> en <code>Download/Spendwise</code>. Restáuralo en el
+            teléfono nuevo y vuelves a donde estabas. Guárdalo donde guardarías un extracto bancario,
+            porque el archivo no está cifrado.
+          </p>
+
+          <h3>Los grupos están incluidos y son locales</h3>
+          <p>
+            Un grupo es un segundo registro: un viaje, un piso compartido, una boda. Tiene sus propias
+            categorías, presupuesto, personas, notas y saldos, para que unas vacaciones nunca
+            enturbien los números del hogar. No hay un nivel de suscripción que desbloquear ni una
+            invitación que aceptar. La contrapartida honesta es que las demás personas del grupo no
+            tienen una copia en vivo en su teléfono: una persona mantiene el registro, y es exacto
+            porque una sola persona lo mantiene.
+          </p>
+
+          <h3>Un anuncio y análisis que puedes desactivar</h3>
+          <p>
+            Spendwise no oculta que tiene un anuncio y no pretende lo contrario. Hay un solo anuncio
+            no personalizado en la pantalla de confirmación, colocado donde una tarea ya ha
+            terminado, y no hay identificador de seguimiento. Los análisis anónimos de pantallas
+            ayudan a mejorar la app y tienen un interruptor de encendido y apagado en Ajustes; apagado
+            significa apagado, no «menos». La política de privacidad detalla ambos.
+          </p>
+
+          <div class="shots">
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-dashboard.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-dashboard.png"
+                  alt="El panel de Spendwise de octubre de 2026: 2.095,50 $ gastados frente a un presupuesto de 6.000,00 $ marcado Vas bien, ingresos de 5.320,00 $, un saldo neto de 3.224,50 $ y una franja de grupos."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                El panel responde primero: cuánto costó el mes, cuánto presupuesto queda y qué está
+                por venir.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-groups.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-groups.png"
+                  alt="La pestaña Grupos, con Flat 4B y 8 categorías, y Voyage en France y 4; cada tarjeta muestra lo que ha gastado el grupo."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Cada grupo es su propio contexto, con sus propias categorías, presupuesto y personas
+                — no una etiqueta en el registro principal.
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="/screenshot/spendwise-reports.webp" type="image/webp" />
+                <img
+                  src="/screenshot/spendwise-reports.png"
+                  alt="El informe de octubre de 2026 con 2.095,50 $ gastados frente a un presupuesto de 6.000,00 $, ingresos y saldo neto, y un gráfico de anillo de gastos por categoría que empieza por Alquiler con 1.400,00 $."
+                  width="1080"
+                  height="2400"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                Informes mensuales y anuales, exportables como PDF o hoja de cálculo sin una cuenta.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 id="spendee-wins">Dónde Spendee es la mejor opción</h2>
+          <p>Hay tres cosas difíciles de hacer sin un servidor, y Spendee hace las tres:</p>
+          <ul>
+            <li>
+              <strong>Conexiones bancarias y categorización automática.</strong> Si no vas a escribir
+              los gastos, ningún registro sin conexión ganará. Spendee importa transacciones y las
+              ordena por ti con un plan de pago.
+            </li>
+            <li>
+              <strong>Dos dispositivos, realmente sincronizados.</strong> Un teléfono, una app web y
+              el teléfono de otra persona son exactamente lo que compra una cuenta. Spendwise es un
+              solo teléfono por diseño.
+            </li>
+            <li>
+              <strong>iPhone y web.</strong> Spendwise solo existe para Android. Si tus dispositivos
+              no son Android, esta comparativa ya terminó.
+            </li>
+          </ul>
+          <p>
+            Spendee también es el producto más antiguo y grande, y eso se nota en cosas difíciles de
+            ver en una tabla de funciones: más monedas en la lista de bancos, más años de casos límite
+            resueltos. Las dos apps se pueden probar gratis, y los niveles de pago de Spendee empiezan
+            por menos que un café al mes, así que probar ambas cuesta una tarde y no dinero.
+          </p>
+
+          <h2 id="price">Qué compra la diferencia de precio</h2>
+          <p>
+            Todos los ingresos de Spendwise son un anuncio en una pantalla, así que la app es gratis y
+            sigue siéndolo; no hay una mejora que venderte después. El nivel gratuito de Spendee es un
+            registro real, pero te limita a un monedero y un presupuesto, y los dos niveles de pago son
+            los que desbloquean la sincronización bancaria, monederos adicionales y monederos
+            compartidos. Si quieres esas funciones, 14,99–35,99 $ al año es un precio justo por ellas.
+            Si no las quieres, el techo del nivel gratuito es la razón para buscar otra opción.
+          </p>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <details class="faq">
+            <summary>¿Spendwise es la misma app que Spendee?</summary>
+            <div class="faq__body">
+              <p>
+                No. Spendee está hecha por SPENDEE a.s. en Praga. Spendwise es una app de Android
+                independiente de otro desarrollador. Los nombres se parecen lo suficiente como para
+                que la gente encuentre una cuando busca la otra, y por eso existe esta página.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Necesito una cuenta para usar Spendwise?</summary>
+            <div class="faq__body">
+              <p>
+                No. No hay que registrarse, ni correo electrónico, ni contraseña. En el primer inicio
+                se eligen el idioma y la moneda, y luego se abre la app.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Spendwise funciona sin conexión a internet?</summary>
+            <div class="faq__body">
+              <p>
+                Sí. El registro, los presupuestos, los grupos, los informes, la copia de seguridad y la
+                restauración son locales. El único anuncio de la pantalla de confirmación necesita
+                conexión para cargarse; sin conexión muestra su marcador de posición y el resto de la
+                app no se ve afectado.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Cómo paso los datos de Spendwise a un teléfono nuevo?</summary>
+            <div class="faq__body">
+              <p>
+                Abre <strong>Ajustes → Copia de seguridad y restauración → Crear archivo de copia</strong>.
+                El archivo contiene transacciones, categorías, presupuestos, personas, grupos y
+                recibos adjuntos. En el teléfono nuevo, elige <strong>Elegir archivo de copia</strong>;
+                la restauración reemplaza los datos actuales tras crear una instantánea de seguridad.
+                Los pasos completos están en la <a href="/support" hreflang="en" lang="en">página de soporte</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Spendwise es gratis?</summary>
+            <div class="faq__body">
+              <p>
+                Sí. Sin suscripción, sin compras dentro de la app. Un anuncio no personalizado en la
+                pantalla de confirmación de la transacción lo financia, y los análisis anónimos de
+                pantallas se pueden desactivar en Ajustes.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>¿Spendwise funciona en iPhone?</summary>
+            <div class="faq__body">
+              <p>
+                No. Spendwise es una app de Android para Android 10 y versiones posteriores. Spendee
+                está disponible en Android, iOS y la web.
+              </p>
+            </div>
+          </details>
+
+          <h2 id="try">Prueba la que encaje</h2>
+          <p>
+            Si esta página ha hecho su trabajo, ya sabes en qué columna estás. Spendwise es gratis y
+            se instala en menos de un minuto; si no es para ti, desinstálalo y no se habrá subido nada
+            a ninguna parte mientras tanto.
+          </p>
+          <nav class="related" aria-label="Más guías">
+            <h2>Más guías</h2>
+            <ul>
+              <li><a href="/es/offline-expense-tracker">Registro de gastos sin conexión</a></li>
+              <li><a href="/es/expense-tracker-without-signup">Registro de gastos sin cuenta</a></li>
+              <li><a href="/es/private-expense-tracker">Registro de gastos privado</a></li>
+              <li><a href="/es/split-expenses-with-friends">Dividir gastos con amigos</a></li>
+              <li><a href="/es/expense-tracker-vs-spreadsheet">Spendwise vs hoja de cálculo</a></li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+
+      <section class="cta">
+        <div class="wrap">
+          <h2>Spendwise en Google Play</h2>
+          <p>
+            Gratis, sin cuenta, sin identificador de seguimiento. Tu registro se queda en tu teléfono,
+            y un archivo se lo lleva contigo cuando cambias de teléfono.
+          </p>
+          <div class="cta__actions">
+            <a
+              class="btn btn--primary"
+              href="https://play.google.com/store/apps/details?id=com.gripxtech.spendwise&amp;hl=es&amp;referrer=utm_source%3Dsite%26utm_medium%3Dorganic%26utm_campaign%3Dvs_spendee"
+              rel="noopener"
+              >Consíguelo en Google Play</a
+            >
+            <a class="btn btn--ghost" href="/support" hreflang="en" lang="en">Leer las preguntas frecuentes</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/es/">
+              <img src="/assets/logo.svg" alt="" width="32" height="32" />
+              Spendwise
+            </a>
+            <p>
+              Un registro de gastos privado y sin conexión para Android. Tus cuentas pertenecen a tu
+              teléfono.
+            </p>
+          </div>
+          <div>
+            <h2>Producto</h2>
+            <ul>
+              <li><a href="/#features">Funciones</a></li>
+              <li><a href="/#gallery">Galería</a></li>
+              <li><a href="/#privacy">Privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy" hreflang="en" lang="en">Política de privacidad</a></li>
+              <li><a href="/terms" hreflang="en" lang="en">Términos y condiciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Soporte</h2>
+            <ul>
+              <li><a href="/support" hreflang="en" lang="en">Ayuda y preguntas frecuentes</a></li>
+              <li><a href="https://www.youtube.com/@getspendwise" rel="me">YouTube</a></li>
+              <li><a href="mailto:support@spendwise.download">support@spendwise.download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bar">
+          <span>&copy; 2026 Spendwise. Todos los derechos reservados.</span>
+          <span>Hecho para Android 10 y versiones posteriores.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
